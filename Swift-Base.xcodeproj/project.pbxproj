@@ -584,7 +584,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "B1A5A18E-8D14-4B2C-9A25-F4F2F916836E";
+				PROVISIONING_PROFILE = "611df384-77ac-468e-80c6-69d41877a6c3";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -600,8 +600,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BUNDLE_DISPLAY_NAME = Swift;
 				BUNDLE_ID = com.flatstack.swift;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: \"FS\" LLC (UTXK29TA3W)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: \"FS\" LLC (UTXK29TA3W)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -621,7 +621,7 @@
 					"\"QuartzCore\"",
 				);
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "74adc2a2-8d48-45c7-9e1d-19fd399c75c0";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -734,7 +734,7 @@
 					"\"QuartzCore\"",
 				);
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "B1A5A18E-8D14-4B2C-9A25-F4F2F916836E";
+				PROVISIONING_PROFILE = "611df384-77ac-468e-80c6-69d41877a6c3";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -806,8 +806,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BUNDLE_DISPLAY_NAME = "Swift Staging";
 				BUNDLE_ID = com.flatstack.swift.staging;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: \"FS\" LLC (UTXK29TA3W)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: \"FS\" LLC (UTXK29TA3W)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -827,7 +827,7 @@
 					"\"QuartzCore\"",
 				);
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "74adc2a2-8d48-45c7-9e1d-19fd399c75c0";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
