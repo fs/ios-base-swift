@@ -7,6 +7,7 @@
 //
 
 #import "Helpers.h"
+#import <KIF/KIF.h>
 //#import "AFNetworking.h"
 //#import "UIKit+AFNetworking.h"
 //#import "SDWebImage/UIImageView+WebCache.h"

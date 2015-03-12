@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194478461AAF8FA500A34744 /* InterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194478451AAF8FA500A34744 /* InterfaceTests.swift */; };
+		1944784A1AAF919D00A34744 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194478471AAF90AF00A34744 /* SenTestingKit.framework */; };
 		2124DFA01A8DF48000422313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124DF9F1A8DF48000422313 /* ViewController.swift */; };
 		212D2D2F1A8A6DA800F3B4CA /* FSExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212D2D2E1A8A6DA800F3B4CA /* FSExtensions.swift */; };
 		213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213B89BE19F01A1E005D3749 /* CoreGraphics.framework */; };
@@ -27,6 +29,7 @@
 		E736C5DC1A252C2C00B8986E /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E736C5D41A252C2C00B8986E /* UIImage+Utils.m */; };
 		E736C5DD1A252C2C00B8986E /* UIImageView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E736C5D61A252C2C00B8986E /* UIImageView+Utils.m */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
+		F03BDD05F5AE4ABCBBDC8477 /* libPods-Swift-BaseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD8BB4AA49CCFC2537BA545 /* libPods-Swift-BaseTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -61,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B854B6014D9DDA9A596C69D /* Pods-Swift-BaseTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		194478451AAF8FA500A34744 /* InterfaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceTests.swift; sourceTree = "<group>"; };
+		194478471AAF90AF00A34744 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		2124DF9F1A8DF48000422313 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		212D2D2E1A8A6DA800F3B4CA /* FSExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FSExtensions.swift; path = Helpers/FSExtensions.swift; sourceTree = "<group>"; };
 		213B89BE19F01A1E005D3749 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,8 +88,13 @@
 		21DB302C19DD2289003A418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21DB303819DD2341003A418D /* BridgeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		21DB304819DD2D6D003A418D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2900C0DB0F579B565AD4F9A8 /* Pods-Swift-BaseTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.release staging.xcconfig"; sourceTree = "<group>"; };
+		3BD8BB4AA49CCFC2537BA545 /* libPods-Swift-BaseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Swift-BaseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E82C8EB8DB50ECF52AE69A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		965DB253E03512431530CABA /* Pods-Swift-BaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9B62AFD8847834B4FE5064BD /* Pods-Swift-BaseTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.appstore.xcconfig"; sourceTree = "<group>"; };
 		9FF9227DEE767ECDD3E739B8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9F31A1C12206DF94283F801 /* Pods-Swift-BaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB848BC11E409F9A85D785F1 /* Pods.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.debug staging.xcconfig"; sourceTree = "<group>"; };
 		CD792995EA1B8C035C9A51B2 /* Pods.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.release staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.release staging.xcconfig"; sourceTree = "<group>"; };
 		E736C5C81A252C2B00B8986E /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
@@ -116,6 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1944784A1AAF919D00A34744 /* SenTestingKit.framework in Frameworks */,
+				F03BDD05F5AE4ABCBBDC8477 /* libPods-Swift-BaseTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */,
+				194478451AAF8FA500A34744 /* InterfaceTests.swift */,
 				21DB302B19DD2289003A418D /* Supporting Files */,
 			);
 			path = "Swift-BaseTests";
@@ -217,12 +231,14 @@
 		5C5B41AD2B6E0DFDD4D53E6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				194478471AAF90AF00A34744 /* SenTestingKit.framework */,
 				213B89C019F01A40005D3749 /* SpriteKit.framework */,
 				213B89BE19F01A1E005D3749 /* CoreGraphics.framework */,
 				21513BBD19EBCBFA00EE6273 /* MediaPlayer.framework */,
 				21C9F2DF19E833300084D18D /* AVFoundation.framework */,
 				21B3D1A019E6E2D700EF0D52 /* Crashlytics.framework */,
 				9FF9227DEE767ECDD3E739B8 /* libPods.a */,
+				3BD8BB4AA49CCFC2537BA545 /* libPods-Swift-BaseTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,6 +250,11 @@
 				AB848BC11E409F9A85D785F1 /* Pods.debug staging.xcconfig */,
 				51E82C8EB8DB50ECF52AE69A /* Pods.release.xcconfig */,
 				CD792995EA1B8C035C9A51B2 /* Pods.release staging.xcconfig */,
+				965DB253E03512431530CABA /* Pods-Swift-BaseTests.debug.xcconfig */,
+				0B854B6014D9DDA9A596C69D /* Pods-Swift-BaseTests.debug staging.xcconfig */,
+				A9F31A1C12206DF94283F801 /* Pods-Swift-BaseTests.release.xcconfig */,
+				9B62AFD8847834B4FE5064BD /* Pods-Swift-BaseTests.appstore.xcconfig */,
+				2900C0DB0F579B565AD4F9A8 /* Pods-Swift-BaseTests.release staging.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -307,9 +328,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21DB303419DD2289003A418D /* Build configuration list for PBXNativeTarget "Swift-BaseTests" */;
 			buildPhases = (
+				593C21C565408951B97706EC /* Check Pods Manifest.lock */,
 				21DB302319DD2289003A418D /* Sources */,
 				21DB302419DD2289003A418D /* Frameworks */,
 				21DB302519DD2289003A418D /* Resources */,
+				89FCCF929F47AE040A9B2C9D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -409,6 +432,36 @@
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics.framework/run 6d91dfaf0a36cfbef5733b3c2d89d2fe7f137706 558b2bcf0efee324101f8bf45f64c08b525998f57a01e3e46d584125bda9afa2";
 		};
+		593C21C565408951B97706EC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		89FCCF929F47AE040A9B2C9D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F968CFE5EFDC266BFE5EBE7A /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				218E3BEA1A8CD5250078686F /* Swift-BaseTests.swift in Sources */,
+				194478461AAF8FA500A34744 /* InterfaceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +622,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -605,6 +661,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=0",
@@ -631,11 +688,13 @@
 		};
 		21DB303519DD2289003A418D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 965DB253E03512431530CABA /* Pods-Swift-BaseTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -650,11 +709,13 @@
 		};
 		21DB303619DD2289003A418D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9F31A1C12206DF94283F801 /* Pods-Swift-BaseTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = "Swift-BaseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -719,6 +780,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -744,11 +807,13 @@
 		};
 		21DB304E19DD3B30003A418D /* Debug Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B854B6014D9DDA9A596C69D /* Pods-Swift-BaseTests.debug staging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -811,6 +876,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=0",
@@ -837,11 +903,13 @@
 		};
 		21DB305119DD3B48003A418D /* Release Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2900C0DB0F579B565AD4F9A8 /* Pods-Swift-BaseTests.release staging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = "Swift-BaseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -899,6 +967,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=0",
@@ -925,11 +994,13 @@
 		};
 		E736C5E01A25320400B8986E /* AppStore */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B62AFD8847834B4FE5064BD /* Pods-Swift-BaseTests.appstore.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = "Swift-BaseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
