@@ -65,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		0B854B6014D9DDA9A596C69D /* Pods-Swift-BaseTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		11C141781AB1950B00ED67DA /* BridgeHeaderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeHeaderTests.h; sourceTree = "<group>"; };
 		194478451AAF8FA500A34744 /* InterfaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceTests.swift; sourceTree = "<group>"; };
 		194478471AAF90AF00A34744 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		2124DF9F1A8DF48000422313 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				21DB302C19DD2289003A418D /* Info.plist */,
+				11C141781AB1950B00ED67DA /* BridgeHeaderTests.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -703,6 +705,7 @@
 				INFOPLIST_FILE = "Swift-BaseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "Swift-BaseTests";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift-BaseTests/BridgeHeaderTests.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Base.app/Swift-Base";
 			};
 			name = Debug;
@@ -720,6 +723,7 @@
 				INFOPLIST_FILE = "Swift-BaseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "Swift-BaseTests";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift-BaseTests/BridgeHeaderTests.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Base.app/Swift-Base";
 			};
 			name = Release;
@@ -822,6 +826,7 @@
 				INFOPLIST_FILE = "Swift-BaseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "Swift-BaseTests";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift-BaseTests/BridgeHeaderTests.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Base.app/Swift-Base";
 			};
 			name = "Debug Staging";
@@ -914,6 +919,7 @@
 				INFOPLIST_FILE = "Swift-BaseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "Swift-BaseTests";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift-BaseTests/BridgeHeaderTests.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Base.app/Swift-Base";
 			};
 			name = "Release Staging";
@@ -1005,6 +1011,7 @@
 				INFOPLIST_FILE = "Swift-BaseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "Swift-BaseTests";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift-BaseTests/BridgeHeaderTests.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Base.app/Swift-Base";
 			};
 			name = AppStore;
