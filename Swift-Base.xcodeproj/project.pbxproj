@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		194478461AAF8FA500A34744 /* InterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194478451AAF8FA500A34744 /* InterfaceTests.swift */; };
 		1944784A1AAF919D00A34744 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194478471AAF90AF00A34744 /* SenTestingKit.framework */; };
+		19D856BE1AB5E3AE0014C459 /* KIF+SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D856BD1AB5E3AE0014C459 /* KIF+SwiftExtension.swift */; };
 		2124DFA01A8DF48000422313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124DF9F1A8DF48000422313 /* ViewController.swift */; };
 		212D2D2F1A8A6DA800F3B4CA /* FSExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212D2D2E1A8A6DA800F3B4CA /* FSExtensions.swift */; };
 		213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213B89BE19F01A1E005D3749 /* CoreGraphics.framework */; };
@@ -68,6 +69,7 @@
 		11C141781AB1950B00ED67DA /* BridgeHeaderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeHeaderTests.h; sourceTree = "<group>"; };
 		194478451AAF8FA500A34744 /* InterfaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceTests.swift; sourceTree = "<group>"; };
 		194478471AAF90AF00A34744 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		19D856BD1AB5E3AE0014C459 /* KIF+SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF+SwiftExtension.swift"; sourceTree = "<group>"; };
 		2124DF9F1A8DF48000422313 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		212D2D2E1A8A6DA800F3B4CA /* FSExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FSExtensions.swift; path = Helpers/FSExtensions.swift; sourceTree = "<group>"; };
 		213B89BE19F01A1E005D3749 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -194,8 +196,9 @@
 		21DB302A19DD2289003A418D /* Swift-BaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */,
+				19D856BD1AB5E3AE0014C459 /* KIF+SwiftExtension.swift */,
 				194478451AAF8FA500A34744 /* InterfaceTests.swift */,
+				218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */,
 				21DB302B19DD2289003A418D /* Supporting Files */,
 			);
 			path = "Swift-BaseTests";
@@ -505,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D856BE1AB5E3AE0014C459 /* KIF+SwiftExtension.swift in Sources */,
 				218E3BEA1A8CD5250078686F /* Swift-BaseTests.swift in Sources */,
 				194478461AAF8FA500A34744 /* InterfaceTests.swift in Sources */,
 			);
