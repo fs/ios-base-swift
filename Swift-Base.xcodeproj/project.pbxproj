@@ -70,6 +70,9 @@
 		194478451AAF8FA500A34744 /* InterfaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceTests.swift; sourceTree = "<group>"; };
 		194478471AAF90AF00A34744 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		19D856BD1AB5E3AE0014C459 /* KIF+SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF+SwiftExtension.swift"; sourceTree = "<group>"; };
+		19D856C11AB5ED2E0014C459 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build.sh; path = Scripts/build.sh; sourceTree = "<group>"; };
+		19D856C51AB5ED2E0014C459 /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = test.sh; path = Scripts/test.sh; sourceTree = "<group>"; };
+		19D856C71AB5EDDF0014C459 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		2124DF9F1A8DF48000422313 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		212D2D2E1A8A6DA800F3B4CA /* FSExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FSExtensions.swift; path = Helpers/FSExtensions.swift; sourceTree = "<group>"; };
 		213B89BE19F01A1E005D3749 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,9 +141,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19D856BF1AB5ECF50014C459 /* Travis CI */ = {
+			isa = PBXGroup;
+			children = (
+				19D856C71AB5EDDF0014C459 /* .travis.yml */,
+				19D856C11AB5ED2E0014C459 /* build.sh */,
+				19D856C51AB5ED2E0014C459 /* test.sh */,
+			);
+			name = "Travis CI";
+			sourceTree = "<group>";
+		};
 		215828691A91E2E000833BE6 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				19D856BF1AB5ECF50014C459 /* Travis CI */,
 				2158286A1A91E2F200833BE6 /* mogen.sh */,
 				2158286B1A91E2F200833BE6 /* mogend.sh */,
 			);
@@ -646,7 +660,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "B1A5A18E-8D14-4B2C-9A25-F4F2F916836E";
+				PROVISIONING_PROFILE = "611df384-77ac-468e-80c6-69d41877a6c3";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -662,8 +676,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BUNDLE_DISPLAY_NAME = Swift;
 				BUNDLE_ID = com.flatstack.swift;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: \"FS\" LLC (UTXK29TA3W)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: \"FS\" LLC (UTXK29TA3W)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -684,7 +698,7 @@
 					"\"QuartzCore\"",
 				);
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "74adc2a2-8d48-45c7-9e1d-19fd399c75c0";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -805,7 +819,7 @@
 					"\"QuartzCore\"",
 				);
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "B1A5A18E-8D14-4B2C-9A25-F4F2F916836E";
+				PROVISIONING_PROFILE = "611df384-77ac-468e-80c6-69d41877a6c3";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -880,8 +894,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BUNDLE_DISPLAY_NAME = "Swift Staging";
 				BUNDLE_ID = com.flatstack.swift.staging;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: \"FS\" LLC (UTXK29TA3W)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: \"FS\" LLC (UTXK29TA3W)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -902,7 +916,7 @@
 					"\"QuartzCore\"",
 				);
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "74adc2a2-8d48-45c7-9e1d-19fd399c75c0";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
