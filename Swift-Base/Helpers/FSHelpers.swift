@@ -117,3 +117,63 @@ extension Double {
 func dispatch_after_short (delay:Double, block:dispatch_block_t) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), block);
 }
+
+enum ScreenTypeInch {
+    case _3_5
+    case _4
+    case _4_7
+    case _5_5
+    
+    var size:CGSize {
+        switch self {
+        case ._3_5: return CGSizeMake(320, 480)
+        case ._4:   return CGSizeMake(320, 568)
+        case ._4_7: return CGSizeMake(375, 667)
+        case ._5_5: return CGSizeMake(414, 736)
+        }
+    }
+    
+    init () {
+        var width = min(UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height)
+        var height = max(UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height)
+        
+        switch CGSizeMake(width, height) {
+        case ScreenTypeInch._3_5.size:
+            self = ScreenTypeInch._3_5
+            
+        case ScreenTypeInch._4.size:
+            self = ScreenTypeInch._4
+            
+        case ScreenTypeInch._4_7.size:
+            self = ScreenTypeInch._4_7
+            
+        case ScreenTypeInch._5_5.size:
+            self = ScreenTypeInch._5_5
+            
+        default:
+            self = ScreenTypeInch._5_5
+        }
+    }
+    
+    init (size:CGSize) {
+        var width = min(size.width, size.height)
+        var height = max(size.width, size.height)
+        
+        switch CGSizeMake(width, height) {
+        case ScreenTypeInch._3_5.size:
+            self = ScreenTypeInch._3_5
+            
+        case ScreenTypeInch._4.size:
+            self = ScreenTypeInch._4
+            
+        case ScreenTypeInch._4_7.size:
+            self = ScreenTypeInch._4_7
+            
+        case ScreenTypeInch._5_5.size:
+            self = ScreenTypeInch._5_5
+            
+        default:
+            self = ScreenTypeInch._4
+        }
+    }
+}
