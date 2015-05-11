@@ -76,12 +76,12 @@ extension UIView {
 //MARK: Dictionary+Utils
 extension Dictionary {
     func objectForKey(key:String, orDefault def:AnyObject) -> Value {
-        var res = key as Key
+        var res = key as! Key
         
         if self[res] != nil {
             return self[res]!
         } else {
-            return def as Value
+            return def as! Value
         }
     }
 }
@@ -126,7 +126,7 @@ extension String {
             "!*'();:@&=+$,/?%#[]",
             CFStringBuiltInEncodings.UTF8.rawValue
         )
-        return str
+        return str as String
     }
     
     func URLDecodedString () -> String? {
@@ -136,7 +136,7 @@ extension String {
     func emailValidate () -> Bool {
         var emailRegEx = "(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
         
-        var regExPredicate:NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)!
+        var regExPredicate:NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         
         return regExPredicate.evaluateWithObject(self)
     }
@@ -193,7 +193,7 @@ extension UIColor {
         
         var regex:NSRegularExpression = NSRegularExpression(pattern: "[^a-fA-F|0-9]", options: nil, error: nil)!
         
-        var match:Int = regex.numberOfMatchesInString(hexString, options: NSMatchingOptions.ReportCompletion, range: NSMakeRange(0, hexString.utf16Count))
+        var match:Int = regex.numberOfMatchesInString(hexString, options: NSMatchingOptions.ReportCompletion, range: NSMakeRange(0, count(hexString)))
         
         if (match != 0) {
             self.init()
@@ -206,7 +206,7 @@ extension UIColor {
             cString = cString.substringFromIndex(advance(cString.startIndex, 1))
         }
         
-        if (countElements(cString) != 6) {
+        if (count(cString) != 6) {
             self.init()
             return nil
         }

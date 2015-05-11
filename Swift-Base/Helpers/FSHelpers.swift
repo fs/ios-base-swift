@@ -10,11 +10,11 @@
 import Foundation
 
 func ApplicationDelegate () -> AppDelegate {
-    return UIApplication.sharedApplication().delegate as AppDelegate
+    return UIApplication.sharedApplication().delegate as! AppDelegate
 }
 
 func ApplicationDirectoryPath (directoryToSearch:NSSearchPathDirectory) -> String {
-    return NSSearchPathForDirectoriesInDomains(directoryToSearch, NSSearchPathDomainMask.UserDomainMask, true).first as String
+    return NSSearchPathForDirectoriesInDomains(directoryToSearch, NSSearchPathDomainMask.UserDomainMask, true).first as! String
 }
 
 func ApplicationDirectoryURL (directoryToSearch:NSSearchPathDirectory) -> NSURL {
@@ -47,27 +47,27 @@ func DeviceOrientation () -> UIDeviceOrientation {
     return UIDevice.currentDevice().orientation
 }
 
-func SystemVersionEqualTo(version: NSString) -> Bool {
+func SystemVersionEqualTo(version: String) -> Bool {
     return UIDevice.currentDevice().systemVersion.compare(version,
         options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedSame
 }
 
-func SystemVersionGreatherThan(version: NSString) -> Bool {
+func SystemVersionGreatherThan(version: String) -> Bool {
     return UIDevice.currentDevice().systemVersion.compare(version,
         options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedDescending
 }
 
-func SystemVersionGreatherThanOrEqualTo(version: NSString) -> Bool {
+func SystemVersionGreatherThanOrEqualTo(version: String) -> Bool {
     return UIDevice.currentDevice().systemVersion.compare(version,
         options: NSStringCompareOptions.NumericSearch) != NSComparisonResult.OrderedAscending
 }
 
-func SystemVersionLessThan(version: NSString) -> Bool {
+func SystemVersionLessThan(version: String) -> Bool {
     return UIDevice.currentDevice().systemVersion.compare(version,
         options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedAscending
 }
 
-func SystemVersionLessThanOrEqualTo(version: NSString) -> Bool {
+func SystemVersionLessThanOrEqualTo(version: String) -> Bool {
     return UIDevice.currentDevice().systemVersion.compare(version,
         options: NSStringCompareOptions.NumericSearch) != NSComparisonResult.OrderedDescending
 }
