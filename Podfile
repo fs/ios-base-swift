@@ -13,5 +13,5 @@ pod 'AFNetworking', '~> 2.5'
 #pod 'NSDate-Extensions'
 
 target 'Swift-BaseTests', :exclusive => true do
-    pod 'KIF', '~> 3.1', :configurations => ['Debug', 'Debug Staging']
+    pod 'KIF', '~> 3.2', :configurations => ['Debug', 'Debug Staging']
 end
