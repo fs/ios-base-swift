@@ -77,10 +77,9 @@ func RGBA (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
 }
 
 func DLog(message: String, function: String = __FUNCTION__, file: String = __FILE__, line: Int = __LINE__) {
-    
-    if DEBUG == 1 {
+    #if DEBUG
         println("Message \"\(message)\" (File: \(file), Function: \(function), Line: \(line))")
-    }
+    #endif
 }
 
 func ImageFromColor (color:UIColor) -> UIImage {

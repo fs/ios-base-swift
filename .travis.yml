@@ -1,7 +1,7 @@
 language: objective-c
 
 xcode_workspace: Swift-Base.xcworkspace
-xcode_scheme: Swift-Base-Staging
+xcode_scheme: Staging
 
 before_install:
     - export LANG=en_US.UTF-8
