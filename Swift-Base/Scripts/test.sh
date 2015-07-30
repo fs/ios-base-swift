@@ -1,7 +1,7 @@
 #!/bin/sh
-xcodebuild -workspace Swift-Base.xcworkspace -scheme Swift-Base-Staging -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' test | xcpretty -c -t && exit ${PIPESTATUS[0]}
+xcodebuild -workspace Swift-Base.xcworkspace -scheme Staging -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' test | xcpretty -c -t && exit ${PIPESTATUS[0]}
 
-#Available destinations for the "ios-base-Staging" scheme:
+#Available destinations for the "Staging" scheme:
 #{ platform:iOS Simulator, id:9D4669A0-72AF-41A9-AB8A-14914D7A502F, OS:8.2, name:iPad 2 }
 #{ platform:iOS Simulator, id:D1F3629A-4698-4DF4-813B-16E944D958C6, OS:8.2, name:iPad Air }
 #{ platform:iOS Simulator, id:F16D6604-4C3C-46CF-B268-904093D42D28, OS:8.2, name:iPad Retina }
