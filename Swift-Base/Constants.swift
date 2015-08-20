@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Flatstack. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /*----------API keys---------*/
 let kAPIKeyCrashlitycs  = ""
@@ -42,3 +42,9 @@ enum FontFamilyName {
         }
     }
 }
+
+/*----------Colors----------*/
+
+//Example of custom color schemes in application
+let MyRedApplicationColor = UIColor.redColor()
+let MyGreenApplicationColor = UIColor.greenColor()
