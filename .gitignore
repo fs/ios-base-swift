@@ -1,5 +1,8 @@
+# OS X
+.DS_Store
+
 # Xcode
-#
+
 build/
 *.pbxuser
 !default.pbxuser
@@ -16,6 +19,7 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+.xcbkptlist
 
 # CocoaPods
 #
