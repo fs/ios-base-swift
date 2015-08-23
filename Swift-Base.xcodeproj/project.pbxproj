@@ -618,8 +618,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUNDLE_DISPLAY_NAME = Swift;
-				BUNDLE_ID = com.flatstack.swift;
+				BUNDLE_DISPLAY_NAME = "Swift-Base";
+				BUNDLE_ID = "com.flatstack.Swift-Base";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -654,8 +654,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUNDLE_DISPLAY_NAME = Swift;
-				BUNDLE_ID = com.flatstack.swift;
+				BUNDLE_DISPLAY_NAME = "Swift-Base";
+				BUNDLE_ID = "com.flatstack.Swift-Base";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -770,8 +770,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUNDLE_DISPLAY_NAME = "Swift Staging";
-				BUNDLE_ID = com.flatstack.swift.staging;
+				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
+				BUNDLE_ID = "com.flatstack.Swift-Base.staging";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -866,8 +866,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUNDLE_DISPLAY_NAME = "Swift Staging";
-				BUNDLE_ID = com.flatstack.swift.staging;
+				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
+				BUNDLE_ID = "com.flatstack.Swift-Base.staging";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -956,8 +956,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUNDLE_DISPLAY_NAME = Swift;
-				BUNDLE_ID = com.flatstack.swift;
+				BUNDLE_DISPLAY_NAME = "Swift-Base";
+				BUNDLE_ID = "com.flatstack.Swift-Base";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
