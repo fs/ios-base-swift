@@ -13,7 +13,7 @@
         #"${SRCROOT}/ios-base/Scripts/mogen.sh"
 #  Set Output files = $(DERIVED_FILE_DIR)/${INPUT_FILE_BASE}.mom
 
-mogenerator --model "${INPUT_FILE_PATH}" --machine-dir "${PROJECT_DIR}/Swift-Base/Models/CoreData/Private/" --human-dir "${PROJECT_DIR}/Swift-Base/Models/CoreData/" --template-var arc=true
+mogenerator --swift --model "${INPUT_FILE_PATH}" --machine-dir "${PROJECT_DIR}/Swift-Base/CoreData/Private/" --human-dir "${PROJECT_DIR}/Swift-Base/CoreData/" --template-var arc=true
 
 ${DEVELOPER_BIN_DIR}/momc -XD_MOMC_TARGET_VERSION=10.6 "${INPUT_FILE_PATH}" "${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${INPUT_FILE_BASE}.mom"
 

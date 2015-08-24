@@ -33,6 +33,7 @@
 			fileType = wrapper.xcdatamodeld;
 			isEditable = 1;
 			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).mom",
 			);
 			script = "echo \"Running mogend (Data model version files)\"\n\"${PROJECT_DIR}/Swift-Base/Scripts/mogend.sh\"";
 		};
@@ -42,6 +43,7 @@
 			fileType = wrapper.xcdatamodel;
 			isEditable = 1;
 			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).momd",
 			);
 			script = "echo \"Running mogend (Data model files)\"\n\"${PROJECT_DIR}/Swift-Base/Scripts/mogend.sh";
 		};
