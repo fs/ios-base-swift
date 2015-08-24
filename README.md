@@ -37,14 +37,16 @@ To rename project you should:
 * Search and replace any occurrence of the ```swift-base``` with the new project name.
 * Save the file.
 
-#### Change bundle id
+#### Change bundle id:
 * Change bundle id for all schemes in project build settings.
 
 #### Rename workspace:
 * Simple rename ```Swift-Base.xcworkspace``` with new project name.
 
 ### Configure mogenerator
-* Configure CoreData and Mogenerator scripts.
+* Go to Build Rules.
+* Change path to script in  ```Data model files using Script```.
+* Change path to script in  ```Data model version files using Script```.
 
 ### Configure CocoaPods
 * Finde Podfile in project.
