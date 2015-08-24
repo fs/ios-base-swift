@@ -34,7 +34,7 @@
 			isEditable = 1;
 			outputFiles = (
 			);
-			script = "echo \"Running mogend (Data model version files)\"\n\"${PROJECT_DIR}/BarApp/Scripts/mogend.sh\"";
+			script = "echo \"Running mogend (Data model version files)\"\n\"${PROJECT_DIR}/Swift-Base/Scripts/mogend.sh\"";
 		};
 		21DB304B19DD32D9003A418D /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
@@ -43,7 +43,7 @@
 			isEditable = 1;
 			outputFiles = (
 			);
-			script = "echo \"Running mogend (Data model files)\"\n\"${PROJECT_DIR}/BarApp/Scripts/mogend.sh";
+			script = "echo \"Running mogend (Data model files)\"\n\"${PROJECT_DIR}/Swift-Base/Scripts/mogend.sh";
 		};
 /* End PBXBuildRule section */
 
