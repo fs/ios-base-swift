@@ -32,13 +32,16 @@ To rename project you should:
 * Go to the project directory and rename folders ```Swift-Base```, ```Swift-BaseTests```.
 * Rename ```Swift-BaseTests.swift``` in folder for test classes.
 
-#### Rename workspace:
-* Simple rename ```Swift-Base.xcworkspace``` with new project name.
-
 #### Change .xcodeproj file:
 * Right click the project bundle ```.xcodeproj``` file and select “Show Package Contents” from the context menu. Open the ```.pbxproj``` file with any text editor.
 * Search and replace any occurrence of the ```swift-base``` with the new project name.
 * Save the file.
+
+#### Change bundle id
+* Change bundle id for all schemes in project build settings.
+
+#### Rename workspace:
+* Simple rename ```Swift-Base.xcworkspace``` with new project name.
 
 ### Configure mogenerator
 * Configure CoreData and Mogenerator scripts.
@@ -76,6 +79,7 @@ pod install
 ```
 
 ### Configure Fabric/Crashlytics
+* Check bundle id in project build settings for all schemes.
 * Create organization in Fabric/Crashlytics.
 * Add applications to this organization for all schemes.
 
