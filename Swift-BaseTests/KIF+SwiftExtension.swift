@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Flatstack. All rights reserved.
 //
 
+import KIF
+
 extension XCTestCase {
     
     func tester(_ file : String = __FILE__, _ line : Int = __LINE__) -> KIFUITestActor {
