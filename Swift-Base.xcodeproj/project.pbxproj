@@ -12,7 +12,6 @@
 		19D856BE1AB5E3AE0014C459 /* KIF+SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D856BD1AB5E3AE0014C459 /* KIF+SwiftExtension.swift */; };
 		2124DFA01A8DF48000422313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124DF9F1A8DF48000422313 /* ViewController.swift */; };
 		213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213B89BE19F01A1E005D3749 /* CoreGraphics.framework */; };
-		2158286C1A91E2F200833BE6 /* mogen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2158286A1A91E2F200833BE6 /* mogen.sh */; };
 		2158286D1A91E2F200833BE6 /* mogend.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2158286B1A91E2F200833BE6 /* mogend.sh */; };
 		2158286F1A91E56600833BE6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2158286E1A91E56600833BE6 /* APIManager.swift */; };
 		218E3BEA1A8CD5250078686F /* Swift-BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */; };
@@ -33,8 +32,9 @@
 			fileType = wrapper.xcdatamodeld;
 			isEditable = 1;
 			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).mom",
 			);
-			script = "echo \"Running mogend (Data model version files)\"\n\"${PROJECT_DIR}/BarApp/Scripts/mogend.sh\"";
+			script = "echo \"Running mogend (Data model version files)\"\n\"${PROJECT_DIR}/Swift-Base/Scripts/mogend.sh\"";
 		};
 		21DB304B19DD32D9003A418D /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
@@ -42,8 +42,9 @@
 			fileType = wrapper.xcdatamodel;
 			isEditable = 1;
 			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).momd",
 			);
-			script = "echo \"Running mogend (Data model files)\"\n\"${PROJECT_DIR}/BarApp/Scripts/mogend.sh";
+			script = "echo \"Running mogend (Data model files)\"\n\"${PROJECT_DIR}/Swift-Base/Scripts/mogend.sh";
 		};
 /* End PBXBuildRule section */
 
@@ -70,7 +71,6 @@
 		213B89BE19F01A1E005D3749 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		213B89C019F01A40005D3749 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		21513BBD19EBCBFA00EE6273 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		2158286A1A91E2F200833BE6 /* mogen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = mogen.sh; path = Scripts/mogen.sh; sourceTree = "<group>"; };
 		2158286B1A91E2F200833BE6 /* mogend.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = mogend.sh; path = Scripts/mogend.sh; sourceTree = "<group>"; };
 		2158286E1A91E56600833BE6 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift-BaseTests.swift"; sourceTree = "<group>"; };
@@ -135,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				19D856BF1AB5ECF50014C459 /* Travis CI */,
-				2158286A1A91E2F200833BE6 /* mogen.sh */,
 				2158286B1A91E2F200833BE6 /* mogend.sh */,
 			);
 			name = Scripts;
@@ -370,7 +369,6 @@
 				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
 				2158286D1A91E2F200833BE6 /* mogend.sh in Resources */,
 				21DB301F19DD2289003A418D /* Images.xcassets in Resources */,
-				2158286C1A91E2F200833BE6 /* mogen.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,10 +616,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUNDLE_DISPLAY_NAME = Swift;
-				BUNDLE_ID = com.flatstack.swift;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				BUNDLE_DISPLAY_NAME = "Swift-Base";
+				BUNDLE_ID = "com.flatstack.Swift-Base";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -640,7 +638,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "867e618f-db1a-4d1e-b60e-ddb69eeaeac2";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -654,10 +652,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUNDLE_DISPLAY_NAME = Swift;
-				BUNDLE_ID = com.flatstack.swift;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				BUNDLE_DISPLAY_NAME = "Swift-Base";
+				BUNDLE_ID = "com.flatstack.Swift-Base";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -675,7 +673,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "867e618f-db1a-4d1e-b60e-ddb69eeaeac2";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -770,10 +768,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUNDLE_DISPLAY_NAME = "Swift Staging";
-				BUNDLE_ID = com.flatstack.swift.staging;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
+				BUNDLE_ID = "com.flatstack.Swift-Base.staging";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -792,7 +790,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "867e618f-db1a-4d1e-b60e-ddb69eeaeac2";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -866,10 +864,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUNDLE_DISPLAY_NAME = "Swift Staging";
-				BUNDLE_ID = com.flatstack.swift.staging;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
+				BUNDLE_ID = "com.flatstack.Swift-Base.staging";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -887,7 +885,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE = "867e618f-db1a-4d1e-b60e-ddb69eeaeac2";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -956,8 +954,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUNDLE_DISPLAY_NAME = Swift;
-				BUNDLE_ID = com.flatstack.swift;
+				BUNDLE_DISPLAY_NAME = "Swift-Base";
+				BUNDLE_ID = "com.flatstack.Swift-Base";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
