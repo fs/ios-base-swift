@@ -12,7 +12,6 @@
 		19D856BE1AB5E3AE0014C459 /* KIF+SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D856BD1AB5E3AE0014C459 /* KIF+SwiftExtension.swift */; };
 		2124DFA01A8DF48000422313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124DF9F1A8DF48000422313 /* ViewController.swift */; };
 		213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213B89BE19F01A1E005D3749 /* CoreGraphics.framework */; };
-		2158286C1A91E2F200833BE6 /* mogen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2158286A1A91E2F200833BE6 /* mogen.sh */; };
 		2158286D1A91E2F200833BE6 /* mogend.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2158286B1A91E2F200833BE6 /* mogend.sh */; };
 		2158286F1A91E56600833BE6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2158286E1A91E56600833BE6 /* APIManager.swift */; };
 		218E3BEA1A8CD5250078686F /* Swift-BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */; };
@@ -72,7 +71,6 @@
 		213B89BE19F01A1E005D3749 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		213B89C019F01A40005D3749 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		21513BBD19EBCBFA00EE6273 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		2158286A1A91E2F200833BE6 /* mogen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = mogen.sh; path = Scripts/mogen.sh; sourceTree = "<group>"; };
 		2158286B1A91E2F200833BE6 /* mogend.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = mogend.sh; path = Scripts/mogend.sh; sourceTree = "<group>"; };
 		2158286E1A91E56600833BE6 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift-BaseTests.swift"; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				19D856BF1AB5ECF50014C459 /* Travis CI */,
-				2158286A1A91E2F200833BE6 /* mogen.sh */,
 				2158286B1A91E2F200833BE6 /* mogend.sh */,
 			);
 			name = Scripts;
@@ -372,7 +369,6 @@
 				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
 				2158286D1A91E2F200833BE6 /* mogend.sh in Resources */,
 				21DB301F19DD2289003A418D /* Images.xcassets in Resources */,
-				2158286C1A91E2F200833BE6 /* mogen.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
