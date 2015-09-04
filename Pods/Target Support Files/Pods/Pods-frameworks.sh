@@ -53,21 +53,16 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/AFNetworking.framework'
-  install_framework 'Pods/FSHelpers_Swift.framework'
 fi
 if [[ "$CONFIGURATION" == "Debug Staging" ]]; then
   install_framework 'Pods/AFNetworking.framework'
-  install_framework 'Pods/FSHelpers_Swift.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/AFNetworking.framework'
-  install_framework 'Pods/FSHelpers_Swift.framework'
 fi
 if [[ "$CONFIGURATION" == "AppStore" ]]; then
   install_framework 'Pods/AFNetworking.framework'
-  install_framework 'Pods/FSHelpers_Swift.framework'
 fi
 if [[ "$CONFIGURATION" == "Release Staging" ]]; then
   install_framework 'Pods/AFNetworking.framework'
-  install_framework 'Pods/FSHelpers_Swift.framework'
 fi

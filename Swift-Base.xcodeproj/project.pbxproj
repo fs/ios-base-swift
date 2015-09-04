@@ -15,6 +15,16 @@
 		2158286D1A91E2F200833BE6 /* mogend.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2158286B1A91E2F200833BE6 /* mogend.sh */; };
 		2158286F1A91E56600833BE6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2158286E1A91E56600833BE6 /* APIManager.swift */; };
 		218E3BEA1A8CD5250078686F /* Swift-BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */; };
+		21A1432E1B99A479004116B8 /* FSE+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A143241B99A479004116B8 /* FSE+Array.swift */; };
+		21A1432F1B99A479004116B8 /* FSE+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A143251B99A479004116B8 /* FSE+Dictionary.swift */; };
+		21A143301B99A479004116B8 /* FSE+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A143261B99A479004116B8 /* FSE+Double.swift */; };
+		21A143311B99A479004116B8 /* FSE+NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A143271B99A479004116B8 /* FSE+NSDate.swift */; };
+		21A143321B99A479004116B8 /* FSE+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A143281B99A479004116B8 /* FSE+String.swift */; };
+		21A143331B99A479004116B8 /* FSE+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A143291B99A479004116B8 /* FSE+UIColor.swift */; };
+		21A143341B99A479004116B8 /* FSE+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1432A1B99A479004116B8 /* FSE+UITableView.swift */; };
+		21A143351B99A479004116B8 /* FSE+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1432B1B99A479004116B8 /* FSE+UITextView.swift */; };
+		21A143361B99A479004116B8 /* FSE+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1432C1B99A479004116B8 /* FSE+UIView.swift */; };
+		21A143371B99A479004116B8 /* FSHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1432D1B99A479004116B8 /* FSHelpers.swift */; };
 		21B3D1A119E6E2D700EF0D52 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B3D1A019E6E2D700EF0D52 /* Crashlytics.framework */; };
 		21DB301519DD2289003A418D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB301419DD2289003A418D /* AppDelegate.swift */; };
 		21DB301819DD2289003A418D /* Swift-Base.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21DB301619DD2289003A418D /* Swift-Base.xcdatamodeld */; };
@@ -74,6 +84,16 @@
 		2158286B1A91E2F200833BE6 /* mogend.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = mogend.sh; path = Scripts/mogend.sh; sourceTree = "<group>"; };
 		2158286E1A91E56600833BE6 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift-BaseTests.swift"; sourceTree = "<group>"; };
+		21A143241B99A479004116B8 /* FSE+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+Array.swift"; sourceTree = "<group>"; };
+		21A143251B99A479004116B8 /* FSE+Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+Dictionary.swift"; sourceTree = "<group>"; };
+		21A143261B99A479004116B8 /* FSE+Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+Double.swift"; sourceTree = "<group>"; };
+		21A143271B99A479004116B8 /* FSE+NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+NSDate.swift"; sourceTree = "<group>"; };
+		21A143281B99A479004116B8 /* FSE+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+String.swift"; sourceTree = "<group>"; };
+		21A143291B99A479004116B8 /* FSE+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+UIColor.swift"; sourceTree = "<group>"; };
+		21A1432A1B99A479004116B8 /* FSE+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+UITableView.swift"; sourceTree = "<group>"; };
+		21A1432B1B99A479004116B8 /* FSE+UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+UITextView.swift"; sourceTree = "<group>"; };
+		21A1432C1B99A479004116B8 /* FSE+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+UIView.swift"; sourceTree = "<group>"; };
+		21A1432D1B99A479004116B8 /* FSHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSHelpers.swift; sourceTree = "<group>"; };
 		21B3D1A019E6E2D700EF0D52 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		21C9F2DF19E833300084D18D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		21DB300F19DD2289003A418D /* Swift-Base.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Base.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +160,31 @@
 			name = Scripts;
 			sourceTree = "<group>";
 		};
+		21A143221B99A479004116B8 /* FSHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				21A143231B99A479004116B8 /* FSExtensions */,
+				21A1432D1B99A479004116B8 /* FSHelpers.swift */,
+			);
+			path = FSHelpers;
+			sourceTree = "<group>";
+		};
+		21A143231B99A479004116B8 /* FSExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				21A143241B99A479004116B8 /* FSE+Array.swift */,
+				21A143251B99A479004116B8 /* FSE+Dictionary.swift */,
+				21A143261B99A479004116B8 /* FSE+Double.swift */,
+				21A143271B99A479004116B8 /* FSE+NSDate.swift */,
+				21A143281B99A479004116B8 /* FSE+String.swift */,
+				21A143291B99A479004116B8 /* FSE+UIColor.swift */,
+				21A1432A1B99A479004116B8 /* FSE+UITableView.swift */,
+				21A1432B1B99A479004116B8 /* FSE+UITextView.swift */,
+				21A1432C1B99A479004116B8 /* FSE+UIView.swift */,
+			);
+			path = FSExtensions;
+			sourceTree = "<group>";
+		};
 		21DB300619DD2289003A418D = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +212,7 @@
 				21DB301419DD2289003A418D /* AppDelegate.swift */,
 				E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */,
 				21DB301E19DD2289003A418D /* Images.xcassets */,
+				21A143221B99A479004116B8 /* FSHelpers */,
 				E731DC7A1A1CF1B700E12CBA /* Models */,
 				E731DC711A1CB30C00E12CBA /* Views */,
 				E736C5A41A252B1500B8986E /* Controllers */,
@@ -492,11 +538,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A1432E1B99A479004116B8 /* FSE+Array.swift in Sources */,
 				21DB301819DD2289003A418D /* Swift-Base.xcdatamodeld in Sources */,
+				21A143351B99A479004116B8 /* FSE+UITextView.swift in Sources */,
+				21A143361B99A479004116B8 /* FSE+UIView.swift in Sources */,
 				2124DFA01A8DF48000422313 /* ViewController.swift in Sources */,
+				21A143331B99A479004116B8 /* FSE+UIColor.swift in Sources */,
+				21A143321B99A479004116B8 /* FSE+String.swift in Sources */,
 				21DB301519DD2289003A418D /* AppDelegate.swift in Sources */,
+				21A143341B99A479004116B8 /* FSE+UITableView.swift in Sources */,
+				21A143371B99A479004116B8 /* FSHelpers.swift in Sources */,
+				21A143311B99A479004116B8 /* FSE+NSDate.swift in Sources */,
+				21A1432F1B99A479004116B8 /* FSE+Dictionary.swift in Sources */,
 				2158286F1A91E56600833BE6 /* APIManager.swift in Sources */,
 				21DB304919DD2D6D003A418D /* Constants.swift in Sources */,
+				21A143301B99A479004116B8 /* FSE+Double.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

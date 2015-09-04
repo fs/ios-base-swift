@@ -20,21 +20,16 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - FSHelpers+Swift (1.1):
-    - FSHelpers+Swift/FSExtensions (= 1.1)
-  - FSHelpers+Swift/FSExtensions (1.1)
   - KIF (3.2.3):
     - KIF/XCTest (= 3.2.3)
   - KIF/XCTest (3.2.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
-  - FSHelpers+Swift (~> 1.1)
   - KIF (~> 3.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  FSHelpers+Swift: b88e6d98d560a4a33dc429050c6c283f986521d8
   KIF: a94bffe9c97e449e44f8fa481c53243d21309e1e
 
 COCOAPODS: 0.38.2
