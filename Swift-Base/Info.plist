@@ -50,5 +50,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>URL_HOST</key>
+	<string>${URL_HOST}</string>
 </dict>
 </plist>

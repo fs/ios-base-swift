@@ -666,7 +666,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_SCHEME = "";
+				URL_HOST = "https://apple.com";
 			};
 			name = Debug;
 		};
@@ -701,7 +701,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_SCHEME = "";
+				URL_HOST = "https://apple.com";
 			};
 			name = Release;
 		};
@@ -818,7 +818,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_SCHEME = "";
+				URL_HOST = "https://apple.com";
 			};
 			name = "Debug Staging";
 		};
@@ -913,7 +913,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_SCHEME = "";
+				URL_HOST = "https://apple.com";
 			};
 			name = "Release Staging";
 		};
@@ -1003,7 +1003,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_SCHEME = "";
+				URL_HOST = "https://apple.com";
 			};
 			name = AppStore;
 		};
