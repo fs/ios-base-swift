@@ -76,5 +76,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
     }
+    
+    //MARK: - Remote Notifications
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        
+        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        var tokenString = ""
+        
+        for var i = 0; i < deviceToken.length; i++ {
+            var formatString = "%02.2hhx"
+            tokenString += String(format: formatString, arguments: [tokenChars[i]])
+        }
+        
+        NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: kUserDefaultsDeviceTokenData)
+        NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: kUserDefaultsDeviceTokenString)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    func requestForRemoteNotifications () {
+        if SystemVersionGreatherThanOrEqualTo("8") {
+            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert|UIUserNotificationType.Sound|UIUserNotificationType.Badge, categories: nil))
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+        } else {
+            UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationType.Alert|UIRemoteNotificationType.Sound|UIRemoteNotificationType.Badge)
+        }
+    }
 }
 
