@@ -12,10 +12,6 @@ import UIKit
 let kAPIKeyCrashlitycs  = ""
 let kAPIKeyGoogle       = ""
 
-/*--------------User Defaults keys-------------*/
-let kUserDefaultsDeviceTokenData = "kUserDefaultsDeviceTokenData"
-let kUserDefaultsDeviceTokenString = "kUserDefaultsDeviceTokenString"
-
 /*----------Notifications---------*/
 let kMockNotification:String = "mock_notification";
 
