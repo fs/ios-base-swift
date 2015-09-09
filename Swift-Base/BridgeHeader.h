@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Flatstack. All rights reserved.
 //
 
-#import <AFNetworking/AFNetworking.h>
+#import "AFNetworking.h"
 //#import <MagicalRecord.h>
 //#import "UIKit+AFNetworking.h"
 //#import "SDWebImage/UIImageView+WebCache.h"
