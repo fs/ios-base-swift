@@ -1,0 +1,12 @@
+/*Use this to generate new strings files -
+ ibtool Base.lproj/Main.storyboard --generate-strings-file ~/Desktop/str.strings
+ */
+
+/* Class = "UIButton"; normalTitle = "Tap to show alert"; ObjectID = "Eky-89-Wjw"; */
+"Eky-89-Wjw.normalTitle" = "Tap to show alert";
+
+/* Class = "UILabel"; accessibilityLabel = "Hello World!"; ObjectID = "LaI-Mr-U2B"; */
+"LaI-Mr-U2B.accessibilityLabel" = "Hello World!";
+
+/* Class = "UILabel"; text = "Hello World!"; ObjectID = "LaI-Mr-U2B"; */
+"LaI-Mr-U2B.text" = "Hello World!";
