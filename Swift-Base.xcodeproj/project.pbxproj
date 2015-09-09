@@ -14,6 +14,7 @@
 		213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213B89BE19F01A1E005D3749 /* CoreGraphics.framework */; };
 		2158286D1A91E2F200833BE6 /* mogend.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2158286B1A91E2F200833BE6 /* mogend.sh */; };
 		2158286F1A91E56600833BE6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2158286E1A91E56600833BE6 /* APIManager.swift */; };
+		218C64B81BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 218C64B61BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld */; };
 		218E3BEA1A8CD5250078686F /* Swift-BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */; };
 		21A1432E1B99A479004116B8 /* FSE+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A143241B99A479004116B8 /* FSE+Array.swift */; };
 		21A1432F1B99A479004116B8 /* FSE+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A143251B99A479004116B8 /* FSE+Dictionary.swift */; };
@@ -27,7 +28,6 @@
 		21A143371B99A479004116B8 /* FSHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1432D1B99A479004116B8 /* FSHelpers.swift */; };
 		21B3D1A119E6E2D700EF0D52 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B3D1A019E6E2D700EF0D52 /* Crashlytics.framework */; };
 		21DB301519DD2289003A418D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB301419DD2289003A418D /* AppDelegate.swift */; };
-		21DB301819DD2289003A418D /* Swift-Base.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21DB301619DD2289003A418D /* Swift-Base.xcdatamodeld */; };
 		21DB301F19DD2289003A418D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DB301E19DD2289003A418D /* Images.xcassets */; };
 		21DB304919DD2D6D003A418D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB304819DD2D6D003A418D /* Constants.swift */; };
 		4F9EF46FAB7D320E12646B79 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FC14334D96A97FADF44304 /* libPods.a */; };
@@ -83,6 +83,7 @@
 		21513BBD19EBCBFA00EE6273 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2158286B1A91E2F200833BE6 /* mogend.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = mogend.sh; path = Scripts/mogend.sh; sourceTree = "<group>"; };
 		2158286E1A91E56600833BE6 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		218C64B71BA078BA00EEEDF1 /* Swift-Base.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Swift-Base.xcdatamodel"; sourceTree = "<group>"; };
 		218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift-BaseTests.swift"; sourceTree = "<group>"; };
 		21A143241B99A479004116B8 /* FSE+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+Array.swift"; sourceTree = "<group>"; };
 		21A143251B99A479004116B8 /* FSE+Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+Dictionary.swift"; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		21DB300F19DD2289003A418D /* Swift-Base.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Base.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DB301319DD2289003A418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21DB301419DD2289003A418D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21DB301719DD2289003A418D /* Swift-Base.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Swift-Base.xcdatamodel"; sourceTree = "<group>"; };
 		21DB301E19DD2289003A418D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		21DB302719DD2289003A418D /* Swift-BaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-BaseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DB302C19DD2289003A418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,6 +158,22 @@
 				2158286B1A91E2F200833BE6 /* mogend.sh */,
 			);
 			name = Scripts;
+			sourceTree = "<group>";
+		};
+		218C64B41BA078BA00EEEDF1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				218C64B51BA078BA00EEEDF1 /* Private */,
+				218C64B61BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		218C64B51BA078BA00EEEDF1 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 		21A143221B99A479004116B8 /* FSHelpers */ = {
@@ -224,9 +240,9 @@
 		21DB301219DD2289003A418D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				215828691A91E2E000833BE6 /* Scripts */,
-				21DB303819DD2341003A418D /* BridgeHeader.h */,
 				21DB301319DD2289003A418D /* Info.plist */,
+				21DB303819DD2341003A418D /* BridgeHeader.h */,
+				215828691A91E2E000833BE6 /* Scripts */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -293,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				E736C5E11A25CF8200B8986E /* API */,
-				E736C5E21A25CF8E00B8986E /* Entities */,
+				218C64B41BA078BA00EEEDF1 /* CoreData */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -312,14 +328,6 @@
 				2158286E1A91E56600833BE6 /* APIManager.swift */,
 			);
 			name = API;
-			sourceTree = "<group>";
-		};
-		E736C5E21A25CF8E00B8986E /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				21DB301619DD2289003A418D /* Swift-Base.xcdatamodeld */,
-			);
-			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,9 +515,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				21A1432E1B99A479004116B8 /* FSE+Array.swift in Sources */,
-				21DB301819DD2289003A418D /* Swift-Base.xcdatamodeld in Sources */,
 				21A143351B99A479004116B8 /* FSE+UITextView.swift in Sources */,
 				21A143361B99A479004116B8 /* FSE+UIView.swift in Sources */,
+				218C64B81BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld in Sources */,
 				2124DFA01A8DF48000422313 /* ViewController.swift in Sources */,
 				21A143331B99A479004116B8 /* FSE+UIColor.swift in Sources */,
 				21A143321B99A479004116B8 /* FSE+String.swift in Sources */,
@@ -1067,12 +1075,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		21DB301619DD2289003A418D /* Swift-Base.xcdatamodeld */ = {
+		218C64B61BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				21DB301719DD2289003A418D /* Swift-Base.xcdatamodel */,
+				218C64B71BA078BA00EEEDF1 /* Swift-Base.xcdatamodel */,
 			);
-			currentVersion = 21DB301719DD2289003A418D /* Swift-Base.xcdatamodel */;
+			currentVersion = 218C64B71BA078BA00EEEDF1 /* Swift-Base.xcdatamodel */;
 			path = "Swift-Base.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
