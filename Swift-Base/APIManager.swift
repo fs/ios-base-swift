@@ -68,7 +68,7 @@ extension APIManager {
                     
                     if let status = response["status"] as? String {
                         let error = NSError(domain: NSURLErrorDomain, code: NSURLErrorUnsupportedURL, userInfo: nil)
-                        failure?(operation: operation, error: error, errorDesc: "The current API version deprecated")
+                        failure?(operation: operation, error: error, errorDesc: NSLocalizedString("API_VERSION_DEPRECATED", comment: ""))
                         
                         return
                         
@@ -92,8 +92,7 @@ extension APIManager {
                         failure?(operation: operation, error: error, errorDesc: errorDesc)
                         
                     } else {
-                        failure?(operation: operation, error: error, errorDesc: "Operation was cancelled")
-                        //NSLocalizedString("OPERATION_WAS_CANCELLED", comment: "")
+                        failure?(operation: operation, error: error, errorDesc: NSLocalizedString("OPERATION_WAS_CANCELLED", comment: ""))
                     }
             }
             
@@ -124,8 +123,7 @@ extension APIManager {
                         failure?(operation: operation, error: error, errorDesc: errorDesc)
                         
                     } else {
-                        failure?(operation: operation, error: error, errorDesc: "Operation was cancelled")
-                        //NSLocalizedString("OPERATION_WAS_CANCELLED", comment: "")
+                        failure?(operation: operation, error: error, errorDesc: NSLocalizedString("OPERATION_WAS_CANCELLED", comment: ""))
                     }
             }
             
@@ -137,13 +135,13 @@ extension APIManager {
         if let lCode = code {
             switch lCode {
             case 404:
-                return "Not found"//NSLocalizedString("NOT_FOUND", comment: "")
+                return NSLocalizedString("NOT_FOUND", comment: "")
                 
             default:
-                return "Unknow error"//NSLocalizedString("UNKNOW_ERROR", comment: "")
+                return NSLocalizedString("UNKNOW_ERROR", comment: "")
             }
         } else {
-            return "Unknow error"//NSLocalizedString("UNKNOW_ERROR", comment: "")
+            return NSLocalizedString("UNKNOW_ERROR", comment: "")
         }
     }
 }

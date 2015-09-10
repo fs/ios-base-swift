@@ -1,0 +1,18 @@
+/* Localized versions of Info.plist keys */
+
+/*------------Common-----------*/
+"ERROR"     = "Error";
+"NO"        = "No";
+"YES"       = "Yes";
+"OK"        = "Ok";
+
+"ORDER"     = "Order";
+
+/*-------------API-----------*/
+"API_VERSION_DEPRECATED"    = "The current API version deprecated";
+"OPERATION_WAS_CANCELLED"   = "Operation was cancelled";
+"NOT_FOUND"                 = "Not found";
+"UNKNOW_ERROR"              = "Unknow error";
+
+//"" = "";
+// /*-------------CATEGORY-----------*/

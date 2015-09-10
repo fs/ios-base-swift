@@ -1,0 +1,18 @@
+/* Localized versions of Info.plist keys */
+
+/*------------Common-----------*/
+"ERROR"     = "Ошибка";
+"NO"        = "Нет";
+"YES"       = "Да";
+"OK"        = "Ок";
+
+"ORDER"     = "Заказ";
+
+/*-------------API-----------*/
+"API_VERSION_DEPRECATED"    = "Текущая версия API устарела";
+"OPERATION_WAS_CANCELLED"   = "Операция была отменена";
+"NOT_FOUND"                 = "Не найдено";
+"UNKNOW_ERROR"              = "Неизвестная ошибка";
+
+//"" = "";
+// /*-------------CATEGORY-----------*/

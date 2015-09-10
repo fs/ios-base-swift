@@ -15,6 +15,7 @@
 		2158286D1A91E2F200833BE6 /* mogend.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2158286B1A91E2F200833BE6 /* mogend.sh */; };
 		2158286F1A91E56600833BE6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2158286E1A91E56600833BE6 /* APIManager.swift */; };
 		218C64B81BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 218C64B61BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld */; };
+		218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 218C64BD1BA07DDE00EEEDF1 /* Localizable.strings */; };
 		218E3BEA1A8CD5250078686F /* Swift-BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */; };
 		21A1432E1B99A479004116B8 /* FSE+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A143241B99A479004116B8 /* FSE+Array.swift */; };
 		21A1432F1B99A479004116B8 /* FSE+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A143251B99A479004116B8 /* FSE+Dictionary.swift */; };
@@ -84,6 +85,9 @@
 		2158286B1A91E2F200833BE6 /* mogend.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = mogend.sh; path = Scripts/mogend.sh; sourceTree = "<group>"; };
 		2158286E1A91E56600833BE6 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		218C64B71BA078BA00EEEDF1 /* Swift-Base.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Swift-Base.xcdatamodel"; sourceTree = "<group>"; };
+		218C64BB1BA07D3800EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_Storyboard.strings; sourceTree = "<group>"; };
+		218C64C21BA07E1F00EEEDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		218C64C31BA07E4300EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		218E3BE91A8CD5250078686F /* Swift-BaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift-BaseTests.swift"; sourceTree = "<group>"; };
 		21A143241B99A479004116B8 /* FSE+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+Array.swift"; sourceTree = "<group>"; };
 		21A143251B99A479004116B8 /* FSE+Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+Dictionary.swift"; sourceTree = "<group>"; };
@@ -176,6 +180,14 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
+		218C64BC1BA07DDE00EEEDF1 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				218C64BD1BA07DDE00EEEDF1 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		21A143221B99A479004116B8 /* FSHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +252,7 @@
 		21DB301219DD2289003A418D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				218C64BC1BA07DDE00EEEDF1 /* Localization */,
 				21DB301319DD2289003A418D /* Info.plist */,
 				21DB303819DD2341003A418D /* BridgeHeader.h */,
 				215828691A91E2E000833BE6 /* Scripts */,
@@ -401,6 +414,7 @@
 			knownRegions = (
 				Base,
 				ru,
+				en,
 			);
 			mainGroup = 21DB300619DD2289003A418D;
 			productRefGroup = 21DB301019DD2289003A418D /* Products */;
@@ -419,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
+				218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */,
 				2158286D1A91E2F200833BE6 /* mogend.sh in Resources */,
 				21DB301F19DD2289003A418D /* Images.xcassets in Resources */,
 			);
@@ -553,10 +568,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		218C64BD1BA07DDE00EEEDF1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				218C64C21BA07E1F00EEEDF1 /* Base */,
+				218C64C31BA07E4300EEEDF1 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E7566DA01A1F85CB00DE3010 /* Base */,
+				218C64BB1BA07D3800EEEDF1 /* ru */,
 			);
 			name = Main_Storyboard.storyboard;
 			sourceTree = "<group>";
