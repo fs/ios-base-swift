@@ -12,7 +12,7 @@ import UIKit
 //MARK: - Application Directory
 
 func ApplicationDirectoryPath (directoryToSearch:NSSearchPathDirectory) -> String {
-    return NSSearchPathForDirectoriesInDomains(directoryToSearch, NSSearchPathDomainMask.UserDomainMask, true).first as! String
+    return NSSearchPathForDirectoriesInDomains(directoryToSearch, NSSearchPathDomainMask.UserDomainMask, true).first!
 }
 
 func ApplicationDirectoryURL (directoryToSearch:NSSearchPathDirectory) -> NSURL {
@@ -78,23 +78,23 @@ func RGBA (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
 
 func ImageFromColor (color:UIColor) -> UIImage {
     
-    var rect:CGRect = CGRectMake(0, 0, 1, 1)
+    let rect:CGRect = CGRectMake(0, 0, 1, 1)
     UIGraphicsBeginImageContext(rect.size)
-    var context:CGContextRef = UIGraphicsGetCurrentContext()
+    let context:CGContextRef = UIGraphicsGetCurrentContext()!
     
     CGContextSetFillColorWithColor(context, color.CGColor)
     CGContextFillRect(context, rect)
     
-    var image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+    let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     
     return image
 }
 
 func RandomColor () -> UIColor {
-    var red:CGFloat = CGFloat(arc4random_uniform(255))/255.0
-    var green:CGFloat = CGFloat(arc4random_uniform(255))/255.0
-    var blue:CGFloat = CGFloat(arc4random_uniform(255))/255.0
+    let red:CGFloat = CGFloat(arc4random_uniform(255))/255.0
+    let green:CGFloat = CGFloat(arc4random_uniform(255))/255.0
+    let blue:CGFloat = CGFloat(arc4random_uniform(255))/255.0
     
     return UIColor(red: red, green: green, blue: blue, alpha: 1)
 }
@@ -153,7 +153,7 @@ enum ScreenTypeInch {
         }
     }
     
-    func getScreenValue (#value3_5:Any, value4:Any, value4_7:Any, value5_5:Any) -> Any {
+    func getScreenValue (value3_5 value3_5:Any, value4:Any, value4_7:Any, value5_5:Any) -> Any {
         switch ScreenTypeInch() {
         case ._3_5:     return value3_5
         case ._4:       return value4
@@ -162,11 +162,11 @@ enum ScreenTypeInch {
         }
     }
     
-    func getScreenCGFloat (#value3_5:CGFloat, value4:CGFloat, value4_7:CGFloat, value5_5:CGFloat) -> CGFloat {
+    func getScreenCGFloat (value3_5 value3_5:CGFloat, value4:CGFloat, value4_7:CGFloat, value5_5:CGFloat) -> CGFloat {
         return self.getScreenValue(value3_5:value3_5, value4: value4, value4_7: value4_7, value5_5: value5_5) as! CGFloat
     }
     
-    func getScreenCGFloat (#value4:CGFloat, value4_7:CGFloat, value5_5:CGFloat) -> CGFloat {
+    func getScreenCGFloat (value4 value4:CGFloat, value4_7:CGFloat, value5_5:CGFloat) -> CGFloat {
         return self.getScreenCGFloat(value3_5:value4, value4: value4, value4_7: value4_7, value5_5: value5_5)
     }
 }

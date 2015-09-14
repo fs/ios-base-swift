@@ -11,7 +11,7 @@ import Foundation
 extension Dictionary {
     
     func objectForKey(key:String, orDefault def:AnyObject) -> Value {
-        var res = key as! Key
+        let res = key as! Key
         
         if self[res] != nil {
             return self[res]!

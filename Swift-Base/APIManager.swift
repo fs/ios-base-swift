@@ -30,7 +30,7 @@ class APIManager: NSObject {
     
     class var baseURL: NSURL {
         let version = "v\(self.currentAPIVersion)"
-        let hostURLString = "\(APIManager.hostURL.absoluteString!)/\(version)"
+        let hostURLString = "\(APIManager.hostURL.absoluteString)/\(version)"
         return NSURL(string: hostURLString)!
     }
     
@@ -62,11 +62,11 @@ extension APIManager {
         success:((operation:AFHTTPRequestOperation, responseObject:AnyObject?) -> Void)?,
         failure:((operation:AFHTTPRequestOperation, error:NSError?, errorDesc:String) -> Void)?) -> AFHTTPRequestOperation? {
             
-            var operation = manager.GET(endpoint, parameters: params, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
+            let operation = manager.GET(endpoint, parameters: params, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
                 
                 if let response = responseObject as? Dictionary<String, AnyObject> {
                     
-                    if let status = response["status"] as? String {
+                    if let _ = response["status"] as? String {
                         let error = NSError(domain: NSURLErrorDomain, code: NSURLErrorUnsupportedURL, userInfo: nil)
                         failure?(operation: operation, error: error, errorDesc: NSLocalizedString("API_VERSION_DEPRECATED", comment: ""))
                         
@@ -104,7 +104,7 @@ extension APIManager {
         success:((operation:AFHTTPRequestOperation, responseObject:AnyObject?) -> Void)?,
         failure:((operation:AFHTTPRequestOperation, error:NSError?, errorDesc:String) -> Void)?) -> AFHTTPRequestOperation? {
             
-            var operation = manager.POST(endpoint, parameters: params, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
+            let operation = manager.POST(endpoint, parameters: params, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
                 
                 success?(operation: operation, responseObject: responseObject)
                 

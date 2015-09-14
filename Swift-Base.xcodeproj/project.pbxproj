@@ -394,7 +394,10 @@
 		21DB300719DD2289003A418D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastTestingUpgradeCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Flatstack;
 				TargetAttributes = {
 					21DB300E19DD2289003A418D = {

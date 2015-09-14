@@ -10,7 +10,7 @@ import Foundation
 
 extension Array {
     
-    func objectAtIndexOrNil (index:Int) -> T? {
+    func objectAtIndexOrNil (index:Int) -> Element? {
         if (index < self.count && index >= 0) {
             return self[index]
         } else {

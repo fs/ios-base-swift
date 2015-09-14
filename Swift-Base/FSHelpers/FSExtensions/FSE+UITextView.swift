@@ -46,7 +46,7 @@ class FSTextView :UITextView {
         self.initialize()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.initialize()
     }
@@ -69,8 +69,8 @@ class FSTextView :UITextView {
     
     private func setupPlaceholder () {
         self.placeholderLabel.preferredMaxLayoutWidth = self.frame.width
-        self.placeholderLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.placeholderLabel.textColor = RGBA(198, 198, 204, 1)
+        self.placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.placeholderLabel.textColor = RGBA(198, g: 198, b: 204, a: 1)
         self.placeholderLabel.userInteractionEnabled = false
         self.placeholderLabel.numberOfLines = 0
         self.placeholderLabel.font = self.font
@@ -83,8 +83,8 @@ class FSTextView :UITextView {
         
         var constraints:[NSLayoutConstraint] = []
         
-        constraints += NSLayoutConstraint.constraintsWithVisualFormat("H:|-LEFT-[label]-RIGHT-|", options: nil, metrics: metrics, views: views) as! [NSLayoutConstraint]
-        constraints += NSLayoutConstraint.constraintsWithVisualFormat("V:|-TOP-[label]-(>=BOTTOM)-|", options: nil, metrics: metrics, views: views) as! [NSLayoutConstraint]
+        constraints += NSLayoutConstraint.constraintsWithVisualFormat("H:|-LEFT-[label]-RIGHT-|", options: [], metrics: metrics, views: views) 
+        constraints += NSLayoutConstraint.constraintsWithVisualFormat("V:|-TOP-[label]-(>=BOTTOM)-|", options: [], metrics: metrics, views: views) 
         for constraint in constraints {
             constraint.priority = 751
         }
@@ -104,7 +104,7 @@ class FSTextView :UITextView {
         return super.textHeight
     }
     
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath ==  "text" || object as? NSObject == self {
             self.textViewDidChange(nil)
         } else {
@@ -118,7 +118,7 @@ class FSTextView :UITextView {
     }
     
     func textViewDidChange (sender: AnyObject?) {
-        if count(self.text) == 0 {
+        if self.text.characters.count == 0 {
             self.placeholderLabel.hidden = false
         } else {
             self.placeholderLabel.hidden = true
