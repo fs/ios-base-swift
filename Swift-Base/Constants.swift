@@ -9,15 +9,15 @@
 import UIKit
 
 /*----------API keys---------*/
-let kAPIKeyCrashlitycs  = ""
-let kAPIKeyGoogle       = ""
+let SBKeyAPIKeyCrashlitycs  = ""
+let SBKeyAPIKeyGoogle       = ""
 
 /*--------------User Defaults keys-------------*/
-let kUserDefaultsDeviceTokenData = "kUserDefaultsDeviceTokenData"
-let kUserDefaultsDeviceTokenString = "kUserDefaultsDeviceTokenString"
+let SBKeyUserDefaultsDeviceTokenData = "kUserDefaultsDeviceTokenData"
+let SBKeyUserDefaultsDeviceTokenString = "kUserDefaultsDeviceTokenString"
 
 /*----------Notifications---------*/
-let kMockNotification:String = "mock_notification";
+let SBNotificationMock:String = "mock_notification";
 
 /*--------------Fonts-------------*/
 
