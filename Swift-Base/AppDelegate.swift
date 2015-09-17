@@ -89,8 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
         }
         
-        NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: kUserDefaultsDeviceTokenData)
-        NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: kUserDefaultsDeviceTokenString)
+        NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: SBKeyUserDefaultsDeviceTokenData)
+        NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: SBKeyUserDefaultsDeviceTokenString)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
