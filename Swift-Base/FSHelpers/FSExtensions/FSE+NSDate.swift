@@ -59,23 +59,15 @@ extension NSDate {
     
     func midnightDate () -> NSDate {
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components( NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay, fromDate: self)
+        let components = calendar.components( [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: self)
         return calendar.dateFromComponents(components)!
     }
     
     func isSameWeekAsDate(date:NSDate) -> Bool
     {
         let calendar = NSCalendar.currentCalendar()
-        let comps =
-        NSCalendarUnit.CalendarUnitYear |
-            NSCalendarUnit.CalendarUnitMonth |
-            NSCalendarUnit.CalendarUnitDay |
-            NSCalendarUnit.CalendarUnitWeekOfYear |
-            NSCalendarUnit.CalendarUnitHour |
-            NSCalendarUnit.CalendarUnitMinute |
-            NSCalendarUnit.CalendarUnitSecond |
-            NSCalendarUnit.CalendarUnitWeekday |
-            NSCalendarUnit.CalendarUnitWeekdayOrdinal
+        let comps: NSCalendarUnit =
+        [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Weekday, NSCalendarUnit.WeekdayOrdinal]
         
         let components1 = calendar.components(comps, fromDate:self)
         let components2 = calendar.components(comps, fromDate:date)
@@ -91,16 +83,8 @@ extension NSDate {
     
     func isEqualToDateIgnoringTime (date:NSDate) -> Bool {
         let calendar = NSCalendar.currentCalendar()
-        let comps =
-        NSCalendarUnit.CalendarUnitYear |
-            NSCalendarUnit.CalendarUnitMonth |
-            NSCalendarUnit.CalendarUnitDay |
-            NSCalendarUnit.CalendarUnitWeekOfYear |
-            NSCalendarUnit.CalendarUnitHour |
-            NSCalendarUnit.CalendarUnitMinute |
-            NSCalendarUnit.CalendarUnitSecond |
-            NSCalendarUnit.CalendarUnitWeekday |
-            NSCalendarUnit.CalendarUnitWeekdayOrdinal
+        let comps: NSCalendarUnit =
+        [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Weekday, NSCalendarUnit.WeekdayOrdinal]
         
         
         let components1 = calendar.components(comps, fromDate:self)

@@ -85,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var tokenString = ""
         
         for var i = 0; i < deviceToken.length; i++ {
-            var formatString = "%02.2hhx"
+            let formatString = "%02.2hhx"
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
         }
         
@@ -95,11 +95,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func requestForRemoteNotifications () {
-        if SystemVersionGreatherThanOrEqualTo("8") {
-            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert|UIUserNotificationType.Sound|UIUserNotificationType.Badge, categories: nil))
+        if #available(iOS 8.0, *) {
+            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge], categories: nil))
             UIApplication.sharedApplication().registerForRemoteNotifications()
         } else {
-            UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationType.Alert|UIRemoteNotificationType.Sound|UIRemoteNotificationType.Badge)
+            UIApplication.sharedApplication().registerForRemoteNotificationTypes([UIRemoteNotificationType.Alert, UIRemoteNotificationType.Sound, UIRemoteNotificationType.Badge])
         }
     }
 }

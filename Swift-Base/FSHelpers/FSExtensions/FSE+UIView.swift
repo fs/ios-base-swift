@@ -79,7 +79,7 @@ extension UIView {
         }
         
         for view in subviews {
-            if findAndResignFirstResponder() {
+            if view.findAndResignFirstResponder() {
                 return true
             }
         }

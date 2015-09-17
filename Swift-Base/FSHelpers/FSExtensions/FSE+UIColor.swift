@@ -12,9 +12,9 @@ extension UIColor {
     
     convenience init? (hexString:String) {
         
-        var regex:NSRegularExpression = NSRegularExpression(pattern: "[^a-fA-F|0-9]", options: nil, error: nil)!
+        let regex:NSRegularExpression = try! NSRegularExpression(pattern: "[^a-fA-F|0-9]", options: [])
         
-        var match:Int = regex.numberOfMatchesInString(hexString, options: NSMatchingOptions.ReportCompletion, range: NSMakeRange(0, count(hexString)))
+        let match:Int = regex.numberOfMatchesInString(hexString, options: NSMatchingOptions.ReportCompletion, range: NSMakeRange(0, hexString.characters.count))
         
         if (match != 0) {
             self.init()
@@ -24,10 +24,10 @@ extension UIColor {
         var cString:String = hexString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
         
         if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(advance(cString.startIndex, 1))
+            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
         }
         
-        if (count(cString) != 6) {
+        if (cString.characters.count != 6) {
             self.init()
             return nil
         }
