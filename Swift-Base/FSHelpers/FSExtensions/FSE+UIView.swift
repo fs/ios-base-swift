@@ -12,16 +12,20 @@ extension UIView {
     
     //MARK: - Set size
     
-    func setSize (size:CGSize) {
-        var frame = self.frame
-        frame.size = size
-        self.frame = frame
+    var size: CGSize {
+        set (value) {
+            self.frame.size = size
+        }
+        
+        get {
+            return self.frame.size
+        }
     }
     
     var width:CGFloat {
         
         set (value) {
-            self.setSize(CGSizeMake(value, frame.size.height))
+            self.size = CGSizeMake(value, frame.size.height)
         }
         
         get {
@@ -32,7 +36,7 @@ extension UIView {
     var height:CGFloat {
         
         set (value) {
-            self.setSize(CGSizeMake(frame.size.width, height))
+            self.size = CGSizeMake(frame.size.width, value)
         }
         
         get {
@@ -42,16 +46,19 @@ extension UIView {
     
     //MARK: - Set origin
     
-    func setOrigin (origin:CGPoint) {
-        var frame = self.frame
-        frame.origin = origin
-        self.frame = frame
+    var origin: CGPoint {
+        set (value) {
+            self.frame.origin = value
+        }
+        get {
+            return self.frame.origin
+        }
     }
     
-    var x:CGFloat {
+    var x: CGFloat {
         
         set (value) {
-            self.setOrigin(CGPointMake(value, frame.origin.y))
+            self.origin = CGPointMake(value, frame.origin.y)
         }
         
         get {
@@ -59,10 +66,10 @@ extension UIView {
         }
     }
     
-    var y:CGFloat {
+    var y: CGFloat {
         
         set (value) {
-            setOrigin(CGPointMake(frame.origin.x, value))
+            self.origin = CGPointMake(frame.origin.x, value)
         }
         
         get {
@@ -87,7 +94,7 @@ extension UIView {
         return false
     }
     
-    var allSubviews:[UIView] {
+    var allSubviews: [UIView] {
         var arr:[UIView] = [self]
         
         for view in subviews {
