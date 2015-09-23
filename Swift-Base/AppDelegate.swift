@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
+        
+        let bitmap = UIImage(named: "test_image")!.getBitmap()
+        for y in 0 ..< bitmap.count {
+            for x in 0 ..< bitmap[y].count {
+                print("\(x):\(y)       \(bitmap[x][y])")
+            }
+        }
         //setting AFNetwork
         /*
         AFNetworkReachabilityManager.sharedManager().startMonitoring()

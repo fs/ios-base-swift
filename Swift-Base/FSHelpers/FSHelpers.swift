@@ -109,7 +109,7 @@ func dispatch_after_short (delay:Double, block:dispatch_block_t) {
 
 func DLog(message: String, function: String = __FUNCTION__, file: String = __FILE__, line: Int = __LINE__) {
     #if DEBUG
-        println("Message \"\(message)\" (File: \(file), Function: \(function), Line: \(line))")
+        print("Message \"\(message)\" (File: \(file), Function: \(function), Line: \(line))")
     #endif
 }
 
@@ -131,34 +131,36 @@ enum ScreenTypeInch {
     }
     
     init () {
-        let size = UIScreen.mainScreen().bounds.size
+        self = ScreenTypeInch.typeForSize(UIScreen.mainScreen().bounds.size)
+    }
+    
+    init (size: CGSize) {
+        self = ScreenTypeInch.typeForSize(size)
+    }
+    
+    static private func typeForSize (size: CGSize) -> ScreenTypeInch {
         let width = min(size.width, size.height)
         let height = max(size.width, size.height)
         
         switch CGSizeMake(width, height) {
-        case ScreenTypeInch._3_5.size:
-            self = ScreenTypeInch._3_5
-            
-        case ScreenTypeInch._4.size:
-            self = ScreenTypeInch._4
-            
-        case ScreenTypeInch._4_7.size:
-            self = ScreenTypeInch._4_7
-            
-        case ScreenTypeInch._5_5.size:
-            self = ScreenTypeInch._5_5
-            
-        default:
-            self = ScreenTypeInch._5_5
+        case ScreenTypeInch._3_5.size:  return ScreenTypeInch._3_5
+        case ScreenTypeInch._4.size:    return ScreenTypeInch._4
+        case ScreenTypeInch._4_7.size:  return ScreenTypeInch._4_7
+        case ScreenTypeInch._5_5.size:  return ScreenTypeInch._5_5
+        default:                        return ScreenTypeInch._4
         }
     }
     
     func getScreenValue (value3_5 value3_5:Any, value4:Any, value4_7:Any, value5_5:Any) -> Any {
-        switch ScreenTypeInch() {
-        case ._3_5:     return value3_5
-        case ._4:       return value4
-        case ._4_7:     return value4_7
-        case ._5_5:     return value5_5
+        switch self {
+        case ._3_5:
+            return value3_5
+        case ._4:
+            return value4
+        case ._4_7:
+            return value4_7
+        case ._5_5:
+            return value5_5
         }
     }
     
