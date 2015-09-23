@@ -221,9 +221,7 @@ class FSHelperTests: XCTestCase {
                             let _       = (currentColor >> 24) & 0xFF
                             
                             XCTAssertEqual(UInt32(imageRed),    red,    "Red must be equal")
-                            
                             XCTAssertEqual(UInt32(imageGreen),  green,  "Green must be equal")
-                            
                             XCTAssertEqual(UInt32(imageBlue),   blue,   "Blue must be equal")
                             
                             currentPixel++

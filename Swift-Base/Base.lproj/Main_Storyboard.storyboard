@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xJO-aM-hqn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xJO-aM-hqn">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,7 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="264" translatesAutoresizingMaskIntoConstraints="NO" id="LaI-Mr-U2B">
-                                <rect key="frame" x="168" y="270" width="263.5" height="60"/>
+                                <rect key="frame" x="167" y="270" width="266" height="60"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Hello World!">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -28,6 +29,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eky-89-Wjw">
                                 <rect key="frame" x="240" y="347" width="120" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="dun-oK-HhV"/>
                                     <constraint firstAttribute="height" constant="30" id="gaA-SK-CZu"/>
@@ -39,16 +41,29 @@
                                     <action selector="tapShowAlert:" destination="xJO-aM-hqn" eventType="touchUpInside" id="XLd-uJ-QMw"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aWH-Ce-5K5">
+                                <rect key="frame" x="225" y="28" width="150" height="150"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Y7c-0n-M5f"/>
+                                    <constraint firstAttribute="width" constant="150" id="p2P-Zn-PI9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aWH-Ce-5K5" firstAttribute="centerX" secondItem="StV-eM-zTl" secondAttribute="centerX" id="5MH-Qw-8iq"/>
                             <constraint firstAttribute="centerY" secondItem="LaI-Mr-U2B" secondAttribute="centerY" id="84P-3q-jKx"/>
                             <constraint firstItem="Eky-89-Wjw" firstAttribute="top" secondItem="LaI-Mr-U2B" secondAttribute="bottom" constant="17" id="A7Q-mZ-tUY"/>
                             <constraint firstAttribute="centerX" secondItem="LaI-Mr-U2B" secondAttribute="centerX" id="Rpu-Td-tew"/>
+                            <constraint firstItem="aWH-Ce-5K5" firstAttribute="top" secondItem="fvF-Te-7tz" secondAttribute="bottom" constant="8" id="SHc-tP-ww2"/>
                             <constraint firstItem="LaI-Mr-U2B" firstAttribute="centerX" secondItem="Eky-89-Wjw" secondAttribute="centerX" id="doi-xI-iPs"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="aWH-Ce-5K5" id="joF-4Q-OqM"/>
                         <outlet property="label" destination="LaI-Mr-U2B" id="bbF-Je-3OU"/>
                     </connections>
                 </viewController>
