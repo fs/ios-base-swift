@@ -30,6 +30,17 @@
 		21DB301519DD2289003A418D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB301419DD2289003A418D /* AppDelegate.swift */; };
 		21DB301F19DD2289003A418D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DB301E19DD2289003A418D /* Images.xcassets */; };
 		21DB304919DD2D6D003A418D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB304819DD2D6D003A418D /* Constants.swift */; };
+		21E157E21BB3EDF40041FCE4 /* FSTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E157E11BB3EDF40041FCE4 /* FSTestHelpers.swift */; settings = {ASSET_TAGS = (); }; };
+		21E157E41BB3F26B0041FCE4 /* FSE+ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E157E31BB3F26B0041FCE4 /* FSE+ArrayTests.swift */; settings = {ASSET_TAGS = (); }; };
+		21E157E61BB3F28A0041FCE4 /* FSE+DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E157E51BB3F28A0041FCE4 /* FSE+DictionaryTests.swift */; settings = {ASSET_TAGS = (); }; };
+		21E157E81BB3F2970041FCE4 /* FSE+DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E157E71BB3F2970041FCE4 /* FSE+DoubleTests.swift */; settings = {ASSET_TAGS = (); }; };
+		21E157EA1BB3F2A20041FCE4 /* FSE+NSDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E157E91BB3F2A20041FCE4 /* FSE+NSDateTests.swift */; settings = {ASSET_TAGS = (); }; };
+		21E157EC1BB3F2AC0041FCE4 /* FSE+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E157EB1BB3F2AC0041FCE4 /* FSE+StringTests.swift */; settings = {ASSET_TAGS = (); }; };
+		21E157EE1BB3F2B70041FCE4 /* FSE+UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E157ED1BB3F2B70041FCE4 /* FSE+UIColorTests.swift */; settings = {ASSET_TAGS = (); }; };
+		21E157F01BB3F2C30041FCE4 /* FSE+UITableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E157EF1BB3F2C30041FCE4 /* FSE+UITableViewTests.swift */; settings = {ASSET_TAGS = (); }; };
+		21E157F21BB3F2CE0041FCE4 /* FSE+UITextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E157F11BB3F2CE0041FCE4 /* FSE+UITextViewTests.swift */; settings = {ASSET_TAGS = (); }; };
+		21E157F41BB3F2DE0041FCE4 /* FSE+UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E157F31BB3F2DE0041FCE4 /* FSE+UIViewTests.swift */; settings = {ASSET_TAGS = (); }; };
+		21E157F61BB3F2E80041FCE4 /* FSE+UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E157F51BB3F2E80041FCE4 /* FSE+UIImageTests.swift */; settings = {ASSET_TAGS = (); }; };
 		4F9EF46FAB7D320E12646B79 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FC14334D96A97FADF44304 /* libPods.a */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 /* End PBXBuildFile section */
@@ -106,6 +117,17 @@
 		21DB301E19DD2289003A418D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		21DB303819DD2341003A418D /* BridgeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		21DB304819DD2D6D003A418D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		21E157E11BB3EDF40041FCE4 /* FSTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FSTestHelpers.swift; path = "Swift-BaseTests/FSTestHelpers.swift"; sourceTree = "<group>"; };
+		21E157E31BB3F26B0041FCE4 /* FSE+ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+ArrayTests.swift"; sourceTree = "<group>"; };
+		21E157E51BB3F28A0041FCE4 /* FSE+DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+DictionaryTests.swift"; sourceTree = "<group>"; };
+		21E157E71BB3F2970041FCE4 /* FSE+DoubleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+DoubleTests.swift"; sourceTree = "<group>"; };
+		21E157E91BB3F2A20041FCE4 /* FSE+NSDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+NSDateTests.swift"; sourceTree = "<group>"; };
+		21E157EB1BB3F2AC0041FCE4 /* FSE+StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+StringTests.swift"; sourceTree = "<group>"; };
+		21E157ED1BB3F2B70041FCE4 /* FSE+UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+UIColorTests.swift"; sourceTree = "<group>"; };
+		21E157EF1BB3F2C30041FCE4 /* FSE+UITableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+UITableViewTests.swift"; sourceTree = "<group>"; };
+		21E157F11BB3F2CE0041FCE4 /* FSE+UITextViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+UITextViewTests.swift"; sourceTree = "<group>"; };
+		21E157F31BB3F2DE0041FCE4 /* FSE+UIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+UIViewTests.swift"; sourceTree = "<group>"; };
+		21E157F51BB3F2E80041FCE4 /* FSE+UIImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+UIImageTests.swift"; sourceTree = "<group>"; };
 		2900C0DB0F579B565AD4F9A8 /* Pods-Swift-BaseTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.release staging.xcconfig"; sourceTree = "<group>"; };
 		51E82C8EB8DB50ECF52AE69A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		67FC14334D96A97FADF44304 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +175,7 @@
 		212D01801BB1977100B34340 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				21E157E11BB3EDF40041FCE4 /* FSTestHelpers.swift */,
 				212D018C1BB1986B00B34340 /* UnitTests */,
 			);
 			name = Tests;
@@ -181,6 +204,16 @@
 		212D019C1BB1988F00B34340 /* FSExtensionsTests */ = {
 			isa = PBXGroup;
 			children = (
+				21E157E31BB3F26B0041FCE4 /* FSE+ArrayTests.swift */,
+				21E157E51BB3F28A0041FCE4 /* FSE+DictionaryTests.swift */,
+				21E157E71BB3F2970041FCE4 /* FSE+DoubleTests.swift */,
+				21E157E91BB3F2A20041FCE4 /* FSE+NSDateTests.swift */,
+				21E157EB1BB3F2AC0041FCE4 /* FSE+StringTests.swift */,
+				21E157ED1BB3F2B70041FCE4 /* FSE+UIColorTests.swift */,
+				21E157EF1BB3F2C30041FCE4 /* FSE+UITableViewTests.swift */,
+				21E157F11BB3F2CE0041FCE4 /* FSE+UITextViewTests.swift */,
+				21E157F31BB3F2DE0041FCE4 /* FSE+UIViewTests.swift */,
+				21E157F51BB3F2E80041FCE4 /* FSE+UIImageTests.swift */,
 			);
 			name = FSExtensionsTests;
 			sourceTree = "<group>";
@@ -511,8 +544,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21E157F41BB3F2DE0041FCE4 /* FSE+UIViewTests.swift in Sources */,
+				21E157F21BB3F2CE0041FCE4 /* FSE+UITextViewTests.swift in Sources */,
+				21E157E41BB3F26B0041FCE4 /* FSE+ArrayTests.swift in Sources */,
+				21E157EA1BB3F2A20041FCE4 /* FSE+NSDateTests.swift in Sources */,
+				21E157EE1BB3F2B70041FCE4 /* FSE+UIColorTests.swift in Sources */,
 				212D019E1BB198A500B34340 /* FSHelpersTests.swift in Sources */,
+				21E157E61BB3F28A0041FCE4 /* FSE+DictionaryTests.swift in Sources */,
+				21E157E81BB3F2970041FCE4 /* FSE+DoubleTests.swift in Sources */,
+				21E157F01BB3F2C30041FCE4 /* FSE+UITableViewTests.swift in Sources */,
 				212D018E1BB1986B00B34340 /* Swift_BaseTests.swift in Sources */,
+				21E157F61BB3F2E80041FCE4 /* FSE+UIImageTests.swift in Sources */,
+				21E157EC1BB3F2AC0041FCE4 /* FSE+StringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +567,7 @@
 				21A143351B99A479004116B8 /* FSE+UITextView.swift in Sources */,
 				21A143361B99A479004116B8 /* FSE+UIView.swift in Sources */,
 				218C64B81BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld in Sources */,
+				21E157E21BB3EDF40041FCE4 /* FSTestHelpers.swift in Sources */,
 				2124DFA01A8DF48000422313 /* ViewController.swift in Sources */,
 				21A143331B99A479004116B8 /* FSE+UIColor.swift in Sources */,
 				21A566001BB2BF7600A96C23 /* FSE+UIImage.swift in Sources */,

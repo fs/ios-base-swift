@@ -52,6 +52,14 @@ struct BitmapPixel {
             blue:   CGFloat(self.b/255)/100,
             alpha:  CGFloat(self.a/255)/100)
     }
+    
+    private var brightness32: UInt32 {
+        return UInt32(self.r) + UInt32(self.g) + UInt32(self.b)
+    }
+    
+    var brightness: UInt8 {
+        return UInt8((CGFloat(self.brightness32)/(255*3))*255)
+    }
 }
 
 class Bitmap: NSObject {
@@ -69,15 +77,24 @@ class Bitmap: NSObject {
         super.init()
     }
     
-    init (size: (Int, Int)) {
+    init (size: (width: Int, height: Int)) {
         self.size = size
         self.data = UnsafeMutablePointer<UInt32>(calloc(self.size.width*self.size.height, sizeof(UInt32)))
         super.init()
     }
     
-    var image: UIImage {
+    convenience init (size: CGSize) {
+        self.init(size: (width: Int(size.width), height: Int(size.height)))
+    }
+    
+    func getCGImage () -> CGImage {
         let image = UIImage.imageFromBitmap(self)
         return image
+    }
+    
+    func getUIImage (scale: CGFloat = UIScreen.mainScreen().scale, orientation: UIImageOrientation = UIImageOrientation.Up) -> UIImage {
+        let image = self.getCGImage()
+        return UIImage(CGImage: image, scale: scale, orientation: orientation)
     }
     
     func getPixel (x: Int, _ y: Int) -> BitmapPixel {
@@ -124,15 +141,15 @@ extension UIImage {
         return Bitmap(data: bitmapData, size: (pixelsWide, pixelsHigh))
     }
     
-    class func imageFromBitmap (bitmap: Bitmap) -> UIImage {
+    class func imageFromBitmap (bitmap: Bitmap) -> CGImageRef {
         
-        let width = bitmap.size.width
-        let height = bitmap.size.height
+        let width   = bitmap.size.width
+        let height  = bitmap.size.height
         
-        let bitsPerComponent = 8
-        let bytesPerPixel = 4
-        let bitsPerPixel = bytesPerPixel * 8
-        let bytesPerRow = width * bytesPerPixel
+        let bitsPerComponent    = 8
+        let bytesPerPixel       = 4
+        let bitsPerPixel        = bytesPerPixel * 8
+        let bytesPerRow         = width * bytesPerPixel
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         
@@ -147,6 +164,6 @@ extension UIImage {
         
         let image = CGImageCreate(width, height, bitsPerComponent, bitsPerPixel, bytesPerRow, colorSpace, bitmapInfo, provider, nil, true, renderingIntent)
         
-        return UIImage(CGImage: image!)
+        return image!
     }
 }

@@ -242,20 +242,22 @@ class FSHelperTests: XCTestCase {
     func testDispatch_after_short () {
         for i in 0 ..< 3 {
             let delay: Double = Double(i)/10
-            var done = false
             
             let expectation = expectationWithDescription("Expectation")
             
+            let startDate = NSDate()
+            var interval: NSTimeInterval = 0
+            
             dispatch_after_short(delay) { () -> Void in
-                done = true
+                interval = abs(NSDate().timeIntervalSinceDate(startDate))
                 expectation.fulfill()
             }
             
-            self.waitForExpectationsWithTimeout(delay+0.001, handler: { (error: NSError?) -> Void in
+            self.waitForExpectationsWithTimeout(delay+0.01, handler: { (error: NSError?) -> Void in
                 if error == nil {
-                    XCTAssertTrue(done, "Value not changed")
+                    XCTAssertGreaterThanOrEqual(interval, delay, "Too fast")
                 } else {
-                    XCTAssertTrue(false, "Too long expectation")
+                    XCTAssertTrue(false, "Too long")
                 }
             })
         }

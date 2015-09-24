@@ -17,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
+        #if TEST
+            switch TestingMode() {
+            case .Unit:
+                print("Unit Tests")
+                self.window?.rootViewController = UIViewController()
+                return true
+                
+            case .UI:
+                print("UI Tests")
+            }
+        #endif
         
         //setting AFNetwork
         /*
