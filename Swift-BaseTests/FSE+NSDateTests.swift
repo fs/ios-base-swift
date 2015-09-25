@@ -11,6 +11,33 @@ import XCTest
 
 class FSE_NSDateTests: XCTestCase {
     
+    let randomInterval = {() -> NSTimeInterval in
+        let hours       = NSTimeInterval(arc4random_uniform(23))*60*60
+        let minutes     = NSTimeInterval(arc4random_uniform(59))*60
+        let seconds     = NSTimeInterval(arc4random_uniform(59))
+        let interval = hours + minutes + seconds
+        return interval
+    }
+    
+    let timezoneFromInterval = {(interval: NSTimeInterval) -> NSTimeInterval in
+        let calendar = NSCalendar.currentCalendar()
+        let date = NSDate(timeIntervalSince1970: interval)
+        
+        let timezoneOffset = NSTimeInterval(calendar.timeZone.secondsFromGMT)
+        let daylightOffset = calendar.timeZone.isDaylightSavingTimeForDate(date) ? calendar.timeZone.daylightSavingTimeOffset : 0
+        
+        return timezoneOffset + daylightOffset
+    }
+    
+    let timezoneFromDate = {(date: NSDate) -> NSTimeInterval in
+        let calendar = NSCalendar.currentCalendar()
+        
+        let timezoneOffset = NSTimeInterval(calendar.timeZone.secondsFromGMT)
+        let daylightOffset = calendar.timeZone.isDaylightSavingTimeForDate(date) ? calendar.timeZone.daylightSavingTimeOffset : 0
+        
+        return timezoneOffset + daylightOffset
+    }
+    
     override func setUp() {
         super.setUp()
     }
@@ -20,39 +47,51 @@ class FSE_NSDateTests: XCTestCase {
     }
     
     func testDatePeriodInit () {
-        let today = NSDate()
-        let tomorrow = NSDate(timeInterval: 24*60*60, sinceDate: today)
-        let thisWeek = NSDate(timeInterval: 2*24*60*60, sinceDate: today)
-    }
-    
-    func testIsDateToday () {
-//        return NSDate().midnightDate() == self.midnightDate()
-    }
-    
-    func testIsTomorrow () {
-//        return self.isEqualToDateIgnoringTime(NSDate.dateTomorrow())
-    }
-    
-    func testIsThisWeek () {
-//        return self.isSameWeekAsDate(NSDate())
+        for _ in 0 ..< 5 {
+            let timestamp = NSDate().timeIntervalSince1970
+            let localTimestamp = timestamp - timestamp%(24*60*60) - self.timezoneFromInterval(timestamp)
+            
+            let today       = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval())
+            let tomorrow    = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval() + 24*60*60)
+            let farAway     = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval() + 10*24*60*60)
+            
+            XCTAssertEqual(DatePeriod(date: today),     DatePeriod.Today, "Must be today")
+            XCTAssertEqual(DatePeriod(date: tomorrow),  DatePeriod.Tomorrow, "Must be tomorrow")
+            XCTAssertEqual(DatePeriod(date: farAway),   DatePeriod.Unknow, "Must be unknow")
+        }
     }
     
     func testMidnightDate () {
-//        let calendar = NSCalendar.currentCalendar()
-//        let components = calendar.components( [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: self)
-//        return calendar.dateFromComponents(components)!
+        
+        for _ in 0 ..< 10 {
+            
+            let random = NSTimeInterval(arc4random())
+            let timestamp = random - random%(24*60*60)
+            
+            let localMidnightTimestamp = timestamp - self.timezoneFromInterval(timestamp)
+            
+            let midnightDate = NSDate(timeIntervalSince1970: localMidnightTimestamp)
+            
+            let first = NSDate(timeIntervalSince1970: localMidnightTimestamp + self.randomInterval())
+            let second = NSDate(timeIntervalSince1970: localMidnightTimestamp + self.randomInterval())
+            
+            let yesterday = NSDate(timeIntervalSince1970: localMidnightTimestamp + self.randomInterval() - 24*60*60)
+            let tomorrow = NSDate(timeIntervalSince1970: localMidnightTimestamp + self.randomInterval() + 24*60*60)
+            
+            XCTAssertEqual(midnightDate, first.midnightDate(),      "Must be equal")
+            XCTAssertEqual(midnightDate, second.midnightDate(),     "Must be equal")
+            
+            XCTAssertNotEqual(midnightDate, yesterday.midnightDate(),   "Must be less")
+            XCTAssertNotEqual(midnightDate, tomorrow.midnightDate(),    "Must be grather")
+            
+        }
     }
     
     func testIsSameWeekAsDate()
     {
-        let calendar = NSCalendar.currentCalendar()
         let dayInterval: NSTimeInterval = 24*60*60
-        let timezone = NSTimeInterval(NSTimeZone.defaultTimeZone().secondsFromGMT)
-        let daylight = {(date: NSDate) -> NSTimeInterval in
-            return calendar.timeZone.isDaylightSavingTimeForDate(date) ? calendar.timeZone.daylightSavingTimeOffset : 0
-        }
         
-        for _ in 0 ..< 5 {
+        for _ in 0 ..< 10 {
             
             let value = NSTimeInterval(arc4random())
             
@@ -63,24 +102,15 @@ class FSE_NSDateTests: XCTestCase {
             let minMidnightInterval = value + (correctionDays*dayInterval) - value%(7*24*60*60)
             let maxMidnightInterval = minMidnightInterval + dayInterval*7 - 1
             
-            let minTimezoneOffset: NSTimeInterval = {
-                let date = NSDate(timeIntervalSince1970: minMidnightInterval)
-                return -(timezone + daylight(date))
-            }()
-            let maxTimezoneOffset: NSTimeInterval = {
-                let date = NSDate(timeIntervalSince1970: maxMidnightInterval)
-                return -(timezone + daylight(date))
-            }()
+            let minInterval = UInt(minMidnightInterval - self.timezoneFromInterval(minMidnightInterval))
+            let maxInterval = UInt(maxMidnightInterval - self.timezoneFromInterval(maxMidnightInterval))
             
-            let minInterval = UInt(minMidnightInterval + minTimezoneOffset)
-            let maxInterval = UInt(maxMidnightInterval + maxTimezoneOffset)
-            
-            let lessDate = NSDate(timeIntervalSince1970: NSTimeInterval(minInterval) - 1)
-            let greatherDate = NSDate(timeIntervalSince1970: NSTimeInterval(maxInterval) + 1)
+            let lessDate        = NSDate(timeIntervalSince1970: NSTimeInterval(minInterval) - 1)
+            let greatherDate    = NSDate(timeIntervalSince1970: NSTimeInterval(maxInterval) + 1)
             
             let values: [NSDate] = {
                 var values: [NSDate] = []
-                for _ in 0 ..< 100 {
+                for _ in 0 ..< 10 {
                     let timestamp: NSTimeInterval = NSTimeInterval(UInt32(minInterval) + arc4random_uniform(UInt32(maxInterval - minInterval - 1)))
                     values.append(NSDate(timeIntervalSince1970: timestamp))
                 }
@@ -98,50 +128,37 @@ class FSE_NSDateTests: XCTestCase {
     }
     
     func testIsEqualToDateIgnoringTime () {
-        
-        let values: [NSTimeInterval] = [NSTimeInterval(arc4random()), NSTimeInterval(arc4random()), NSTimeInterval(arc4random())]
-        
-        for value in values {
-            let interval = value - value%(24*60*60)
-            let base = NSDate(timeIntervalSince1970: interval)
+        for _ in 0 ..< 10 {
+            let random = NSTimeInterval(arc4random())
             
-            let randomInterval = {() -> NSTimeInterval in
-                let hours       = NSTimeInterval(arc4random_uniform(23))*60*60
-                let minutes     = NSTimeInterval(arc4random_uniform(59))*60
-                let seconds     = NSTimeInterval(arc4random_uniform(59))
-                let interval = hours + minutes + seconds
-                return interval
-            }
+            let timestamp               = random - random%(24*60*60)
+            let localMidnightTimestamp  = timestamp - self.timezoneFromInterval(timestamp)
             
-            let first = NSDate(timeInterval: randomInterval(), sinceDate: base)
-            let second = NSDate(timeInterval: randomInterval(), sinceDate: base)
+            let date = NSDate(timeIntervalSince1970: localMidnightTimestamp)
             
-            let calendar = NSCalendar.currentCalendar()
-            let comps: NSCalendarUnit =
-            [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Weekday, NSCalendarUnit.WeekdayOrdinal]
+            let first   = NSDate(timeIntervalSince1970: localMidnightTimestamp + self.randomInterval())
+            let second  = NSDate(timeIntervalSince1970: localMidnightTimestamp + self.randomInterval())
             
+            let yesterday   = NSDate(timeIntervalSince1970: localMidnightTimestamp + self.randomInterval() - 24*60*60)
+            let tomorrow    = NSDate(timeIntervalSince1970: localMidnightTimestamp + self.randomInterval() + 24*60*60)
             
-            let components1 = calendar.components(comps, fromDate:first)
-            let components2 = calendar.components(comps, fromDate:second)
+            XCTAssertTrue(date.isEqualToDateIgnoringTime(first), "Must be equal")
+            XCTAssertTrue(date.isEqualToDateIgnoringTime(second), "Must be equal")
             
-            let isSameDate =  (components1.year == components2.year) &&
-                (components1.month == components2.month) &&
-                (components1.day == components2.day)
-            
-            XCTAssertTrue(isSameDate, "Must be same day ignoting time")
+            XCTAssertFalse(date.isEqualToDateIgnoringTime(yesterday), "Must be less")
+            XCTAssertFalse(date.isEqualToDateIgnoringTime(tomorrow), "Must be greather")
         }
         
     }
     
     func testDateByAddingDays () {
-        
-        let date = NSDate()
-        let values: [Int] = [Int(arc4random_uniform(100)), Int(arc4random_uniform(100)), Int(arc4random_uniform(100))]
-        
-        for value in values {
-            let timeInterval:NSTimeInterval = date.timeIntervalSinceReferenceDate + TimePeriod.Day.rawValue * NSTimeInterval(value)
-            let etalon = NSDate(timeIntervalSinceReferenceDate: timeInterval)
+        for _ in 0 ..< 10 {
+            let date = NSDate(timeIntervalSince1970: NSTimeInterval(arc4random()))
+            let value = Int(arc4random_uniform(100))
             
+            let timeInterval:NSTimeInterval = date.timeIntervalSinceReferenceDate + 24*60*60 * NSTimeInterval(value)
+            
+            let etalon = NSDate(timeIntervalSinceReferenceDate: timeInterval)
             let result = date.dateByAddingDays(value)
             
             XCTAssertEqual(etalon, result, "Must be equal")
@@ -149,23 +166,15 @@ class FSE_NSDateTests: XCTestCase {
     }
     
     func testTomorrow () {
-        let date = NSDate()
-        let etalon = date.dateByAddingDays(1)
-        let result = NSDate.tomorrow
-        
-        
-        let calendar = NSCalendar.currentCalendar()
-        let comps: NSCalendarUnit =
-        [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Weekday, NSCalendarUnit.WeekdayOrdinal]
-        
-        
-        let components1 = calendar.components(comps, fromDate:etalon)
-        let components2 = calendar.components(comps, fromDate:result)
-        let isSameDate =  (components1.year == components2.year) &&
-            (components1.month == components2.month) &&
-            (components1.day == components2.day)
-
-        XCTAssertTrue(isSameDate, "Must be same date")
+        for _ in 0 ..< 10 {
+            let timestamp = NSTimeInterval(arc4random())
+            
+            let date = NSDate(timeIntervalSince1970: timestamp)
+            let etalon = NSDate(timeIntervalSince1970: timestamp + 24*60*60)
+            let result = date.tomorrow
+            
+            XCTAssertTrue(etalon == result, "Must be same date")
+        }
     }
     
     

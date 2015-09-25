@@ -43,14 +43,30 @@ enum DatePeriod:Int {
     }
 }
 
+extension NSTimeInterval {
+    var timezone: NSTimeInterval {
+        let calendar = NSCalendar.currentCalendar()
+        let date = NSDate(timeIntervalSince1970: self)
+        
+        let timezoneOffset = NSTimeInterval(calendar.timeZone.secondsFromGMT)
+        let daylightOffset = calendar.timeZone.isDaylightSavingTimeForDate(date) ? calendar.timeZone.daylightSavingTimeOffset : 0
+        
+        return timezoneOffset + daylightOffset
+    }
+}
+
 extension NSDate {
+    
+    var timezone: NSTimeInterval {
+        return self.timeIntervalSince1970.timezone
+    }
     
     func isDateToday () -> Bool {
         return NSDate().midnightDate() == self.midnightDate()
     }
     
     func isTomorrow () -> Bool {
-        return self.isEqualToDateIgnoringTime(NSDate.tomorrow)
+        return self.isEqualToDateIgnoringTime(NSDate().tomorrow)
     }
     
     func isThisWeek () -> Bool {
@@ -58,9 +74,12 @@ extension NSDate {
     }
     
     func midnightDate () -> NSDate {
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components( [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day], fromDate: self)
-        return calendar.dateFromComponents(components)!
+        
+        let timestamp = self.timeIntervalSince1970 + self.timezone
+        let midnightTimestamp = timestamp - timestamp%(TimePeriod.Day.rawValue)
+        
+        let result = NSDate(timeIntervalSince1970: midnightTimestamp - midnightTimestamp.timezone)
+        return result
     }
     
     func isSameWeekAsDate(date:NSDate) -> Bool
@@ -135,16 +154,7 @@ extension NSDate {
     }
     
     func isEqualToDateIgnoringTime (date:NSDate) -> Bool {
-        let calendar = NSCalendar.currentCalendar()
-        let comps: NSCalendarUnit =
-        [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Weekday, NSCalendarUnit.WeekdayOrdinal]
-        
-        
-        let components1 = calendar.components(comps, fromDate:self)
-        let components2 = calendar.components(comps, fromDate:date)
-        return  (components1.year == components2.year) &&
-            (components1.month == components2.month) &&
-            (components1.day == components2.day)
+        return self.midnightDate() == date.midnightDate()
     }
     
     func dateByAddingDays (days: Int) -> NSDate {
@@ -153,7 +163,7 @@ extension NSDate {
         return newDate
     }
     
-    class var tomorrow: NSDate {
-        return NSDate().dateByAddingDays(1)
+    var tomorrow: NSDate {
+        return self.dateByAddingDays(1)
     }
 }
