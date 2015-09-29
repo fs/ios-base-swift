@@ -29,15 +29,6 @@ class FSE_NSDateTests: XCTestCase {
         return timezoneOffset + daylightOffset
     }
     
-    let timezoneFromDate = {(date: NSDate) -> NSTimeInterval in
-        let calendar = NSCalendar.currentCalendar()
-        
-        let timezoneOffset = NSTimeInterval(calendar.timeZone.secondsFromGMT)
-        let daylightOffset = calendar.timeZone.isDaylightSavingTimeForDate(date) ? calendar.timeZone.daylightSavingTimeOffset : 0
-        
-        return timezoneOffset + daylightOffset
-    }
-    
     override func setUp() {
         super.setUp()
     }
@@ -51,13 +42,84 @@ class FSE_NSDateTests: XCTestCase {
             let timestamp = NSDate().timeIntervalSince1970
             let localTimestamp = timestamp - timestamp%(24*60*60) - self.timezoneFromInterval(timestamp)
             
-            let today       = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval())
-            let tomorrow    = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval() + 24*60*60)
-            let farAway     = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval() + 10*24*60*60)
+            let today           = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval())
+            let tomorrow        = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval() + 24*60*60)
+            let yesterday       = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval() - 24*60*60)
+            let farAway         = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval() + 24*60*60*10)
             
-            XCTAssertEqual(DatePeriod(date: today),     DatePeriod.Today, "Must be today")
-            XCTAssertEqual(DatePeriod(date: tomorrow),  DatePeriod.Tomorrow, "Must be tomorrow")
-            XCTAssertEqual(DatePeriod(date: farAway),   DatePeriod.Unknow, "Must be unknow")
+            XCTAssertEqual(DatePeriod(date: today),         DatePeriod.Today, "Must be today")
+            XCTAssertEqual(DatePeriod(date: tomorrow),      DatePeriod.Tomorrow, "Must be tomorrow")
+            XCTAssertNotEqual(DatePeriod(date: yesterday),  DatePeriod.Tomorrow, "Must be unknow")
+            XCTAssertEqual(DatePeriod(date: farAway),       DatePeriod.Unknow, "Must be unknow")
+        }
+    }
+    
+    func testTimezone () {
+        
+        let date = NSDate()
+        
+        let calendar = NSCalendar.currentCalendar()
+        
+        let timezoneOffset = NSTimeInterval(calendar.timeZone.secondsFromGMT)
+        let daylightOffset = calendar.timeZone.isDaylightSavingTimeForDate(date) ? calendar.timeZone.daylightSavingTimeOffset : 0
+        
+        let timezone = timezoneOffset + daylightOffset
+        
+        XCTAssertEqual(timezone, date.timezone, "Must be equal")
+        XCTAssertEqual(timezone, date.timeIntervalSince1970.timezone, "Must be equal")
+    }
+    
+    func testIsDateToday () {
+        let timestamp = NSDate().timeIntervalSince1970
+        let todayTimestamp      = timestamp - timestamp%(24*60*60) - self.timezoneFromInterval(timestamp)
+        let tomorrowTimestamp   = timestamp - timestamp%(24*60*60) - self.timezoneFromInterval(timestamp) + 24*60*60
+        let yesterdayTimestamp  = timestamp - timestamp%(24*60*60) - self.timezoneFromInterval(timestamp) - 24*60*60
+        
+        for _ in 0 ..< 5 {
+            let today       = NSDate(timeIntervalSince1970: todayTimestamp      + self.randomInterval())
+            let tomorrow    = NSDate(timeIntervalSince1970: tomorrowTimestamp   + self.randomInterval())
+            let yesterday   = NSDate(timeIntervalSince1970: yesterdayTimestamp  + self.randomInterval())
+            
+            XCTAssertTrue(today.isDateToday(), "Must be today")
+            XCTAssertFalse(tomorrow.isDateToday(), "Must be today")
+            XCTAssertFalse(yesterday.isDateToday(), "Must be today")
+        }
+        
+    }
+    
+    func testIsTomorrow () {
+        let timestamp = NSDate().timeIntervalSince1970
+        let todayTimestamp      = timestamp - timestamp%(24*60*60) - self.timezoneFromInterval(timestamp)
+        let tomorrowTimestamp   = timestamp - timestamp%(24*60*60) - self.timezoneFromInterval(timestamp) + 24*60*60
+        let yesterdayTimestamp  = timestamp - timestamp%(24*60*60) - self.timezoneFromInterval(timestamp) - 24*60*60
+        
+        for _ in 0 ..< 5 {
+            let today       = NSDate(timeIntervalSince1970: todayTimestamp      + self.randomInterval())
+            let tomorrow    = NSDate(timeIntervalSince1970: tomorrowTimestamp   + self.randomInterval())
+            let yesterday   = NSDate(timeIntervalSince1970: yesterdayTimestamp  + self.randomInterval())
+            
+            XCTAssertFalse(today.isTomorrow(), "Must be today")
+            XCTAssertTrue(tomorrow.isTomorrow(), "Must be today")
+            XCTAssertFalse(yesterday.isTomorrow(), "Must be today")
+        }
+    }
+    
+    func testIsThisWeek () {
+        let timestamp = NSDate().timeIntervalSince1970
+        let localTimestamp = timestamp - timestamp%(24*60*60) - self.timezoneFromInterval(timestamp)
+        
+        var week: [NSDate] = []
+        
+        for i in 1 ..< 7 {
+            let next = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval() + 24*60*60*NSTimeInterval(i))
+            let prev = NSDate(timeIntervalSince1970: localTimestamp + self.randomInterval() - 24*60*60*NSTimeInterval(i))
+            
+            week.append(next)
+            week.insert(prev, atIndex: 0)
+        }
+        
+        for date in week {
+            XCTAssertEqual(date.isSameWeekAsDate(NSDate()), date.isThisWeek(), "Must be equal")
         }
     }
     
