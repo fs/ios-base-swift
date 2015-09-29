@@ -13,68 +13,35 @@ extension UIView {
     //MARK: - Set size
     
     var size: CGSize {
-        set (value) {
-            self.frame.size = size
-        }
-        
-        get {
-            return self.frame.size
-        }
+        set (value) {self.frame.size = value}
+        get         {return self.frame.size}
     }
     
     var width:CGFloat {
-        
-        set (value) {
-            self.size = CGSizeMake(value, frame.size.height)
-        }
-        
-        get {
-            return self.frame.size.width
-        }
+        set (value) {self.size = CGSizeMake(value, frame.size.height)}
+        get         {return self.frame.size.width}
     }
     
     var height:CGFloat {
-        
-        set (value) {
-            self.size = CGSizeMake(frame.size.width, value)
-        }
-        
-        get {
-            return self.frame.size.height
-        }
+        set (value) {self.size = CGSizeMake(frame.size.width, value)}
+        get         {return self.frame.size.height}
     }
     
     //MARK: - Set origin
     
     var origin: CGPoint {
-        set (value) {
-            self.frame.origin = value
-        }
-        get {
-            return self.frame.origin
-        }
+        set (value) {self.frame.origin = value}
+        get         {return self.frame.origin}
     }
     
     var x: CGFloat {
-        
-        set (value) {
-            self.origin = CGPointMake(value, frame.origin.y)
-        }
-        
-        get {
-            return self.frame.origin.x
-        }
+        set (value) {self.origin = CGPointMake(value, frame.origin.y)}
+        get         {return self.frame.origin.x}
     }
     
     var y: CGFloat {
-        
-        set (value) {
-            self.origin = CGPointMake(frame.origin.x, value)
-        }
-        
-        get {
-            return self.frame.origin.y
-        }
+        set (value) {self.origin = CGPointMake(frame.origin.x, value)}
+        get         {return self.frame.origin.y}
     }
     
     //MARK: - Other
