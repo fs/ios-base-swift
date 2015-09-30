@@ -20,4 +20,15 @@ class FSE_UITextViewTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+    
+    func testGetTextHeight() {
+        var height =  UITextView.getTextHeight(forText: "test test test", width: 20, font: UIFont.systemFontOfSize(15))
+        XCTAssertEqual(height, 232, "Must be equal")
+        height = UITextView.getTextHeight(forText: "t", width: 20, font: UIFont.systemFontOfSize(15))
+        XCTAssertEqual(height, 35, "Must be equal")
+        height = UITextView.getTextHeight(forText: "t", width: 1000, font: UIFont.systemFontOfSize(15))
+        XCTAssertEqual(height, 35, "Must be equal")
+        height = UITextView.getTextHeight(forText: "t", width: 10, font: UIFont.systemFontOfSize(15))
+        XCTAssertEqual(height, 35, "Must be equal")
+    }
 }

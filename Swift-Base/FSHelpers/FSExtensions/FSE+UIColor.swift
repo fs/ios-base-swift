@@ -51,13 +51,13 @@ extension UIColor {
         }
         
         var red:CGFloat = 0
-        var blue:CGFloat = 0
         var green:CGFloat = 0
+        var blue:CGFloat = 0
         var alpha:CGFloat = 0
         
         self.getRed(&(red), green: &green, blue: &blue, alpha: &alpha)
         
-        let hexString:String = NSString(format: "%02x%02x%02x", (Int(red*255)), (Int(blue*255)), (Int(green*255))) as String
+        let hexString:String = NSString(format: "%02x%02x%02x", (Int(red*255)), (Int(green*255)), (Int(blue*255))) as String
         
         return hexString
     }

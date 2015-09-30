@@ -20,4 +20,21 @@ class FSE_UIColorTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+    
+    func testHexString() {
+        let colorBlack = UIColor.blackColor()
+        XCTAssertEqual(colorBlack.hexString(), "000000", "Must be equal")
+        
+        let colorRed = UIColor.redColor()
+         XCTAssertEqual(colorRed.hexString(), "ff0000", "Must be equal")
+        
+        let colorBlue = UIColor.blueColor()
+        XCTAssertEqual(colorBlue.hexString(), "0000ff", "Must be equal")
+        
+        let colorGreen = UIColor.greenColor()
+        XCTAssertEqual(colorGreen.hexString(), "00ff00", "Must be equal")
+        
+        let colorWhite = UIColor.whiteColor()
+        XCTAssertEqual(colorWhite.hexString(), "ffffff", "Must be equal")
+    }
 }
