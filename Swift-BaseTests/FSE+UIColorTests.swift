@@ -21,20 +21,36 @@ class FSE_UIColorTests: XCTestCase {
         super.tearDown()
     }
     
+    func testInitWithHexAndAlpha () {
+        for _ in 0 ..< 5 {
+            let red     = CGFloat(arc4random_uniform(255))/255.0
+            let green   = CGFloat(arc4random_uniform(255))/255.0
+            let blue    = CGFloat(arc4random_uniform(255))/255.0
+            let alpha   = CGFloat(arc4random_uniform(255))/255.0
+            
+            let hexString = NSString(format: "%02x%02x%02x", (Int(red*255)), (Int(green*255)), (Int(blue*255))) as String
+            
+            let color           = UIColor(red: red, green: green, blue: blue, alpha: alpha)
+            let defaultColor    = UIColor(red: red, green: green, blue: blue, alpha: 1)
+            
+            let result          = UIColor(hexString: hexString, alpha: alpha)!
+            let defaultResult   = UIColor(hexString: hexString)!
+            
+            XCTAssertEqual(color.description, result.description, "Must be equal")
+            XCTAssertEqual(defaultColor.description, defaultResult.description, "Must be equal")
+        }
+    }
+    
     func testHexString() {
-        let colorBlack = UIColor.blackColor()
-        XCTAssertEqual(colorBlack.hexString(), "000000", "Must be equal")
-        
-        let colorRed = UIColor.redColor()
-         XCTAssertEqual(colorRed.hexString(), "ff0000", "Must be equal")
-        
-        let colorBlue = UIColor.blueColor()
-        XCTAssertEqual(colorBlue.hexString(), "0000ff", "Must be equal")
-        
-        let colorGreen = UIColor.greenColor()
-        XCTAssertEqual(colorGreen.hexString(), "00ff00", "Must be equal")
-        
-        let colorWhite = UIColor.whiteColor()
-        XCTAssertEqual(colorWhite.hexString(), "ffffff", "Must be equal")
+        for _ in 0 ..< 5 {
+            let red     = CGFloat(arc4random_uniform(255))/255.0
+            let green   = CGFloat(arc4random_uniform(255))/255.0
+            let blue    = CGFloat(arc4random_uniform(255))/255.0
+            
+            let etalon = NSString(format: "%02x%02x%02x", (Int(red*255)), (Int(green*255)), (Int(blue*255))) as String
+            let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
+            
+            XCTAssertEqual(etalon, color.hexString(), "Must be equal")
+        }
     }
 }
