@@ -127,7 +127,7 @@ class FSHelperTests: XCTestCase {
                         let alpha   = CGFloat(a*100/count)
                         
                         let etalon = UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha/100)
-                        let value = RGBA(red, g: green, b: blue, a: alpha/100)
+                        let value = RGBA(red, green, blue, alpha/100)
                         
                         var eRedPointer:    CGFloat = -1
                         var eGreenPointer:  CGFloat = -1

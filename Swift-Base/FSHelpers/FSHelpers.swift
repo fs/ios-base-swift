@@ -72,8 +72,8 @@ func SystemVersionLessThanOrEqualTo(version: String) -> Bool {
 
 //MARK: - Images and colors
 
-func RGBA (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {    
-    return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)
+func RGBA (r:CGFloat, _ g:CGFloat, _ b:CGFloat, _ a:CGFloat) -> UIColor {
+    return UIColor(red: r/255, green: g/255, blue: b/255, alpha: a)
 }
 
 func ImageFromColor (color:UIColor) -> UIImage {

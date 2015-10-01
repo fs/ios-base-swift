@@ -29,10 +29,10 @@ struct BitmapPixel {
         
         color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         
-        self.r  = UInt8(red*255)
-        self.g  = UInt8(green*255)
-        self.b  = UInt8(blue*255)
-        self.a  = UInt8(alpha*255)
+        self.r  = UInt8(red     * 255)
+        self.g  = UInt8(green   * 255)
+        self.b  = UInt8(blue    * 255)
+        self.a  = UInt8(alpha   * 255)
     }
     
     var value: UInt32 {
@@ -47,10 +47,15 @@ struct BitmapPixel {
     }
     
     var color: UIColor {
-        return UIColor( red:    CGFloat(self.r/255)/100,
-            green:  CGFloat(self.g/255)/100,
-            blue:   CGFloat(self.b/255)/100,
-            alpha:  CGFloat(self.a/255)/100)
+        return UIColor(
+            red:    CGFloat(self.r)/255,
+            green:  CGFloat(self.g)/255,
+            blue:   CGFloat(self.b)/255,
+            alpha:  CGFloat(self.a)/255)
+    }
+    
+    var description: String {
+        return "\(self.r)|\(self.g)|\(self.b)|\(self.a)"
     }
     
     private var brightness32: UInt32 {
@@ -71,7 +76,7 @@ class Bitmap: NSObject {
     var data: UnsafeMutablePointer<UInt32>
     var size: (width: Int, height: Int)
     
-    init (data: UnsafeMutablePointer<UInt32>, size: (Int, Int)) {
+    init (data: UnsafeMutablePointer<UInt32>, size: (width: Int, height: Int)) {
         self.size = size
         self.data = data
         super.init()
@@ -88,8 +93,28 @@ class Bitmap: NSObject {
     }
     
     func getCGImage () -> CGImage {
-        let image = UIImage.imageFromBitmap(self)
-        return image
+        let width   = self.size.width
+        let height  = self.size.height
+        
+        let bitsPerComponent    = 8
+        let bytesPerPixel       = 4
+        let bitsPerPixel        = bytesPerPixel * 8
+        let bytesPerRow         = width * bytesPerPixel
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        
+        let renderingIntent = CGColorRenderingIntent.RenderingIntentDefault
+        
+        let bitmapInfo = CGBitmapInfo(rawValue: CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue).rawValue | CGBitmapInfo.ByteOrder32Big.rawValue)
+        
+        let bitmapData = self.data
+        
+        let bufferLength = width * height * bytesPerPixel
+        let provider = CGDataProviderCreateWithData(nil, bitmapData, bufferLength, nil)
+        
+        let image = CGImageCreate(width, height, bitsPerComponent, bitsPerPixel, bytesPerRow, colorSpace, bitmapInfo, provider, nil, true, renderingIntent)
+        
+        return image!
     }
     
     func getUIImage (scale: CGFloat = UIScreen.mainScreen().scale, orientation: UIImageOrientation = UIImageOrientation.Up) -> UIImage {
@@ -141,29 +166,9 @@ extension UIImage {
         return Bitmap(data: bitmapData, size: (pixelsWide, pixelsHigh))
     }
     
-    class func imageFromBitmap (bitmap: Bitmap) -> CGImageRef {
-        
-        let width   = bitmap.size.width
-        let height  = bitmap.size.height
-        
-        let bitsPerComponent    = 8
-        let bytesPerPixel       = 4
-        let bitsPerPixel        = bytesPerPixel * 8
-        let bytesPerRow         = width * bytesPerPixel
-        
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        
-        let renderingIntent = CGColorRenderingIntent.RenderingIntentDefault
-        
-        let bitmapInfo = CGBitmapInfo(rawValue: CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue).rawValue | CGBitmapInfo.ByteOrder32Big.rawValue)
-        
-        let bitmapData = bitmap.data
-        
-        let bufferLength = width * height * bytesPerPixel
-        let provider = CGDataProviderCreateWithData(nil, bitmapData, bufferLength, nil)
-        
-        let image = CGImageCreate(width, height, bitsPerComponent, bitsPerPixel, bytesPerRow, colorSpace, bitmapInfo, provider, nil, true, renderingIntent)
-        
-        return image!
+    var base64: String {
+        let imageData = UIImagePNGRepresentation(self)!
+        let base64String = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        return base64String
     }
 }

@@ -36,10 +36,10 @@ extension UIColor {
         NSScanner(string: cString).scanHexInt(&rgbValue)
         
         self.init(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
+            red     : CGFloat((rgbValue & 0xFF0000) >> 16)  / 255,
+            green   : CGFloat((rgbValue & 0x00FF00) >> 8)   / 255,
+            blue    : CGFloat((rgbValue & 0x0000FF) >> 0)   / 255,
+            alpha   : CGFloat(1.0)
         )
     }
     
@@ -50,10 +50,10 @@ extension UIColor {
             return "ffffff"
         }
         
-        var red:CGFloat = 0
-        var blue:CGFloat = 0
-        var green:CGFloat = 0
-        var alpha:CGFloat = 0
+        var red     : CGFloat = 0
+        var blue    : CGFloat = 0
+        var green   : CGFloat = 0
+        var alpha   : CGFloat = 0
         
         self.getRed(&(red), green: &green, blue: &blue, alpha: &alpha)
         
