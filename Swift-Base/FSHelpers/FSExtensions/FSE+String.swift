@@ -14,24 +14,16 @@ extension String {
         return self.getStringHeight(font, width: CGFloat.max)
     }
     
-    func getLineCount (font:UIFont, size:CGSize) -> Int {
+    func getLineCount (font:UIFont) -> Int {
         let rowHeight = self.getRowHeight(font)
         return Int(ceil(rowHeight / font.lineHeight))
     }
     
-    func URLEncodedString () -> String {
-        let str = CFURLCreateStringByAddingPercentEscapes(
-            nil,
-            self,
-            nil,
-            "!*'();:@&=+$,/?%#[]",
-            CFStringBuiltInEncodings.UTF8.rawValue
-        )
-        return str as String
+    func URLEncodedString () -> String? {
+        return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
     }
     
     func URLDecodedString () -> String? {
-        
         return self.stringByRemovingPercentEncoding
     }
     

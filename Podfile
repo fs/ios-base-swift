@@ -11,7 +11,3 @@ pod 'AFNetworking', '~> 2.6'
 #pod 'NSData+Base64'
 #pod 'MKStoreKit'
 #pod 'NSDate-Extensions'
-
-target 'Swift-BaseTests', :exclusive => true do
-    pod 'KIF', '~> 3.2', :configurations => ['Debug', 'Debug Staging']
-end

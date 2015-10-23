@@ -28,7 +28,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "21DB302619DD2289003A418D"
+               BlueprintIdentifier = "212D018A1BB1986B00B34340"
                BuildableName = "Swift-BaseTests.xctest"
                BlueprintName = "Swift-BaseTests"
                ReferencedContainer = "container:Swift-Base.xcodeproj">
@@ -37,16 +37,17 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Test"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "NO"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "21DB302619DD2289003A418D"
+               BlueprintIdentifier = "212D018A1BB1986B00B34340"
                BuildableName = "Swift-BaseTests.xctest"
                BlueprintName = "Swift-BaseTests"
                ReferencedContainer = "container:Swift-Base.xcodeproj">
@@ -62,6 +63,13 @@
             ReferencedContainer = "container:Swift-Base.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "Testing"
+            value = "Unit"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

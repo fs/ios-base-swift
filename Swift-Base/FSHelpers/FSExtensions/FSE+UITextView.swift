@@ -70,7 +70,7 @@ class FSTextView :UITextView {
     private func setupPlaceholder () {
         self.placeholderLabel.preferredMaxLayoutWidth = self.frame.width
         self.placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.placeholderLabel.textColor = RGBA(198, g: 198, b: 204, a: 1)
+        self.placeholderLabel.textColor = RGBA(198, 198, 204, 1)
         self.placeholderLabel.userInteractionEnabled = false
         self.placeholderLabel.numberOfLines = 0
         self.placeholderLabel.font = self.font
