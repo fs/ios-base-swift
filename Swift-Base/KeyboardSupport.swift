@@ -1,5 +1,5 @@
 //
-//  KeyboardSupport.swift
+//  KeyboardScrollSupport.swift
 //  Swift-Base
 //
 //  Created by Kruperfone on 09.11.15.
@@ -9,36 +9,38 @@
 import UIKit
 
 /*
-    You must did not forget to call keyboardSupportKeyboardWillHide: method in your `deinit`
+    You must did not forget to call KeyboardScrollSupportKeyboardWillHide: method in your `deinit`
 */
 
-protocol KeyboardSupport {
-    var keyboardSupportScrollView   : UIScrollView? {get}
-    var keyboardSupportActiveField  : UIView? {get}
+protocol KeyboardScrollSupport {
+    var keyboardScrollSupportScrollView   : UIScrollView?   {get}
+    var keyboardScrollSupportActiveField  : UIView?         {get}
     
-    func keyboardSupportRegisterForNotifications ()
-    func keyboardSupportRemoveNotifications ()
+    func keyboardScrollSupportRegisterForNotifications  ()
+    func keyboardScrollSupportRemoveNotifications       ()
     
-    func keyboardSupportKeyboardWillShow (notif: NSNotification)
-    func keyboardSupportKeyboardWillHide (notif: NSNotification)
+    func keyboardScrollSupportKeyboardWillShow (notif: NSNotification)
+    func keyboardScrollSupportKeyboardWillHide (notif: NSNotification)
 }
 
-extension KeyboardSupport {
-    var keyboardSupportActiveField  : UIView? {
+extension KeyboardScrollSupport {
+    var keyboardScrollSupportActiveField  : UIView? {
         return nil
     }
 }
 
-extension KeyboardSupport where Self: AnyObject {
+extension KeyboardScrollSupport where Self: AnyObject {
     
-    func keyboardSupportRegisterForNotifications () {
+    func keyboardScrollSupportRegisterForNotifications () {
+        
         let center = NSNotificationCenter.defaultCenter()
         
-        center.addObserver(self, selector: "keyboardWillShow:", name:UIKeyboardWillShowNotification, object: nil)
-        center.addObserver(self, selector: "keyboardWillHide:", name:UIKeyboardWillHideNotification, object: nil)
+        center.addObserver(self, selector: "keyboardScrollSupportKeyboardWillShow:", name:UIKeyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: "keyboardScrollSupportKeyboardWillHide:", name:UIKeyboardWillHideNotification, object: nil)
     }
     
-    func keyboardSupportRemoveNotifications () {
+    func keyboardScrollSupportRemoveNotifications () {
+        
         let center = NSNotificationCenter.defaultCenter()
         
         center.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
@@ -46,11 +48,11 @@ extension KeyboardSupport where Self: AnyObject {
     }
 }
 
-extension KeyboardSupport where Self: UIViewController {
+extension KeyboardScrollSupport where Self: UIViewController {
     
-    func keyboardSupportKeyboardWillShow (notif: NSNotification) {
+    func keyboardScrollSupportKeyboardWillShow (notif: NSNotification) {
         
-        guard let scrollView = self.keyboardSupportScrollView else {return}
+        guard let scrollView = self.keyboardScrollSupportScrollView else {return}
         
         guard let info = notif.userInfo else {return}
         guard let value = info[UIKeyboardFrameEndUserInfoKey] as? NSValue else {return}
@@ -63,7 +65,7 @@ extension KeyboardSupport where Self: UIViewController {
         
         // If active text field is hidden by keyboard, scroll it so it's visible
         // Your app might not need or want this behavior.
-        guard let activeField = self.keyboardSupportActiveField else {return}
+        guard let activeField = self.keyboardScrollSupportActiveField else {return}
         
         var viewRect = self.view.frame
         viewRect.size.height -= keyboardFrame.height
@@ -73,9 +75,9 @@ extension KeyboardSupport where Self: UIViewController {
         }
     }
     
-    func keyboardSupportKeyboardWillHide (notif: NSNotification) {
+    func keyboardScrollSupportKeyboardWillHide (notif: NSNotification) {
         
-        guard let scrollView = self.keyboardSupportScrollView else {return}
+        guard let scrollView = self.keyboardScrollSupportScrollView else {return}
         
         let contentInsets = UIEdgeInsetsZero
         scrollView.contentInset = contentInsets
@@ -83,14 +85,14 @@ extension KeyboardSupport where Self: UIViewController {
     }
 }
 
-extension KeyboardSupport where Self: UITableViewController {
-    var keyboardSupportScrollView: UIScrollView? {
+extension KeyboardScrollSupport where Self: UITableViewController {
+    var keyboardScrollSupportScrollView: UIScrollView? {
         return self.tableView
     }
 }
 
-extension KeyboardSupport where Self: UICollectionViewController {
-    var keyboardSupportScrollView: UIScrollView? {
+extension KeyboardScrollSupport where Self: UICollectionViewController {
+    var keyboardScrollSupportScrollView: UIScrollView? {
         return self.collectionView
     }
 }
