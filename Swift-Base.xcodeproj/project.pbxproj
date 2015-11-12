@@ -27,7 +27,7 @@
 		21A143371B99A479004116B8 /* FSHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1432D1B99A479004116B8 /* FSHelpers.swift */; };
 		21A566001BB2BF7600A96C23 /* FSE+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A565FF1BB2BF7600A96C23 /* FSE+UIImage.swift */; };
 		21B3D1A119E6E2D700EF0D52 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B3D1A019E6E2D700EF0D52 /* Crashlytics.framework */; };
-		21C18F681BF0991300B79A7F /* KeyboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C18F671BF0991300B79A7F /* KeyboardSupport.swift */; };
+		21C18F681BF0991300B79A7F /* KeyboardScrollSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C18F671BF0991300B79A7F /* KeyboardScrollSupport.swift */; };
 		21DB301519DD2289003A418D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB301419DD2289003A418D /* AppDelegate.swift */; };
 		21DB301F19DD2289003A418D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DB301E19DD2289003A418D /* Images.xcassets */; };
 		21DB304919DD2D6D003A418D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB304819DD2D6D003A418D /* Constants.swift */; };
@@ -111,7 +111,7 @@
 		21A1432D1B99A479004116B8 /* FSHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSHelpers.swift; sourceTree = "<group>"; };
 		21A565FF1BB2BF7600A96C23 /* FSE+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSE+UIImage.swift"; sourceTree = "<group>"; };
 		21B3D1A019E6E2D700EF0D52 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		21C18F671BF0991300B79A7F /* KeyboardSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardSupport.swift; sourceTree = "<group>"; };
+		21C18F671BF0991300B79A7F /* KeyboardScrollSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardScrollSupport.swift; sourceTree = "<group>"; };
 		21C9F2DF19E833300084D18D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		21DB300F19DD2289003A418D /* Swift-Base.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Base.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DB301319DD2289003A418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -290,7 +290,7 @@
 		21C18F661BF0978800B79A7F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				21C18F671BF0991300B79A7F /* KeyboardSupport.swift */,
+				21C18F671BF0991300B79A7F /* KeyboardScrollSupport.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -596,7 +596,7 @@
 				21A143371B99A479004116B8 /* FSHelpers.swift in Sources */,
 				21A143311B99A479004116B8 /* FSE+NSDate.swift in Sources */,
 				21A1432F1B99A479004116B8 /* FSE+Dictionary.swift in Sources */,
-				21C18F681BF0991300B79A7F /* KeyboardSupport.swift in Sources */,
+				21C18F681BF0991300B79A7F /* KeyboardScrollSupport.swift in Sources */,
 				2158286F1A91E56600833BE6 /* APIManager.swift in Sources */,
 				21DB304919DD2D6D003A418D /* Constants.swift in Sources */,
 				21A143301B99A479004116B8 /* FSE+Double.swift in Sources */,
