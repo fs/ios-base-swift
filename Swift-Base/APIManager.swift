@@ -60,6 +60,7 @@ class APIManager: NSObject {
 
 //MARK: - Basic methods
 extension APIManager {
+    
     //MARK: - Basic Methods
     
     func GET (endpoint:String,
@@ -69,25 +70,24 @@ extension APIManager {
             
             let operation = manager.GET(endpoint, parameters: params, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
                 
-                if let response = responseObject as? Dictionary<String, AnyObject> {
-                    
-                    if let _ = response["status"] as? String {
-                        let error = NSError(domain: NSURLErrorDomain, code: NSURLErrorUnsupportedURL, userInfo: nil)
-                        failure?(operation: operation, error: error)
-                        
-                        return
-                        
-                    }
-                }
-                
                 success?(operation: operation, responseObject: responseObject)
                 
                 }) { (operation: AFHTTPRequestOperation?, error: NSError) -> Void in
                     
-                    if let operation = operation where !operation.cancelled {
-                        failure?(operation: operation, error: error)
-                    } else {
-                        failure?(operation: operation, error: APIManagerError.cancelled.generateError())
+                    var resultError = error
+                    
+                    guard let lOperation = operation else {
+                        resultError = APIManagerError.connectionMissing.generateError()
+                        return
+                    }
+                    
+                    guard !lOperation.cancelled else {
+                        resultError = APIManagerError.cancelled.generateError()
+                        return
+                    }
+                    
+                    defer {
+                        failure?(operation: operation, error: resultError)
                     }
             }
             
@@ -105,10 +105,20 @@ extension APIManager {
                 
                 }) { (operation: AFHTTPRequestOperation?, error: NSError) -> Void in
                     
-                    if let operation = operation where !operation.cancelled {
-                        failure?(operation: operation, error: error)
-                    } else {
-                        failure?(operation: operation, error: APIManagerError.cancelled.generateError())
+                    var resultError = error
+                    
+                    guard let lOperation = operation else {
+                        resultError = APIManagerError.connectionMissing.generateError()
+                        return
+                    }
+                    
+                    guard !lOperation.cancelled else {
+                        resultError = APIManagerError.cancelled.generateError()
+                        return
+                    }
+                    
+                    defer {
+                        failure?(operation: operation, error: resultError)
                     }
             }
             

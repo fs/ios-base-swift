@@ -11,8 +11,9 @@ import Foundation
 enum APIManagerError: Int {
     
     case cancelled = 0
-    case deviceTokenIsMissing
+    case connectionMissing
     case notImplemented
+    case deviceTokenIsMissing
     
     //---------------//
     static let domain: String = "com.apimanager"
@@ -29,6 +30,9 @@ enum APIManagerError: Int {
         case cancelled:
             return "\(self.rawValue): Request was cancelled"
             
+        case connectionMissing:
+            return "\(self.rawValue): Connection is missing"
+            
         case notImplemented:
             return "\(self.rawValue): This feature is not implemented yet"
             
@@ -43,11 +47,15 @@ enum APIManagerError: Int {
         case cancelled:
             return "Operation was cancelled"
             
-        case deviceTokenIsMissing:
-            return "Device token is missing"
+        case connectionMissing:
+            return "Connection is missing"
             
         case notImplemented:
             return "The feature is not implemented"
+            
+        case deviceTokenIsMissing:
+            return "Device token is missing"
+            
         }
     }
     
