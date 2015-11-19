@@ -61,7 +61,7 @@ class APIManager: NSObject {
 //MARK: - Basic methods
 extension APIManager {
     
-    func failureErrorRecognizer (operation: AFHTTPRequestOperation?, error: NSError?) -> NSError? {
+    func failureErrorRecognizer (operation: AFHTTPRequestOperation?, error: NSError) -> NSError {
         
         guard let lOperation = operation else {
             return APIManagerError.connectionMissing.generateError()
@@ -78,7 +78,7 @@ extension APIManager {
     func GET (endpoint:String,
         params:Dictionary<String, AnyObject>?,
         success:((operation: AFHTTPRequestOperation, responseObject: AnyObject?) -> Void)?,
-        failure:((operation: AFHTTPRequestOperation?, error: NSError?) -> Void)?) -> AFHTTPRequestOperation? {
+        failure:((operation: AFHTTPRequestOperation?, error: NSError) -> Void)?) -> AFHTTPRequestOperation? {
             
             let operation = manager.GET(endpoint, parameters: params, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
                 
@@ -99,7 +99,7 @@ extension APIManager {
     func POST (endpoint:String,
         params:Dictionary<String, AnyObject>?,
         success:((operation: AFHTTPRequestOperation, responseObject: AnyObject?) -> Void)?,
-        failure:((operation: AFHTTPRequestOperation?, error: NSError?) -> Void)?) -> AFHTTPRequestOperation? {
+        failure:((operation: AFHTTPRequestOperation?, error: NSError) -> Void)?) -> AFHTTPRequestOperation? {
             
             let operation = manager.POST(endpoint, parameters: params, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
                 
