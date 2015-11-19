@@ -9,26 +9,37 @@
 import UIKit
 
 /*----------API keys---------*/
-let SBKeyAPIKeyCrashlitycs  = ""
-let SBKeyAPIKeyGoogle       = ""
+//For API Keys use prefix ABKeyAPI where AB is capital letters of your project name
+//For example: 'SBKeyAPIMock' for Swift-Base
 
 /*--------------User Defaults keys-------------*/
-let SBKeyUserDefaultsDeviceTokenData = "kUserDefaultsDeviceTokenData"
-let SBKeyUserDefaultsDeviceTokenString = "kUserDefaultsDeviceTokenString"
+let SBKeyUserDefaultsDeviceTokenData    = "kUserDefaultsDeviceTokenData"
+let SBKeyUserDefaultsDeviceTokenString  = "kUserDefaultsDeviceTokenString"
 
 /*----------Notifications---------*/
-let SBNotificationMock:String = "mock_notification";
+//For Notifications use prefix ABNotif where AB is capital letters of your project name
+//For example: 'SBNotifMock' for Swift-Base
 
 /*--------------Fonts-------------*/
 
 //Example of custom font family name
-enum FontFamilyName {
-    case Regular
+enum AppFont: Int {
+    case Regular = 0
     case Bold
     case Italic
     
-    static let fontFamilyName = "FontFamilyName"
-    static let allValues = [FontFamilyName.Regular, FontFamilyName.Bold, FontFamilyName.Italic]
+    static var allValues: [AppFont] {
+        var fonts: [AppFont] = []
+        var i = 0
+        while let font = AppFont(rawValue: i) {
+            fonts.append(font)
+            i++
+        }
+        return fonts
+    }
+    
+    static let familyName = "FontFamilyName"
+    var familyName: String {return AppFont.familyName}
     
     var description : String {
         switch self {
@@ -50,5 +61,4 @@ enum FontFamilyName {
 /*----------Colors----------*/
 
 //Example of custom color schemes in application
-let MyRedApplicationColor = UIColor.redColor()
-let MyGreenApplicationColor = UIColor.greenColor()
+let AppColor              = UIColor.clearColor()
