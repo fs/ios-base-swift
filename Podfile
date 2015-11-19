@@ -1,7 +1,10 @@
-platform :ios, '7.1'
+platform :ios, '8.0'
 source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
 
-pod 'AFNetworking', '~> 2.6'
+pod 'FSHelpers+Swift'
+
+pod 'AFNetworking'
 #pod 'SDWebImage', '~> 3.7'
 #pod 'NSDate-Extensions'
 #pod 'MagicalRecord'
