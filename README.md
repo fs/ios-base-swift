@@ -57,8 +57,8 @@ platform :ios, '8.0'
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-pod 'FSHelpers+Swift', '~> 1.1'
-pod 'AFNetworking', '~> 2.5'
+pod 'FSHelpers+Swift'
+pod 'AFNetworking'
 #pod 'SDWebImage', '~> 3.7'
 #pod 'NSDate-Extensions'
 #pod 'MagicalRecord'
@@ -97,6 +97,9 @@ git commit -m "Initial commit"
 git remote add origin git@github.com:fs/some-git-repository.git
 git push origin master 
 ```
+
+## License
+ios-base-swift is released under the MIT license. See LICENSE for details.
 
 ## Credits
 
