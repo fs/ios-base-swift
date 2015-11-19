@@ -9,14 +9,16 @@
 import UIKit
 
 /*----------API keys---------*/
-
+//For API Keys use prefix ABKeyAPI where AB is capital letters of your project name
+//For example: 'SBKeyAPIMock' for Swift-Base
 
 /*--------------User Defaults keys-------------*/
 let SBKeyUserDefaultsDeviceTokenData    = "kUserDefaultsDeviceTokenData"
 let SBKeyUserDefaultsDeviceTokenString  = "kUserDefaultsDeviceTokenString"
 
 /*----------Notifications---------*/
-
+//For Notifications use prefix ABNotif where AB is capital letters of your project name
+//For example: 'SBNotifMock' for Swift-Base
 
 /*--------------Fonts-------------*/
 
