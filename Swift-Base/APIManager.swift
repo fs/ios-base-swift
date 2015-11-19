@@ -61,8 +61,20 @@ class APIManager: NSObject {
 //MARK: - Basic methods
 extension APIManager {
     
-    //MARK: - Basic Methods
+    func failureErrorRecognizer (operation: AFHTTPRequestOperation?, error: NSError?) -> NSError? {
+        
+        guard let lOperation = operation else {
+            return APIManagerError.connectionMissing.generateError()
+        }
+        
+        guard !lOperation.cancelled else {
+            return APIManagerError.cancelled.generateError()
+        }
+        
+        return error
+    }
     
+    //MARK: - Basic Methods
     func GET (endpoint:String,
         params:Dictionary<String, AnyObject>?,
         success:((operation: AFHTTPRequestOperation, responseObject: AnyObject?) -> Void)?,
@@ -74,17 +86,7 @@ extension APIManager {
                 
                 }) { (operation: AFHTTPRequestOperation?, error: NSError) -> Void in
                     
-                    var resultError = error
-                    
-                    guard let lOperation = operation else {
-                        resultError = APIManagerError.connectionMissing.generateError()
-                        return
-                    }
-                    
-                    guard !lOperation.cancelled else {
-                        resultError = APIManagerError.cancelled.generateError()
-                        return
-                    }
+                    var resultError = self.failureErrorRecognizer(operation, error: error)
                     
                     defer {
                         failure?(operation: operation, error: resultError)
@@ -105,17 +107,7 @@ extension APIManager {
                 
                 }) { (operation: AFHTTPRequestOperation?, error: NSError) -> Void in
                     
-                    var resultError = error
-                    
-                    guard let lOperation = operation else {
-                        resultError = APIManagerError.connectionMissing.generateError()
-                        return
-                    }
-                    
-                    guard !lOperation.cancelled else {
-                        resultError = APIManagerError.cancelled.generateError()
-                        return
-                    }
+                    var resultError = self.failureErrorRecognizer(operation, error: error)
                     
                     defer {
                         failure?(operation: operation, error: resultError)
