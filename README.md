@@ -95,7 +95,7 @@ git init
 git add --all
 git commit -m "Initial commit"
 git remote add origin git@github.com:fs/some-git-repository.git
-git push origin master 
+git push origin master
 ```
 
 ## License
@@ -107,5 +107,4 @@ iOS Base is maintained by [Nikita Fomin](http://github.com/nikitafomin), [Sergey
 It was written by [Flatstack](http://www.flatstack.com) with the help of our
 [contributors](http://github.com/fs/ios-base/contributors).
 
-
-[![Flatstack](https://avatars0.githubusercontent.com/u/15136?v=2&s=200)](http://www.flatstack.com)
+[<img src="http://www.flatstack.com/logo.svg" width="100"/>](http://www.flatstack.com)
