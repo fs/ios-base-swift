@@ -29,6 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         #endif
         
+        #if DEBUG
+            // print documents directory and device ID
+            print("\n*******************************************\nDOCUMENTS\n\(NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0])\n*******************************************\n")
+            print("\n*******************************************\nDEVICE ID\n\(UIDevice.currentDevice().identifierForVendor?.UUIDString)\n*******************************************\n")
+        #endif
+        
         //setting AFNetwork
         /*
         AFNetworkReachabilityManager.sharedManager().startMonitoring()
