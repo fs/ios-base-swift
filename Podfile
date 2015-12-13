@@ -5,11 +5,11 @@ use_frameworks!
 pod 'FSHelpers+Swift'
 
 pod 'AFNetworking'
-#pod 'SDWebImage', '~> 3.7'
+#pod 'SDWebImage'
 #pod 'NSDate-Extensions'
 #pod 'MagicalRecord'
 #pod 'Reachability'
-#pod 'SVProgressHUD', '~> 1.0'
+#pod 'SVProgressHUD'
 #pod 'SSKeychain'
 #pod 'NSData+Base64'
 #pod 'MKStoreKit'
