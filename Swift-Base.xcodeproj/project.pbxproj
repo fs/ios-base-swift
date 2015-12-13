@@ -540,6 +540,7 @@
 			baseConfigurationReference = 51E82C8EB8DB50ECF52AE69A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_VERSION = v1;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -569,6 +570,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				URL_HOST = "https://apple.com";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Test;
@@ -608,7 +610,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_HOST = "https://apple.com";
 			};
 			name = Test;
 		};
@@ -617,6 +618,7 @@
 			baseConfigurationReference = CD792995EA1B8C035C9A51B2 /* Pods.release staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_VERSION = v1;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -647,6 +649,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				URL_HOST = "https://apple.com";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Test Staging";
@@ -686,7 +689,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_HOST = "https://apple.com";
 			};
 			name = "Test Staging";
 		};
@@ -695,6 +697,7 @@
 			baseConfigurationReference = FF3C7DA238EA7C51D060C78B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_VERSION = v1;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -729,6 +732,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				URL_HOST = "https://apple.com";
 			};
 			name = "AppStore Debug";
 		};
@@ -765,7 +769,6 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_HOST = "https://apple.com";
 			};
 			name = "AppStore Debug";
 		};
@@ -924,6 +927,7 @@
 			baseConfigurationReference = FF3C7DA238EA7C51D060C78B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_VERSION = v1;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -958,6 +962,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				URL_HOST = "https://apple.com";
 			};
 			name = Debug;
 		};
@@ -966,6 +971,7 @@
 			baseConfigurationReference = 51E82C8EB8DB50ECF52AE69A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_VERSION = v1;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -995,6 +1001,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				URL_HOST = "https://apple.com";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1032,7 +1039,6 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_HOST = "https://apple.com";
 			};
 			name = Debug;
 		};
@@ -1067,7 +1073,6 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_HOST = "https://apple.com";
 			};
 			name = Release;
 		};
@@ -1076,6 +1081,7 @@
 			baseConfigurationReference = AB848BC11E409F9A85D785F1 /* Pods.debug staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_VERSION = v1;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1110,6 +1116,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				URL_HOST = "https://apple.com";
 			};
 			name = "Debug Staging";
 		};
@@ -1146,7 +1153,6 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_HOST = "https://apple.com";
 			};
 			name = "Debug Staging";
 		};
@@ -1155,6 +1161,7 @@
 			baseConfigurationReference = CD792995EA1B8C035C9A51B2 /* Pods.release staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_VERSION = v1;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1185,6 +1192,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				URL_HOST = "https://apple.com";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release Staging";
@@ -1220,7 +1228,6 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_HOST = "https://apple.com";
 			};
 			name = "Release Staging";
 		};
@@ -1229,6 +1236,7 @@
 			baseConfigurationReference = 51E82C8EB8DB50ECF52AE69A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_VERSION = v1;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1258,6 +1266,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				URL_HOST = "https://apple.com";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = AppStore;
@@ -1293,7 +1302,6 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_HOST = "https://apple.com";
 			};
 			name = AppStore;
 		};
