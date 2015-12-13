@@ -18,7 +18,6 @@
 		2158286F1A91E56600833BE6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2158286E1A91E56600833BE6 /* APIManager.swift */; };
 		218C64B81BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 218C64B61BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld */; };
 		218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 218C64BD1BA07DDE00EEEDF1 /* Localizable.strings */; };
-		21B3D1A119E6E2D700EF0D52 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B3D1A019E6E2D700EF0D52 /* Crashlytics.framework */; };
 		21DB301519DD2289003A418D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB301419DD2289003A418D /* AppDelegate.swift */; };
 		21DB301F19DD2289003A418D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DB301E19DD2289003A418D /* Images.xcassets */; };
 		21DB304919DD2D6D003A418D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB304819DD2D6D003A418D /* Constants.swift */; };
@@ -84,7 +83,6 @@
 		218C64BB1BA07D3800EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_Storyboard.strings; sourceTree = "<group>"; };
 		218C64C21BA07E1F00EEEDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		218C64C31BA07E4300EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		21B3D1A019E6E2D700EF0D52 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		21C9F2DF19E833300084D18D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		21DB300F19DD2289003A418D /* Swift-Base.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Base.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DB301319DD2289003A418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */,
-				21B3D1A119E6E2D700EF0D52 /* Crashlytics.framework in Frameworks */,
 				A05B7FEDBE32B3F483B33908 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +131,13 @@
 				214F4FF51BFDC35C0084BE32 /* Protocols.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		19C66A341C1DC54800C44FE3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		19D856BF1AB5ECF50014C459 /* Travis CI */ = {
@@ -227,6 +231,7 @@
 				21DB301E19DD2289003A418D /* Images.xcassets */,
 				196D6E161BAB0736000B7997 /* Helpers */,
 				E731DC7A1A1CF1B700E12CBA /* Models */,
+				19C66A341C1DC54800C44FE3 /* Classes */,
 				E731DC711A1CB30C00E12CBA /* Views */,
 				E736C5A41A252B1500B8986E /* Controllers */,
 				21DB301219DD2289003A418D /* Supporting Files */,
@@ -253,7 +258,6 @@
 				213B89BE19F01A1E005D3749 /* CoreGraphics.framework */,
 				21513BBD19EBCBFA00EE6273 /* MediaPlayer.framework */,
 				21C9F2DF19E833300084D18D /* AVFoundation.framework */,
-				21B3D1A019E6E2D700EF0D52 /* Crashlytics.framework */,
 				7570731C5C4A951A2A3B3A1E /* libPods-Swift-BaseTests.a */,
 				1218E154FF6E17259B67BF8D /* Pods.framework */,
 			);
@@ -443,7 +447,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 6d91dfaf0a36cfbef5733b3c2d89d2fe7f137706 558b2bcf0efee324101f8bf45f64c08b525998f57a01e3e46d584125bda9afa2";
+			shellScript = "#\"${PODS_ROOT}/Fabric/Fabric.framework/run\" api_key build_secret";
 		};
 		654836B709D288B4C74C22AA /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
