@@ -16,43 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        #if TEST
-            switch TestingMode() {
-            case .Unit:
-                print("Unit Tests")
-                self.window?.rootViewController = UIViewController()
-                return true
-                
-            case .UI:
-                print("UI Tests")
-            }
-        #endif
-        
-        #if DEBUG
-            // print documents directory and device ID
-            print("\n*******************************************\nDOCUMENTS\n\(NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0])\n*******************************************\n")
-            print("\n*******************************************\nDEVICE ID\n\(UIDevice.currentDevice().identifierForVendor?.UUIDString)\n*******************************************\n")
-        #endif
-        
-        //setting AFNetwork
-        /*
-        AFNetworkReachabilityManager.sharedManager().startMonitoring()
-        AFNetworkActivityIndicatorManager.sharedManager().enabled   = true
-        */
-        
-        //setting SDWebImage
-        
-        /*
-        let imageCache:SDImageCache = SDImageCache.sharedImageCache()
-        imageCache.maxCacheSize     = 1024*1024*100 // 100mb on disk
-        imageCache.maxMemoryCost    = 1024*1024*10  // 10mb in memory
-        
-        let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.sharedDownloader()
-        imageDownloader.downloadTimeout          = 60.0
-        */
-        
-        //setting Crashlytics
-        Fabric.with([Crashlytics.self])
+        self.setupProject()
         
         return true
     }
@@ -110,5 +74,71 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.sharedApplication().registerForRemoteNotificationTypes([UIRemoteNotificationType.Alert, UIRemoteNotificationType.Sound, UIRemoteNotificationType.Badge])
         }
     }
+}
+
+extension AppDelegate {
+    
+    func setupProject() {
+        
+        self.printProjectSettings()
+        
+        self.setupProjectForTests()
+        
+        // setup AFNetwork
+        self.setupAFNetworking()
+        
+        // Magica Record
+//        self.setupMagicalRecord()
+        
+        //setup SDWebImage
+//        self.setupSDWebImage()
+        
+        //setup Crashlytics
+        Fabric.with([Crashlytics.self])
+        
+    }
+    
+    func setupProjectForTests() {
+        #if TEST
+            switch TestingMode() {
+            case .Unit:
+                print("Unit Tests")
+                self.window?.rootViewController = UIViewController()
+                return true
+                
+            case .UI:
+                print("UI Tests")
+            }
+        #endif
+    }
+    
+    func printProjectSettings() {
+        #if DEBUG
+            // print documents directory and device ID
+            print("\n*******************************************\nDOCUMENTS:\n\(NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0])\n*******************************************\n")
+            print("\n*******************************************\nDEVICE ID:\n\((UIDevice.currentDevice().identifierForVendor?.UUIDString)!)\n*******************************************\n")
+            print("\n*******************************************\nBUNDLE ID:\n\((NSBundle.mainBundle().bundleIdentifier)!)\n*******************************************\n")
+        #endif
+    }
+    
+    func setupAFNetworking() {
+        AFNetworkReachabilityManager.sharedManager().startMonitoring()
+        AFNetworkActivityIndicatorManager.sharedManager().enabled   = true
+    }
+    
+//    func setupMagicalRecord() {
+//        MagicalRecord.setShouldDeleteStoreOnModelMismatch(true)
+//        MagicalRecord.setupAutoMigratingCoreDataStack()
+//        MagicalRecord.setLoggingLevel(MagicalRecordLoggingLevel.Off)
+//    }
+    
+//    func setupSDWebImage() {
+//        let imageCache:SDImageCache = SDImageCache.sharedImageCache()
+//        imageCache.maxCacheSize     = 1024*1024*100 // 100mb on disk
+//        imageCache.maxMemoryCost    = 1024*1024*10  // 10mb in memory
+//        
+//        let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.sharedDownloader()
+//        imageDownloader.downloadTimeout          = 60.0
+//    }
 }
 
