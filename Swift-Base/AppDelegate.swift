@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -53,16 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         */
         
         //setting Crashlytics
-        /*
-        if DEBUG == 1
-        {
-            println("Crashlytics is disabled in DEBUG")
-        }
-        else
-        {
-            Crashlytics.startWithAPIKey(kAPIKeyCrashlitycs)
-        }
-        */
+        Fabric.with([Crashlytics.self])
         
         return true
     }

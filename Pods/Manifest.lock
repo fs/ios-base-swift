@@ -20,14 +20,21 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Crashlytics (3.4.1):
+    - Fabric (~> 1.6.0)
+  - Fabric (1.6.1)
   - FSHelpers+Swift (2.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - Crashlytics
+  - Fabric
   - FSHelpers+Swift
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Crashlytics: 41574a245bc6ae10c55d57f385ebd2004e5bee05
+  Fabric: bf0ceb04e7c924090efc5f8c55e4fbcca189e0a0
   FSHelpers+Swift: 6d199597cf772fbeb5c009fe5715886ffba18719
 
 COCOAPODS: 0.39.0
