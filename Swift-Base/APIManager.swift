@@ -23,23 +23,13 @@ class APIManager: NSObject {
         return Static.instance!
     }
     
-    class var hostURL: NSURL {
+    private static let baseURL: NSURL = {
         
-        let URL_HOST = NSBundle.mainBundle().infoDictionary!["URL_HOST"] as! String
-        return NSURL(string: URL_HOST)!
-    }
-    
-    class var currentAPIVersion: UInt {
-        return 1
-    }
-    
-    class var baseURL: NSURL {
+        let host = NSBundle.mainBundle().infoDictionary!["URL_HOST"]
+        let version = NSBundle.mainBundle().infoDictionary!["API_VERSION"]
         
-        let version = "v\(self.currentAPIVersion)"
-        let hostURLString = "\(APIManager.hostURL.absoluteString)/\(version)"
-        
-        return NSURL(string: hostURLString)!
-    }
+        return NSURL(string: "\(host)/\(version)")!
+    }()
     
     private lazy var manager:AFHTTPRequestOperationManager = {
         
