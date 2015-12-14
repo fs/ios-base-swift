@@ -100,7 +100,7 @@ git push origin master
 ```
 
 ## License
-ios-base-swift is released under the MIT license. See LICENSE for details.
+ios-base-swift is released under the MIT license. See [LICENSE](LICENSE) for details.
 
 ## Credits
 
