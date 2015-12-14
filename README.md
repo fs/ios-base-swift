@@ -81,9 +81,10 @@ pod install
 ```
 
 ### Configure Fabric/Crashlytics
-* Check bundle id in project build settings for all schemes.
-* Create organization in Fabric/Crashlytics.
+* Check **Bundle ID** in project build settings for all schemes.
+* Create new organization in Fabric/Crashlytics.
 * Add applications to this organization for all schemes.
+* Do not forget change **Run Script** in settings of the project.
 
 ### Edit README.md
 * Edit ```README.md```.
