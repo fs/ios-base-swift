@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1710DE5F1C453AF800912C5B /* Swift_BaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710DE5E1C453AF800912C5B /* Swift_BaseUITests.swift */; };
 		2124DFA01A8DF48000422313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124DF9F1A8DF48000422313 /* ViewController.swift */; };
 		212D018E1BB1986B00B34340 /* Swift_BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212D018D1BB1986B00B34340 /* Swift_BaseTests.swift */; };
 		213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213B89BE19F01A1E005D3749 /* CoreGraphics.framework */; };
@@ -50,6 +51,13 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
+		1710DE611C453AF800912C5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21DB300719DD2289003A418D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21DB300E19DD2289003A418D;
+			remoteInfo = "Swift-Base";
+		};
 		212D01901BB1986B00B34340 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 21DB300719DD2289003A418D /* Project object */;
@@ -62,6 +70,9 @@
 /* Begin PBXFileReference section */
 		0B854B6014D9DDA9A596C69D /* Pods-Swift-BaseTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.debug staging.xcconfig"; sourceTree = "<group>"; };
 		1218E154FF6E17259B67BF8D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1710DE5C1C453AF700912C5B /* Swift-BaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-BaseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1710DE5E1C453AF800912C5B /* Swift_BaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_BaseUITests.swift; sourceTree = "<group>"; };
+		1710DE601C453AF800912C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194478471AAF90AF00A34744 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		19D856C11AB5ED2E0014C459 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build.sh; path = Scripts/build.sh; sourceTree = "<group>"; };
 		19D856C51AB5ED2E0014C459 /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = test.sh; path = Scripts/test.sh; sourceTree = "<group>"; };
@@ -104,6 +115,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1710DE591C453AF700912C5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		212D01881BB1986B00B34340 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1710DE5D1C453AF800912C5B /* Swift-BaseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1710DE5E1C453AF800912C5B /* Swift_BaseUITests.swift */,
+				1710DE601C453AF800912C5B /* Info.plist */,
+			);
+			path = "Swift-BaseUITests";
+			sourceTree = "<group>";
+		};
 		196D6E161BAB0736000B7997 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +234,7 @@
 			children = (
 				21DB301119DD2289003A418D /* Swift-Base */,
 				212D01801BB1977100B34340 /* Tests */,
+				1710DE5D1C453AF800912C5B /* Swift-BaseUITests */,
 				21DB301019DD2289003A418D /* Products */,
 				D9F12AAF93832B17BB391A0E /* Pods */,
 				5C5B41AD2B6E0DFDD4D53E6B /* Frameworks */,
@@ -218,6 +246,7 @@
 			children = (
 				21DB300F19DD2289003A418D /* Swift-Base.app */,
 				212D018B1BB1986B00B34340 /* Swift-BaseTests.xctest */,
+				1710DE5C1C453AF700912C5B /* Swift-BaseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,6 +345,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1710DE5B1C453AF700912C5B /* Swift-BaseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1710DE6B1C453AF800912C5B /* Build configuration list for PBXNativeTarget "Swift-BaseUITests" */;
+			buildPhases = (
+				1710DE581C453AF700912C5B /* Sources */,
+				1710DE591C453AF700912C5B /* Frameworks */,
+				1710DE5A1C453AF700912C5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1710DE621C453AF800912C5B /* PBXTargetDependency */,
+			);
+			name = "Swift-BaseUITests";
+			productName = "Swift-BaseUITests";
+			productReference = 1710DE5C1C453AF700912C5B /* Swift-BaseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		212D018A1BB1986B00B34340 /* Swift-BaseTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 212D01921BB1986B00B34340 /* Build configuration list for PBXNativeTarget "Swift-BaseTests" */;
@@ -364,11 +411,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastTestingUpgradeCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Flatstack;
 				TargetAttributes = {
+					1710DE5B1C453AF700912C5B = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 21DB300E19DD2289003A418D;
+					};
 					212D018A1BB1986B00B34340 = {
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = 21DB300E19DD2289003A418D;
@@ -395,11 +446,19 @@
 			targets = (
 				21DB300E19DD2289003A418D /* Swift-Base */,
 				212D018A1BB1986B00B34340 /* Swift-BaseTests */,
+				1710DE5B1C453AF700912C5B /* Swift-BaseUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1710DE5A1C453AF700912C5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		212D01891BB1986B00B34340 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -482,6 +541,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1710DE581C453AF700912C5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1710DE5F1C453AF800912C5B /* Swift_BaseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		212D01871BB1986B00B34340 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -510,6 +577,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1710DE621C453AF800912C5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21DB300E19DD2289003A418D /* Swift-Base */;
+			targetProxy = 1710DE611C453AF800912C5B /* PBXContainerItemProxy */;
+		};
 		212D01911BB1986B00B34340 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 21DB300E19DD2289003A418D /* Swift-Base */;
@@ -539,6 +611,152 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1710DE631C453AF800912C5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF3C7DA238EA7C51D060C78B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Swift-BaseUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FS.Swift-BaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Swift-Base";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1710DE641C453AF800912C5B /* AppStore Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF3C7DA238EA7C51D060C78B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Swift-BaseUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FS.Swift-BaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Swift-Base";
+				USES_XCTRUNNER = YES;
+			};
+			name = "AppStore Debug";
+		};
+		1710DE651C453AF800912C5B /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF3C7DA238EA7C51D060C78B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Swift-BaseUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FS.Swift-BaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Swift-Base";
+				USES_XCTRUNNER = YES;
+			};
+			name = "Debug Staging";
+		};
+		1710DE661C453AF800912C5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51E82C8EB8DB50ECF52AE69A /* Pods.release.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Swift-BaseUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FS.Swift-BaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Swift-Base";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		1710DE671C453AF800912C5B /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51E82C8EB8DB50ECF52AE69A /* Pods.release.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Swift-BaseUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "FS.Swift-BaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Swift-Base";
+				USES_XCTRUNNER = YES;
+			};
+			name = Test;
+		};
+		1710DE681C453AF800912C5B /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51E82C8EB8DB50ECF52AE69A /* Pods.release.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Swift-BaseUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FS.Swift-BaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Swift-Base";
+				USES_XCTRUNNER = YES;
+			};
+			name = AppStore;
+		};
+		1710DE691C453AF800912C5B /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD792995EA1B8C035C9A51B2 /* Pods.release staging.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Swift-BaseUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FS.Swift-BaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Swift-Base";
+				USES_XCTRUNNER = YES;
+			};
+			name = "Release Staging";
+		};
+		1710DE6A1C453AF800912C5B /* Test Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD792995EA1B8C035C9A51B2 /* Pods.release staging.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Swift-BaseUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "FS.Swift-BaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Swift-Base";
+				USES_XCTRUNNER = YES;
+			};
+			name = "Test Staging";
+		};
 		212D01811BB1978500B34340 /* Test */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51E82C8EB8DB50ECF52AE69A /* Pods.release.xcconfig */;
@@ -613,7 +831,6 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Test;
 		};
@@ -692,7 +909,6 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Test Staging";
 		};
@@ -772,7 +988,6 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "AppStore Debug";
 		};
@@ -1042,7 +1257,6 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1076,7 +1290,6 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1156,7 +1369,6 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Debug Staging";
 		};
@@ -1231,7 +1443,6 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Release Staging";
 		};
@@ -1305,13 +1516,27 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift-Base/BridgeHeader.h";
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = AppStore;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1710DE6B1C453AF800912C5B /* Build configuration list for PBXNativeTarget "Swift-BaseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1710DE631C453AF800912C5B /* Debug */,
+				1710DE641C453AF800912C5B /* AppStore Debug */,
+				1710DE651C453AF800912C5B /* Debug Staging */,
+				1710DE661C453AF800912C5B /* Release */,
+				1710DE671C453AF800912C5B /* Test */,
+				1710DE681C453AF800912C5B /* AppStore */,
+				1710DE691C453AF800912C5B /* Release Staging */,
+				1710DE6A1C453AF800912C5B /* Test Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		212D01921BB1986B00B34340 /* Build configuration list for PBXNativeTarget "Swift-BaseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
