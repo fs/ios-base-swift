@@ -25,10 +25,14 @@ class APIManager: NSObject {
     
     private static let baseURL: NSURL = {
         
-        let host = NSBundle.mainBundle().infoDictionary!["URL_HOST"]
-        let version = NSBundle.mainBundle().infoDictionary!["API_VERSION"]
+        #if TEST
+            return  NSURL(string: "http://httpbin.org/")!
+        #else
+            let host = NSBundle.mainBundle().infoDictionary!["URL_HOST"]
+            let version = NSBundle.mainBundle().infoDictionary!["API_VERSION"]
+            return NSURL(string: "\(host)/\(version)")!
+        #endif
         
-        return NSURL(string: "\(host)/\(version)")!
     }()
     
     private lazy var manager:AFHTTPRequestOperationManager = {
