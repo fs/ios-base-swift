@@ -104,7 +104,7 @@ extension AppDelegate {
             case .Unit:
                 print("Unit Tests")
                 self.window?.rootViewController = UIViewController()
-                return 
+                return
                 
             case .UI:
                 print("UI Tests")
