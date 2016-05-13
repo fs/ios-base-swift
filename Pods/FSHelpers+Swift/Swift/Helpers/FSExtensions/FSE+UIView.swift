@@ -71,3 +71,83 @@ public extension UIView {
         return arr
     }
 }
+
+//MARK: - Extensions for Storyboard
+public extension UIView {
+    
+    @IBInspectable var fs_cornerRadius: CGFloat {
+        set(newValue) { self.layer.cornerRadius = newValue }
+        get { return self.layer.cornerRadius }
+    }
+    
+    @IBInspectable var fs_borderColor: UIColor {
+        set(newValue) { self.layer.borderColor = newValue.CGColor }
+        get { return UIColor(CGColor: self.layer.borderColor!) }
+    }
+    
+    @IBInspectable var fs_borderWidth: CGFloat {
+        set(newValue) { self.layer.borderWidth = newValue }
+        get { return self.layer.borderWidth }
+    }
+    
+    @IBInspectable var fs_shadowColor: UIColor {
+        set(newValue) { self.layer.shadowColor = newValue.CGColor }
+        get { return UIColor(CGColor: self.layer.shadowColor!) }
+    }
+    
+    @IBInspectable var fs_shadowOffset: CGSize {
+        set(newValue) { self.layer.shadowOffset = newValue }
+        get { return  self.layer.shadowOffset}
+    }
+    
+    @IBInspectable var fs_shadowOpacity: Float {
+        set(newValue) { self.layer.shadowOpacity = newValue }
+        get { return  self.layer.shadowOpacity}
+    }
+    
+    @IBInspectable var fs_shadowRadius: CGFloat {
+        set(newValue) { self.layer.shadowRadius = newValue }
+        get { return  self.layer.shadowRadius}
+    }
+    
+    @IBInspectable var fs_masksToBounds: Bool {
+        set(newValue) { self.layer.masksToBounds = newValue }
+        get { return self.layer.masksToBounds }
+    }
+}
+
+//MARK: - Collection View Animated Reload
+public extension UICollectionView {
+    
+    /**
+     - parameter options: UIViewAnimationOptionTransition's only available
+     */
+    func fs_reloadDataWithAnimation(duration: NSTimeInterval = 0.2, options: UIViewAnimationOptions, completion: ((Bool) -> Void)?) {
+        
+        UIView.transitionWithView(self,
+            duration: duration,
+            options: options,
+            animations: { [weak self] () -> Void in
+                self?.reloadData()
+            },
+            completion: completion)
+    }
+}
+
+//MARK: - Table View Animated Reload
+public extension UITableView {
+    
+    /**
+     - parameter options: UIViewAnimationOptionTransition's only available
+     */
+    func fs_reloadDataWithAnimation(duration: NSTimeInterval = 0.2, options: UIViewAnimationOptions, completion: ((Bool) -> Void)?) {
+        
+        UIView.transitionWithView(self,
+            duration: duration,
+            options: options,
+            animations: { [weak self] () -> Void in
+                self?.reloadData()
+            },
+            completion: completion)
+    }
+}
