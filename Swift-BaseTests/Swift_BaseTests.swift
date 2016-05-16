@@ -26,34 +26,11 @@ class Swift_BaseTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    func testApiGetRequest() {
-        let expect = self.expectationWithDescription("completion handler called")
-        let manager = APIManager.sharedInstance
-        manager.GET("get", params:["show_env":1], success: { (operation, responseObject) -> Void in
-            print("Result: \(responseObject)")
-            expect.fulfill()
-            }) { (operation, error) -> Void in
-                print("Error: \(error)")
-        }
-     waitForExpectationsWithTimeout(10, handler: nil)
-    }
-    
-    func testApiPostRequest() {
-        let expect = self.expectationWithDescription("completion handler called")
-        let manager = APIManager.sharedInstance
-        manager.POST("post", params: ["test":"request"], success: { (operation, responseObject) -> Void in
-            print("Result: \(responseObject)")
-            expect.fulfill()
-            }) { (operation, error) -> Void in
-                 print("Error: \(error)")
-        }
-        waitForExpectationsWithTimeout(10, handler: nil)
-    }
+//    func testPerformanceExample() {
+//        // This is an example of a performance test case.
+//        self.measureBlock {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
     
 }

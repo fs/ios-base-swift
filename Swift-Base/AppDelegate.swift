@@ -55,24 +55,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
         var tokenString = ""
-        
-        for var i = 0; i < deviceToken.length; i++ {
+        UIFont.systemFontOfSize(1, weight: 1)
+        for i in 0 ..< deviceToken.length {
             let formatString = "%02.2hhx"
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
         }
         
-        NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: SBKeyUserDefaultsDeviceTokenData)
-        NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: SBKeyUserDefaultsDeviceTokenString)
+        NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
+        NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     func requestForRemoteNotifications () {
-        if #available(iOS 8.0, *) {
-            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge], categories: nil))
-            UIApplication.sharedApplication().registerForRemoteNotifications()
-        } else {
-            UIApplication.sharedApplication().registerForRemoteNotificationTypes([UIRemoteNotificationType.Alert, UIRemoteNotificationType.Sound, UIRemoteNotificationType.Badge])
-        }
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge], categories: nil))
+        UIApplication.sharedApplication().registerForRemoteNotifications()
     }
 }
 

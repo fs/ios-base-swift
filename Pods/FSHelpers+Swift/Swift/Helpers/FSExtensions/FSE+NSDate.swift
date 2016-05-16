@@ -16,6 +16,29 @@ public enum FSTimePeriod:NSTimeInterval {
     case Week       = 604800
 }
 
+// MARK: Time Period
+private func FS_ConvertToInterval (value: Any, period: FSTimePeriod) -> NSTimeInterval {
+    guard let number = value as? NSNumber else {return 0}
+    let interval = NSTimeInterval(number.doubleValue)
+    return interval * period.rawValue
+}
+
+public extension IntegerType {
+    public var fs_seconds  : NSTimeInterval {return FS_ConvertToInterval(self, period: .Second)}
+    public var fs_minutes  : NSTimeInterval {return FS_ConvertToInterval(self, period: .Minute)}
+    public var fs_hours    : NSTimeInterval {return FS_ConvertToInterval(self, period: .Hour)}
+    public var fs_days     : NSTimeInterval {return FS_ConvertToInterval(self, period: .Day)}
+    public var fs_weeks    : NSTimeInterval {return FS_ConvertToInterval(self, period: .Week)}
+}
+
+public extension FloatingPointType {
+    public var fs_seconds  : NSTimeInterval {return FS_ConvertToInterval(self, period: .Second)}
+    public var fs_minutes  : NSTimeInterval {return FS_ConvertToInterval(self, period: .Minute)}
+    public var fs_hours    : NSTimeInterval {return FS_ConvertToInterval(self, period: .Hour)}
+    public var fs_days     : NSTimeInterval {return FS_ConvertToInterval(self, period: .Day)}
+    public var fs_weeks    : NSTimeInterval {return FS_ConvertToInterval(self, period: .Week)}
+}
+
 public enum FSDatePeriod:Int {
     case Unknow     = -1
     case Today      = 0

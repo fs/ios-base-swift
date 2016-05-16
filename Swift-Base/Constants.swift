@@ -8,57 +8,33 @@
 
 import UIKit
 
-/*----------API keys---------*/
-//For API Keys use prefix ABKeyAPI where AB is capital letters of your project name
-//For example: 'SBKeyAPIMock' for Swift-Base
-
 /*--------------User Defaults keys-------------*/
-let SBKeyUserDefaultsDeviceTokenData    = "kUserDefaultsDeviceTokenData"
-let SBKeyUserDefaultsDeviceTokenString  = "kUserDefaultsDeviceTokenString"
+enum FSUserDefaultsKey {
+    
+    enum DeviceToken {
+        private static let Prefix = "FSDeviceToken"
+        
+        static let Data    = GenerateKey(Prefix, key: "Data")
+        static let String  = GenerateKey(Prefix, key: "String")
+    }
+}
 
 /*----------Notifications---------*/
-//For Notifications use prefix ABNotif where AB is capital letters of your project name
-//For example: 'SBNotifMock' for Swift-Base
-
-/*--------------Fonts-------------*/
-
-//Example of custom font family name
-enum AppFont: Int {
-    case Regular = 0
-    case Bold
-    case Italic
+enum FSNotificationKey {
     
-    static var allValues: [AppFont] {
-        var fonts: [AppFont] = []
-        var i = 0
-        while let font = AppFont(rawValue: i) {
-            fonts.append(font)
-            i++
-        }
-        return fonts
-    }
-    
-    static let familyName = "FontFamilyName"
-    var familyName: String {return AppFont.familyName}
-    
-    var description : String {
-        switch self {
-        case .Regular:  return "FontFamilyName-Regular";
-        case .Bold:     return "FontFamilyName-Bold";
-        case .Italic:   return "FontFamilyName-Italic";
-        }
-    }
-    
-    func font (size:CGFloat) -> UIFont? {
-        switch self {
-        case .Regular:  return UIFont(name: self.description, size: size)
-        case .Bold:     return UIFont(name: self.description, size: size)
-        case .Italic:   return UIFont(name: self.description, size: size)
-        }
+    enum Example {
+        private static let Prefix = "Example"
+        
+        static let Key = GenerateKey(Prefix, key: "Key")
     }
 }
 
 /*----------Colors----------*/
+enum FSColors {
+    static let AppColor = UIColor.clearColor()
+}
 
-//Example of custom color schemes in application
-let AppColor              = UIColor.clearColor()
+/*----------Helpers----------*/
+private func GenerateKey (prefix: String, key: String) -> String {
+    return "__\(prefix)-\(key)__"
+}

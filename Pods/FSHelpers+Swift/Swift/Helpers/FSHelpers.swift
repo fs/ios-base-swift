@@ -19,29 +19,39 @@ public func FSApplicationDirectoryURL (directoryToSearch:NSSearchPathDirectory) 
     return NSURL(string: FSApplicationDirectoryPath(directoryToSearch))!
 }
 
+public func FSPrintDocumentsPath () {
+    print("\n*******************************************\nDOCUMENTS\n\(NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0])\n*******************************************\n")
+}
+
 //MARK: - Interface
 
-public let FSScreenBounds: CGRect = UIScreen.mainScreen().bounds
+public var FSScreenBounds: CGRect {
+    return UIScreen.mainScreen().bounds
+}
 
-public func FSIsIPad () -> Bool {
+public var FSIsIPad: Bool {
     return UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad
 }
 
-public func FSIsIPhone () -> Bool {
+public var FSIsIPhone: Bool {
     return UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone
 }
 
-public func FSScaleFactor () -> CGFloat {
+public var FSScaleFactor: CGFloat {
     return UIScreen.mainScreen().scale
 }
 
-public func FSIsRetina () -> Bool {
-    return FSScaleFactor() == 2
+public var FSIsRetina: Bool {
+    return FSScaleFactor == 2
 }
 
-public func FSDeviceOrientation () -> UIDeviceOrientation {
+public var FSDeviceOrientation: UIDeviceOrientation {
     return UIDevice.currentDevice().orientation
 }
+
+//MARK: - App Version
+public let FSAppVersion      = NSBundle.mainBundle().infoDictionary?.fs_objectForKey("CFBundleShortVersionString", orDefault: "0") as! String
+public let FSBuildNumber     = NSBundle.mainBundle().infoDictionary?.fs_objectForKey("CFBundleVersion", orDefault: "0") as! String
 
 //MARK: - System Version
 
@@ -105,66 +115,91 @@ public func FSDispatch_after_short (delay:Double, block:dispatch_block_t) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), block);
 }
 
+//MARK: - iOS settings
+
+// App settigns
+public func APP_SETTINGS_URL() -> NSURL? {
+    return NSURL(string: UIApplicationOpenSettingsURLString)
+}
+
+public func CAN_OPEN_SETTINGS_APP() -> Bool {
+    if let url = APP_SETTINGS_URL() {
+        return UIApplication.sharedApplication().canOpenURL(url)
+    }
+    
+    return false
+}
+
+public func OPEN_SETTINGS_APP() -> Bool {
+    if let url = APP_SETTINGS_URL() where CAN_OPEN_SETTINGS_APP() {
+        return UIApplication.sharedApplication().openURL(url)
+    }
+    
+    return false
+}
+
+// WIFI settings
+public func WIFI_SETTINGS_URL() -> NSURL? {
+    return NSURL(string: "prefs:root=WIFI")
+}
+
+public func CAN_OPEN_WIFI_SETTINGS() -> Bool {
+    if let url = WIFI_SETTINGS_URL() {
+        return UIApplication.sharedApplication().canOpenURL(url)
+    }
+    
+    return false
+}
+
+public func OPEN_WIFI_SETTINGS() -> Bool {
+    if let url = WIFI_SETTINGS_URL() where CAN_OPEN_WIFI_SETTINGS() {
+        return UIApplication.sharedApplication().openURL(url)
+    }
+    
+    return false
+}
+
 //MARK: - Other
 
-public func FSDLog(message: String, function: String = __FUNCTION__, file: String = __FILE__, line: Int = __LINE__) {
+public var FSGregorianCalendar: NSCalendar {return NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!}
+
+/**
+ Try to make call with input number
+ 
+ - parameter number: phone number (string)
+ 
+ - returns: 'true' if can open URL and 'false' if not or if can't initialize URL from input number
+ */
+public func FSMakePhoneCall (number: String) -> Bool {
+    let callURLString = "tel://\(number)"
+    guard let URL = NSURL(string: callURLString) else {return false}
+    
+    guard UIApplication.sharedApplication().canOpenURL(URL) else {
+        return false
+    }
+    
+    UIApplication.sharedApplication().openURL(URL)
+    return true
+}
+
+public func FSGetRandomBool() -> Bool {
+    return arc4random()%2 == 0
+}
+
+public func FSGetInfoDictionaryValue (key: String) -> AnyObject? {
+    return NSBundle.mainBundle().infoDictionary?[key]
+}
+
+public func FSDLog(message: String, function: String = #function, file: String = #file, line: Int = #line) {
     #if DEBUG
         print("Message \"\(message)\" (File: \(file), Function: \(function), Line: \(line))")
     #endif
 }
 
-//MARK: - Enumerations
-
-public enum FSScreenTypeInch {
-    case _3_5
-    case _4
-    case _4_7
-    case _5_5
-    
-    public var size:CGSize {
-        switch self {
-        case ._3_5: return CGSizeMake(320, 480)
-        case ._4:   return CGSizeMake(320, 568)
-        case ._4_7: return CGSizeMake(375, 667)
-        case ._5_5: return CGSizeMake(414, 736)
+public func FSLog(format: String, _ args: CVarArgType...) {
+    #if DEBUG
+        withVaList(args) { (pointer: CVaListPointer) -> Void in
+            NSLogv(format, pointer)
         }
-    }
-    
-    public init () {
-        self = FSScreenTypeInch.typeForSize(UIScreen.mainScreen().bounds.size)
-    }
-    
-    public init (size: CGSize) {
-        self = FSScreenTypeInch.typeForSize(size)
-    }
-    
-    static private func typeForSize (size: CGSize) -> FSScreenTypeInch {
-        let width = min(size.width, size.height)
-        let height = max(size.width, size.height)
-        
-        switch CGSizeMake(width, height) {
-        case FSScreenTypeInch._3_5.size:  return FSScreenTypeInch._3_5
-        case FSScreenTypeInch._4.size:    return FSScreenTypeInch._4
-        case FSScreenTypeInch._4_7.size:  return FSScreenTypeInch._4_7
-        case FSScreenTypeInch._5_5.size:  return FSScreenTypeInch._5_5
-        default:                          return FSScreenTypeInch._4
-        }
-    }
-    
-    public func getScreenValue (value3_5 value3_5:Any, value4:Any, value4_7:Any, value5_5:Any) -> Any {
-        switch self {
-        case ._3_5:     return value3_5
-        case ._4:       return value4
-        case ._4_7:     return value4_7
-        case ._5_5:     return value5_5
-        }
-    }
-    
-    public func getScreenCGFloat (value3_5 value3_5:CGFloat, value4:CGFloat, value4_7:CGFloat, value5_5:CGFloat) -> CGFloat {
-        return self.getScreenValue(value3_5:value3_5, value4: value4, value4_7: value4_7, value5_5: value5_5) as! CGFloat
-    }
-    
-    public func getScreenCGFloat (value4 value4:CGFloat, value4_7:CGFloat, value5_5:CGFloat) -> CGFloat {
-        return self.getScreenCGFloat(value3_5:value4, value4: value4, value4_7: value4_7, value5_5: value5_5)
-    }
+    #endif
 }
