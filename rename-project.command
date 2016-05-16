@@ -34,13 +34,15 @@ rm ./rename-project.command
 
 #Git setup
 git init
+git add -A
+git commit -m "Inital commit"
 
 #Body
 transform "$BASE_NAME" "$NEW_NAME"
 
-#Git inital commit
+#Git renaming commit
 git add -A
-git commit -m "Inital commit"
+git commit -m "Rename project"
 
 #Success message
 echo "Success"
