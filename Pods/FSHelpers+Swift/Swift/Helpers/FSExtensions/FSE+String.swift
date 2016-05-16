@@ -13,7 +13,7 @@ public extension String {
     public func fs_toDouble   () -> Double?   {return Double(self)}
     public func fs_toInt      () -> Int?      {return Int(self)}
     
-    public var fs_lenght: Int {
+    public var fs_length: Int {
         return self.characters.count
     }
     

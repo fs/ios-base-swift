@@ -35,7 +35,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   FSHelpers+Swift:
-    :commit: 284b8160b352485c3c16471d222d7ab9233d8584
+    :commit: 1c0e69208239116ae2444a259a223ef62482c504
     :git: https://github.com/fs/FSHelper.git
 
 SPEC CHECKSUMS:
