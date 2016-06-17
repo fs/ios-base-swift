@@ -13,6 +13,8 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var loadedEnoughToDeepLink : Bool = false
+    var deepLink : DeepLink?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
@@ -70,6 +72,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge], categories: nil))
         UIApplication.sharedApplication().registerForRemoteNotifications()
     }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return self.canOpenURL(url, application: application)
+    }
+    
 }
 
 extension AppDelegate {
@@ -136,5 +143,55 @@ extension AppDelegate {
 //        let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.sharedDownloader()
 //        imageDownloader.downloadTimeout          = 60.0
 //    }
+    
+    
+////////DeepLink Handling
+    func canOpenURL(url: NSURL, application:UIApplication) -> Bool {
+        if url.host == nil
+        {
+            return true;
+        }
+        
+        let urlString = url.absoluteString
+        let queryArray = urlString.componentsSeparatedByString("/")
+        let query = queryArray[2]
+        
+        for sectionKey in DeepLinkAppSectionKey.allValues {
+            if query.rangeOfString(sectionKey.description) != nil
+            {
+                let data = urlString.componentsSeparatedByString("/")
+                if data.count >= 3
+                {
+                    let parameter = data[3]
+                    let userInfo = [sectionKey.description : parameter]
+                    self.applicationHandleDeepLink(application, deepLinkUserInfo: userInfo, sectionKey: sectionKey)
+                    break
+                }
+            }
+        }
+        return true
+    }
+    
+    func applicationHandleDeepLink(application: UIApplication, deepLinkUserInfo userInfo: [NSObject : AnyObject],sectionKey: DeepLinkAppSectionKey )
+    {
+        if application.applicationState == UIApplicationState.Background || application.applicationState == UIApplicationState.Inactive
+        {
+            let canDoNow = loadedEnoughToDeepLink
+            
+            self.deepLink = DeepLink.create(userInfo,sectionKey: sectionKey)
+            
+            if canDoNow
+            {
+                self.triggerDeepLinkIfPresent()
+            }
+        }
+    }
+    
+    func triggerDeepLinkIfPresent()
+    {
+        self.loadedEnoughToDeepLink = true
+        self.deepLink?.trigger()
+        self.deepLink = nil
+    }
 }
 

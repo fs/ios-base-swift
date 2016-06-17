@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1710DE5F1C453AF800912C5B /* Swift_BaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710DE5E1C453AF800912C5B /* Swift_BaseUITests.swift */; };
+		172013901D11A11B00A39C1D /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1720138F1D11A11B00A39C1D /* DeepLink.swift */; };
 		2124DFA01A8DF48000422313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124DF9F1A8DF48000422313 /* ViewController.swift */; };
 		212D018E1BB1986B00B34340 /* Swift_BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212D018D1BB1986B00B34340 /* Swift_BaseTests.swift */; };
 		213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213B89BE19F01A1E005D3749 /* CoreGraphics.framework */; };
@@ -75,6 +76,7 @@
 		1710DE5C1C453AF700912C5B /* Swift-BaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-BaseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1710DE5E1C453AF800912C5B /* Swift_BaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_BaseUITests.swift; sourceTree = "<group>"; };
 		1710DE601C453AF800912C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1720138F1D11A11B00A39C1D /* DeepLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		194478471AAF90AF00A34744 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		19D856C11AB5ED2E0014C459 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build.sh; path = Scripts/build.sh; sourceTree = "<group>"; };
 		19D856C51AB5ED2E0014C459 /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = test.sh; path = Scripts/test.sh; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		19C66A341C1DC54800C44FE3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1720138F1D11A11B00A39C1D /* DeepLink.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -463,7 +466,7 @@
 					};
 					21DB300E19DD2289003A418D = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = UTXK29TA3W;
+						DevelopmentTeam = Y49MTY8CU2;
 					};
 				};
 			};
@@ -680,6 +683,7 @@
 				214F4FF61BFDC35C0084BE32 /* Protocols.swift in Sources */,
 				214F4FF41BFDC2D90084BE32 /* Helpers.swift in Sources */,
 				21DB301519DD2289003A418D /* AppDelegate.swift in Sources */,
+				172013901D11A11B00A39C1D /* DeepLink.swift in Sources */,
 				2158286F1A91E56600833BE6 /* APIManager.swift in Sources */,
 				21DB304919DD2D6D003A418D /* Constants.swift in Sources */,
 				214F4FF21BFDC2CF0084BE32 /* Extensions.swift in Sources */,
@@ -915,7 +919,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Swift-Base";
 				BUNDLE_ID = "com.flatstack.Swift-Base";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -992,7 +996,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
 				BUNDLE_ID = "com.flatstack.Swift-Base.staging";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1376,7 +1380,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Swift-Base";
 				BUNDLE_ID = "com.flatstack.Swift-Base";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1528,7 +1532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
 				BUNDLE_ID = "com.flatstack.Swift-Base.staging";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
