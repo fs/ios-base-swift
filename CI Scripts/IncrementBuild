@@ -1,0 +1,46 @@
+#!/bin/sh
+#Increment build
+#Setup variables
+
+CURRENT_COMMIT_HEAD="$(git rev-parse HEAD)"
+CURRENT_COMMIT_REMOTE="$(git rev-parse origin/master)"
+
+PROJECT_NAME="Swift-Base"
+
+if [ "$CURRENT_COMMIT_HEAD" = "$CURRENT_COMMIT_REMOTE" ]; then
+  #Setup git
+  echo "Configuring of git..."
+  git config user.email "ios-admin@flatstack.com"
+  git config user.name "CI Server"
+  echo "Done"
+  #Get Info.plist file
+  CURRENT_DIR=$(dirname $PWD)
+  INFOPLIST_FILE="${PROJECT_NAME}/Info.plist"
+  echo "info.plist: ${INFOPLIST_FILE}"
+  echo ""
+  #Get build number
+  echo "Getting build number..."
+  BUILD_NUM=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "${INFOPLIST_FILE}")
+  echo "Build number: ${BUILD_NUM}"
+  echo ""
+  #Create tag
+  TAG_NAME="Build_${BUILD_NUM}"
+  git tag $TAG_NAME
+  #Increment build number
+  BUILD_NUM=$(expr $BUILD_NUM + 1)
+  echo "Increasing build number to ${BUILD_NUM}..."
+  /usr/libexec/Plistbuddy -c "Set CFBundleVersion ${BUILD_NUM}" "${INFOPLIST_FILE}"
+  echo "Done"
+  #Commiting changes
+  echo "Commiting changes"
+  git add ${GREENHOUSE_BUILD_DIR}/${PROJECT_NAME}/Info.plist
+  git commit -m 'increment build number [skip ci]'
+  echo "Done"
+  #Pushing to git
+  echo "Pushing to git"
+  git push origin master
+  git push origin $TAG_NAME
+  echo "Done"
+else
+    echo "Current branch is not master"
+fi

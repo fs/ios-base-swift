@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Carthage script started"
+carthage bootstrap --platform iOS
+echo "Carthage script ended"
