@@ -4,8 +4,8 @@ use_frameworks!
 
 
 abstract_target 'Abstract' do
-    pod 'FSHelpers+Swift', :git => 'https://github.com/fs/FSHelper.git'
-    
+#    pod 'FSHelpers+Swift', :git => 'https://github.com/fs/FSHelper.git'
+
     # Analytics
     pod 'Fabric'
     pod 'Crashlytics'
