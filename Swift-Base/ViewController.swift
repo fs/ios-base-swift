@@ -14,6 +14,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Check if deep link is present. Must be in initial view controller
+        guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate else {return}
+        appDelegate.triggerDeepLinkIfPresent()
     }
     
     override func didReceiveMemoryWarning() {
