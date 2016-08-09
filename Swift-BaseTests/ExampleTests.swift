@@ -9,7 +9,7 @@
 import XCTest
 @testable import Swift_Base
 
-class Swift_BaseTests: XCTestCase {
+class ExampleTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

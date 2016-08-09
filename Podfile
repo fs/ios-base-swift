@@ -20,8 +20,6 @@ abstract_target 'Abstract' do
     target 'Swift-BaseTests' do
     end
     
-    target 'Swift-BaseUITests' do
-    end
 end
 
 # Helpers
