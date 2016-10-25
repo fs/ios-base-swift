@@ -12,7 +12,7 @@ import UIKit
 enum FSUserDefaultsKey {
     
     enum DeviceToken {
-        fileprivate static let Prefix = "FSDeviceToken"
+        private static let Prefix = "FSDeviceToken"
         
         static let Data    = GenerateKey(Prefix, key: "Data")
         static let String  = GenerateKey(Prefix, key: "String")
@@ -23,7 +23,7 @@ enum FSUserDefaultsKey {
 enum FSNotificationKey {
     
     enum Example {
-        fileprivate static let Prefix = "Example"
+        private static let Prefix = "Example"
         
         static let Key = GenerateKey(Prefix, key: "Key")
     }
