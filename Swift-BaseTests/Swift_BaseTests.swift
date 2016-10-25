@@ -32,5 +32,32 @@ class Swift_BaseTests: XCTestCase {
 //            // Put the code you want to measure the time of here.
 //        }
 //    }
+    func testApiGetRequest() {
+        let expect = self.expectation(description:"completion handler called")
+        let manager = APIManager.sharedInstance.manager
+        let params = ["show_env":1]
+        _ = try! manager.API_GET("get", params: params as AnyObject? , success: { (task, response) in
+            print("Result: \(response)")
+            expect.fulfill()
+            }, failure: { (task, error) in
+            print("Error: \(error)")
+        })
+        
+        waitForExpectations(timeout: 10, handler: nil)
+        
+    }
     
+    func testApiPostRequest() {
+        let expect = self.expectation(description: "completion handler called")
+        let manager = APIManager.sharedInstance.manager
+        let params = ["show_env":1]
+        _ = try! manager.API_POST("post", params: params as AnyObject?, success: { (task, response) in
+            print("Result: \(response)")
+            expect.fulfill()
+            }, failure: { (operation, error) -> Void in
+            print("Error: \(error)")
+        })
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+
 }

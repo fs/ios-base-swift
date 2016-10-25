@@ -10,37 +10,30 @@ import Foundation
 
 class APIManager: NSObject {
     
-    class var sharedInstance: APIManager {
-        struct Static {
-            static var instance: APIManager?
-            static var token: dispatch_once_t = 0
-        }
-        
-        dispatch_once(&Static.token) {
-            Static.instance = APIManager()
-        }
-        
-        return Static.instance!
-    }
     
-    private static let baseURL: NSURL = {
+    static let sharedInstance: APIManager = {
+        let instance = APIManager()
+        return instance
+    }()
+    
+    fileprivate static let baseURL: URL = {
         
         #if TEST
-            return  NSURL(string: "http://httpbin.org/")!
+            return  URL(string: "http://httpbin.org/")!
         #else
-            let host = NSBundle.mainBundle().infoDictionary!["URL_HOST"]
-            let version = NSBundle.mainBundle().infoDictionary!["API_VERSION"]
-            return NSURL(string: "\(host)/\(version)")!
+            let host = Bundle.main.infoDictionary!["URL_HOST"]
+            let version = Bundle.main.infoDictionary!["API_VERSION"]
+            return URL(string: "\(host)/\(version)")!
         #endif
         
     }()
     
-    private(set) lazy var manager: AFHTTPSessionManager = {
+    fileprivate(set) lazy var manager: AFHTTPSessionManager = {
         
         let manager = AFHTTPSessionManager(baseURL: APIManager.baseURL)
         
-        manager.requestSerializer = AFJSONRequestSerializer(writingOptions: NSJSONWritingOptions.PrettyPrinted)
-        manager.responseSerializer = AFJSONResponseSerializer(readingOptions: NSJSONReadingOptions.AllowFragments)
+        manager.requestSerializer = AFJSONRequestSerializer(writingOptions: JSONSerialization.WritingOptions.prettyPrinted)
+        manager.responseSerializer = AFJSONResponseSerializer(readingOptions: JSONSerialization.ReadingOptions.allowFragments)
         
         manager.responseSerializer.acceptableContentTypes = ["text/plain", "text/html", "application/json"]
         
@@ -52,7 +45,7 @@ class APIManager: NSObject {
     }()
 }
 
-enum InitializationOperationError: ErrorType {
+enum InitializationOperationError: Error {
     case operationNotCreated
     case queryIsAlreadyRunning
     case missingRequiredParameter
@@ -61,44 +54,39 @@ enum InitializationOperationError: ErrorType {
 
 //MARK: - Basic methods
 
-typealias APIManagerSuccessBlock    = (task: NSURLSessionDataTask, response: Dictionary<String, AnyObject>) -> Void
-typealias APIManagerFailureBlock    = (task: NSURLSessionDataTask?, error: NSError?) -> Void
-typealias APIManagerProgressBlock   = (progress: NSProgress) -> Void
+typealias APIManagerSuccessBlock    = (_ task: URLSessionDataTask, _ response: Dictionary<String, AnyObject>) -> Void
+typealias APIManagerFailureBlock    = (_ task: URLSessionDataTask?, _ error: NSError?) -> Void
+typealias APIManagerProgressBlock   = (_ progress: Progress) -> Void
 
 extension AFHTTPSessionManager {
     
-    func API_GET(URLString : String,
+
+    func API_GET(_ URLString : String,
                  params   : AnyObject?,
                  success  : APIManagerSuccessBlock?,
                  failure  : APIManagerFailureBlock?,
-                 progress : APIManagerProgressBlock? = nil) throws -> NSURLSessionDataTask {
+                 progress : APIManagerProgressBlock? = nil) throws -> URLSessionDataTask {
         
-        let task = self.GET(URLString, parameters: params,
-                            
-                            progress: { (progressState: NSProgress) in
-                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    progress?(progress: progressState)
-                                })
-            },
-                            
-                            success: { (task: NSURLSessionDataTask, response: AnyObject?)  in
-                                
-                                if let lResponse = response as? Dictionary<String, AnyObject> {
-                                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                        success?(task: task, response: lResponse)
-                                    })
-                                } else {
-                                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                        failure?(task: task, error: nil)
-                                    })
-                                }
-            },
-                            
-                            failure: { (task: NSURLSessionDataTask?, error: NSError) in
-                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    failure?(task: task, error: error)
-                                })
-        })
+        let task = self.get(URLString, parameters: params, progress: { (progressState) in
+            DispatchQueue.main.async {
+                 progress?(progressState)
+            }
+
+            }, success: { (task, response) in
+                if let lResponse = response as? Dictionary<String, AnyObject> {
+                   DispatchQueue.main.async {
+                        success?(task, lResponse)
+                    }
+                } else {
+                   DispatchQueue.main.async {
+                        failure?(task, nil)
+                    }
+                }
+            }) { (task, error) in
+                DispatchQueue.main.async {
+                   failure?(task, error as NSError?)
+                }
+        }
         
         guard let lTask = task else {
             throw InitializationOperationError.operationNotCreated
@@ -106,34 +94,37 @@ extension AFHTTPSessionManager {
         
         return lTask
     }
-    
-    func API_POST(URLString : String,
+
+    func API_POST(_ URLString : String,
                   params   : AnyObject?,
                   success  : APIManagerSuccessBlock?,
                   failure  : APIManagerFailureBlock?,
-                  progress : APIManagerProgressBlock? = nil) throws -> NSURLSessionDataTask {
+                  progress : APIManagerProgressBlock? = nil) throws -> URLSessionDataTask {
         
         
         
-        let task = self.POST(URLString, parameters: params,
+        let task = self.post(URLString, parameters: params,
                              
-                             progress: { (progressState: NSProgress) in
-                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    progress?(progress: progressState)
-                                })
-            },
-                             
-                             success: { (task: NSURLSessionDataTask, response: AnyObject?)  in
-                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    success?(task: task, response: (response as? [String : AnyObject]) ?? [:])
-                                })
-            },
-                             
-                             failure: { (task: NSURLSessionDataTask?, error: NSError) in
-                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    failure?(task: task, error: error)
-                                })
-        })
+                             progress: { (progressState) in
+                                DispatchQueue.main.async {
+                                    progress?(progressState)
+                                }
+                                
+            }, success: { (task, response) in
+                if let lResponse = response as? Dictionary<String, AnyObject> {
+                    DispatchQueue.main.async {
+                        success?(task, lResponse)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        failure?(task, nil)
+                    }
+                }
+        }) { (task, error) in
+            DispatchQueue.main.async {
+                failure?(task, error as NSError?)
+            }
+        }
         
         guard let lTask = task else {
             throw InitializationOperationError.operationNotCreated
@@ -142,24 +133,26 @@ extension AFHTTPSessionManager {
         return lTask
     }
     
-    func API_PATCH(URLString : String,
+    func API_PATCH(_ URLString : String,
                    params   : AnyObject?,
                    success  : APIManagerSuccessBlock?,
-                   failure  : APIManagerFailureBlock?) throws -> NSURLSessionDataTask {
+                   failure  : APIManagerFailureBlock?) throws -> URLSessionDataTask {
         
-        let task = self.PATCH(URLString, parameters: params,
-                              success: { (task: NSURLSessionDataTask, response: AnyObject?)  in
-                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    success?(task: task, response: (response as? [String : AnyObject]) ?? [:])
-                                })
-            },
-                              
-                              failure: { (task: NSURLSessionDataTask?, error: NSError) in
-                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    failure?(task: task, error: error)
-                                })
-        })
-        
+        let task = self.patch(URLString, parameters: params, success: { (task, response) in
+            if let lResponse = response as? Dictionary<String, AnyObject> {
+                DispatchQueue.main.async {
+                    success?(task, lResponse)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    success?(task, [:])
+                }
+            }
+            }) { (task, error) in
+                DispatchQueue.main.async {
+                    failure?(task, error as NSError?)
+                }
+        }
         guard let lTask = task else {
             throw InitializationOperationError.operationNotCreated
         }
@@ -167,23 +160,27 @@ extension AFHTTPSessionManager {
         return lTask
     }
     
-    func API_DELETE(URLString : String,
+    func API_DELETE(_ URLString : String,
                     params   : AnyObject?,
                     success  : APIManagerSuccessBlock?,
-                    failure  : APIManagerFailureBlock?) throws -> NSURLSessionDataTask {
-        let task = self.DELETE(URLString, parameters: params,
+                    failure  : APIManagerFailureBlock?) throws -> URLSessionDataTask {
+        let task = self.delete(URLString, parameters: params,
                                
-                               success: { (task: NSURLSessionDataTask, response: AnyObject?)  in
-                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    success?(task: task, response: (response as? [String : AnyObject]) ?? [:])
-                                })
-            },
-                               
-                               failure: { (task: NSURLSessionDataTask?, error: NSError) in
-                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    failure?(task: task, error: error)
-                                })
-        })
+                               success: { (task, response) in
+                                if let lResponse = response as? Dictionary<String, AnyObject> {
+                                    DispatchQueue.main.async {
+                                        success?(task, lResponse)
+                                    }
+                                } else {
+                                    DispatchQueue.main.async {
+                                        success?(task, [:])
+                                    }
+                                }
+        }) { (task, error) in
+            DispatchQueue.main.async {
+                failure?(task, error as NSError?)
+            }
+        }
         
         guard let lTask = task else {
             throw InitializationOperationError.operationNotCreated
