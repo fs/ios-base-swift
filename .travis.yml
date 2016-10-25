@@ -4,7 +4,7 @@ xcode_workspace: Swift-Base.xcworkspace
 xcode_scheme: Staging
 
 before_install:
-    - rvm use system
+    - rvm install 2.2.5
     - export LANG=en_US.UTF-8
     - sudo gem install cocoapods -v '0.39.0'
 
