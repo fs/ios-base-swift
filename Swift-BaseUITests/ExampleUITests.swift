@@ -34,7 +34,9 @@ class ExampleUITests: XCTestCase {
         
         let app = XCUIApplication()
         app.buttons["Tap to show alert"].tap()
-        app.alerts.collectionViews.buttons["OK"].tap()
+        app.alerts.buttons["OK"].tap()
+        
+  
         
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

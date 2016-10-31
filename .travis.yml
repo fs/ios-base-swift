@@ -6,7 +6,7 @@ xcode_scheme: Staging
 before_install:
     - rvm install 2.2.5
     - export LANG=en_US.UTF-8
-    - sudo gem install cocoapods -v '0.39.0'
+    - sudo gem install cocoapods
 
 install:
     - pod install
