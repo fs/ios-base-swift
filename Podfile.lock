@@ -14,10 +14,10 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Crashlytics (3.7.0):
+  - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.7)
-  - FSHelpers+Swift (2.1)
+  - Fabric (1.6.10)
+  - FSHelpers+Swift (2.2)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
@@ -35,16 +35,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   FSHelpers+Swift:
-    :commit: 1c0e69208239116ae2444a259a223ef62482c504
+    :commit: 835f7d730f142880439d27607f905125bf39fa0e
     :git: https://github.com/fs/FSHelper.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
-  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
-  FSHelpers+Swift: 76ec63cb6a68ee7170c23d3d22cfc933c08d52e5
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Fabric: c73f371ee543e3f0b80608f2674750e4910d1669
+  FSHelpers+Swift: df9494a1d09ac433dcb3a88dcec6546a7a09c17b
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
 
 PODFILE CHECKSUM: 5dc4b1a02ecae5da0ffc44bdbe8ea4210701ffca
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1

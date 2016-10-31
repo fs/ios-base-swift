@@ -9,7 +9,7 @@
 import UIKit
 
 enum  DeepLinkAppSectionKey : Int{
-    case Article = 0
+    case article = 0
     
     static var allValues: [DeepLinkAppSectionKey] {
         var sectionKeys: [DeepLinkAppSectionKey] = []
@@ -23,7 +23,7 @@ enum  DeepLinkAppSectionKey : Int{
     
     var description : String {
         switch self {
-        case .Article:  return "article";
+        case .article:  return "article";
         }
     }
     
@@ -40,14 +40,14 @@ class DeepLink: NSObject {
     
     var sectionKey:DeepLinkAppSectionKey?
     
-    class func create(userInfo : [NSObject : AnyObject], sectionKey:DeepLinkAppSectionKey) -> DeepLink?
+    class func create(_ userInfo : [AnyHashable: Any], sectionKey:DeepLinkAppSectionKey) -> DeepLink?
     {
         let info = userInfo as NSDictionary
         
         switch sectionKey {
-        case DeepLinkAppSectionKey.Article:
+        case DeepLinkAppSectionKey.article:
             
-            guard let articleID = info.objectForKey(DeepLinkAppSectionKey.Article.description) as? String else {return nil}
+            guard let articleID = info.object(forKey: DeepLinkAppSectionKey.article.description) as? String else {return nil}
             
             var deepLink : DeepLink? = nil
             if !articleID.isEmpty
@@ -62,14 +62,14 @@ class DeepLink: NSObject {
         
     }
     
-    private override init()
+    fileprivate override init()
     {
         super.init()
     }
     
     final func trigger()
     {
-        dispatch_async(dispatch_get_main_queue())
+        DispatchQueue.main.async
         {
             self.triggerImp()
                 { (passedData) in
@@ -78,7 +78,7 @@ class DeepLink: NSObject {
         }
     }
     
-    private func triggerImp(completion: ((AnyObject?)->(Void)))
+    fileprivate func triggerImp(_ completion: ((AnyObject?)->(Void)))
     {
         completion(nil)
     }
@@ -88,13 +88,13 @@ class DeepLinkArticle : DeepLink
 {
     var articleID : String!
     
-    private init(articleStr: String)
+    fileprivate init(articleStr: String)
     {
         self.articleID = articleStr
         super.init()
     }
     
-    private override func triggerImp(completion: ((AnyObject?)->(Void)))
+    fileprivate override func triggerImp(_ completion: ((AnyObject?)->(Void)))
     {
         super.triggerImp()
             { (passedData) in
@@ -105,18 +105,18 @@ class DeepLinkArticle : DeepLink
                 
                 switch self.articleID {
                 case ArticleType.ArticleA.rawValue :
-                    vc = storyboard.instantiateViewControllerWithIdentifier("ViewControllerA")
+                    vc = storyboard.instantiateViewController(withIdentifier: "ViewControllerA")
                     break
                 case ArticleType.ArticleB.rawValue :
-                    vc = storyboard.instantiateViewControllerWithIdentifier("ViewControllerB")
+                    vc = storyboard.instantiateViewController(withIdentifier: "ViewControllerB")
                     break
                 case ArticleType.ArticleC.rawValue :
-                    vc = storyboard.instantiateViewControllerWithIdentifier("ViewControllerC")
+                    vc = storyboard.instantiateViewController(withIdentifier: "ViewControllerC")
                     break
                 default: break
                 }
                 
-                guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate else {completion(nil); return}
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {completion(nil); return}
                 appDelegate.window?.addSubview(vc.view)
                 
                 completion(nil)

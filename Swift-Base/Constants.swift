@@ -31,10 +31,10 @@ enum FSNotificationKey {
 
 /*----------Colors----------*/
 enum FSColors {
-    static let AppColor = UIColor.clearColor()
+    static let AppColor = UIColor.clear
 }
 
 /*----------Helpers----------*/
-private func GenerateKey (prefix: String, key: String) -> String {
+private func GenerateKey (_ prefix: String, key: String) -> String {
     return "__\(prefix)-\(key)__"
 }

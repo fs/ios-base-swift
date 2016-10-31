@@ -16,36 +16,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var loadedEnoughToDeepLink : Bool = false
     var deepLink : DeepLink?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         self.setupProject()
-        
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication)
+    func applicationWillResignActive(_ application: UIApplication)
     {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication)
+    func applicationDidEnterBackground(_ application: UIApplication)
     {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication)
+    func applicationWillEnterForeground(_ application: UIApplication)
     {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication)
+    func applicationDidBecomeActive(_ application: UIApplication)
     {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication)
+    func applicationWillTerminate(_ application: UIApplication)
     {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
@@ -53,27 +52,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //MARK: - Remote Notifications
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
-        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
         var tokenString = ""
-        UIFont.systemFontOfSize(1, weight: 1)
-        for i in 0 ..< deviceToken.length {
+        UIFont.systemFont(ofSize: 1, weight: 1)
+        for i in 0 ..< deviceToken.count {
             let formatString = "%02.2hhx"
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
         }
         
-        NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
-        NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.set(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
+        UserDefaults.standard.set(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
+        UserDefaults.standard.synchronize()
     }
     
     func requestForRemoteNotifications () {
-        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge], categories: nil))
-        UIApplication.sharedApplication().registerForRemoteNotifications()
+        UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.sound, UIUserNotificationType.badge], categories: nil))
+        UIApplication.shared.registerForRemoteNotifications()
     }
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return self.canOpenURL(url, application: application)
     }
     
@@ -118,15 +117,15 @@ extension AppDelegate {
     func printProjectSettings() {
         #if DEBUG
             // print documents directory and device ID
-            print("\n*******************************************\nDOCUMENTS:\n\(NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0])\n*******************************************\n")
-            print("\n*******************************************\nDEVICE ID:\n\((UIDevice.currentDevice().identifierForVendor?.UUIDString)!)\n*******************************************\n")
-            print("\n*******************************************\nBUNDLE ID:\n\((NSBundle.mainBundle().bundleIdentifier)!)\n*******************************************\n")
+            print("\n*******************************************\nDOCUMENTS:\n\(NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])\n*******************************************\n")
+            print("\n*******************************************\nDEVICE ID:\n\((UIDevice.current.identifierForVendor?.uuidString)!)\n*******************************************\n")
+            print("\n*******************************************\nBUNDLE ID:\n\((Bundle.main.bundleIdentifier)!)\n*******************************************\n")
         #endif
     }
     
     func setupAFNetworking() {
-        AFNetworkReachabilityManager.sharedManager().startMonitoring()
-        AFNetworkActivityIndicatorManager.sharedManager().enabled   = true
+        AFNetworkReachabilityManager.shared().startMonitoring()
+        AFNetworkActivityIndicatorManager.shared().isEnabled   = true
     }
     
 //    func setupMagicalRecord() {
@@ -146,20 +145,20 @@ extension AppDelegate {
     
     
 ////////DeepLink Handling
-    func canOpenURL(url: NSURL, application:UIApplication) -> Bool {
+    func canOpenURL(_ url: URL, application:UIApplication) -> Bool {
         if url.host == nil
         {
             return true;
         }
         
         let urlString = url.absoluteString
-        let queryArray = urlString.componentsSeparatedByString("/")
+        let queryArray = urlString.components(separatedBy: "/")
         let query = queryArray[2]
         
         for sectionKey in DeepLinkAppSectionKey.allValues {
-            if query.rangeOfString(sectionKey.description) != nil
+            if query.range(of: sectionKey.description) != nil
             {
-                let data = urlString.componentsSeparatedByString("/")
+                let data = urlString.components(separatedBy: "/")
                 if data.count >= 3
                 {
                     let parameter = data[3]
@@ -172,9 +171,9 @@ extension AppDelegate {
         return true
     }
     
-    func applicationHandleDeepLink(application: UIApplication, deepLinkUserInfo userInfo: [NSObject : AnyObject],sectionKey: DeepLinkAppSectionKey )
+    func applicationHandleDeepLink(_ application: UIApplication, deepLinkUserInfo userInfo: [AnyHashable: Any],sectionKey: DeepLinkAppSectionKey )
     {
-        if application.applicationState == UIApplicationState.Background || application.applicationState == UIApplicationState.Inactive
+        if application.applicationState == UIApplicationState.background || application.applicationState == UIApplicationState.inactive
         {
             let canDoNow = loadedEnoughToDeepLink
             
