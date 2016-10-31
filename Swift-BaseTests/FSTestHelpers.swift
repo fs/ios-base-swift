@@ -13,7 +13,7 @@ enum TestingMode: String {
     case UI     = "UI"
     
     init () {
-        let environments = NSProcessInfo.processInfo().environment
+        let environments = ProcessInfo.processInfo.environment
         guard let modeString = environments["Testing"] else {
             fatalError("Testing mode not defined")
         }
@@ -31,12 +31,12 @@ enum TestingMode: String {
     }
 }
 
-func HasLaunchArgument (argument: String) -> Bool {
-    let arguments = NSProcessInfo.processInfo().arguments
+func HasLaunchArgument (_ argument: String) -> Bool {
+    let arguments = ProcessInfo.processInfo.arguments
     return arguments.contains(argument)
 }
 
-func GetEnvironment (key: String) -> String? {
-    let environments = NSProcessInfo.processInfo().environment
+func GetEnvironment (_ key: String) -> String? {
+    let environments = ProcessInfo.processInfo.environment
     return environments[key]
 }

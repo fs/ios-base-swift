@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //Check if deep link is present. Must be in initial view controller
-        guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate else {return}
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         appDelegate.triggerDeepLinkIfPresent()
     }
     
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func tapShowAlert(sender: AnyObject) {
+    @IBAction func tapShowAlert(_ sender: AnyObject) {
         UIAlertView(title: nil, message: "Press OK", delegate: nil, cancelButtonTitle: "OK").show()
     }
 }
