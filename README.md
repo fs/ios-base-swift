@@ -58,5 +58,5 @@ It was written by [Flatstack][11] with the help of our
 [9]:	https://github.com/NikolaevSergey
 [10]:	https://github.com/VladimirGoncharov
 [11]:	http://www.flatstack.com
-[12]:	http://github.com/fs/ios-base/contributors
+[12]:	https://github.com/fs/ios-base-swift/graphs/contributors
 [13]:	http://www.flatstack.com
