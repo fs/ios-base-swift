@@ -9,7 +9,7 @@
 import XCTest
 @testable import Swift_Base
 
-class Swift_BaseTests: XCTestCase {
+class ExampleTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -36,13 +36,14 @@ class Swift_BaseTests: XCTestCase {
         let expect = self.expectation(description:"completion handler called")
         let manager = APIManager.sharedInstance.manager
         let params = ["show_env":1]
-        _ = try! manager.API_GET("get", params: params as AnyObject? , success: { (task, response) in
-            print("Result: \(response)")
-            expect.fulfill()
-            }, failure: { (task, error) in
-            print("Error: \(error)")
-        })
         
+        guard let _ = try? manager.API_GET("get", params: params as AnyObject?, success: { (task, response) in
+            print("Result: \(response)")
+             expect.fulfill()
+            }, failure: { (task, error) in
+                print("Error: \(error)")
+                XCTFail();
+        }) else { XCTFail(); return }
         waitForExpectations(timeout: 10, handler: nil)
         
     }
@@ -51,12 +52,13 @@ class Swift_BaseTests: XCTestCase {
         let expect = self.expectation(description: "completion handler called")
         let manager = APIManager.sharedInstance.manager
         let params = ["show_env":1]
-        _ = try! manager.API_POST("post", params: params as AnyObject?, success: { (task, response) in
+         guard let _ = try? manager.API_POST("post", params: params as AnyObject?, success: { (task, response) in
             print("Result: \(response)")
             expect.fulfill()
             }, failure: { (operation, error) -> Void in
             print("Error: \(error)")
-        })
+         }) else { XCTFail(); return }
+
         waitForExpectations(timeout: 10, handler: nil)
     }
 

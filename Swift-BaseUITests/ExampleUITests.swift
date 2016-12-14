@@ -7,11 +7,9 @@
 //
 
 
-@testable import Swift_Base
-
 import XCTest
 
-class Swift_BaseUITests: XCTestCase {
+class ExampleUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -20,7 +18,7 @@ class Swift_BaseUITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
         let app = XCUIApplication()
-        app.launchEnvironment = ["Testing":"UI"]
+        app.launchEnvironment = ["Testing" : "UI"]
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         app.launch()
 
@@ -36,7 +34,9 @@ class Swift_BaseUITests: XCTestCase {
         
         let app = XCUIApplication()
         app.buttons["Tap to show alert"].tap()
-        app.alerts.collectionViews.buttons["OK"].tap()
+        app.alerts.buttons["OK"].tap()
+        
+  
         
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
