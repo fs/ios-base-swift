@@ -451,7 +451,7 @@
 				21DB300B19DD2289003A418D /* Sources */,
 				21DB300C19DD2289003A418D /* Frameworks */,
 				21DB300D19DD2289003A418D /* Resources */,
-				21B3D19F19E6E2B700EF0D52 /* ShellScript */,
+				21B3D19F19E6E2B700EF0D52 /* Fabric */,
 				ED5EA10099FAC7936106D98E /* [CP] Embed Pods Frameworks */,
 				76E2B99096FBD35DC42BB937 /* [CP] Copy Pods Resources */,
 			);
@@ -560,13 +560,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-Swift-BaseUITests/Pods-Abstract-Swift-BaseUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		21B3D19F19E6E2B700EF0D52 /* ShellScript */ = {
+		21B3D19F19E6E2B700EF0D52 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Fabric;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -894,8 +895,8 @@
 			baseConfigurationReference = 0622735EF2B5544374C1AF2B /* Pods-Abstract-Swift-Base.test.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_DISPLAY_NAME = "Swift-Base";
-				BUNDLE_ID = "com.flatstack.ios.Swift-Base";
+				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
+				BUNDLE_ID = "com.flatstack.ios.Swift-Base.staging";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_TESTABILITY = YES;
