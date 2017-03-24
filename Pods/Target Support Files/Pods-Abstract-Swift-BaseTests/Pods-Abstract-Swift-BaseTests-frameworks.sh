@@ -88,19 +88,7 @@ strip_invalid_archs() {
 }
 
 
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FSHelpers+Swift/FSHelpers_Swift.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MagicalRecord/MagicalRecord.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/OHHTTPStubs/OHHTTPStubs.framework"
-fi
 if [[ "$CONFIGURATION" == "Debug Staging" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FSHelpers+Swift/FSHelpers_Swift.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MagicalRecord/MagicalRecord.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/OHHTTPStubs/OHHTTPStubs.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FSHelpers+Swift/FSHelpers_Swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MagicalRecord/MagicalRecord.framework"
