@@ -17,7 +17,6 @@ class APIManager: NSObject {
     }()
     
     fileprivate static let baseURL: URL = {
-        
         #if TEST
             return  URL(string: "http://httpbin.org/")!
         #else
@@ -25,7 +24,6 @@ class APIManager: NSObject {
             let version = Bundle.main.infoDictionary!["API_VERSION"]
             return URL(string: "\(host)/\(version)")!
         #endif
-        
     }()
     
     fileprivate(set) lazy var manager: AFHTTPSessionManager = {
@@ -60,7 +58,6 @@ typealias APIManagerProgressBlock   = (_ progress: Progress) -> Void
 
 extension AFHTTPSessionManager {
     
-
     func API_GET(_ URLString : String,
                  params   : AnyObject?,
                  success  : APIManagerSuccessBlock?,
