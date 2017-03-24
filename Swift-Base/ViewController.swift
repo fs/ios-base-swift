@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //Check if deep link is present. Must be in initial view controller
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         appDelegate.triggerDeepLinkIfPresent()
     }
     

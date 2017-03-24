@@ -18,9 +18,15 @@ abstract_target 'Abstract' do
     end
     
     target 'Swift-BaseTests' do
+        #stub
+        pod 'OHHTTPStubs'
+        pod 'OHHTTPStubs/Swift'
     end
     
     target 'Swift-BaseUITests' do
+        #stub
+        pod 'OHHTTPStubs'
+        pod 'OHHTTPStubs/Swift'
     end
 end
 

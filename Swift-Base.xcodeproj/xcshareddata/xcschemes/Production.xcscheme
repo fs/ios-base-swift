@@ -21,7 +21,7 @@
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForTesting = "NO"
             buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
@@ -34,6 +34,20 @@
                ReferencedContainer = "container:Swift-Base.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1710DE5B1C453AF700912C5B"
+               BuildableName = "Swift-BaseUITests.xctest"
+               BlueprintName = "Swift-BaseUITests"
+               ReferencedContainer = "container:Swift-Base.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -43,26 +57,6 @@
       shouldUseLaunchSchemeArgsEnv = "NO"
       codeCoverageEnabled = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "212D018A1BB1986B00B34340"
-               BuildableName = "Swift-BaseTests.xctest"
-               BlueprintName = "Swift-BaseTests"
-               ReferencedContainer = "container:Swift-Base.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1710DE5B1C453AF700912C5B"
-               BuildableName = "Swift-BaseUITests.xctest"
-               BlueprintName = "Swift-BaseUITests"
-               ReferencedContainer = "container:Swift-Base.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
