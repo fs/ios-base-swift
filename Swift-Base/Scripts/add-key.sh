@@ -29,9 +29,18 @@ if [[ "$TRAVIS" == "true" ]]; then
     curl 'https://developer.apple.com/certificationauthority/AppleWWDRCA.cer' > "$APPLE_CERT_PATH"
     security import "$APPLE_CERT_PATH" -k $KEYCHAIN -T /usr/bin/codesign
 
-    #Copy local certs
-    security import Certs/$DISTRIBUTION_CERT_NAME.p12 -k $KEYCHAIN -P "twiage" -T /usr/bin/codesign
-    security import Certs/$DEVELOPMENT_CERT_NAME.p12 -k $KEYCHAIN -P "twiage" -T /usr/bin/codesign
+    #Import development and distribution certificates
+    #start decryption
+    for entry in Certs/*.p12.enc
+    do
+        if [ -f "$cert" ];then
+        #remove .enc extension
+        encripted_path="${cert%.*}"
+        openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $cert -d -a -out $encripted_path
+        security import $encripted_path -k $KEYCHAIN -T /usr/bin/codesign
+        fi
+    done
+    #end decryption
 
     echo " ****** "
 
@@ -49,6 +58,17 @@ if [[ "$TRAVIS" == "true" ]]; then
     echo "********************************"
     echo ""
     mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+    #Coping provisioning profiles
+    #start decryption
+    for profile in Certs/*.mobileprovision.enc
+    do
+        if [ -f "$profile" ];then
+        #encrpting provisioning profiles and remove .enc extension
+        encripted_path="${profile%.*}"
+        openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $profile -d -a -out $encripted_path
+        fi
+    done
+    #end decryption
     cp Certs/*.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
     ls ~/Library/MobileDevice/Provisioning\ Profiles
     echo " ****** "
@@ -70,15 +90,15 @@ elif [[ "$CIRCLECI" == "true" ]]; then
     curl 'https://developer.apple.com/certificationauthority/AppleWWDRCA.cer' > "$APPLE_CERT_PATH"
     security import "$APPLE_CERT_PATH" -k $KEYCHAIN -T /usr/bin/codesign
 
-    #Copy local certs
-    security import Certs/$DISTRIBUTION_CERT_NAME.p12 -k $KEYCHAIN -P "twiage" -T /usr/bin/codesign
-    security import Certs/$DEVELOPMENT_CERT_NAME.p12 -k $KEYCHAIN -P "twiage" -T /usr/bin/codesign
+    # Certs can be loaded on circle
 
     echo " ****** "
 
     echo "List keychains: "
     security list-keychains
     echo " ****** "
+
+    # Provisioning profiles can be loaded on circle
 
     echo "Find indentities keychains: "
     security find-identity -p codesigning
