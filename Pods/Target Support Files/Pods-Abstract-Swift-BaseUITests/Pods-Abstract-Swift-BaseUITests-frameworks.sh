@@ -124,6 +124,12 @@ if [[ "$CONFIGURATION" == "Release Staging" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/MagicalRecord/MagicalRecord.framework"
   install_framework "$BUILT_PRODUCTS_DIR/OHHTTPStubs/OHHTTPStubs.framework"
 fi
+if [[ "$CONFIGURATION" == "AppStore Staging" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FSHelpers+Swift/FSHelpers_Swift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MagicalRecord/MagicalRecord.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/OHHTTPStubs/OHHTTPStubs.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi
