@@ -1,31 +1,67 @@
 language: objective-c
+osx_image: xcode8.2
 
-xcode_workspace: Swift-Base.xcworkspace
-xcode_scheme: Staging
+cache:
+    timeout: 300
+    bundler: true
+    cocoapods: true
+    directories:
+        - vendor/bundle
+
+podfile: Podfile
 
 before_install:
-    - rvm install 2.2.5
     - export LANG=en_US.UTF-8
-    - sudo gem install cocoapods -v '0.39.0'
 
 install:
-    - pod install
+    - bundle install --path vendor/bundle # to cache vendor/bundle
+    - bundle exec pod install
+
+before_script:
+    - "$APP_NAME/Scripts/add-key.sh"
 
 script:
-    - ./Swift-Base/Scripts/build.sh
-    - ./Swift-Base/Scripts/test.sh
+    - travis_wait 30 $APP_NAME/Scripts/test.sh
 
-branches:
-    only:
-        - master
+#before_cache:
+    #- somescript.sh
+
+#after_success:
+    #- somescript.sh
+
+#after_failure:
+    #- somescript.sh
+
+#before_deploy:
+    #- somescript.sh
+
+deploy:
+    provider: script
+    script: travis_wait 30 $APP_NAME/Scripts/sign-and-upload.sh $DEVELOP_BRANCH $DEVELOP_LANE
+    on:
+        branch: $DEVELOP_BRANCH
+
+deploy:
+    provider: script
+    script: travis_wait 30 $APP_NAME/Scripts/sign-and-upload.sh $RELEASE_BRANCH $RELEASE_LANE
+    on:
+        branch: $RELEASE_BRANCH
+
+#after_deploy:
+    #- somescript.sh
+
+after_script:
+    - "$APP_NAME/Scripts/remove-key.sh"
 
 notifications:
-    hipchat:
-        rooms:
-            - $API_TOKEN@ios-base
+    #hipchat:
+        #rooms: XXX
+        #template:
+            #- '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}
+            #(<a href="%{build_url}">Details</a>/<a href="%{compare_url}">Change view</a>)'
+            #format: html
     email:
         recipients:
-            # - one@example.com
-            # - other@example.com
-        on_success: change # [always|never|change] # default: change
-        on_failure: change # [always|never|change] # default: always
+            - vladimir.goncharov@flatstack.com
+        on_success: always
+        on_failure: always
