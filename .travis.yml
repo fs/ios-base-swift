@@ -13,7 +13,7 @@ podfile: Podfile
 before_install:
     - export LANG=en_US.UTF-8
     # pre-starting the simulator
-    - xcrun instruments -w "iPhone 7 (10.2) [" || true
+    - xcrun instruments -w "iPhone 7 (10.2) [E40727B3-41FB-4D6E-B4CB-BFA87109EB12]" || true
 
 install:
     - bundle install --path vendor/bundle # to cache vendor/bundle
