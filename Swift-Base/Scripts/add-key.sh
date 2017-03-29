@@ -31,7 +31,7 @@ if [[ "$TRAVIS" == "true" ]]; then
 
     #Import development and distribution certificates
     #start decryption
-    for entry in Certs/*.p12.enc
+    for cert in Certs/*.p12.enc
     do
         if [ -f "$cert" ];then
         #remove .enc extension
