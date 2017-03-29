@@ -15,7 +15,7 @@ before_install:
 
 install:
     - bundle install --path vendor/bundle # to cache vendor/bundle
-    - bundle exec pod install
+    - bundle exec pod repo update
 
 before_script:
     - "$APP_NAME/Scripts/add-key.sh"
