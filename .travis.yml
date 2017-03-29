@@ -14,6 +14,7 @@ before_install:
     - xcrun instruments -w "iPhone 7 (10.2) [E40727B3-41FB-4D6E-B4CB-BFA87109EB12]" || true
 
 install:
+    - gem update bundler
     - bundle install
     - bundle exec pod update
 
