@@ -8,8 +8,8 @@ if [[ "$TRAVIS" == "true" ]]; then
     echo "********************************"
     echo ""
 
-    KEYCHAIN=ios-build.keychain
-    KEYCHAIN_PASSWORD=cibuild
+    KEYCHAIN="ios-build.keychain"
+    KEYCHAIN_PASSWORD="cibuild"
 
     # Create a temporary keychain for code signing.
     security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
@@ -34,10 +34,12 @@ if [[ "$TRAVIS" == "true" ]]; then
     for cert_path in Certs/*.p12.enc
     do
         if [ -f "$cert_path" ];then
-        #remove .enc extension
-        encripted_path="${cert_path%.*}"
-        openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $cert_path -d -a -out $encripted_path
-        security import $encripted_path -k $KEYCHAIN -T /usr/bin/codesign
+            #remove .enc extension
+            echo $cert_path
+            encripted_path="${cert_path%.*}"
+            echo $encripted_path
+            openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $cert_path -d -a -out $encripted_path
+            security import $encripted_path -k $KEYCHAIN -T /usr/bin/codesign
         fi
     done
     #end decryption
@@ -63,9 +65,9 @@ if [[ "$TRAVIS" == "true" ]]; then
     for provisioning_path in Certs/*.mobileprovision.enc
     do
         if [ -f "$provisioning_path" ];then
-        #encrpting provisioning profiles and remove .enc extension
-        encripted_path="${provisioning_path%.*}"
-        openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $provisioning_path -d -a -out $encripted_path
+            #encrpting provisioning profiles and remove .enc extension
+            encripted_path="${provisioning_path%.*}"
+            openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $provisioning_path -d -a -out $encripted_path
         fi
     done
     #end decryption
