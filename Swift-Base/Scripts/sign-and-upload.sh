@@ -45,15 +45,15 @@ if [[ "$CHECKING_BRANCH" && "$FASTLANE_NAME" ]]; then
 
     echo "$CI_NAME running on $CI_BRANCH branch..."
 
-    if [[ "$IS_PR" == "true" ]]; then
-        echo "This is a pull request. No deployment will be done."
-        exit 0
-    fi
+#    if [[ "$IS_PR" == "true" ]]; then
+#        echo "This is a pull request. No deployment will be done."
+#        exit 0
+#    fi
 
-    if [[ "$CI_BRANCH" != "$CHECKING_BRANCH" ]]; then
-        echo "Testing on a branch other than $CHECKING_BRANCH. No deployment will be done."
-        exit 0
-    fi
+#    if [[ "$CI_BRANCH" != "$CHECKING_BRANCH" ]]; then
+#        echo "Testing on a branch other than $CHECKING_BRANCH. No deployment will be done."
+#        exit 0
+#    fi
 
     echo ""
     echo "********************************"
