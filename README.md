@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fs/ios-base-swift.svg?branch=master)](https://travis-ci.org/fs/ios-base-swift)
+
 # ios-base-swift
 
 iOS swift template application.
