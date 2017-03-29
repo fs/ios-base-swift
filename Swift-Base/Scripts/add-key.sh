@@ -31,12 +31,12 @@ if [[ "$TRAVIS" == "true" ]]; then
 
     #Import development and distribution certificates
     #start decryption
-    for cert in Certs/*.p12.enc
+    for cert_path in Certs/*.p12.enc
     do
-        if [ -f "$cert" ];then
+        if [ -f "$cert_path" ];then
         #remove .enc extension
-        encripted_path="${cert%.*}"
-        openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $cert -d -a -out $encripted_path
+        encripted_path="${cert_path%.*}"
+        openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $cert_path -d -a -out $encripted_path
         security import $encripted_path -k $KEYCHAIN -T /usr/bin/codesign
         fi
     done
@@ -60,12 +60,12 @@ if [[ "$TRAVIS" == "true" ]]; then
     mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
     #Coping provisioning profiles
     #start decryption
-    for profile in Certs/*.mobileprovision.enc
+    for provisioning_path in Certs/*.mobileprovision.enc
     do
-        if [ -f "$profile" ];then
+        if [ -f "$provisioning_path" ];then
         #encrpting provisioning profiles and remove .enc extension
-        encripted_path="${profile%.*}"
-        openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $profile -d -a -out $encripted_path
+        encripted_path="${provisioning_path%.*}"
+        openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $provisioning_path -d -a -out $encripted_path
         fi
     done
     #end decryption
