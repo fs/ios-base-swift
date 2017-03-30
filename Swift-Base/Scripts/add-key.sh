@@ -42,7 +42,8 @@ if [[ "$TRAVIS" == "true" ]]; then
     done
     #end decryption
 
-    security set-key-partition-list -S apple-tool:,apple: -s -k $KEYCHAIN_PASSWORD $KEYCHAIN
+    #If you have a codesign error https://docs.travis-ci.com/user/common-build-problems#Mac%3A-macOS-Sierra-(10.12)-Code-Signing-Errors
+    #security set-key-partition-list -S apple-tool:,apple: -s -k $KEYCHAIN_PASSWORD $KEYCHAIN
 
     echo " ****** "
 

@@ -58,12 +58,12 @@ pod install
 #### Setting fastlane scripts
 
 * We use [bundler][16] for third-party gems. Set it like [here][17].
-* Find AppFile in the project and set ```team_id``` from developer program.
-* Find Deliverfile in the project and set ```username``` like apple id. 
+* Find AppFile in the project and set ```team_id``` from developer program. (for private repos)
+* Find Deliverfile in the project and set ```username``` like apple id. (for private repos)
 * Open the Terminal, write ```fastlane fastlane-credentials add --username YOUR_APPLE_ID``` and save your password to [CredentialManager][18]. It need that you can send new builds locally without input of the password everytime.
 * Find Fastfile in the project and set:
 - ```fastlane_version```, ```info_plist_path``` - required settings of the project.
-- ```CRASHLYTICS_GROUPS``` - testers aliases of Fabric/Crashlytics. Example: "group1, group2".
+- ```CRASHLYTICS_GROUPS``` - testers aliases of Fabric/Crashlytics. Example: "group1, group2". (for private repos)
 - ```BUNDLE_ID_APPSTORE```, ```BUNDLE_ID_APPSTORE_STAGING``` - for TestFlight. 
 - Check ```SCHEME_STAGING```, ```SCHEME_APPSTORE```, ```SCHEME_APPSTORE_STAGING``` - shared schemes.
 * [More info][15]
@@ -75,8 +75,8 @@ Add on the CI environment variables:
 * ```ENCRYPTION_SECRET``` - secret key of certificates and provisioning profiles (must be private)
 * ```DEVELOP_BRANCH``` and ```DEVELOP_LANE``` - setting developer branch and fastlane name (can be open) 
 * ```RELEASE_BRANCH``` and ```RELEASE_LANE``` - setting release branch and fastlane name (can be open)
-* ```FASTLANE_USER``` and ```FASTLANE_PASSWORD``` - apple id for deploying to testflight (must be private)
-* ```CRASHLYTICS_TOKEN```, ```CRASHLYTICS_SECRET``` - API key and Build secret of Fabric for deploying to Fabric/Crashlytics (must be private)
+* ```FASTLANE_TEAM_ID```, ```FASTLANE_USER``` and ```FASTLANE_PASSWORD``` - teaapple id for deploying to testflight (must be private)
+* ```CRASHLYTICS_TOKEN```, ```CRASHLYTICS_SECRET``` and ```CRASHLYTICS_GROUPS``` - API key and Build secret of Fabric for deploying to Fabric/Crashlytics (must be private)
 
 ## License
 ios-base-swift is released under the MIT license. See [LICENSE][7] for details.
