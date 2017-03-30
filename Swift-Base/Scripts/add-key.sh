@@ -12,10 +12,10 @@ if [[ "$TRAVIS" == "true" ]]; then
     KEYCHAIN_PASSWORD="cibuild"
 
     # Create a temporary keychain for code signing.
-    security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
-    security default-keychain -s "$KEYCHAIN"
-    security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
-    security set-keychain-settings -t 3600 -u "$KEYCHAIN"
+    security create-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN
+    security default-keychain -s $KEYCHAIN
+    security unlock-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN
+    security set-keychain-settings -t 3600 -u $KEYCHAIN
 
     echo ""
     echo "********************************"
@@ -25,9 +25,9 @@ if [[ "$TRAVIS" == "true" ]]; then
 
     # Download the certificate for the Apple Worldwide Developer Relations
     # Certificate Authority.
-    APPLE_CERT_PATH=Certs/apple_wwdr.cer
-    curl 'https://developer.apple.com/certificationauthority/AppleWWDRCA.cer' > "$APPLE_CERT_PATH"
-    security import "$APPLE_CERT_PATH" -k $KEYCHAIN -T /usr/bin/codesign
+    APPLE_CERT_PATH="Certs/apple_wwdr.cer"
+    curl 'https://developer.apple.com/certificationauthority/AppleWWDRCA.cer' > $APPLE_CERT_PATH
+    security import $APPLE_CERT_PATH -k $KEYCHAIN -T /usr/bin/codesign
 
     #Import development and distribution certificates
     #start decryption
@@ -38,11 +38,13 @@ if [[ "$TRAVIS" == "true" ]]; then
             echo $cert_path
             encripted_path="${cert_path%.*}"
             echo $encripted_path
-            openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $cert_path -d -a -out $encripted_path
-            security import $encripted_path -k $KEYCHAIN -T /usr/bin/codesign
+            openssl aes-256-cbc -k $ENCRYPTION_SECRET -in $cert_path -d -a -out $encripted_path
+            security import $encripted_path -k $KEYCHAIN -P "" -T /usr/bin/codesign
         fi
     done
     #end decryption
+
+    security set-key-partition-list -S apple-tool:,apple: -s -k $KEYCHAIN_PASSWORD $KEYCHAIN
 
     echo " ****** "
 
@@ -67,7 +69,7 @@ if [[ "$TRAVIS" == "true" ]]; then
         if [ -f "$provisioning_path" ];then
             #encrpting provisioning profiles and remove .enc extension
             encripted_path="${provisioning_path%.*}"
-            openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in $provisioning_path -d -a -out $encripted_path
+            openssl aes-256-cbc -k $ENCRYPTION_SECRET -in $provisioning_path -d -a -out $encripted_path
         fi
     done
     #end decryption
@@ -89,8 +91,10 @@ elif [[ "$CIRCLECI" == "true" ]]; then
     # Download the certificate for the Apple Worldwide Developer Relations
     # Certificate Authority.
     APPLE_CERT_PATH=Certs/apple_wwdr.cer
-    curl 'https://developer.apple.com/certificationauthority/AppleWWDRCA.cer' > "$APPLE_CERT_PATH"
-    security import "$APPLE_CERT_PATH" -k $KEYCHAIN -T /usr/bin/codesign
+    curl 'https://developer.apple.com/certificationauthority/AppleWWDRCA.cer' > $APPLE_CERT_PATH
+    security import $APPLE_CERT_PATH -k $KEYCHAIN -T /usr/bin/codesign
+
+    security set-key-partition-list -S apple-tool:,apple: -s -k $KEYCHAIN_PASSWORD $KEYCHAIN
 
     # Certs can be loaded on circle
 
