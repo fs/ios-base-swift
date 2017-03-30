@@ -25,6 +25,7 @@
 		21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */; };
 		5551EE0CB3C8CB1B21352BCB /* Pods_Abstract_Swift_BaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D030CC4C6950A7AF958E88 /* Pods_Abstract_Swift_BaseTests.framework */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
+		E75BB8051E8CFEF90035C2DA /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75BB8071E8CFEF90035C2DA /* Main_iPad.storyboard */; };
 		E7C62E171E8518080045B9F3 /* FSTestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C62E121E8517FA0045B9F3 /* FSTestExtension.swift */; };
 		E7C62E181E85180B0045B9F3 /* FSTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C62E131E8517FA0045B9F3 /* FSTestHelpers.swift */; };
 		E7C62E1C1E851B0F0045B9F3 /* FSUITestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C62E1A1E8519840045B9F3 /* FSUITestHelpers.swift */; };
@@ -128,6 +129,8 @@
 		E7294E0A1E8560240011DA63 /* sign-and-upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "sign-and-upload.sh"; path = "Scripts/sign-and-upload.sh"; sourceTree = "<group>"; };
 		E7294E0B1E8560240011DA63 /* test.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = test.sh; path = Scripts/test.sh; sourceTree = "<group>"; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
+		E75BB8061E8CFEF90035C2DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		E75BB8091E8CFEFB0035C2DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		E7C62E121E8517FA0045B9F3 /* FSTestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTestExtension.swift; sourceTree = "<group>"; };
 		E7C62E131E8517FA0045B9F3 /* FSTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTestHelpers.swift; sourceTree = "<group>"; };
 		E7C62E1A1E8519840045B9F3 /* FSUITestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSUITestHelpers.swift; sourceTree = "<group>"; };
@@ -284,6 +287,7 @@
 				21DB304819DD2D6D003A418D /* Constants.swift */,
 				21DB301419DD2289003A418D /* AppDelegate.swift */,
 				E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */,
+				E75BB8071E8CFEF90035C2DA /* Main_iPad.storyboard */,
 				21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */,
 				21DB301E19DD2289003A418D /* Images.xcassets */,
 				196D6E161BAB0736000B7997 /* Helpers */,
@@ -535,6 +539,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75BB8051E8CFEF90035C2DA /* Main_iPad.storyboard in Resources */,
 				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
 				218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */,
 				21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */,
@@ -766,6 +771,15 @@
 				218C64BB1BA07D3800EEEDF1 /* ru */,
 			);
 			name = Main_Storyboard.storyboard;
+			sourceTree = "<group>";
+		};
+		E75BB8071E8CFEF90035C2DA /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E75BB8061E8CFEF90035C2DA /* Base */,
+				E75BB8091E8CFEFB0035C2DA /* ru */,
+			);
+			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
