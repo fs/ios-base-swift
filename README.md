@@ -53,7 +53,7 @@ pod install
 * Choose ```Provisioning Profiles -> All``` and create 6 provisioning profiles for Staging ```Debug Staging```, ```Release Staging```, ```AppStore Staging``` and for Release ```Debug```, ```Release```,  ```AppStore```.
 * Download the 2 certificates and the 6 provisioning profiles.
 * Copy the files to ```/Certs``` path.
-* Encrypting the files via ```openssl aes-256-cbc -k "YOUR_ENCRYPTION_SECRET" -in Certs/XXX.ext -out Certs/XXX.ext.enc -a```
+* Encrypting the files via ```encrypt.sh```
 
 #### Setting fastlane scripts
 
