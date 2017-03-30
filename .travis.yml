@@ -27,8 +27,8 @@ before_script:
     - "$APP_NAME/Scripts/add-key.sh"
 
 script:
-    #- travis_wait 30 $APP_NAME/Scripts/test.sh
-    - travis_wait 30 $APP_NAME/Scripts/sign-and-upload.sh staging
+    #- travis_wait 10 $APP_NAME/Scripts/test.sh
+    - travis_wait 10 $APP_NAME/Scripts/sign-and-upload.sh staging
 
 #before_cache:
     #- somescript.sh
