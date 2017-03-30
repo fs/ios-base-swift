@@ -45,14 +45,20 @@ script:
 deploy:
     provider: script
     script: travis_wait 30 $APP_NAME/Scripts/sign-and-upload.sh $DEVELOP_LANE
+    api_key: $GITHUB_OAUTH_TOKEN
+    skip_cleanup: true
     on:
         branch: $DEVELOP_BRANCH
+        tags: true
 
 deploy:
     provider: script
+    api_key: $GITHUB_OAUTH_TOKEN
+    skip_cleanup: true
     script: travis_wait 30 $APP_NAME/Scripts/sign-and-upload.sh $RELEASE_LANE
     on:
         branch: $RELEASE_BRANCH
+        tags: true
 
 #after_deploy:
     #- somescript.sh
