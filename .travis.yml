@@ -28,7 +28,7 @@ before_script:
 
 script:
     #- travis_wait 30 $APP_NAME/Scripts/test.sh
-    - travis_wait 30 $APP_NAME/Scripts/sign-and-upload.sh empty staging
+    - travis_wait 30 $APP_NAME/Scripts/sign-and-upload.sh staging
 
 #before_cache:
     #- somescript.sh
@@ -44,13 +44,13 @@ script:
 
 deploy:
     provider: script
-    script: travis_wait 30 $APP_NAME/Scripts/sign-and-upload.sh $DEVELOP_BRANCH $DEVELOP_LANE
+    script: travis_wait 30 $APP_NAME/Scripts/sign-and-upload.sh $DEVELOP_LANE
     on:
         branch: $DEVELOP_BRANCH
 
 deploy:
     provider: script
-    script: travis_wait 30 $APP_NAME/Scripts/sign-and-upload.sh $RELEASE_BRANCH $RELEASE_LANE
+    script: travis_wait 30 $APP_NAME/Scripts/sign-and-upload.sh $RELEASE_LANE
     on:
         branch: $RELEASE_BRANCH
 

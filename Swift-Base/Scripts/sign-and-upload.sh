@@ -2,10 +2,9 @@
 
 
 #input params
-CHECKING_BRANCH=$1
-FASTLANE_NAME=$2
+FASTLANE_NAME=$1
 
-if [[ "$CHECKING_BRANCH" && "$FASTLANE_NAME" ]]; then
+if [[ "$FASTLANE_NAME" ]]; then
 
     echo ""
     echo "********************************"
@@ -50,11 +49,6 @@ if [[ "$CHECKING_BRANCH" && "$FASTLANE_NAME" ]]; then
 #        exit 0
 #    fi
 
-#    if [[ "$CI_BRANCH" != "$CHECKING_BRANCH" ]]; then
-#        echo "Testing on a branch other than $CHECKING_BRANCH. No deployment will be done."
-#        exit 0
-#    fi
-
     echo ""
     echo "********************************"
     echo "* Config *"
@@ -85,6 +79,6 @@ if [[ "$CHECKING_BRANCH" && "$FASTLANE_NAME" ]]; then
     bundle exec fastlane ios $FASTLANE_NAME remove_local_tags:false
 
 else
-    echo "Missing required parameter CHECKING_BRANCH or FASTLANE_NAME"
+    echo "Missing required parameter FASTLANE_NAME"
     exit 1
 fi
