@@ -20,7 +20,7 @@ before_install:
 
 install:
     - gem update bundler
-    - bundle install
+    - bundle install --path vendor/bundle # to cache vendor/bundle
     - bundle exec pod update
 
 before_script:
