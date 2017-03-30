@@ -32,7 +32,7 @@ platform :ios do
     #setting crashlytics
     #ENV["CRASHLYTICS_TOKEN"] = "XXX"
     #ENV["CRASHLYTICS_SECRET"] = "XXX"
-    #ENV["CRASHLYTICS_GROUPS"] = "XXX"
+    ENV["CRASHLYTICS_GROUPS"] = "ios"
 
     #custom default env
     ENV["SCHEME_STAGING"] = "Staging"
