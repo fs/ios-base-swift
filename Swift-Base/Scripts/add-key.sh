@@ -35,9 +35,7 @@ if [[ "$TRAVIS" == "true" ]]; then
     do
         if [ -f "$cert_path" ];then
             #remove .enc extension
-            echo $cert_path
             encripted_path="${cert_path%.*}"
-            echo $encripted_path
             openssl aes-256-cbc -k $ENCRYPTION_SECRET -in $cert_path -d -a -out $encripted_path
             security import $encripted_path -k $KEYCHAIN -P "" -T /usr/bin/codesign
         fi
@@ -90,7 +88,7 @@ elif [[ "$CIRCLECI" == "true" ]]; then
 
     # Download the certificate for the Apple Worldwide Developer Relations
     # Certificate Authority.
-    APPLE_CERT_PATH=Certs/apple_wwdr.cer
+    APPLE_CERT_PATH="Certs/apple_wwdr.cer"
     curl 'https://developer.apple.com/certificationauthority/AppleWWDRCA.cer' > $APPLE_CERT_PATH
     security import $APPLE_CERT_PATH -k $KEYCHAIN -T /usr/bin/codesign
 
