@@ -31,6 +31,8 @@ class Swift_BaseTests: XCTestCase {
             expect.fulfill()
             }, failure: { (task, error) in
             Log("Error: \(error)")
+            XCTFail("\(error)")
+            expect.fulfill()
         })
         
         self.waitForExpectations(timeout: 10, handler: nil)
@@ -46,6 +48,8 @@ class Swift_BaseTests: XCTestCase {
             expect.fulfill()
             }, failure: { (operation, error) -> Void in
             Log("Error: \(error)")
+            XCTFail("\(error)")
+            expect.fulfill()
         })
         self.waitForExpectations(timeout: 10, handler: nil)
     }
