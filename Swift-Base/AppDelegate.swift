@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
         var tokenString = ""
-        UIFont.systemFont(ofSize: 1, weight: 1)
+        UIFont.systemFont(ofSize: 1, weight: UIFont.Weight(rawValue: 1))
         for i in 0 ..< deviceToken.count {
             let formatString = "%02.2hhx"
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
@@ -86,9 +86,6 @@ extension AppDelegate {
         self.printProjectSettings()
         
         self.setupProjectForTests()
-        
-        // setup AFNetwork
-        self.setupAFNetworking()
         
         // Magica Record
 //        self.setupMagicalRecord()
@@ -124,10 +121,10 @@ extension AppDelegate {
         #endif
     }
     
-    func setupAFNetworking() {
-        AFNetworkReachabilityManager.shared().startMonitoring()
-        AFNetworkActivityIndicatorManager.shared().isEnabled   = true
-    }
+//    func setupAFNetworking() {
+//        AFNetworkReachabilityManager.shared().startMonitoring()
+//        AFNetworkActivityIndicatorManager.shared().isEnabled   = true
+//    }
     
 //    func setupMagicalRecord() {
 //        MagicalRecord.setShouldDeleteStoreOnModelMismatch(true)

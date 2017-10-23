@@ -11,7 +11,7 @@ abstract_target 'Abstract' do
     pod 'Crashlytics'
     
     # Libraries
-    pod 'AFNetworking'
+    pod 'Alamofire', '~> 4.5'
     pod 'MagicalRecord'
     
     target 'Swift-Base' do

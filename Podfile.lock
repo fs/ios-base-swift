@@ -1,19 +1,5 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
-    - AFNetworking/NSURLSession
+  - Alamofire (4.5.1)
   - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.10)
@@ -23,7 +9,7 @@ PODS:
   - MagicalRecord/Core (2.3.2)
 
 DEPENDENCIES:
-  - AFNetworking
+  - Alamofire (~> 4.5)
   - Crashlytics
   - Fabric
   - FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`)
@@ -39,12 +25,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/fs/FSHelper.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   Fabric: c73f371ee543e3f0b80608f2674750e4910d1669
   FSHelpers+Swift: df9494a1d09ac433dcb3a88dcec6546a7a09c17b
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
 
-PODFILE CHECKSUM: d0964f30ce51520ca9eb484a4f1e94d0249a92e4
+PODFILE CHECKSUM: 006a5ddafbb9dd1f731761ab336fbb9ae847b287
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.3.1
