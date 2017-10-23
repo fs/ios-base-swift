@@ -80,19 +80,6 @@ open class FSTextView :UITextView {
         self.textViewDidChange(nil)
     }
     
-    override class open func fs_getTextHeight (forText text:String, width:CGFloat, font:UIFont) -> CGFloat {
-        let textView = FSTextView(frame: CGRect(x: 0, y: 0, width: width, height: 0))
-        textView.font = font
-        textView.text = text
-        return textView.fs_textHeight
-    }
-    
-    override open var fs_textHeight:CGFloat {
-        return super.fs_textHeight
-    }
-    
-    
-    
     private func updatePlaceholderTextPosition () {
         let insets = self.textContainerInset
         self.placeholderLabel.frame = CGRect(x: insets.left, y: insets.right, width: self.bounds.width - (insets.left + insets.right), height: self.font?.lineHeight ?? 0)
@@ -116,11 +103,11 @@ open class FSTextView :UITextView {
     }
     
     //MARK: - Notifications
-    func textViewDidBeginEditing (_ sender: AnyObject?) {
+    @objc func textViewDidBeginEditing (_ sender: AnyObject?) {
         
     }
     
-    func textViewDidChange (_ sender: AnyObject?) {
+    @objc func textViewDidChange (_ sender: AnyObject?) {
         if self.text.characters.count == 0 {
             self.placeholderLabel.isHidden = false
         } else {
@@ -128,7 +115,7 @@ open class FSTextView :UITextView {
         }
     }
     
-    func textViewDidEndEditing (_ sender: AnyObject?) {
+    @objc func textViewDidEndEditing (_ sender: AnyObject?) {
         
     }
     
@@ -144,7 +131,7 @@ extension UITextView {
         return textView.fs_textHeight
     }
     
-    public var fs_textHeight:CGFloat {
+    @objc public var fs_textHeight:CGFloat {
         let size = self.sizeThatFits(CGSize(width: self.fs_width, height: CGFloat.greatestFiniteMagnitude))
         return size.height + 1
     }

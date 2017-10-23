@@ -28,7 +28,7 @@ public extension Array {
             let exchangeIndex = i + Int(arc4random_uniform(UInt32(remainingCount)))
             
             guard i != exchangeIndex else {continue}
-            swap(&array[i], &array[exchangeIndex])
+            array.swapAt(i, exchangeIndex)
         }
         
         return array

@@ -14,7 +14,6 @@
 @import Crashlytics;
 
 // Libraries
-@import AFNetworking;
 //@import MagicalRecord;
 //@import SDWebImage;
 

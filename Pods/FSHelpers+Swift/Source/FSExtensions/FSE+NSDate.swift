@@ -23,7 +23,7 @@ private func FS_ConvertToInterval (_ value: Any, period: FSTimePeriod) -> TimeIn
     return interval * period.rawValue
 }
 
-public extension Integer {
+public extension BinaryInteger {
     public var fs_seconds  : TimeInterval {return FS_ConvertToInterval(self, period: .second)}
     public var fs_minutes  : TimeInterval {return FS_ConvertToInterval(self, period: .minute)}
     public var fs_hours    : TimeInterval {return FS_ConvertToInterval(self, period: .hour)}

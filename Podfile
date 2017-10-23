@@ -1,42 +1,25 @@
-platform :ios, '8.2'
+platform :ios, '9.0'
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 
 abstract_target 'Abstract' do
     pod 'FSHelpers+Swift', :git => 'https://github.com/fs/FSHelper.git'
-    
+
     # Analytics
     pod 'Fabric'
     pod 'Crashlytics'
     
     # Libraries
-    pod 'AFNetworking'
+    pod 'Alamofire', '~> 4.5'
     pod 'MagicalRecord'
     
     target 'Swift-Base' do
     end
     
     target 'Swift-BaseTests' do
-        #stub
-        pod 'OHHTTPStubs'
-        pod 'OHHTTPStubs/Swift'
     end
     
-    target 'Swift-BaseUITests' do
-        #stub
-        pod 'OHHTTPStubs'
-        pod 'OHHTTPStubs/Swift'
-    end
-end
-
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['SWIFT_VERSION'] = '3.0'
-            config.build_settings['GCC_OPTIMIZATION_LEVEL'] = '0'
-        end
-    end
 end
 
 # Helpers

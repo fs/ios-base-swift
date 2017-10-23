@@ -46,7 +46,7 @@ public extension String {
         
         let boundingSize:CGSize = CGSize(width: CGFloat.greatestFiniteMagnitude, height: height)
         
-        let attributes = [NSFontAttributeName:font]
+        let attributes = [NSAttributedStringKey.font:font]
         
         let options : NSStringDrawingOptions = unsafeBitCast(
             NSStringDrawingOptions.usesLineFragmentOrigin.rawValue |
@@ -64,7 +64,7 @@ public extension String {
         
         let boundingSize:CGSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
         
-        let attributes = [NSFontAttributeName:font]
+        let attributes = [NSAttributedStringKey.font:font]
         
         let options : NSStringDrawingOptions = unsafeBitCast(
             NSStringDrawingOptions.usesLineFragmentOrigin.rawValue |

@@ -68,6 +68,14 @@ fileprivate extension AppDelegate {
         
         self.shareSetupProject()
         
+        self.setupProjectForTests()
+        
+        // Magica Record
+//        self.setupMagicalRecord()
+        
+        //setup SDWebImage
+//        self.setupSDWebImage()
+        
         //setup Crashlytics
         Fabric.with([Crashlytics.self])
     }
@@ -95,9 +103,6 @@ fileprivate extension AppDelegate {
         
         self.printProjectSettings()
         
-        //setup AFNetworking
-        self.setupAFNetworking()
-        
         //setup Magical Record
         //        self.setupMagicalRecord()
         
@@ -114,10 +119,10 @@ fileprivate extension AppDelegate {
         #endif
     }
     
-    func setupAFNetworking() {
-        AFNetworkReachabilityManager.shared().startMonitoring()
-        AFNetworkActivityIndicatorManager.shared().isEnabled   = true
-    }
+//    func setupAFNetworking() {
+//        AFNetworkReachabilityManager.shared().startMonitoring()
+//        AFNetworkActivityIndicatorManager.shared().isEnabled   = true
+//    }
     
 //    func setupMagicalRecord() {
 //        MagicalRecord.setShouldDeleteStoreOnModelMismatch(true)
@@ -141,7 +146,7 @@ fileprivate extension AppDelegate {
     func saveRemoteNotificationTokenData(_ application: UIApplication, deviceToken: Data) {
         let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
         var tokenString = ""
-        UIFont.systemFont(ofSize: 1, weight: 1)
+        UIFont.systemFont(ofSize: 1, weight: UIFont.Weight(rawValue: 1))
         for i in 0 ..< deviceToken.count {
             let formatString = "%02.2hhx"
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
