@@ -81,11 +81,6 @@ Add on the CI environment variables:
 ## License
 ios-base-swift is released under the MIT license. See [LICENSE][7] for details.
 
-## Credits
-
-iOS Base is maintained by [Nikita Fomin][8], [Sergey Nikolaev][9] and [Vladimir Goncharov][10].
-It was written by [Flatstack][11] with the help of our
-[contributors][12].
 
 [<img src="http://www.flatstack.com/logo.svg" width="100"/>][11]
 
