@@ -9,15 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var label: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Check if deep link is present. Must be in initial view controller
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         appDelegate.triggerDeepLinkIfPresent()
+        
+        // Usage API
+          let _ = try! UsageWebAPI.ByMonth(Date()).validate().responseJSON(completionHandler: { (response) in
+                switch response.result {
+                case .success(let result):
+                    debugPrint(result)
+                    break
+                    
+                case.failure(let error):
+                    debugPrint(error)
+                    break
+                }
+            })
+        
+
     }
     
     override func didReceiveMemoryWarning() {
