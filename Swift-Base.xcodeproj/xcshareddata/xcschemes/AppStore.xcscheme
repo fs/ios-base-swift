@@ -21,7 +21,7 @@
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForTesting = "NO"
             buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
@@ -34,28 +34,12 @@
                ReferencedContainer = "container:Swift-Base.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-      </BuildActionEntries>
-   </BuildAction>
-   <TestAction
-      buildConfiguration = "Test"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
-      shouldUseLaunchSchemeArgsEnv = "NO"
-      codeCoverageEnabled = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "212D018A1BB1986B00B34340"
-               BuildableName = "Swift-BaseTests.xctest"
-               BlueprintName = "Swift-BaseTests"
-               ReferencedContainer = "container:Swift-Base.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1710DE5B1C453AF700912C5B"
@@ -63,7 +47,17 @@
                BlueprintName = "Swift-BaseUITests"
                ReferencedContainer = "container:Swift-Base.xcodeproj">
             </BuildableReference>
-         </TestableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "AppStore"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
+      shouldUseLaunchSchemeArgsEnv = "NO"
+      codeCoverageEnabled = "YES">
+      <Testables>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -85,7 +79,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "AppStore"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       language = ""
@@ -126,7 +120,7 @@
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "AppStore">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "AppStore"

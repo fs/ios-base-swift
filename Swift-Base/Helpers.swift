@@ -8,6 +8,17 @@
 
 import Foundation
 
+//MARK: - Logs
+public func Log(_ error: Error) {
+    Log(error.localizedDescription)
+}
+
+public func Log(_ message: String, function: String = #function, file: String = #file, line: Int = #line) {
+    #if DEBUG
+        let fileName = file.components(separatedBy: "/").last != nil ? "[\(file.components(separatedBy: "/").last!)]" : ""
+        print("****\(fileName)[\(function)][\(line)]:\r\(message)\n")
+    #endif
+}
 //MARK: -
 //The server time format - 2016-06-07T12:24:35.732Z
 var DefaultISO8601Formatter: DateFormatter = {
@@ -18,3 +29,4 @@ var DefaultISO8601Formatter: DateFormatter = {
     
     return dateFormatter
 }()
+

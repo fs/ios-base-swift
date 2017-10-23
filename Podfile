@@ -1,11 +1,11 @@
-platform :ios, '8.2'
+platform :ios, '9.0'
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 
 abstract_target 'Abstract' do
     pod 'FSHelpers+Swift', :git => 'https://github.com/fs/FSHelper.git'
-    
+
     # Analytics
     pod 'Fabric'
     pod 'Crashlytics'
@@ -20,8 +20,6 @@ abstract_target 'Abstract' do
     target 'Swift-BaseTests' do
     end
     
-    target 'Swift-BaseUITests' do
-    end
 end
 
 # Helpers

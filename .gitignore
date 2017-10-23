@@ -21,5 +21,4 @@ DerivedData
 *.xcuserstate
 .xcbkptlist
 
-Pods/
 Carthage/
