@@ -13,8 +13,6 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    fileprivate(set) var loadedEnoughToDeepLink : Bool = false
-    fileprivate(set) var deepLink : DeepLink?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -53,11 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Remote notifications
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         self.saveRemoteNotificationTokenData(application, deviceToken: deviceToken)
-    }
-    
-    //MARK: - Deeplinks
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return self.canOpenURL(application, url: url)
     }
 }
 
@@ -119,11 +112,6 @@ fileprivate extension AppDelegate {
         #endif
     }
     
-//    func setupAFNetworking() {
-//        AFNetworkReachabilityManager.shared().startMonitoring()
-//        AFNetworkActivityIndicatorManager.shared().isEnabled   = true
-//    }
-    
 //    func setupMagicalRecord() {
 //        MagicalRecord.setShouldDeleteStoreOnModelMismatch(true)
 //        MagicalRecord.setupAutoMigratingCoreDataStack()
@@ -160,55 +148,5 @@ fileprivate extension AppDelegate {
     func requestForRemoteNotifications () {
         UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.sound, UIUserNotificationType.badge], categories: nil))
         UIApplication.shared.registerForRemoteNotifications()
-    }
-}
-
-//MARK: - DeepLink Handling
-extension AppDelegate {
-    
-    fileprivate func canOpenURL(_ application: UIApplication, url: URL) -> Bool {
-        if url.host == nil {
-            return true;
-        }
-        
-        let urlString = url.absoluteString
-        let queryArray = urlString.components(separatedBy: "/")
-        let query = queryArray[2]
-        
-        for sectionKey in DeepLinkAppSectionKey.allValues {
-            if query.range(of: sectionKey.description) != nil
-            {
-                let data = urlString.components(separatedBy: "/")
-                if data.count >= 3
-                {
-                    let parameter = data[3]
-                    let userInfo = [sectionKey.description : parameter]
-                    self.applicationHandleDeepLink(application, deepLinkUserInfo: userInfo, sectionKey: sectionKey)
-                    break
-                }
-            }
-        }
-        return true
-    }
-    
-    fileprivate func applicationHandleDeepLink(_ application: UIApplication,
-                                   deepLinkUserInfo userInfo: [AnyHashable: Any],
-                                   sectionKey: DeepLinkAppSectionKey) {
-        if  application.applicationState == UIApplicationState.background ||
-            application.applicationState == UIApplicationState.inactive {
-            let canDoNow = loadedEnoughToDeepLink
-            
-            self.deepLink = DeepLink.create(userInfo,sectionKey: sectionKey)
-            
-            if canDoNow {
-                self.triggerDeepLinkIfPresent()
-            }
-        }
-    }
-    
-    func triggerDeepLinkIfPresent() {
-        self.loadedEnoughToDeepLink = true
-        self.deepLink?.trigger()
-        self.deepLink = nil
     }
 }
