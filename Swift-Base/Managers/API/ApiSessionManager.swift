@@ -15,11 +15,12 @@ class ApiSessionManager {
     
     fileprivate let manager: Alamofire.SessionManager
     fileprivate let baseURL: URL = {
-         return  URL(string: "http://httpbin.org/")!
         #if TEST
             return  URL(string: "http://httpbin.org/")!
         #else
-            guard let host = Bundle.main.infoDictionary!["URL_HOST"] as? String else {return URL(string: "http://httpbin.org/")!}
+            guard let host = Bundle.main.infoDictionary!["URL_HOST"] as? String else {
+                fatalError("URL_HOST IS NOT DEFINED")
+            }
             return URL(string: host)!
         #endif
         
