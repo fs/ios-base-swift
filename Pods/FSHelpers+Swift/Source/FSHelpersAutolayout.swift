@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(*, deprecated, message: "Deprecated. Use NSLayoutDimension")
 public enum FSConstraint {
     
     public static func Visual (

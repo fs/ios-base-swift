@@ -1,9 +1,9 @@
 PODS:
-  - Alamofire (4.5.1)
-  - Crashlytics (3.8.3):
-    - Fabric (~> 1.6.3)
-  - Fabric (1.6.10)
-  - FSHelpers+Swift (2.2)
+  - Alamofire (4.8.1)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
+  - "FSHelpers+Swift (2.2.1)"
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
@@ -12,25 +12,32 @@ DEPENDENCIES:
   - Alamofire (~> 4.5)
   - Crashlytics
   - Fabric
-  - FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`)
+  - "FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`)"
   - MagicalRecord
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Crashlytics
+    - Fabric
+    - MagicalRecord
+
 EXTERNAL SOURCES:
-  FSHelpers+Swift:
+  "FSHelpers+Swift":
     :git: https://github.com/fs/FSHelper.git
 
 CHECKOUT OPTIONS:
-  FSHelpers+Swift:
-    :commit: 5ebfe3e076ad1efd8a1366fb029c46822f94e471
+  "FSHelpers+Swift":
+    :commit: 89ac92a3866deb54f5598c17b145894616155811
     :git: https://github.com/fs/FSHelper.git
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
-  Fabric: c73f371ee543e3f0b80608f2674750e4910d1669
-  FSHelpers+Swift: df9494a1d09ac433dcb3a88dcec6546a7a09c17b
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  "FSHelpers+Swift": 6ac6ff050daf0e5350a1205ca3a6f3fe6c4e43b7
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
 
-PODFILE CHECKSUM: 364b7d269691887f0afa8af7c0967505ed2afa03
+PODFILE CHECKSUM: e231d70d56c9dc195c2076196db68801011b8567
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

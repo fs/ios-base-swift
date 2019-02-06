@@ -108,7 +108,7 @@ open class FSTextView :UITextView {
     }
     
     @objc func textViewDidChange (_ sender: AnyObject?) {
-        if self.text.characters.count == 0 {
+        if self.text.count == 0 {
             self.placeholderLabel.isHidden = false
         } else {
             self.placeholderLabel.isHidden = true
