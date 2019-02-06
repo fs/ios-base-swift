@@ -13,10 +13,6 @@ public extension String {
     public func fs_toDouble   () -> Double?   {return Double(self)}
     public func fs_toInt      () -> Int?      {return Int(self)}
     
-    public var fs_length: Int {
-        return self.characters.count
-    }
-    
     public func fs_getRowHeight (_ font: UIFont) -> CGFloat {
         return self.fs_getStringHeight(font, width: CGFloat.greatestFiniteMagnitude)
     }
@@ -82,12 +78,10 @@ public extension String {
         var string = self
         
         guard let lFirstRange = self.range(of: firstString) else {return nil}
-        let strinBefore = self.substring(to: lFirstRange.upperBound)
-        string = self.replacingOccurrences(of: strinBefore, with: "")
+        string.removeFirst(lFirstRange.upperBound.encodedOffset)
         
         guard let lSecondRange = string.range(of: secondString) else {return nil}
-        let stringAfter = string.substring(from: lSecondRange.lowerBound)
-        string = string.replacingOccurrences(of: stringAfter, with: "")
+        string.removeSubrange(lSecondRange.lowerBound...)
         
         return string
     }
@@ -97,6 +91,14 @@ public extension String {
     }
     public func fs_toURL() -> URL? {
         return URL(string: self)
+    }
+    
+    public func fs_prefix(count: Int) -> String {
+        return ((self.count > count) ? String(self[..<self.index(self.startIndex, offsetBy: count)]) : self)
+    }
+    
+    public func fs_suffix(from index: Int) -> String {
+        return ((self.count > index) ? String(self[self.index(self.startIndex, offsetBy: index)...]) : "")
     }
     
     public var fs_localizedString: String {
@@ -113,14 +115,10 @@ public extension String {
     }
     
     public subscript (i: Int) -> Character {
-        return self[self.characters.index(self.startIndex, offsetBy: i)]
+        return self[self.index(self.startIndex, offsetBy: i)]
     }
     
     public subscript (i: Int) -> String {
         return String(self[i] as Character)
-    }
-    
-    public subscript (range: Range<Int>) -> String {
-        return self.substring(with: Range(self.characters.index(self.startIndex, offsetBy: range.lowerBound) ..< self.characters.index(self.startIndex, offsetBy: range.upperBound)))
     }
 }

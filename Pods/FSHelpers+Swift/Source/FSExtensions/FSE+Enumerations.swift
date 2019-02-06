@@ -8,13 +8,7 @@
 
 import Foundation
 
-// MARK: Raw Representable
-public extension RawRepresentable {
-    public init?(_ rawValue: RawValue) {
-        self.init(rawValue: rawValue)
-    }
-}
-
+// MARK: - Raw Representable
 public extension RawRepresentable where Self.RawValue == Int {
     public static var allCases: [Self] {
         var i = -1

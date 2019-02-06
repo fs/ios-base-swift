@@ -45,6 +45,38 @@ public extension UIImage {
         return self.fs_aspectFillImageWithSize(targetSize)
     }
     
+    public final func fs_scaled(toSize size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        
+        self.draw(in: CGRect(x: 0.0,
+                             y: 0.0,
+                             size: size))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return scaledImage
+    }
+    
+    public final func fs_scaled(toWidth width: CGFloat) -> UIImage? {
+        let scaleFactor = width / self.size.width
+        
+        let scaledSize: CGSize = CGSize(width: self.size.width * scaleFactor, height: self.size.height * scaleFactor)
+        
+        UIGraphicsBeginImageContext(scaledSize)
+        
+        self.draw(in: CGRect(x: 0.0,
+                             y: 0.0,
+                             size: scaledSize))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return scaledImage
+    }
+    
     public var fs_base64: String {
         let imageData = UIImagePNGRepresentation(self)!
         let base64String = imageData.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))

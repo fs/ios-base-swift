@@ -111,12 +111,10 @@ public extension FSSettingsAppProtocol {
 public enum FSSettingsApp: FSSettingsAppProtocol {
     
     case settings
-    case wiFi
     
     public var URL: Foundation.URL {
         switch self {
         case .settings: return Foundation.URL(string: UIApplicationOpenSettingsURLString)!
-        case .wiFi: return Foundation.URL(string: "prefs:root=WIFI")!
         }
     }
 }
