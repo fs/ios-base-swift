@@ -1,7 +1,20 @@
 disabled_rules: # rule identifiers to exclude from running
   - control_statement
+  - line_length
+  - trailing_whitespace
+  - identifier_name
 opt_in_rules: # some rules are only opt-in
   - empty_count
+  - attributes
+  - closure_spacing
+  - collection_alignment
+  - discouraged_object_literal
+  - empty_string
+  - fallthrough
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - private_action
+  - private_outlet
   # Find all the available rules by running:
   # swiftlint rules
 included: # paths to include during linting. `--path` is ignored if present.

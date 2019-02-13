@@ -8,12 +8,14 @@
 
 import UIKit
 
-enum DeepLinkAppSectionKey : Int {
+enum DeepLinkAppSectionKey: Int {
     case example = 0
     
     static var allValues: [DeepLinkAppSectionKey] {
         var sectionKeys: [DeepLinkAppSectionKey] = []
+        // swiftlint:disable:next identifier_name
         var i = 0
+        // swiftlint:disable:next identifier_name
         while let key = DeepLinkAppSectionKey(rawValue: i) {
             sectionKeys.append(key)
             i += 1
@@ -21,33 +23,31 @@ enum DeepLinkAppSectionKey : Int {
         return sectionKeys
     }
     
-    var description : String {
+    var description: String {
         switch self {
-        case .example:  return "example";
+        case .example: return "example"
         }
     }
     
 }
 
 enum ArticleType: String {
-    case ArticleA = "A"
-    case ArticleB = "B"
-    case ArticleC = "C"
+    case articleA = "A"
+    case articleB = "B"
+    case articleC = "C"
 }
-
 
 class DeepLink: NSObject {
 
-    class func create(_ userInfo : [AnyHashable: Any], sectionKey: DeepLinkAppSectionKey) -> DeepLink? {
+    class func create(_ userInfo: [AnyHashable: Any], sectionKey: DeepLinkAppSectionKey) -> DeepLink? {
         let info = userInfo as NSDictionary
         
         switch sectionKey {
         case DeepLinkAppSectionKey.example:
             guard let articleID = info.object(forKey: DeepLinkAppSectionKey.example.description) as? String else {return nil}
             
-            var deepLink : DeepLink? = nil
-            if !articleID.isEmpty
-            {
+            var deepLink: DeepLink? = nil
+            if !articleID.isEmpty {
                 deepLink = DeepLinkExample(exampleStr: articleID)
             }
             return deepLink

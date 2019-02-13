@@ -8,35 +8,35 @@
 import Alamofire
 
 enum UsageWebAPI: URLRequestConvertible, WebAPI {
-    case ByMonth(Date)
-    case Authentificate(login:String, password: String)
+    case byMonth(Date)
+    case authentificate(login:String, password: String)
     
     private var method: Alamofire.HTTPMethod {
         switch self {
-        case .ByMonth: return .get
-        case .Authentificate: return .post
+        case .byMonth: return .get
+        case .authentificate: return .post
         }
     }
     
     private var path: String {
         switch self {
-        case .ByMonth: return "get"
-        case .Authentificate: return "post"
+        case .byMonth: return "get"
+        case .authentificate: return "post"
         }
     }
     
     private var parameters: Alamofire.Parameters {
         var params: Alamofire.Parameters = [:]
         switch self {
-        case .ByMonth(let date):
+        case .byMonth(let date):
             if #available(iOS 10.0, *) {
                 params["date"] = ISO8601DateFormatter().string(from: date)
             } else {
-                params["date"] = DefaultISO8601Formatter.string(from:date)
+                params["date"] = defaultISO8601Formatter.string(from: date)
             }
             return params
             
-        case .Authentificate(let login,let password):
+        case .authentificate(let login, let password):
             params["login"] = login
             params["password"] = password
             return params

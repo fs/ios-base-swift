@@ -128,7 +128,7 @@ fileprivate extension AppDelegate {
 //    }
 }
 
-//MARK: - Push notifications 
+// MARK: - Push notifications
 fileprivate extension AppDelegate {
     
     func saveRemoteNotificationTokenData(_ application: UIApplication, deviceToken: Data) {
