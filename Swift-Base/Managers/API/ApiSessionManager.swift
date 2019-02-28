@@ -12,18 +12,19 @@ import Alamofire
 class ApiSessionManager {
 
     static let shared = ApiSessionManager()
-    
     fileprivate let manager: Alamofire.SessionManager
     fileprivate let baseURL: URL = {
         #if TEST
+        // swiftlint:disable:next force_unwrapping
             return  URL(string: "http://httpbin.org/")!
         #else
+         // swiftlint:disable:next force_unwrapping
             guard let host = Bundle.main.infoDictionary!["URL_HOST"] as? String else {
                 fatalError("URL_HOST IS NOT DEFINED")
             }
+        // swiftlint:disable:next force_unwrapping
             return URL(string: host)!
         #endif
-        
     }()
     
     fileprivate init() {
@@ -33,19 +34,16 @@ class ApiSessionManager {
             if let version = dict["CFBundleShortVersionString"] {
                 defaultHeaders["X-App-iOS-Version"] = version
             }
-            
             if let build = dict["CFBundleVersion"] {
                 defaultHeaders["X-App-iOS-Build"] = build
             }
         }
-        
         let configuration = URLSessionConfiguration.ephemeral
         configuration.httpAdditionalHeaders = defaultHeaders
-        
         manager = Alamofire.SessionManager(configuration: configuration)
     }
     
-    func authorizationHeaders() ->[AnyHashable : Any]? {
+    func authorizationHeaders() -> [AnyHashable: Any]? {
         return [:]
     }
     
@@ -59,12 +57,11 @@ class ApiSessionManager {
     }
     
     func call(_ request: URLRequestConvertible) -> DataRequest {
+        // swiftlint:disable:next identifier_name
         let req = manager.request(request)
-        
         #if DEBUG
             debugPrint(req)
         #endif
-        
         return req
     }
 }
@@ -72,7 +69,7 @@ class ApiSessionManager {
 protocol WebAPI {
 }
 
-extension WebAPI where Self : URLRequestConvertible {
+extension WebAPI where Self: URLRequestConvertible {
     func validate<S: Sequence>(statusCode acceptableStatusCode: S) -> Request where S.Iterator.Element == Int {
         return ApiSessionManager.shared.call(self).validate(statusCode: acceptableStatusCode)
     }
@@ -80,7 +77,4 @@ extension WebAPI where Self : URLRequestConvertible {
     func validate() -> DataRequest {
         return ApiSessionManager.shared.call(self).validate()
     }
-    
-    
-    
 }

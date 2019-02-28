@@ -10,22 +10,19 @@ import UIKit
 
 /*--------------User Defaults keys-------------*/
 enum FSUserDefaultsKey {
-    
     enum DeviceToken {
         private static let Prefix = "FSDeviceToken"
-        
-        static let Data    = GenerateKey(Prefix, key: "Data")
-        static let String  = GenerateKey(Prefix, key: "String")
+        static let Data    = generateKey(Prefix, key: "Data")
+        static let String  = generateKey(Prefix, key: "String")
     }
 }
 
 /*----------Notifications---------*/
 enum FSNotificationKey {
-    
     enum Example {
         private static let Prefix = "Example"
-        
-        static let Key = GenerateKey(Prefix, key: "Key")
+        // swiftlint:disable:next identifier_name
+        static let Key = generateKey(Prefix, key: "Key")
     }
 }
 
@@ -35,6 +32,7 @@ enum FSColors {
 }
 
 /*----------Helpers----------*/
-private func GenerateKey (_ prefix: String, key: String) -> String {
+// swiftlint:disable:next identifier_name
+private func generateKey (_ prefix: String, key: String) -> String {
     return "__\(prefix)-\(key)__"
 }
