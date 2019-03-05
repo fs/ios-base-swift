@@ -152,7 +152,7 @@ strip_invalid_archs() {
 }
 
 
-if [[ "$CONFIGURATION" == "Debug Staging" ]]; then
+if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSHelpers+Swift/FSHelpers_Swift.framework"
 fi
@@ -168,11 +168,11 @@ if [[ "$CONFIGURATION" == "Release Staging" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSHelpers+Swift/FSHelpers_Swift.framework"
 fi
-if [[ "$CONFIGURATION" == "AppStore Staging" ]]; then
+if [[ "$CONFIGURATION" == "Debug Staging" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSHelpers+Swift/FSHelpers_Swift.framework"
 fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
+if [[ "$CONFIGURATION" == "AppStore Staging" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSHelpers+Swift/FSHelpers_Swift.framework"
 fi

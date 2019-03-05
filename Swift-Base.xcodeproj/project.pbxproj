@@ -20,7 +20,10 @@
 		21DB301F19DD2289003A418D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DB301E19DD2289003A418D /* Images.xcassets */; };
 		21DB304919DD2D6D003A418D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB304819DD2D6D003A418D /* Constants.swift */; };
 		21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */; };
+		2E7E76D2F3337950D7564BCB /* Pods_Swift_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21809D2EF15C6FD4042F092 /* Pods_Swift_Base.framework */; };
 		5551EE0CB3C8CB1B21352BCB /* Pods_Abstract_Swift_BaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D030CC4C6950A7AF958E88 /* Pods_Abstract_Swift_BaseTests.framework */; };
+		5CF9588F8881E81443920C5F /* Pods_Swift_BaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD474BF55427F785B95E1521 /* Pods_Swift_BaseUITests.framework */; };
+		A940C6E5DCC150B8E0AC2473 /* Pods_Swift_BaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC34A414A3141736DAC65BE7 /* Pods_Swift_BaseTests.framework */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 		E75BB8051E8CFEF90035C2DA /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75BB8071E8CFEF90035C2DA /* Main_iPad.storyboard */; };
 		E7C62E171E8518080045B9F3 /* FSTestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C62E121E8517FA0045B9F3 /* FSTestExtension.swift */; };
@@ -28,7 +31,6 @@
 		E7C62E1C1E851B0F0045B9F3 /* FSUITestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C62E1A1E8519840045B9F3 /* FSUITestHelpers.swift */; };
 		E7C62E1D1E851B280045B9F3 /* FSTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C62E131E8517FA0045B9F3 /* FSTestHelpers.swift */; };
 		E7C62E1E1E851B290045B9F3 /* FSTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C62E131E8517FA0045B9F3 /* FSTestHelpers.swift */; };
-		F0487B3D81C1B66DDEAEB7DB /* Pods_Abstract_Swift_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66C84DF09B94596F79FE884 /* Pods_Abstract_Swift_Base.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,11 +53,13 @@
 /* Begin PBXFileReference section */
 		077D69E51F9DE831008F63DA /* ExampleApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApiRouter.swift; sourceTree = "<group>"; };
 		1218E154FF6E17259B67BF8D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15235CC3B840AD1FB8DE3152 /* Pods-Swift-BaseUITests.appstore staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseUITests.appstore staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseUITests/Pods-Swift-BaseUITests.appstore staging.xcconfig"; sourceTree = "<group>"; };
 		1710DE5C1C453AF700912C5B /* Swift-BaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-BaseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1710DE5E1C453AF800912C5B /* ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUITests.swift; sourceTree = "<group>"; };
 		1710DE601C453AF800912C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194478471AAF90AF00A34744 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		19D856C71AB5EDDF0014C459 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
+		1A693C2D567FE7B2C21ED2B2 /* Pods-Swift-Base.appstore staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Base.appstore staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Base/Pods-Swift-Base.appstore staging.xcconfig"; sourceTree = "<group>"; };
 		2124DF9F1A8DF48000422313 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		212D018B1BB1986B00B34340 /* Swift-BaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-BaseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		212D018D1BB1986B00B34340 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
@@ -79,18 +83,37 @@
 		21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21E617E41CE61BBF005D67E0 /* generate_entities.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = generate_entities.sh; path = "Swift-Base/Scripts/generate_entities.sh"; sourceTree = SOURCE_ROOT; };
 		2265BB77CF808D30857E6BB8 /* Pods-Abstract-Swift-BaseTests.appstore staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-BaseTests.appstore staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests.appstore staging.xcconfig"; sourceTree = "<group>"; };
+		2A1AE1E36ED34DE9B1144BB3 /* Pods-Swift-BaseUITests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseUITests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseUITests/Pods-Swift-BaseUITests.debug staging.xcconfig"; sourceTree = "<group>"; };
 		2EDBCEC62EED8E435D38F2E2 /* Pods-Abstract-Swift-Base.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-Base.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base.release.xcconfig"; sourceTree = "<group>"; };
 		30E10CA8C13400E183AC2638 /* Pods-Abstract-Swift-BaseTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-BaseTests.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests.appstore.xcconfig"; sourceTree = "<group>"; };
+		4FDB0559A20956E2F804BCC5 /* Pods-Swift-BaseTests.appstore staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.appstore staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.appstore staging.xcconfig"; sourceTree = "<group>"; };
 		515E1CD58AEDDB60304AE65F /* Pods-Abstract-Swift-Base.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-Base.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base.appstore.xcconfig"; sourceTree = "<group>"; };
+		5680218565A77C4235FC030D /* Pods-Swift-BaseUITests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseUITests.test.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseUITests/Pods-Swift-BaseUITests.test.xcconfig"; sourceTree = "<group>"; };
 		5A6EEF9457403CA02590F64D /* Pods-Abstract-Swift-Base.appstore staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-Base.appstore staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base.appstore staging.xcconfig"; sourceTree = "<group>"; };
+		5FFECDAB821757A8696965B1 /* Pods-Swift-Base.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Base.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Base/Pods-Swift-Base.appstore.xcconfig"; sourceTree = "<group>"; };
+		603488A1F6209B3FC0730E39 /* Pods-Swift-BaseTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		62629B55F0F444A517A4C423 /* Pods-Swift-BaseUITests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseUITests.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseUITests/Pods-Swift-BaseUITests.appstore.xcconfig"; sourceTree = "<group>"; };
+		64D27B4164BEF7EB6D4FC90C /* Pods-Swift-BaseTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.test.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.test.xcconfig"; sourceTree = "<group>"; };
 		68D030CC4C6950A7AF958E88 /* Pods_Abstract_Swift_BaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_Swift_BaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E7BAA57C604196285083A18 /* Pods-Swift-Base.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Base.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Base/Pods-Swift-Base.release staging.xcconfig"; sourceTree = "<group>"; };
+		791CDADA226760F71B49499D /* Pods-Swift-Base.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Base.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Base/Pods-Swift-Base.release.xcconfig"; sourceTree = "<group>"; };
 		86B3A86E0650E2ED8BA485B6 /* Pods-Abstract-Swift-Base.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-Base.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base.debug staging.xcconfig"; sourceTree = "<group>"; };
 		8BE8A10D4F6C40D2CFF8881F /* Pods-Abstract-Swift-Base.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-Base.test.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base.test.xcconfig"; sourceTree = "<group>"; };
 		939D201EA38A5C54F69E5C78 /* Pods-Abstract-Swift-BaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-BaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests.release.xcconfig"; sourceTree = "<group>"; };
+		A51A59DCD384CAF58B2961A7 /* Pods-Swift-BaseTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.appstore.xcconfig"; sourceTree = "<group>"; };
+		B21809D2EF15C6FD4042F092 /* Pods_Swift_Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66C84DF09B94596F79FE884 /* Pods_Abstract_Swift_Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_Swift_Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC34A414A3141736DAC65BE7 /* Pods_Swift_BaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_BaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD474BF55427F785B95E1521 /* Pods_Swift_BaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_BaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB5164643740790B3D625C6 /* Pods-Swift-BaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		C09E73AD933DF021CF291D2B /* Pods_Abstract_Swift_BaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_Swift_BaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ACEDDEF27D7CEC8050008B /* Pods-Abstract-Swift-BaseTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-BaseTests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		C9C7DACE6AD96D0A52AFBF85 /* Pods-Swift-BaseUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseUITests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseUITests/Pods-Swift-BaseUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		CD668A6E2E26FB6FE9EC39E2 /* Pods-Abstract-Swift-BaseTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-BaseTests.test.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests.test.xcconfig"; sourceTree = "<group>"; };
+		D674784D249FB8DC5340E4D9 /* Pods-Swift-BaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseUITests/Pods-Swift-BaseUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D94174684F8EC7156120E6AF /* Pods-Swift-Base.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Base.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Base/Pods-Swift-Base.debug staging.xcconfig"; sourceTree = "<group>"; };
+		D97C3F8992D1704C15ECDE40 /* Pods-Swift-BaseTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.release staging.xcconfig"; sourceTree = "<group>"; };
+		DC4B5E47BC86CBB14A7CB50E /* Pods-Swift-Base.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Base.test.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Base/Pods-Swift-Base.test.xcconfig"; sourceTree = "<group>"; };
 		E728A0EB1E85717400CE6723 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = SOURCE_ROOT; };
 		E7294E081E8560240011DA63 /* add-key.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "add-key.sh"; path = "Scripts/add-key.sh"; sourceTree = "<group>"; };
 		E7294E091E8560240011DA63 /* remove-key.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "remove-key.sh"; path = "Scripts/remove-key.sh"; sourceTree = "<group>"; };
@@ -111,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CF9588F8881E81443920C5F /* Pods_Swift_BaseUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5551EE0CB3C8CB1B21352BCB /* Pods_Abstract_Swift_BaseTests.framework in Frameworks */,
+				A940C6E5DCC150B8E0AC2473 /* Pods_Swift_BaseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */,
-				F0487B3D81C1B66DDEAEB7DB /* Pods_Abstract_Swift_Base.framework in Frameworks */,
+				2E7E76D2F3337950D7564BCB /* Pods_Swift_Base.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +434,9 @@
 				B66C84DF09B94596F79FE884 /* Pods_Abstract_Swift_Base.framework */,
 				68D030CC4C6950A7AF958E88 /* Pods_Abstract_Swift_BaseTests.framework */,
 				C09E73AD933DF021CF291D2B /* Pods_Abstract_Swift_BaseUITests.framework */,
+				B21809D2EF15C6FD4042F092 /* Pods_Swift_Base.framework */,
+				BC34A414A3141736DAC65BE7 /* Pods_Swift_BaseTests.framework */,
+				BD474BF55427F785B95E1521 /* Pods_Swift_BaseUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -428,6 +456,24 @@
 				2EDBCEC62EED8E435D38F2E2 /* Pods-Abstract-Swift-Base.release.xcconfig */,
 				8BE8A10D4F6C40D2CFF8881F /* Pods-Abstract-Swift-Base.test.xcconfig */,
 				939D201EA38A5C54F69E5C78 /* Pods-Abstract-Swift-BaseTests.release.xcconfig */,
+				791CDADA226760F71B49499D /* Pods-Swift-Base.release.xcconfig */,
+				DC4B5E47BC86CBB14A7CB50E /* Pods-Swift-Base.test.xcconfig */,
+				5FFECDAB821757A8696965B1 /* Pods-Swift-Base.appstore.xcconfig */,
+				6E7BAA57C604196285083A18 /* Pods-Swift-Base.release staging.xcconfig */,
+				D94174684F8EC7156120E6AF /* Pods-Swift-Base.debug staging.xcconfig */,
+				1A693C2D567FE7B2C21ED2B2 /* Pods-Swift-Base.appstore staging.xcconfig */,
+				603488A1F6209B3FC0730E39 /* Pods-Swift-BaseTests.debug staging.xcconfig */,
+				64D27B4164BEF7EB6D4FC90C /* Pods-Swift-BaseTests.test.xcconfig */,
+				A51A59DCD384CAF58B2961A7 /* Pods-Swift-BaseTests.appstore.xcconfig */,
+				D97C3F8992D1704C15ECDE40 /* Pods-Swift-BaseTests.release staging.xcconfig */,
+				4FDB0559A20956E2F804BCC5 /* Pods-Swift-BaseTests.appstore staging.xcconfig */,
+				BFB5164643740790B3D625C6 /* Pods-Swift-BaseTests.release.xcconfig */,
+				2A1AE1E36ED34DE9B1144BB3 /* Pods-Swift-BaseUITests.debug staging.xcconfig */,
+				5680218565A77C4235FC030D /* Pods-Swift-BaseUITests.test.xcconfig */,
+				62629B55F0F444A517A4C423 /* Pods-Swift-BaseUITests.appstore.xcconfig */,
+				C9C7DACE6AD96D0A52AFBF85 /* Pods-Swift-BaseUITests.release staging.xcconfig */,
+				15235CC3B840AD1FB8DE3152 /* Pods-Swift-BaseUITests.appstore staging.xcconfig */,
+				D674784D249FB8DC5340E4D9 /* Pods-Swift-BaseUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -468,6 +514,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1710DE6B1C453AF800912C5B /* Build configuration list for PBXNativeTarget "Swift-BaseUITests" */;
 			buildPhases = (
+				83F25A1D0BD1C52ECD96656C /* [CP] Check Pods Manifest.lock */,
 				1710DE581C453AF700912C5B /* Sources */,
 				1710DE591C453AF700912C5B /* Frameworks */,
 				1710DE5A1C453AF700912C5B /* Resources */,
@@ -490,7 +537,6 @@
 				212D01871BB1986B00B34340 /* Sources */,
 				212D01881BB1986B00B34340 /* Frameworks */,
 				212D01891BB1986B00B34340 /* Resources */,
-				FD5D7D33D1B38CDFEFAD7404 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -648,7 +694,29 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Abstract-Swift-BaseTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Swift-BaseTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83F25A1D0BD1C52ECD96656C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swift-BaseUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -666,7 +734,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Abstract-Swift-Base-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Swift-Base-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -679,7 +747,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Swift-Base/Pods-Swift-Base-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FSHelpers+Swift/FSHelpers_Swift.framework",
 			);
@@ -690,27 +758,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FD5D7D33D1B38CDFEFAD7404 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/FSHelpers+Swift/FSHelpers_Swift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSHelpers_Swift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swift-Base/Pods-Swift-Base-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -799,7 +847,7 @@
 /* Begin XCBuildConfiguration section */
 		077D69E71F9DF31A008F63DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 939D201EA38A5C54F69E5C78 /* Pods-Abstract-Swift-BaseTests.release.xcconfig */;
+			baseConfigurationReference = BFB5164643740790B3D625C6 /* Pods-Swift-BaseTests.release.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -809,6 +857,7 @@
 		};
 		077D69E81F9DF31A008F63DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D674784D249FB8DC5340E4D9 /* Pods-Swift-BaseUITests.release.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -818,6 +867,7 @@
 		};
 		1710DE651C453AF800912C5B /* Debug Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A1AE1E36ED34DE9B1144BB3 /* Pods-Swift-BaseUITests.debug staging.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
@@ -840,6 +890,7 @@
 		};
 		1710DE671C453AF800912C5B /* Test */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5680218565A77C4235FC030D /* Pods-Swift-BaseUITests.test.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -859,6 +910,7 @@
 		};
 		1710DE681C453AF800912C5B /* AppStore */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62629B55F0F444A517A4C423 /* Pods-Swift-BaseUITests.appstore.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -877,6 +929,7 @@
 		};
 		1710DE691C453AF800912C5B /* Release Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9C7DACE6AD96D0A52AFBF85 /* Pods-Swift-BaseUITests.release staging.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -943,7 +996,7 @@
 		};
 		212D01821BB1978500B34340 /* Test */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BE8A10D4F6C40D2CFF8881F /* Pods-Abstract-Swift-Base.test.xcconfig */;
+			baseConfigurationReference = DC4B5E47BC86CBB14A7CB50E /* Pods-Swift-Base.test.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
@@ -975,7 +1028,7 @@
 		};
 		212D01951BB1986B00B34340 /* Debug Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8ACEDDEF27D7CEC8050008B /* Pods-Abstract-Swift-BaseTests.debug staging.xcconfig */;
+			baseConfigurationReference = 603488A1F6209B3FC0730E39 /* Pods-Swift-BaseTests.debug staging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -998,7 +1051,7 @@
 		};
 		212D01971BB1986B00B34340 /* Test */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD668A6E2E26FB6FE9EC39E2 /* Pods-Abstract-Swift-BaseTests.test.xcconfig */;
+			baseConfigurationReference = 64D27B4164BEF7EB6D4FC90C /* Pods-Swift-BaseTests.test.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1020,7 +1073,7 @@
 		};
 		212D01981BB1986B00B34340 /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30E10CA8C13400E183AC2638 /* Pods-Abstract-Swift-BaseTests.appstore.xcconfig */;
+			baseConfigurationReference = A51A59DCD384CAF58B2961A7 /* Pods-Swift-BaseTests.appstore.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1039,7 +1092,7 @@
 		};
 		212D01991BB1986B00B34340 /* Release Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE4BF9F76D2787DC0E27216D /* Pods-Abstract-Swift-BaseTests.release staging.xcconfig */;
+			baseConfigurationReference = D97C3F8992D1704C15ECDE40 /* Pods-Swift-BaseTests.release staging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1108,7 +1161,7 @@
 		};
 		21DB304D19DD3B30003A418D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EDBCEC62EED8E435D38F2E2 /* Pods-Abstract-Swift-Base.release.xcconfig */;
+			baseConfigurationReference = 791CDADA226760F71B49499D /* Pods-Swift-Base.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				API_VERSION = v1;
@@ -1201,7 +1254,7 @@
 		};
 		21DB305019DD3B48003A418D /* Release Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5569AFF31D6AD52CF989338 /* Pods-Abstract-Swift-Base.release staging.xcconfig */;
+			baseConfigurationReference = 6E7BAA57C604196285083A18 /* Pods-Swift-Base.release staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
@@ -1279,7 +1332,7 @@
 		};
 		CB4EB178222ED12200FF2232 /* Debug Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86B3A86E0650E2ED8BA485B6 /* Pods-Abstract-Swift-Base.debug staging.xcconfig */;
+			baseConfigurationReference = D94174684F8EC7156120E6AF /* Pods-Swift-Base.debug staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
@@ -1307,7 +1360,7 @@
 		};
 		CB4EB179222ED12200FF2232 /* Debug Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE4BF9F76D2787DC0E27216D /* Pods-Abstract-Swift-BaseTests.release staging.xcconfig */;
+			baseConfigurationReference = 603488A1F6209B3FC0730E39 /* Pods-Swift-BaseTests.debug staging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1326,6 +1379,7 @@
 		};
 		CB4EB17A222ED12200FF2232 /* Debug Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A1AE1E36ED34DE9B1144BB3 /* Pods-Swift-BaseUITests.debug staging.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1394,7 +1448,7 @@
 		};
 		E7294D9B1E85529D0011DA63 /* AppStore Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A6EEF9457403CA02590F64D /* Pods-Abstract-Swift-Base.appstore staging.xcconfig */;
+			baseConfigurationReference = 1A693C2D567FE7B2C21ED2B2 /* Pods-Swift-Base.appstore staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
@@ -1422,7 +1476,7 @@
 		};
 		E7294D9C1E85529D0011DA63 /* AppStore Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2265BB77CF808D30857E6BB8 /* Pods-Abstract-Swift-BaseTests.appstore staging.xcconfig */;
+			baseConfigurationReference = 4FDB0559A20956E2F804BCC5 /* Pods-Swift-BaseTests.appstore staging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1440,6 +1494,7 @@
 		};
 		E7294D9D1E85529D0011DA63 /* AppStore Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15235CC3B840AD1FB8DE3152 /* Pods-Swift-BaseUITests.appstore staging.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1449,7 +1504,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FS.Swift-BaseUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "Swift-Base";
 				USES_XCTRUNNER = YES;
 			};
@@ -1505,7 +1560,7 @@
 		};
 		E736C5DF1A25320400B8986E /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 515E1CD58AEDDB60304AE65F /* Pods-Abstract-Swift-Base.appstore.xcconfig */;
+			baseConfigurationReference = 5FFECDAB821757A8696965B1 /* Pods-Swift-Base.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Swift-Base";
