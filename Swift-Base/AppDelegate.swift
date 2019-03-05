@@ -85,14 +85,6 @@ private extension AppDelegate {
     /*
     Setup third party libraries
 
-    private func setupMagicalRecord() {
-        MagicalRecord.setShouldDeleteStoreOnModelMismatch(true)
-        MagicalRecord.setupAutoMigratingCoreDataStack()
-        MagicalRecord.setLoggingLevel(MagicalRecordLoggingLevel.Off)
-    }
-    */
-
-    /*
     private func setupSDWebImage() {
         let imageCache:SDImageCache = SDImageCache.sharedImageCache()
         imageCache.maxCacheSize     = 1024*1024*100 // 100mb on disk

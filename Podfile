@@ -12,7 +12,6 @@ abstract_target 'Abstract' do
     
     # Libraries
     pod 'Alamofire', '~> 4.5'
-    pod 'MagicalRecord'
     
     target 'Swift-Base' do
     end

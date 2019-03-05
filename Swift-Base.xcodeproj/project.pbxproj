@@ -75,7 +75,6 @@
 		21DB301319DD2289003A418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21DB301419DD2289003A418D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21DB301E19DD2289003A418D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		21DB303819DD2341003A418D /* BridgeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		21DB304819DD2D6D003A418D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21E617E41CE61BBF005D67E0 /* generate_entities.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = generate_entities.sh; path = "Swift-Base/Scripts/generate_entities.sh"; sourceTree = SOURCE_ROOT; };
@@ -285,7 +284,6 @@
 			children = (
 				215828691A91E2E000833BE6 /* Scripts */,
 				21DB301319DD2289003A418D /* Info.plist */,
-				21DB303819DD2341003A418D /* BridgeHeader.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -508,8 +506,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21DB303119DD2289003A418D /* Build configuration list for PBXNativeTarget "Swift-Base" */;
 			buildPhases = (
-				07B2A25A220ADE80001EC701 /* ShellScript */,
 				CC612261ED91271563C1FE5B /* [CP] Check Pods Manifest.lock */,
+				07B2A25A220ADE80001EC701 /* ShellScript */,
 				21DB300B19DD2289003A418D /* Sources */,
 				21DB300C19DD2289003A418D /* Frameworks */,
 				21DB300D19DD2289003A418D /* Resources */,
@@ -681,20 +679,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FSHelpers+Swift/FSHelpers_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSHelpers_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD5D7D33D1B38CDFEFAD7404 /* [CP] Embed Pods Frameworks */ = {
@@ -703,20 +699,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FSHelpers+Swift/FSHelpers_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSHelpers_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -941,7 +935,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				URL_HOST = "https://apple.com";
 				VALIDATE_PRODUCT = YES;
@@ -972,7 +965,7 @@
 				PRODUCT_NAME = "Swift-Base";
 				PROVISIONING_PROFILE = "6abf51a6-4557-4190-a61f-8517c7946ecf";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/BridgeHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -1106,7 +1099,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/BridgeHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				URL_HOST = "https://apple.com";
@@ -1161,7 +1153,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/BridgeHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1200,7 +1192,6 @@
 				PRODUCT_NAME = "Swift-Base";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/BridgeHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -1229,12 +1220,127 @@
 				PRODUCT_NAME = "Swift-Base";
 				PROVISIONING_PROFILE = "1a9506f9-983f-4087-a07a-26355b883ef8";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/BridgeHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Release Staging";
+		};
+		CB4EB177222ED12200FF2232 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_VERSION = v1;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				URL_HOST = "https://apple.com";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Debug Staging";
+		};
+		CB4EB178222ED12200FF2232 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86B3A86E0650E2ED8BA485B6 /* Pods-Abstract-Swift-Base.debug staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
+				BUNDLE_DISPLAY_NAME = "Swift-Base Staging";
+				BUNDLE_ID = "com.flatstack.ios.Swift-Base.staging";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID)";
+				PRODUCT_NAME = "Swift-Base";
+				PROVISIONING_PROFILE = "1a9506f9-983f-4087-a07a-26355b883ef8";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Debug Staging";
+		};
+		CB4EB179222ED12200FF2232 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE4BF9F76D2787DC0E27216D /* Pods-Abstract-Swift-BaseTests.release staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Swift-BaseTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flatstack.Swift-BaseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-Base.app/Swift-Base";
+			};
+			name = "Debug Staging";
+		};
+		CB4EB17A222ED12200FF2232 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Swift-BaseUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FS.Swift-BaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = "Swift-Base";
+				USES_XCTRUNNER = YES;
+			};
+			name = "Debug Staging";
 		};
 		E7294D9A1E85529D0011DA63 /* AppStore Staging */ = {
 			isa = XCBuildConfiguration;
@@ -1279,7 +1385,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/BridgeHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				URL_HOST = "https://apple.com";
@@ -1308,7 +1413,7 @@
 				PRODUCT_NAME = "Swift-Base";
 				PROVISIONING_PROFILE = "1f21326e-340a-428d-a6c3-4eb9873475fc";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/BridgeHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1392,7 +1497,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/BridgeHeader.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				URL_HOST = "https://apple.com";
 				VALIDATE_PRODUCT = YES;
@@ -1420,7 +1524,7 @@
 				PRODUCT_NAME = "Swift-Base";
 				PROVISIONING_PROFILE = "4bedd41f-7037-4a27-a19b-53e7697ca528";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/BridgeHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1437,6 +1541,7 @@
 				1710DE671C453AF800912C5B /* Test */,
 				1710DE681C453AF800912C5B /* AppStore */,
 				1710DE691C453AF800912C5B /* Release Staging */,
+				CB4EB17A222ED12200FF2232 /* Debug Staging */,
 				E7294D9D1E85529D0011DA63 /* AppStore Staging */,
 				077D69E81F9DF31A008F63DA /* Release */,
 			);
@@ -1450,6 +1555,7 @@
 				212D01971BB1986B00B34340 /* Test */,
 				212D01981BB1986B00B34340 /* AppStore */,
 				212D01991BB1986B00B34340 /* Release Staging */,
+				CB4EB179222ED12200FF2232 /* Debug Staging */,
 				E7294D9C1E85529D0011DA63 /* AppStore Staging */,
 				077D69E71F9DF31A008F63DA /* Release */,
 			);
@@ -1460,6 +1566,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21DB304C19DD3B30003A418D /* Release Staging */,
+				CB4EB177222ED12200FF2232 /* Debug Staging */,
 				212D01811BB1978500B34340 /* Test */,
 				E736C5DE1A25320400B8986E /* AppStore */,
 				21DB304F19DD3B48003A418D /* Release */,
@@ -1475,6 +1582,7 @@
 				212D01821BB1978500B34340 /* Test */,
 				E736C5DF1A25320400B8986E /* AppStore */,
 				21DB305019DD3B48003A418D /* Release Staging */,
+				CB4EB178222ED12200FF2232 /* Debug Staging */,
 				E7294D9B1E85529D0011DA63 /* AppStore Staging */,
 			);
 			defaultConfigurationIsVisible = 0;

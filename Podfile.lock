@@ -4,23 +4,18 @@ PODS:
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
   - "FSHelpers+Swift (2.2.1)"
-  - MagicalRecord (2.3.2):
-    - MagicalRecord/Core (= 2.3.2)
-  - MagicalRecord/Core (2.3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - Crashlytics
   - Fabric
   - "FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`)"
-  - MagicalRecord
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Crashlytics
     - Fabric
-    - MagicalRecord
 
 EXTERNAL SOURCES:
   "FSHelpers+Swift":
@@ -36,8 +31,7 @@ SPEC CHECKSUMS:
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   "FSHelpers+Swift": 6ac6ff050daf0e5350a1205ca3a6f3fe6c4e43b7
-  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
 
-PODFILE CHECKSUM: e231d70d56c9dc195c2076196db68801011b8567
+PODFILE CHECKSUM: 16edcd15674a5f830395336f9ecc72f20abe2a09
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1
