@@ -8,19 +8,22 @@
 
 import UIKit
 import CoreData
+import UserNotifications
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: - Instance Properties
+
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    // MARK: - Instance Methods
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        if IS_RUNNING_TESTS() {
-            self.setupProjectForTests()
-        } else {
-            self.setupProject()
-        }
+        self.setupProject()
         
         return true
     }
@@ -48,105 +51,84 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
     }
     
-    //MARK: - Remote notifications
+    // MARK: - Remote notifications
+
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         self.saveRemoteNotificationTokenData(application, deviceToken: deviceToken)
     }
+
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        Log("Failed to register: \(error)")
+    }
+
+    func requestForRemoteNotifications () {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { [weak self] granted, error in
+            Log("Permission granted: \(granted)")
+
+            guard granted else {
+                return
+            }
+
+            self?.getNotificationSettings()
+        })
+    }
 }
 
-//MARK: - Settings
-fileprivate extension AppDelegate {
+// MARK: - Settings
+
+private extension AppDelegate {
+
+    // MARK: - Instance Methods
     
-    func setupProject() {
-        
-        self.shareSetupProject()
-        
-        self.setupProjectForTests()
-        
-        // Magica Record
-//        self.setupMagicalRecord()
-        
-        //setup SDWebImage
-//        self.setupSDWebImage()
-        
-        //setup Crashlytics
+    private func setupProject() {
         Fabric.with([Crashlytics.self])
     }
-    
-    func setupProjectForTests() {
-        
-        self.shareSetupProject()
-        
-        #if TEST
-            switch TestingMode() {
-            case .Unit:
-                Log("Unit Tests")
-                self.window?.rootViewController = UIViewController()
-                return
-                
-            case .UI:
-                Log("UI Tests")
-                //setting custom the first view controller
-//                self.window?.rootViewController = UIViewController()
-            }
-        #endif
+
+    /*
+    Setup third party libraries
+
+    private func setupSDWebImage() {
+        let imageCache:SDImageCache = SDImageCache.sharedImageCache()
+        imageCache.maxCacheSize     = 1024*1024*100 // 100mb on disk
+        imageCache.maxMemoryCost    = 1024*1024*10  // 10mb in memory
+
+        let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.sharedDownloader()
+        imageDownloader.downloadTimeout          = 60.0
     }
-    
-    func shareSetupProject() {
-        
-        self.printProjectSettings()
-        
-        //setup Magical Record
-        //        self.setupMagicalRecord()
-        
-        //setup SDWebImage
-        //        self.setupSDWebImage()
-    }
-    
-    func printProjectSettings() {
-        #if DEBUG
-            // print documents directory and device ID
-            Log("\n*******************************************\nDOCUMENTS:\n\(NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])\n*******************************************\n")
-            Log("\n*******************************************\nDEVICE ID:\n\((UIDevice.current.identifierForVendor?.uuidString)!)\n*******************************************\n")
-            Log("\n*******************************************\nBUNDLE ID:\n\((Bundle.main.bundleIdentifier)!)\n*******************************************\n")
-        #endif
-    }
-    
-//    func setupMagicalRecord() {
-//        MagicalRecord.setShouldDeleteStoreOnModelMismatch(true)
-//        MagicalRecord.setupAutoMigratingCoreDataStack()
-//        MagicalRecord.setLoggingLevel(MagicalRecordLoggingLevel.Off)
-//    }
-    
-//    func setupSDWebImage() {
-//        let imageCache:SDImageCache = SDImageCache.sharedImageCache()
-//        imageCache.maxCacheSize     = 1024*1024*100 // 100mb on disk
-//        imageCache.maxMemoryCost    = 1024*1024*10  // 10mb in memory
-//        
-//        let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.sharedDownloader()
-//        imageDownloader.downloadTimeout          = 60.0
-//    }
+    */
 }
 
 // MARK: - Push notifications
-fileprivate extension AppDelegate {
+
+private extension AppDelegate {
+
+    // MARK: - Instance Methods
     
-    func saveRemoteNotificationTokenData(_ application: UIApplication, deviceToken: Data) {
-        let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
-        var tokenString = ""
-        UIFont.systemFont(ofSize: 1, weight: UIFont.Weight(rawValue: 1))
-        for i in 0 ..< deviceToken.count {
-            let formatString = "%02.2hhx"
-            tokenString += String(format: formatString, arguments: [tokenChars[i]])
+    private func saveRemoteNotificationTokenData(_ application: UIApplication, deviceToken: Data) {
+        let tokenParts = deviceToken.map { data in
+            String(format: "%02.2hhx", data)
         }
+
+        let token = tokenParts.joined()
+
+        Log("Device token: \(token)")
         
         UserDefaults.standard.set(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
-        UserDefaults.standard.set(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
+        UserDefaults.standard.set(token, forKey: FSUserDefaultsKey.DeviceToken.String)
         UserDefaults.standard.synchronize()
     }
-    
-    func requestForRemoteNotifications () {
-        UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.sound, UIUserNotificationType.badge], categories: nil))
-        UIApplication.shared.registerForRemoteNotifications()
+
+    private func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { settings in
+            Log("Notification settings: \(settings)")
+
+            guard settings.authorizationStatus == .authorized else {
+                return
+            }
+
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        })
     }
 }

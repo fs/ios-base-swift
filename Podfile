@@ -1,32 +1,28 @@
-platform :ios, '10.0'
-source 'https://github.com/CocoaPods/Specs.git'
-use_frameworks!
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
+target 'Swift-Base' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
 
-abstract_target 'Abstract' do
-    pod 'FSHelpers+Swift', :git => 'https://github.com/fs/FSHelper.git'
+  # Pods for Swift-Base
+  pod 'FSHelpers+Swift', :git => 'https://github.com/fs/FSHelper.git'
 
-    # Analytics
-    pod 'Fabric'
-    pod 'Crashlytics'
-    
-    # Libraries
-    pod 'Alamofire', '~> 4.5'
-    pod 'MagicalRecord'
-    
-    target 'Swift-Base' do
-    end
-    
-    target 'Swift-BaseTests' do
-    end
-    
+  # Analytics
+  pod 'Fabric'
+  pod 'Crashlytics'
+  
+  # Libraries
+  pod 'Alamofire', '~> 4.5'
+
+  target 'Swift-BaseTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Swift-BaseUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 end
-
-# Helpers
-
-#pod 'SDWebImage'
-#pod 'NSDate-Extensions'
-#pod 'Reachability'
-#pod 'SVProgressHUD'
-#pod 'SSKeychain'
-#pod 'MKStoreKit'
