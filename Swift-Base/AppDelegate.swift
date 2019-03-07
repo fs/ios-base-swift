@@ -113,8 +113,8 @@ private extension AppDelegate {
 
         Log("Device token: \(token)")
         
-        UserDefaults.standard.set(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
-        UserDefaults.standard.set(token, forKey: FSUserDefaultsKey.DeviceToken.String)
+        UserDefaults.standard.set(deviceToken, forKey: UserDefaultsKeys.DeviceToken.data)
+        UserDefaults.standard.set(token, forKey: UserDefaultsKeys.DeviceToken.string)
         UserDefaults.standard.synchronize()
     }
 
