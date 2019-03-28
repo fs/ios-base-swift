@@ -47,5 +47,4 @@ enum UsageWebAPI: URLRequestConvertible, WebAPI {
         let request = ApiSessionManager.shared.request(forPath: path, method: method)
         return try Alamofire.JSONEncoding.default.encode(request, with: parameters)
     }
-    
 }

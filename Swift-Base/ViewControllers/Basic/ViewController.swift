@@ -9,17 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var label: UILabel!
+    
+    // MARK: - Instance Properties
+    
+    @IBOutlet fileprivate weak var label: UILabel!
+    
+    // MARK: - Instance Methods
+    
+    @IBAction fileprivate func tapShowAlert(_ sender: AnyObject) {
+        let alertController = UIAlertController(title: nil, message: "Press OK", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        self.present(alertController, animated: true)
+    }
+    
+    // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    @IBAction func tapShowAlert(_ sender: AnyObject) {
-        UIAlertView(title: nil, message: "Press OK", delegate: nil, cancelButtonTitle: "OK").show()
     }
 }
