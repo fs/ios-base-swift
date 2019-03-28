@@ -4,6 +4,12 @@ PODS:
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
   - "FSHelpers+Swift (2.2.1)"
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - Result (4.1.0)
   - SwiftLint (0.30.1)
 
 DEPENDENCIES:
@@ -11,6 +17,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - "FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`)"
+  - Moya (~> 12.0)
   - SwiftLint
 
 SPEC REPOS:
@@ -18,6 +25,8 @@ SPEC REPOS:
     - Alamofire
     - Crashlytics
     - Fabric
+    - Moya
+    - Result
     - SwiftLint
 
 EXTERNAL SOURCES:
@@ -34,8 +43,10 @@ SPEC CHECKSUMS:
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   "FSHelpers+Swift": 6ac6ff050daf0e5350a1205ca3a6f3fe6c4e43b7
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
 
-PODFILE CHECKSUM: b6b23fbc69355afc77c448bced693499ad12f874
+PODFILE CHECKSUM: c4d04423bc82eabf2164b23445b6ad5eaa273b95
 
 COCOAPODS: 1.5.2
