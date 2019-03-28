@@ -26,23 +26,6 @@
 		C32DB337224CC436001198B5 /* LoggedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB331224CC436001198B5 /* LoggedNavigationController.swift */; };
 		C32DB338224CC436001198B5 /* LoggedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB332224CC436001198B5 /* LoggedTabBarController.swift */; };
 		C32DB33A224CC449001198B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB339224CC449001198B5 /* Log.swift */; };
-		C32DB34E224CC78D001198B5 /* WebStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB33C224CC78D001198B5 /* WebStatusCode.swift */; };
-		C32DB34F224CC78D001198B5 /* WebMultiPartDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB33D224CC78D001198B5 /* WebMultiPartDataItem.swift */; };
-		C32DB350224CC78D001198B5 /* AlamofireWebHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB33F224CC78D001198B5 /* AlamofireWebHandler.swift */; };
-		C32DB351224CC78D001198B5 /* AlamofireWebRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB340224CC78D001198B5 /* AlamofireWebRequestAdapter.swift */; };
-		C32DB352224CC78D001198B5 /* AlamofireWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB341224CC78D001198B5 /* AlamofireWebService.swift */; };
-		C32DB353224CC78D001198B5 /* AlamofireWebError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB342224CC78D001198B5 /* AlamofireWebError.swift */; };
-		C32DB354224CC78D001198B5 /* WebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB343224CC78D001198B5 /* WebRequest.swift */; };
-		C32DB355224CC78D001198B5 /* WebMultiPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB344224CC78D001198B5 /* WebMultiPart.swift */; };
-		C32DB356224CC78D001198B5 /* WebError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB345224CC78D001198B5 /* WebError.swift */; };
-		C32DB357224CC78D001198B5 /* WebHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB346224CC78D001198B5 /* WebHandler.swift */; };
-		C32DB358224CC78D001198B5 /* WebRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB347224CC78D001198B5 /* WebRequestAdapter.swift */; };
-		C32DB359224CC78D001198B5 /* WebActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB348224CC78D001198B5 /* WebActivityIndicator.swift */; };
-		C32DB35A224CC78D001198B5 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB349224CC78D001198B5 /* WebService.swift */; };
-		C32DB35B224CC78D001198B5 /* UIWebActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB34A224CC78D001198B5 /* UIWebActivityIndicator.swift */; };
-		C32DB35C224CC78D001198B5 /* WebMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB34B224CC78D001198B5 /* WebMethod.swift */; };
-		C32DB35D224CC78D001198B5 /* WebErrorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB34C224CC78D001198B5 /* WebErrorBase.swift */; };
-		C32DB35E224CC78D001198B5 /* WebMultiPartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB34D224CC78D001198B5 /* WebMultiPartItem.swift */; };
 		CB18CA31223109670027E905 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18CA30223109670027E905 /* UserDefaultsKeys.swift */; };
 		CB18CA3322310A070027E905 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18CA3222310A070027E905 /* Colors.swift */; };
 		CB18CA3522310B0D0027E905 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18CA3422310B0D0027E905 /* Fonts.swift */; };
@@ -127,23 +110,6 @@
 		C32DB331224CC436001198B5 /* LoggedNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedNavigationController.swift; sourceTree = "<group>"; };
 		C32DB332224CC436001198B5 /* LoggedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedTabBarController.swift; sourceTree = "<group>"; };
 		C32DB339224CC449001198B5 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		C32DB33C224CC78D001198B5 /* WebStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebStatusCode.swift; sourceTree = "<group>"; };
-		C32DB33D224CC78D001198B5 /* WebMultiPartDataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebMultiPartDataItem.swift; sourceTree = "<group>"; };
-		C32DB33F224CC78D001198B5 /* AlamofireWebHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireWebHandler.swift; sourceTree = "<group>"; };
-		C32DB340224CC78D001198B5 /* AlamofireWebRequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireWebRequestAdapter.swift; sourceTree = "<group>"; };
-		C32DB341224CC78D001198B5 /* AlamofireWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireWebService.swift; sourceTree = "<group>"; };
-		C32DB342224CC78D001198B5 /* AlamofireWebError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireWebError.swift; sourceTree = "<group>"; };
-		C32DB343224CC78D001198B5 /* WebRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRequest.swift; sourceTree = "<group>"; };
-		C32DB344224CC78D001198B5 /* WebMultiPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebMultiPart.swift; sourceTree = "<group>"; };
-		C32DB345224CC78D001198B5 /* WebError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebError.swift; sourceTree = "<group>"; };
-		C32DB346224CC78D001198B5 /* WebHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebHandler.swift; sourceTree = "<group>"; };
-		C32DB347224CC78D001198B5 /* WebRequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRequestAdapter.swift; sourceTree = "<group>"; };
-		C32DB348224CC78D001198B5 /* WebActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebActivityIndicator.swift; sourceTree = "<group>"; };
-		C32DB349224CC78D001198B5 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
-		C32DB34A224CC78D001198B5 /* UIWebActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebActivityIndicator.swift; sourceTree = "<group>"; };
-		C32DB34B224CC78D001198B5 /* WebMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebMethod.swift; sourceTree = "<group>"; };
-		C32DB34C224CC78D001198B5 /* WebErrorBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebErrorBase.swift; sourceTree = "<group>"; };
-		C32DB34D224CC78D001198B5 /* WebMultiPartItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebMultiPartItem.swift; sourceTree = "<group>"; };
 		C8ACEDDEF27D7CEC8050008B /* Pods-Abstract-Swift-BaseTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-BaseTests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests.debug staging.xcconfig"; sourceTree = "<group>"; };
 		C9C7DACE6AD96D0A52AFBF85 /* Pods-Swift-BaseUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseUITests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseUITests/Pods-Swift-BaseUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		CB18CA30223109670027E905 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
@@ -416,7 +382,6 @@
 			children = (
 				C32DB339224CC449001198B5 /* Log.swift */,
 				C32DB32C224CC436001198B5 /* ViewControllers */,
-				C32DB33B224CC78D001198B5 /* WebService */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -432,38 +397,6 @@
 				C32DB332224CC436001198B5 /* LoggedTabBarController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		C32DB33B224CC78D001198B5 /* WebService */ = {
-			isa = PBXGroup;
-			children = (
-				C32DB33C224CC78D001198B5 /* WebStatusCode.swift */,
-				C32DB33D224CC78D001198B5 /* WebMultiPartDataItem.swift */,
-				C32DB33E224CC78D001198B5 /* Alamofire */,
-				C32DB343224CC78D001198B5 /* WebRequest.swift */,
-				C32DB344224CC78D001198B5 /* WebMultiPart.swift */,
-				C32DB345224CC78D001198B5 /* WebError.swift */,
-				C32DB346224CC78D001198B5 /* WebHandler.swift */,
-				C32DB347224CC78D001198B5 /* WebRequestAdapter.swift */,
-				C32DB348224CC78D001198B5 /* WebActivityIndicator.swift */,
-				C32DB349224CC78D001198B5 /* WebService.swift */,
-				C32DB34A224CC78D001198B5 /* UIWebActivityIndicator.swift */,
-				C32DB34B224CC78D001198B5 /* WebMethod.swift */,
-				C32DB34C224CC78D001198B5 /* WebErrorBase.swift */,
-				C32DB34D224CC78D001198B5 /* WebMultiPartItem.swift */,
-			);
-			path = WebService;
-			sourceTree = "<group>";
-		};
-		C32DB33E224CC78D001198B5 /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				C32DB33F224CC78D001198B5 /* AlamofireWebHandler.swift */,
-				C32DB340224CC78D001198B5 /* AlamofireWebRequestAdapter.swift */,
-				C32DB341224CC78D001198B5 /* AlamofireWebService.swift */,
-				C32DB342224CC78D001198B5 /* AlamofireWebError.swift */,
-			);
-			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		CB4EB180222ED72B00FF2232 /* Swift-BaseTests */ = {
@@ -749,36 +682,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C32DB34F224CC78D001198B5 /* WebMultiPartDataItem.swift in Sources */,
 				218C64B81BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld in Sources */,
-				C32DB35E224CC78D001198B5 /* WebMultiPartItem.swift in Sources */,
-				C32DB354224CC78D001198B5 /* WebRequest.swift in Sources */,
 				CB18CA3322310A070027E905 /* Colors.swift in Sources */,
-				C32DB34E224CC78D001198B5 /* WebStatusCode.swift in Sources */,
-				C32DB359224CC78D001198B5 /* WebActivityIndicator.swift in Sources */,
-				C32DB353224CC78D001198B5 /* AlamofireWebError.swift in Sources */,
 				C32DB338224CC436001198B5 /* LoggedTabBarController.swift in Sources */,
 				077D69E61F9DE831008F63DA /* ExampleApiRouter.swift in Sources */,
-				C32DB35C224CC78D001198B5 /* WebMethod.swift in Sources */,
 				C32DB333224CC436001198B5 /* LoggedPageViewController.swift in Sources */,
-				C32DB352224CC78D001198B5 /* AlamofireWebService.swift in Sources */,
 				2124DFA01A8DF48000422313 /* ViewController.swift in Sources */,
-				C32DB358224CC78D001198B5 /* WebRequestAdapter.swift in Sources */,
 				C32DB33A224CC449001198B5 /* Log.swift in Sources */,
 				C32DB336224CC436001198B5 /* LoggedViewController.swift in Sources */,
-				C32DB35D224CC78D001198B5 /* WebErrorBase.swift in Sources */,
-				C32DB355224CC78D001198B5 /* WebMultiPart.swift in Sources */,
 				214F4FF41BFDC2D90084BE32 /* Helpers.swift in Sources */,
-				C32DB35B224CC78D001198B5 /* UIWebActivityIndicator.swift in Sources */,
-				C32DB350224CC78D001198B5 /* AlamofireWebHandler.swift in Sources */,
 				CB18CA31223109670027E905 /* UserDefaultsKeys.swift in Sources */,
-				C32DB357224CC78D001198B5 /* WebHandler.swift in Sources */,
 				C32DB337224CC436001198B5 /* LoggedNavigationController.swift in Sources */,
-				C32DB351224CC78D001198B5 /* AlamofireWebRequestAdapter.swift in Sources */,
 				C32DB335224CC436001198B5 /* LoggedTableViewController.swift in Sources */,
-				C32DB35A224CC78D001198B5 /* WebService.swift in Sources */,
 				21DB301519DD2289003A418D /* AppDelegate.swift in Sources */,
-				C32DB356224CC78D001198B5 /* WebError.swift in Sources */,
 				CB18CA3522310B0D0027E905 /* Fonts.swift in Sources */,
 				C32DB334224CC436001198B5 /* PannableViewController.swift in Sources */,
 				2158286F1A91E56600833BE6 /* ApiSessionManager.swift in Sources */,
