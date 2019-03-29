@@ -12,6 +12,5 @@ protocol ExampleService {
     
     // MARK: - Instance Properties
     
-    func exampleFetch(phoneNumber: String, code: String)
+    func exampleFetch(phoneNumber: String, code: String, completion: @escaping (Bool?, Error?) -> Void)
 }
-

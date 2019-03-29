@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/elina/Desktop/ios-base-swift/Swift-Base/Configuration/Keys/Production.swift">
-   </FileRef>
-   <FileRef
       location = "group:Swift-Base.xcodeproj">
    </FileRef>
    <FileRef

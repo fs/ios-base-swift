@@ -23,12 +23,18 @@ public class PannableViewController: LoggedViewController {
         super.viewDidLoad()
         
         self.panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGestureAction(_:)))
-        self.view.addGestureRecognizer(panGestureRecognizer!)
+        
+        guard let gesture = self.panGestureRecognizer else {
+            fatalError()
+        }
+        
+        self.view.addGestureRecognizer(gesture)
     }
     
     // MARK: -
     
-    @objc fileprivate func panGestureAction(_ panGesture: UIPanGestureRecognizer) {
+    @objc
+    fileprivate func panGestureAction(_ panGesture: UIPanGestureRecognizer) {
         let translation = panGesture.translation(in: view)
         
          if translation.y < 0 { return }
@@ -57,7 +63,11 @@ public class PannableViewController: LoggedViewController {
                 })
             } else {
                 UIView.animate(withDuration: 0.2, animations: {
-                    self.view.center = self.originalPosition!
+                    guard let position = self.originalPosition else {
+                        fatalError()
+                    }
+                    
+                    self.view.center = position
                 })
             }
         }

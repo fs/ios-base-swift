@@ -12,19 +12,21 @@ struct DefaultExampleService: ExampleService {
     
     // MARK: - Instance Properties
     
-    let provider = MoyaProvider<ExampleRequest>()
+    let provider = MoyaProvider<ExampleAPI>()
     
     // MARK: - Instance Methods
     
-    func exampleFetch(phoneNumber: String, code: String) {
+    func exampleFetch(phoneNumber: String, code: String, completion: @escaping (Bool?, Error?) -> Void) {
         provider.request(.exampleFetch(phoneNumber: phoneNumber, code: code)) { (result) in
             switch result {
             case .success(let response):
-            //  Decode object like this:
-            //  let object = try? response.mapObject(YourObject.self)
+                //  Decode object like this:
+                //  let object = try? response.mapObject(YourObject.self)
                 print(response)
+                
+                completion(true, nil)
             case .failure(let error):
-                print(error)
+                completion(nil, error)
             }
         }
     }

@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		077D69E61F9DE831008F63DA /* ExampleApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D69E51F9DE831008F63DA /* ExampleApiRouter.swift */; };
 		2124DFA01A8DF48000422313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124DF9F1A8DF48000422313 /* ViewController.swift */; };
 		213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213B89BE19F01A1E005D3749 /* CoreGraphics.framework */; };
 		214F4FF41BFDC2D90084BE32 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F4FF31BFDC2D90084BE32 /* Helpers.swift */; };
-		2158286F1A91E56600833BE6 /* ApiSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2158286E1A91E56600833BE6 /* ApiSessionManager.swift */; };
 		218C64B81BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 218C64B61BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld */; };
 		218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 218C64BD1BA07DDE00EEEDF1 /* Localizable.strings */; };
 		21DB301519DD2289003A418D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB301419DD2289003A418D /* AppDelegate.swift */; };
@@ -26,11 +24,11 @@
 		C32DB337224CC436001198B5 /* LoggedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB331224CC436001198B5 /* LoggedNavigationController.swift */; };
 		C32DB338224CC436001198B5 /* LoggedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB332224CC436001198B5 /* LoggedTabBarController.swift */; };
 		C32DB33A224CC449001198B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32DB339224CC449001198B5 /* Log.swift */; };
-		C3B9F323224D2E1700ED6949 /* Staging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9F322224D2E1700ED6949 /* Staging.swift */; };
 		C3B9F329224D322900ED6949 /* ExampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9F328224D322900ED6949 /* ExampleService.swift */; };
-		C3B9F32B224D324700ED6949 /* ExampleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9F32A224D324700ED6949 /* ExampleRequest.swift */; };
 		C3B9F32D224D377B00ED6949 /* DefaultExampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9F32C224D377B00ED6949 /* DefaultExampleService.swift */; };
 		C3B9F32F224D38AE00ED6949 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9F32E224D38AE00ED6949 /* Services.swift */; };
+		C3B9F335224E385900ED6949 /* DefaultTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9F334224E385900ED6949 /* DefaultTargetType.swift */; };
+		C3B9F337224E3FD300ED6949 /* ExampleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9F336224E3FD300ED6949 /* ExampleAPI.swift */; };
 		CB18CA31223109670027E905 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18CA30223109670027E905 /* UserDefaultsKeys.swift */; };
 		CB18CA3322310A070027E905 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18CA3222310A070027E905 /* Colors.swift */; };
 		CB18CA3522310B0D0027E905 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18CA3422310B0D0027E905 /* Fonts.swift */; };
@@ -59,7 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		077D69E51F9DE831008F63DA /* ExampleApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApiRouter.swift; sourceTree = "<group>"; };
 		1218E154FF6E17259B67BF8D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15235CC3B840AD1FB8DE3152 /* Pods-Swift-BaseUITests.appstore staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseUITests.appstore staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseUITests/Pods-Swift-BaseUITests.appstore staging.xcconfig"; sourceTree = "<group>"; };
 		194478471AAF90AF00A34744 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -71,7 +68,6 @@
 		214F4FF31BFDC2D90084BE32 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		21513BBD19EBCBFA00EE6273 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2158286B1A91E2F200833BE6 /* mogend.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = mogend.sh; path = Scripts/mogend.sh; sourceTree = "<group>"; };
-		2158286E1A91E56600833BE6 /* ApiSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiSessionManager.swift; sourceTree = "<group>"; };
 		218C64B71BA078BA00EEEDF1 /* Swift-Base.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Swift-Base.xcdatamodel"; sourceTree = "<group>"; };
 		218C64BB1BA07D3800EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_Storyboard.strings; sourceTree = "<group>"; };
 		218C64C21BA07E1F00EEEDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -115,12 +111,11 @@
 		C32DB331224CC436001198B5 /* LoggedNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedNavigationController.swift; sourceTree = "<group>"; };
 		C32DB332224CC436001198B5 /* LoggedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedTabBarController.swift; sourceTree = "<group>"; };
 		C32DB339224CC449001198B5 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		C3B9F322224D2E1700ED6949 /* Staging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staging.swift; sourceTree = "<group>"; };
-		C3B9F324224D2F1300ED6949 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Production.swift; path = "/Users/elina/Desktop/ios-base-swift/Swift-Base/Configuration/Keys/Production.swift"; sourceTree = "<absolute>"; };
 		C3B9F328224D322900ED6949 /* ExampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleService.swift; sourceTree = "<group>"; };
-		C3B9F32A224D324700ED6949 /* ExampleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRequest.swift; sourceTree = "<group>"; };
 		C3B9F32C224D377B00ED6949 /* DefaultExampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExampleService.swift; sourceTree = "<group>"; };
 		C3B9F32E224D38AE00ED6949 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		C3B9F334224E385900ED6949 /* DefaultTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTargetType.swift; sourceTree = "<group>"; };
+		C3B9F336224E3FD300ED6949 /* ExampleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAPI.swift; sourceTree = "<group>"; };
 		C8ACEDDEF27D7CEC8050008B /* Pods-Abstract-Swift-BaseTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-BaseTests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests.debug staging.xcconfig"; sourceTree = "<group>"; };
 		C9C7DACE6AD96D0A52AFBF85 /* Pods-Swift-BaseUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseUITests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseUITests/Pods-Swift-BaseUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		CB18CA30223109670027E905 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
@@ -189,7 +184,6 @@
 		0721AE272046EDB1009B4474 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				C3B9F321224D2E0700ED6949 /* Keys */,
 				CB18CA3222310A070027E905 /* Colors.swift */,
 				CB18CA3422310B0D0027E905 /* Fonts.swift */,
 				CB18CA30223109670027E905 /* UserDefaultsKeys.swift */,
@@ -198,37 +192,12 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		0721AE282046EE17009B4474 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				0721AE292046EE25009B4474 /* API */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		0721AE292046EE25009B4474 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				2158286E1A91E56600833BE6 /* ApiSessionManager.swift */,
-				077D69E51F9DE831008F63DA /* ExampleApiRouter.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		0721AE2C2046EE57009B4474 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				0721AE2D2046EE87009B4474 /* Basic */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		0721AE2D2046EE87009B4474 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
 				2124DF9F1A8DF48000422313 /* ViewController.swift */,
 			);
-			path = Basic;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		0721AE2F2046EF11009B4474 /* Resources */ = {
@@ -321,11 +290,10 @@
 		21DB301119DD2289003A418D /* Swift-Base */ = {
 			isa = PBXGroup;
 			children = (
-				C3B9F326224D320B00ED6949 /* Services */,
 				21DB301419DD2289003A418D /* AppDelegate.swift */,
+				C3B9F326224D320B00ED6949 /* Services */,
 				0721AE272046EDB1009B4474 /* Configuration */,
 				0721AE202046E325009B4474 /* Helpers */,
-				0721AE282046EE17009B4474 /* Managers */,
 				218C64B41BA078BA00EEEDF1 /* Models */,
 				0721AE2F2046EF11009B4474 /* Resources */,
 				C32DB32B224CC3C0001198B5 /* Tools */,
@@ -413,31 +381,23 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		C3B9F321224D2E0700ED6949 /* Keys */ = {
-			isa = PBXGroup;
-			children = (
-				C3B9F324224D2F1300ED6949 /* Production.swift */,
-				C3B9F322224D2E1700ED6949 /* Staging.swift */,
-			);
-			path = Keys;
-			sourceTree = "<group>";
-		};
 		C3B9F326224D320B00ED6949 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C3B9F327224D321300ED6949 /* Requests */,
+				C3B9F327224D321300ED6949 /* API */,
 				C3B9F328224D322900ED6949 /* ExampleService.swift */,
 				C3B9F32C224D377B00ED6949 /* DefaultExampleService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		C3B9F327224D321300ED6949 /* Requests */ = {
+		C3B9F327224D321300ED6949 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				C3B9F32A224D324700ED6949 /* ExampleRequest.swift */,
+				C3B9F334224E385900ED6949 /* DefaultTargetType.swift */,
+				C3B9F336224E3FD300ED6949 /* ExampleAPI.swift */,
 			);
-			path = Requests;
+			path = API;
 			sourceTree = "<group>";
 		};
 		CB4EB180222ED72B00FF2232 /* Swift-BaseTests */ = {
@@ -730,13 +690,13 @@
 				218C64B81BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld in Sources */,
 				CB18CA3322310A070027E905 /* Colors.swift in Sources */,
 				C32DB338224CC436001198B5 /* LoggedTabBarController.swift in Sources */,
-				077D69E61F9DE831008F63DA /* ExampleApiRouter.swift in Sources */,
 				C32DB333224CC436001198B5 /* LoggedPageViewController.swift in Sources */,
+				C3B9F337224E3FD300ED6949 /* ExampleAPI.swift in Sources */,
 				2124DFA01A8DF48000422313 /* ViewController.swift in Sources */,
 				C32DB33A224CC449001198B5 /* Log.swift in Sources */,
 				C32DB336224CC436001198B5 /* LoggedViewController.swift in Sources */,
+				C3B9F335224E385900ED6949 /* DefaultTargetType.swift in Sources */,
 				214F4FF41BFDC2D90084BE32 /* Helpers.swift in Sources */,
-				C3B9F323224D2E1700ED6949 /* Staging.swift in Sources */,
 				C3B9F32F224D38AE00ED6949 /* Services.swift in Sources */,
 				C3B9F329224D322900ED6949 /* ExampleService.swift in Sources */,
 				CB18CA31223109670027E905 /* UserDefaultsKeys.swift in Sources */,
@@ -746,8 +706,6 @@
 				21DB301519DD2289003A418D /* AppDelegate.swift in Sources */,
 				CB18CA3522310B0D0027E905 /* Fonts.swift in Sources */,
 				C32DB334224CC436001198B5 /* PannableViewController.swift in Sources */,
-				C3B9F32B224D324700ED6949 /* ExampleRequest.swift in Sources */,
-				2158286F1A91E56600833BE6 /* ApiSessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

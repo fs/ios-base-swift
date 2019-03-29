@@ -20,8 +20,8 @@ public final class Log {
         return dateFormatter
     }()
 
-    public fileprivate(set) static var fileName: String? = nil
-    public fileprivate(set) static var filePath: String? = nil
+    public fileprivate(set) static var fileName: String?
+    public fileprivate(set) static var filePath: String?
 
     // MARK: -
 
@@ -59,7 +59,7 @@ public final class Log {
                 content = "Log File"
             }
 
-            try? "\(content!)\n\(line)".write(toFile: filePath, atomically: true, encoding: .utf8)
+            try? "\(content ?? "")\n\(line)".write(toFile: filePath, atomically: true, encoding: .utf8)
         }
     }
 
