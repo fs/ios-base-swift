@@ -12,5 +12,5 @@ enum Keys {
     
     // MARK: - Instance Propeties
     
-    static let apiServerBaseURL = URL(string: "http://91.245.33.107:7045/ox-backend-v2")!
+    static let apiServerBaseURL = URL(string: "YOUR_STAGING_API_SERVER_BASE_URL")!
 }
