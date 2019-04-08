@@ -14,6 +14,8 @@ target 'Swift-Base' do
   
   # Libraries
   pod 'Alamofire', '~> 4.5'
+  pod 'SwiftLint'
+  pod 'Moya', '~> 12.0'
 
   target 'Swift-BaseTests' do
     inherit! :search_paths
