@@ -1,6 +1,0 @@
-framework module FSHelpers_Swift {
-  umbrella header "FSHelpers+Swift-umbrella.h"
-
-  export *
-  module * { export * }
-}
