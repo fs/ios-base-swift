@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Swift-Base
 //
-//  Created by Kruperfone on 02.10.14.
+//  Created by Flatstack on 02.10.14.
 //  Copyright (c) 2014 Flatstack. All rights reserved.
 //
 
@@ -22,50 +22,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Instance Methods
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Log.initialize(withDateFormat: "HH:mm:ss.SSSS")
-        Log.high("applicationDidFinishLaunchingWithOptions(\(launchOptions ?? [:]))", from: self)
-        
         self.setupProject()
         
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        Log.high("applicationWillResignActive()", from: self)
-    }
+    func applicationWillResignActive(_ application: UIApplication) { }
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        Log.high("applicationDidEnterBackground()", from: self)
-    }
+    func applicationDidEnterBackground(_ application: UIApplication) { }
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        Log.high("applicationWillEnterForeground()", from: self)
-    }
+    func applicationWillEnterForeground(_ application: UIApplication) { }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        Log.high("applicationDidBecomeActive()", from: self)
-    }
+    func applicationDidBecomeActive(_ application: UIApplication) { }
 
-    func applicationWillTerminate(_ application: UIApplication) {
-        Log.high("applicationWillTerminate()", from: self)
-    }
+    func applicationWillTerminate(_ application: UIApplication) { }
     
     // MARK: - Remote notifications
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        Log.high("applicationDidRegisterForRemoteNotifications()", from: self)
-        
         self.saveRemoteNotificationTokenData(application, deviceToken: deviceToken)
     }
 
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        Log.high("applicationDidFailToRegisterForRemoteNotifications(withError: \(error))", from: self)
-    }
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) { }
 
     func requestForRemoteNotifications () {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { [weak self] granted, error in
-            Log.high("Permission granted: \(granted)", from: self)
-
             guard granted else {
                 return
             }
@@ -111,8 +92,6 @@ private extension AppDelegate {
         }
 
         let token = tokenParts.joined()
-
-        Log.high("Device token: \(token)", from: self)
         
         UserDefaults.standard.set(deviceToken, forKey: UserDefaultsKeys.DeviceToken.data)
         UserDefaults.standard.set(token, forKey: UserDefaultsKeys.DeviceToken.string)
@@ -121,8 +100,6 @@ private extension AppDelegate {
 
     private func getNotificationSettings() {
         UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { settings in
-            Log.high("Notification settings: \(settings)", from: self)
-
             guard settings.authorizationStatus == .authorized else {
                 return
             }

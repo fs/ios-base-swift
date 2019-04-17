@@ -1,23 +1,31 @@
 PODS:
-  - Alamofire (4.8.1)
+  - Alamofire (4.8.2)
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
-  - "FSHelpers+Swift (2.2.1)"
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya/Core (12.0.1):
+  - Moya (13.0.0):
+    - Moya/Core (= 13.0.0)
+  - Moya/Core (13.0.0):
     - Alamofire (~> 4.1)
-    - Result (~> 4.0)
+    - Result (~> 4.1)
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.4):
+    - PromiseKit/CorePromise
   - Result (4.1.0)
-  - SwiftLint (0.30.1)
+  - SwiftLint (0.31.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - Crashlytics
   - Fabric
-  - "FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`)"
-  - Moya (~> 12.0)
+  - Moya
+  - PromiseKit
   - SwiftLint
 
 SPEC REPOS:
@@ -26,27 +34,19 @@ SPEC REPOS:
     - Crashlytics
     - Fabric
     - Moya
+    - PromiseKit
     - Result
     - SwiftLint
 
-EXTERNAL SOURCES:
-  "FSHelpers+Swift":
-    :git: https://github.com/fs/FSHelper.git
-
-CHECKOUT OPTIONS:
-  "FSHelpers+Swift":
-    :commit: 89ac92a3866deb54f5598c17b145894616155811
-    :git: https://github.com/fs/FSHelper.git
-
 SPEC CHECKSUMS:
-  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
-  "FSHelpers+Swift": 6ac6ff050daf0e5350a1205ca3a6f3fe6c4e43b7
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Moya: 161263550064ff8a4948e8ff63137fd72a876292
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: c4d04423bc82eabf2164b23445b6ad5eaa273b95
+PODFILE CHECKSUM: 8f83747133efd947e1bad42da78cc625ed8d5b1d
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.6.0
