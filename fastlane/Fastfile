@@ -19,6 +19,7 @@ platform :ios do
 
   #----------Preparing
   before_all do
+    setup_circle_ci
     #setting default path to info plist
     info_plist_path = File.expand_path("../Swift-Base/Supporting\ files/Info.plist")
     ENV["FL_GET_INFO_PLIST_PATH"] = info_plist_path
