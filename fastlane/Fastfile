@@ -66,6 +66,8 @@ platform :ios do
 
     clear_derived_data()
 
+    match(type: "appstore")
+
     make_ipa(
 	  scheme_name: ENV["SCHEME_APPSTORE_STAGING"]
 	)
@@ -81,6 +83,8 @@ platform :ios do
   lane :deploy_to_crashlytics_staging do |options|
 
     clear_derived_data()
+
+    match(type: "adhoc")
 
     make_ipa(
 	  scheme_name: ENV["SCHEME_STAGING"]
@@ -101,6 +105,10 @@ platform :ios do
       remove_local_tags()
     end
 
+    match(type: "appstore")
+
+    match(type: "adhoc")
+
     custom_increment_build_number()
 
     create_default_changelog()
@@ -108,8 +116,6 @@ platform :ios do
     deploy_to_crashlytics_staging()
 
     deploy_to_testflight_staging()
-
-    push_tag_as_build_number()
 
   end
 
@@ -120,6 +126,10 @@ platform :ios do
     if options[:remove_local_tags] == true
       remove_local_tags()
     end
+
+    match(type: "appstore")
+
+    match(type: "adhoc")
 
     custom_increment_build_number()
 
@@ -139,8 +149,6 @@ platform :ios do
 	  app_identifier: ENV["BUNDLE_ID_APPSTORE"]
 	)
 
-    push_tag_as_build_number()
-
   end
 
 
@@ -153,18 +161,6 @@ platform :ios do
     puts "New number of build is " + custom_get_number_of_build().to_s
 
   end
-
-
-  desc "Increment a build number like number of commits."
-  private_lane :push_tag_as_build_number do |options|
-
-    add_git_tag(
-      tag: custom_get_number_of_build().to_s
-    )
-    push_git_tags()
-
-  end
-
 
   desc "Get build number"
   private_lane :custom_get_number_of_build do |options|
