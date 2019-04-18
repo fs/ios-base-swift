@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     macos:
-      xcode: 10.2
+      xcode: 10.2.0
     working_directory: /Users/distiller/project
     environment:
       BUNDLE_PATH: vendor/bundle
