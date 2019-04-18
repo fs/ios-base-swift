@@ -22,7 +22,7 @@ jobs:
           path: output/scan
   adhoc-staging:
     macos:
-      xcode: 9.4.0
+      xcode: 10.2.0
     working_directory: /Users/distiller/project
     environment:
       BUNDLE_PATH: vendor/bundle
