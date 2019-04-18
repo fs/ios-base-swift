@@ -1,0 +1,9 @@
+git_url("https://github.com/fs/ios-base-swift-signing.git")
+
+storage_mode("git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+app_identifier(["com.flatstack.ios.Swift-Base.staging", "com.flatstack.ios.Swift-Base"])
+username("apple@flatstack.com") # Your Apple Developer Portal username
+team_id("Y49MTY8CU2")
