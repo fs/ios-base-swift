@@ -30,9 +30,9 @@ platform :ios do
     ENV["INIT_BUILD_NUMBER_VALUE"] = init_build_number
 
     #setting crashlytics
-    #ENV["CRASHLYTICS_TOKEN"] = "XXX"
-    #ENV["CRASHLYTICS_SECRET"] = "XXX"
-    #ENV["CRASHLYTICS_GROUPS"] = "XXX"
+    ENV["CRASHLYTICS_TOKEN"] = "a58319df29eb3929f0ed864166f3c42deb476e66"
+    ENV["CRASHLYTICS_SECRET"] = "3b5009c215f001848f3030458e2bbb292e68c6b82a2a092424a1caf7a1ee6225"
+    ENV["CRASHLYTICS_GROUPS"] = "ios"
 
     #custom default env
     ENV["SCHEME_STAGING"] = "Staging"
@@ -250,7 +250,6 @@ platform :ios do
 	  include_symbols: true,
 	  export_method: "app-store",
 	  include_bitcode: false,
-	  use_legacy_build_api: true,
 	)
 
   end
