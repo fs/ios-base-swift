@@ -1,0 +1,55 @@
+version: 2
+jobs:
+  test:
+    macos:
+      xcode: 10.2.0
+    working_directory: /Users/distiller/project
+    environment:
+      BUNDLE_PATH: vendor/bundle
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: test
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - run: bundle install
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+          no_output_timeout: 900
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/scan
+  adhoc-staging:
+    macos:
+      xcode: 10.2.0
+    working_directory: /Users/distiller/project
+    environment:
+      BUNDLE_PATH: vendor/bundle
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: deploy_to_crashlytics_staging
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - run: bundle install
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output/Staging.ipa
+workflows:
+  version: 2
+  test-and-deploy:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /^.*/
+      - adhoc-staging:
+          filters:
+            tags:
+              only: /^v{0,1}\d+[.]\d+[.]\d+[.]?\d?+$/
+            branches:
+              ignore: /^.*/
+          requires:
+            - test

@@ -11,7 +11,7 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "2.12.0"
+fastlane_version "2.120.0"
 
 default_platform :ios
 
@@ -19,8 +19,10 @@ platform :ios do
 
   #----------Preparing
   before_all do
+    setup_circle_ci
+
     #setting default path to info plist
-    info_plist_path = File.expand_path("../Swift-Base/Info.plist")
+    info_plist_path = File.expand_path("../Swift-Base/Supporting\ Files/Info.plist")
     ENV["FL_GET_INFO_PLIST_PATH"] = info_plist_path
     ENV["FL_SET_INFO_PLIST_PATH"] = info_plist_path
 
@@ -30,9 +32,9 @@ platform :ios do
     ENV["INIT_BUILD_NUMBER_VALUE"] = init_build_number
 
     #setting crashlytics
-    #ENV["CRASHLYTICS_TOKEN"] = "XXX"
-    #ENV["CRASHLYTICS_SECRET"] = "XXX"
-    #ENV["CRASHLYTICS_GROUPS"] = "XXX"
+    ENV["CRASHLYTICS_TOKEN"] = "a58319df29eb3929f0ed864166f3c42deb476e66"
+    ENV["CRASHLYTICS_SECRET"] = "3b5009c215f001848f3030458e2bbb292e68c6b82a2a092424a1caf7a1ee6225"
+    ENV["CRASHLYTICS_GROUPS"] = "ios"
 
     #custom default env
     ENV["SCHEME_STAGING"] = "Staging"
@@ -53,7 +55,7 @@ platform :ios do
     scan(
       scheme: ENV["SCHEME_STAGING"],
       clean: true,
-      devices: ["iPhone 7 (10.2)"]
+      devices: ["iPhone Xs (12.2)"]
 	)
 
   end
@@ -65,8 +67,11 @@ platform :ios do
 
     clear_derived_data()
 
+    match(type: "appstore")
+
     make_ipa(
-	  scheme_name: ENV["SCHEME_APPSTORE_STAGING"]
+	  scheme_name: ENV["SCHEME_APPSTORE_STAGING"],
+    export_method: "app-store"
 	)
 
     deploy_testflight(
@@ -81,89 +86,23 @@ platform :ios do
 
     clear_derived_data()
 
+    create_default_changelog()
+
+    match(type: "adhoc")
+
     make_ipa(
-	  scheme_name: ENV["SCHEME_STAGING"]
+	   scheme_name: ENV["SCHEME_STAGING"],
+     export_method: "ad-hoc"
 	)
 
     deploy_crashlytics(
       crashlytics_notes_path: ENV["CHANGELOG_FILE"]
 	)
-
-  end
-
-
-  #----------Deploy
-  desc "Deploy Staging. Optional: remove_local_tags as Bool (def is false)"
-  lane :staging do |options|
-
-    if options[:remove_local_tags] == true
-      remove_local_tags()
-    end
-
-    custom_increment_build_number()
-
-    create_default_changelog()
-
-    deploy_to_crashlytics_staging()
-
-    deploy_to_testflight_staging()
-
-    push_tag_as_build_number()
-
-  end
-
-
-  desc "Deploy AppStore. Optional :remove_local_tags as Bool (def is false)"
-  lane :release do |options|
-
-    if options[:remove_local_tags] == true
-      remove_local_tags()
-    end
-
-    custom_increment_build_number()
-
-    create_default_changelog()
-
-    clear_derived_data()
-
-    make_ipa(
-	  scheme_name: ENV["SCHEME_APPSTORE"]
-	)
-
-    deploy_crashlytics(
-      crashlytics_notes_path: ENV["CHANGELOG_FILE"]
-	)
-
-    deploy_testflight(
-	  app_identifier: ENV["BUNDLE_ID_APPSTORE"]
-	)
-
-    push_tag_as_build_number()
 
   end
 
 
   #----------------------PRIVATE
-  #----------Versionig
-  desc "Increment a build number like number of commits."
-  private_lane :custom_increment_build_number do |options|
-
-    custom_set_number_of_build(value: number_of_commits().to_s)
-    puts "New number of build is " + custom_get_number_of_build().to_s
-
-  end
-
-
-  desc "Increment a build number like number of commits."
-  private_lane :push_tag_as_build_number do |options|
-
-    add_git_tag(
-      tag: custom_get_number_of_build().to_s
-    )
-    push_git_tags()
-
-  end
-
 
   desc "Get build number"
   private_lane :custom_get_number_of_build do |options|
@@ -181,18 +120,7 @@ platform :ios do
   end
 
 
-  desc "Remove all local tags"
-  private_lane :remove_local_tags do |options|
-
-    #removing all tags
-    sh("git tag -l | xargs git tag -d")
-    #fetch all tags from repo
-    sh("git fetch --tags")
-
-  end
-
-
-  #----------Deploy
+ #----------Deploy
   desc "Generate a changelog between last merged commit and last commit"
   private_lane :create_default_changelog do |options|
 
@@ -240,7 +168,6 @@ platform :ios do
 
   end
 
-
   desc "Make an ipa file. Need params :scheme_name as String"
   private_lane :make_ipa do |options|
 
@@ -248,9 +175,8 @@ platform :ios do
 	  scheme: options[:scheme_name],
 	  clean: true,
 	  include_symbols: true,
-	  export_method: "app-store",
+	  export_method: options[:export_method],
 	  include_bitcode: false,
-	  use_legacy_build_api: true,
 	)
 
   end
@@ -260,7 +186,7 @@ platform :ios do
   private_lane :deploy_crashlytics do |options|
 
     crashlytics(
-  	  crashlytics_path: "./Pods/Crashlytics",
+  	  crashlytics_path: "Pods/Crashlytics/submit",
 	  notes_path: options[:crashlytics_notes_path],
  	  api_token: ENV["CRASHLYTICS_TOKEN"],
   	  build_secret: ENV["CRASHLYTICS_SECRET"],
@@ -295,28 +221,6 @@ platform :ios do
     end
 
   end
-
-  desc "Clean all data"
-  lane :clean do |options|
-
-    delete_changelog()
-
-    custom_set_number_of_build(value: ENV["INIT_BUILD_NUMBER_VALUE"].to_s)
-    clean_cocoapods_cache
-    clean_build_artifacts
-
-  end
-
-  #-----------------Success
-  after_all do |lane|
-
-    clean()
-
-    #slack(
-    #  message: "Successfully deployed new App Update."
-    #)
-  end
-
 
   #-----------------Error
   error do |lane, exception|
