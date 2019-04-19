@@ -20,15 +20,6 @@ platform :ios do
   #----------Preparing
   before_all do
     setup_circle_ci
-    #setting default path to info plist
-    info_plist_path = File.expand_path("../Swift-Base/Supporting\ files/Info.plist")
-    ENV["FL_GET_INFO_PLIST_PATH"] = info_plist_path
-    ENV["FL_SET_INFO_PLIST_PATH"] = info_plist_path
-
-    #saving current number of build
-    init_build_number = custom_get_number_of_build()
-    puts "Init number of build is " + init_build_number.to_s
-    ENV["INIT_BUILD_NUMBER_VALUE"] = init_build_number
 
     #setting crashlytics
     ENV["CRASHLYTICS_TOKEN"] = "a58319df29eb3929f0ed864166f3c42deb476e66"
@@ -42,8 +33,6 @@ platform :ios do
 
     ENV["BUNDLE_ID_APPSTORE"] = "com.flatstack.ios.Swift-Base"
     ENV["BUNDLE_ID_APPSTORE_STAGING"] = "com.flatstack.ios.Swift-Base.staging"
-
-    ENV["CHANGELOG_FILE"] = File.expand_path("../changelog.txt")
   end
 
 
@@ -70,6 +59,7 @@ platform :ios do
 
     make_ipa(
 	  scheme_name: ENV["SCHEME_APPSTORE_STAGING"]
+    export_method: "app-store"
 	)
 
     deploy_testflight(
@@ -87,7 +77,8 @@ platform :ios do
     match(type: "adhoc")
 
     make_ipa(
-	  scheme_name: ENV["SCHEME_STAGING"]
+	   scheme_name: ENV["SCHEME_STAGING"]
+     export_method: "ad-hoc"
 	)
 
     deploy_crashlytics(
@@ -95,148 +86,8 @@ platform :ios do
 	)
 
   end
-
-
-  #----------Deploy
-  desc "Deploy Staging. Optional: remove_local_tags as Bool (def is false)"
-  lane :staging do |options|
-
-    if options[:remove_local_tags] == true
-      remove_local_tags()
-    end
-
-    match(type: "appstore")
-
-    match(type: "adhoc")
-
-    custom_increment_build_number()
-
-    create_default_changelog()
-
-    deploy_to_crashlytics_staging()
-
-    deploy_to_testflight_staging()
-
-  end
-
-
-  desc "Deploy AppStore. Optional :remove_local_tags as Bool (def is false)"
-  lane :release do |options|
-
-    if options[:remove_local_tags] == true
-      remove_local_tags()
-    end
-
-    match(type: "appstore")
-
-    match(type: "adhoc")
-
-    custom_increment_build_number()
-
-    create_default_changelog()
-
-    clear_derived_data()
-
-    make_ipa(
-	  scheme_name: ENV["SCHEME_APPSTORE"]
-	)
-
-    deploy_crashlytics(
-      crashlytics_notes_path: ENV["CHANGELOG_FILE"]
-	)
-
-    deploy_testflight(
-	  app_identifier: ENV["BUNDLE_ID_APPSTORE"]
-	)
-
-  end
-
 
   #----------------------PRIVATE
-  #----------Versionig
-  desc "Increment a build number like number of commits."
-  private_lane :custom_increment_build_number do |options|
-
-    custom_set_number_of_build(value: number_of_commits().to_s)
-    puts "New number of build is " + custom_get_number_of_build().to_s
-
-  end
-
-  desc "Get build number"
-  private_lane :custom_get_number_of_build do |options|
-
-    get_info_plist_value(key: "CFBundleVersion")
-
-  end
-
-
-  desc "Get build number. Need params :value as String"
-  private_lane :custom_set_number_of_build do |options|
-
-    set_info_plist_value(key: "CFBundleVersion", value: options[:value])
-
-  end
-
-
-  desc "Remove all local tags"
-  private_lane :remove_local_tags do |options|
-
-    #removing all tags
-    sh("git tag -l | xargs git tag -d")
-    #fetch all tags from repo
-    sh("git fetch --tags")
-
-  end
-
-
-  #----------Deploy
-  desc "Generate a changelog between last merged commit and last commit"
-  private_lane :create_default_changelog do |options|
-
-    delete_changelog()
-
-    last_merged_commit = sh("git log --pretty=format:\"%h\" --merges -1")
-    last_commit = sh("git log --pretty=format:\"%h\" -1")
-
-    create_changelog(
-      changelog_from_commit: last_merged_commit,
-      changelog_to_commit: last_commit
-    )
-
-  end
-
-  desc "Generate a changelog. Need params :changelog_from_commit, :changelog_to_commit as String"
-  private_lane :create_changelog do |options|
-
-    delete_changelog()
-
-    current_date = Time.now.strftime("%Y/%m/%d %H:%M:%S")
-    first_message = "This version was uploaded automatically by CI\nCI Build number is " + custom_get_number_of_build().to_s + "\nUploaded: " + current_date + "\nChangelog:\n"
-    changelog = changelog_from_git_commits(
-      between: [options[:changelog_from_commit], options[:changelog_to_commit]],
-      pretty: "- %an, %ar : %s",
-      merge_commit_filtering: 'exclude_merges'
-    )
-    full_message = first_message + changelog
-
-    #write to file
-    out_file = File.new(ENV["CHANGELOG_FILE"], "w+")
-    out_file.puts(full_message)
-    out_file.close
-
-  end
-
-
-  desc "Read changelog"
-  private_lane :read_changelog do |options|
-
-    if File.file?(ENV["CHANGELOG_FILE"])
-      #read the file
-      puts File.read(ENV["CHANGELOG_FILE"])
-    end
-
-  end
-
 
   desc "Make an ipa file. Need params :scheme_name as String"
   private_lane :make_ipa do |options|
@@ -245,7 +96,7 @@ platform :ios do
 	  scheme: options[:scheme_name],
 	  clean: true,
 	  include_symbols: true,
-	  export_method: "app-store",
+	  export_method: options[:export_method],
 	  include_bitcode: false,
 	)
 
@@ -280,39 +131,6 @@ platform :ios do
 	)
 
   end
-
-
-  #-----------------Clean
-  desc "Delete changelog"
-  private_lane :delete_changelog do |options|
-
-    if File.file?(ENV["CHANGELOG_FILE"])
-      File.delete(ENV["CHANGELOG_FILE"])
-    end
-
-  end
-
-  desc "Clean all data"
-  lane :clean do |options|
-
-    delete_changelog()
-
-    custom_set_number_of_build(value: ENV["INIT_BUILD_NUMBER_VALUE"].to_s)
-    clean_cocoapods_cache
-    clean_build_artifacts
-
-  end
-
-  #-----------------Success
-  after_all do |lane|
-
-    clean()
-
-    #slack(
-    #  message: "Successfully deployed new App Update."
-    #)
-  end
-
 
   #-----------------Error
   error do |lane, exception|
