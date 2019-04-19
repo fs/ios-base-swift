@@ -21,6 +21,16 @@ platform :ios do
   before_all do
     setup_circle_ci
 
+    #setting default path to info plist
+    info_plist_path = File.expand_path("../Swift-Base/Supporting\ Files/Info.plist")
+    ENV["FL_GET_INFO_PLIST_PATH"] = info_plist_path
+    ENV["FL_SET_INFO_PLIST_PATH"] = info_plist_path
+
+    #saving current number of build
+    init_build_number = custom_get_number_of_build()
+    puts "Init number of build is " + init_build_number.to_s
+    ENV["INIT_BUILD_NUMBER_VALUE"] = init_build_number
+
     #setting crashlytics
     ENV["CRASHLYTICS_TOKEN"] = "a58319df29eb3929f0ed864166f3c42deb476e66"
     ENV["CRASHLYTICS_SECRET"] = "3b5009c215f001848f3030458e2bbb292e68c6b82a2a092424a1caf7a1ee6225"
@@ -33,6 +43,8 @@ platform :ios do
 
     ENV["BUNDLE_ID_APPSTORE"] = "com.flatstack.ios.Swift-Base"
     ENV["BUNDLE_ID_APPSTORE_STAGING"] = "com.flatstack.ios.Swift-Base.staging"
+
+    ENV["CHANGELOG_FILE"] = File.expand_path("../changelog.txt")
   end
 
 
@@ -58,7 +70,7 @@ platform :ios do
     match(type: "appstore")
 
     make_ipa(
-	  scheme_name: ENV["SCHEME_APPSTORE_STAGING"]
+	  scheme_name: ENV["SCHEME_APPSTORE_STAGING"],
     export_method: "app-store"
 	)
 
@@ -74,10 +86,12 @@ platform :ios do
 
     clear_derived_data()
 
+    create_default_changelog()
+
     match(type: "adhoc")
 
     make_ipa(
-	   scheme_name: ENV["SCHEME_STAGING"]
+	   scheme_name: ENV["SCHEME_STAGING"],
      export_method: "ad-hoc"
 	)
 
@@ -87,7 +101,72 @@ platform :ios do
 
   end
 
+
   #----------------------PRIVATE
+
+  desc "Get build number"
+  private_lane :custom_get_number_of_build do |options|
+
+    get_info_plist_value(key: "CFBundleVersion")
+
+  end
+
+
+  desc "Get build number. Need params :value as String"
+  private_lane :custom_set_number_of_build do |options|
+
+    set_info_plist_value(key: "CFBundleVersion", value: options[:value])
+
+  end
+
+
+ #----------Deploy
+  desc "Generate a changelog between last merged commit and last commit"
+  private_lane :create_default_changelog do |options|
+
+    delete_changelog()
+
+    last_merged_commit = sh("git log --pretty=format:\"%h\" --merges -1")
+    last_commit = sh("git log --pretty=format:\"%h\" -1")
+
+    create_changelog(
+      changelog_from_commit: last_merged_commit,
+      changelog_to_commit: last_commit
+    )
+
+  end
+
+  desc "Generate a changelog. Need params :changelog_from_commit, :changelog_to_commit as String"
+  private_lane :create_changelog do |options|
+
+    delete_changelog()
+
+    current_date = Time.now.strftime("%Y/%m/%d %H:%M:%S")
+    first_message = "This version was uploaded automatically by CI\nCI Build number is " + custom_get_number_of_build().to_s + "\nUploaded: " + current_date + "\nChangelog:\n"
+    changelog = changelog_from_git_commits(
+      between: [options[:changelog_from_commit], options[:changelog_to_commit]],
+      pretty: "- %an, %ar : %s",
+      merge_commit_filtering: 'exclude_merges'
+    )
+    full_message = first_message + changelog
+
+    #write to file
+    out_file = File.new(ENV["CHANGELOG_FILE"], "w+")
+    out_file.puts(full_message)
+    out_file.close
+
+  end
+
+
+  desc "Read changelog"
+  private_lane :read_changelog do |options|
+
+    if File.file?(ENV["CHANGELOG_FILE"])
+      #read the file
+      puts File.read(ENV["CHANGELOG_FILE"])
+    end
+
+  end
 
   desc "Make an ipa file. Need params :scheme_name as String"
   private_lane :make_ipa do |options|
@@ -107,7 +186,7 @@ platform :ios do
   private_lane :deploy_crashlytics do |options|
 
     crashlytics(
-  	  crashlytics_path: "./Pods/Crashlytics",
+  	  crashlytics_path: "Pods/Crashlytics/submit",
 	  notes_path: options[:crashlytics_notes_path],
  	  api_token: ENV["CRASHLYTICS_TOKEN"],
   	  build_secret: ENV["CRASHLYTICS_SECRET"],
@@ -129,6 +208,17 @@ platform :ios do
 	  automatic_release: false,
 	  force: true,
 	)
+
+  end
+
+
+  #-----------------Clean
+  desc "Delete changelog"
+  private_lane :delete_changelog do |options|
+
+    if File.file?(ENV["CHANGELOG_FILE"])
+      File.delete(ENV["CHANGELOG_FILE"])
+    end
 
   end
 
