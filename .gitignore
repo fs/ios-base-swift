@@ -1,9 +1,15 @@
-# OS X
+ ## OS X files
 .DS_Store
+.DS_Store?
+.Trashes
+.Spotlight-V100
+*.swp
 
-# Xcode
-
+## Xcode build files
+DerivedData/
 build/
+
+## Xcode private settings
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -12,13 +18,24 @@ build/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
+
+xcuserdata/
+
+## Other
 *.xccheckout
 *.moved-aside
-DerivedData
+*.xcuserstate
+*.xcscmblueprint
+
+## Obj-C/Swift specific
 *.hmap
 *.ipa
-*.xcuserstate
-.xcbkptlist
+*.dSYM.zip
+*.dSYM
 
-Carthage/
+## Swift Package Manager
+.build/
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
