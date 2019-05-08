@@ -1,9 +1,9 @@
 before_install:
-  - rvm @global do gem uninstall bundler -a -x
-  - rvm @global do gem install bundler -v 1.17.3
+    - rvm use system
+    - sudo gem install bundle
 
 language: objective-c #1
-osx_image: xcode10.3 #2
+osx_image: xcode10.2 #2
 xcode_workspace: Swift-Base.xcworkspace #3
 xcode_scheme: Staging #4
 xcode_sdk: iphonesimulator12.1 #5
