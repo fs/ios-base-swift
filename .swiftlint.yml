@@ -1,57 +1,730 @@
-disabled_rules: # rule identifiers to exclude from running
-  - control_statement
-  - line_length
-  - trailing_whitespace
-  - identifier_name
+included:
+  - Swift-Base
+
+excluded:
+  - Swift-Base/Tools
+
+disabled_rules:
+  - discouraged_optional_boolean
+  - discouraged_optional_collection
+  - explicit_enum_raw_value
+  - explicit_type_interface
+  - extension_access_modifier
+  - fatal_error_message
+  - file_name # doesn't work as it should
+  - force_cast
+  - force_unwrapping
+  - function_default_parameter_at_end
+  - implicit_return
+  - implicitly_unwrapped_optional
+  - literal_expression_end_indentation
+  - missing_docs
+  - multiline_arguments_brackets
+  - multiline_literal_brackets
+  - multiline_parameters_brackets
+  - nimble_operator
+  - notification_center_detachment
+  - nslocalizedstring_key
+  - no_grouping_extension # should ignore Constrained Extensions
+  - prefixed_toplevel_constant
+  - prohibited_interface_builder
+  - sorted_imports
+  - strong_iboutlet
+  - toggle_bool
+  - trailing_closure
   - unused_closure_parameter
-opt_in_rules: # some rules are only opt-in
-  - empty_count
+  - vertical_whitespace_opening_braces # should ignore braces after type declarations
+  - explicit_acl # frameworks only
+  - explicit_top_level_acl # frameworks only
+  - line_length
+  - legacy_hashing
+  - multiline_function_chains
+  - first_where
+  - multiline_arguments
+  - identifier_name
+  - valid_ibinspectable
+  - closure_body_length
+  - cyclomatic_complexity
+  - lower_acl_than_parent # doesn't work as it should on Swift 5
+  - untyped_error_in_catch
+  - prohibited_super_call
+  - private_outlet # for unit testing
+  - private_action # for unit testing
+  - object_literal
+
+opt_in_rules:
+  - anyobject_protocol
+  - array_init
   - attributes
+  - block_based_kvo
+  - class_delegate_protocol
+  - closing_brace
+  - closure_end_indentation
+  - closure_parameter_position
   - closure_spacing
   - collection_alignment
-  - discouraged_object_literal
+  - colon
+  - comma
+  - compiler_protocol_init
+  - conditional_returns_on_newline
+  - contains_over_first_not_nil
+  - control_statement
+  - convenience_type
+  - custom_rules
+  - deployment_target
+  - discarded_notification_center_observer
+  - discouraged_direct_init
+  - duplicate_imports
+  - dynamic_inline
+  - empty_enum_arguments
+  - empty_parameters
+  - empty_parentheses_with_trailing_closure
   - empty_string
+  - empty_xctest_method
+  - explicit_init
+  - explicit_self # doesn't work as it should
   - fallthrough
-  - force_unwrapping
-  - implicitly_unwrapped_optional
-  - private_action
-  - private_outlet
-  # Find all the available rules by running:
-  # swiftlint rules
-included: # paths to include during linting. `--path` is ignored if present.
-  - Swift-Base
-excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - Pods
-analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
-  - explicit_self
-# configurable rules can be customized from this configuration file
-# binary rules can set their severity level
-force_cast: error # implicitly
-force_try:
-  severity: warning # explicitly
-# rules that have both warning and error levels, can set just the warning level
-# implicitly
-# they can set both implicitly with an array
-type_body_length:
-  - 300 # warning
-  - 400 # error
-# or they can set both explicitly
+  - file_header
+  - file_length
+  - file_name
+  - for_where
+  - force_try
+  - function_body_length
+  - function_parameter_count
+  - generic_type_name
+  - identical_operands
+  - implicit_getter
+  - inert_defer
+  - is_disjoint
+  - joined_default_parameter
+  - large_tuple
+  - last_where
+  - leading_whitespace
+  - legacy_cggeometry_functions
+  - legacy_constant
+  - legacy_constructor
+  - legacy_nsgeometry_functions
+  - legacy_random
+  - let_var_whitespace # doesn't work as it should
+  - mark
+  - modifier_order
+  - multiline_parameters
+  - multiple_closures_with_trailing_closure
+  - nesting
+  - no_extension_access_modifier
+  - no_fallthrough_only
+  - number_separator
+  - opening_brace
+  - operator_usage_whitespace
+  - operator_whitespace
+  - overridden_super_call
+  - override_in_extension
+  - pattern_matching_keywords
+  - private_over_fileprivate
+  - private_unit_test
+  - protocol_property_accessors_order
+  - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
+  - redundant_discardable_let
+  - redundant_nil_coalescing
+  - redundant_objc_attribute
+  - redundant_optional_initialization
+  - redundant_set_access_control
+  - redundant_string_enum_value
+  - redundant_type_annotation
+  - redundant_void_return
+  - required_enum_case
+  - return_arrow_whitespace
+  - shorthand_operator
+  - single_test_class
+  - sorted_first_last
+  - statement_position
+  - static_operator
+  - strict_fileprivate
+  - superfluous_disable_command
+  - switch_case_alignment
+  - switch_case_on_newline
+  - syntactic_sugar
+  - todo
+  - trailing_comma
+  - trailing_newline
+  - trailing_semicolon
+  - type_body_length
+  - type_name
+  - unavailable_function
+  - unneeded_break_in_switch
+  - unneeded_parentheses_in_closure_argument
+  - unused_control_flow_label
+  - unused_enumerated
+  - unused_import
+  - unused_optional_binding
+  - unused_private_declaration # doesn't work as it should
+  - unused_setter_value
+  - vertical_parameter_alignment
+  - vertical_parameter_alignment_on_call
+  - vertical_whitespace
+  - vertical_whitespace_between_cases
+  - vertical_whitespace_closing_braces
+  - void_return
+  - weak_computed_property # doesn't work as it should
+  - weak_delegate
+  - xct_specific_matcher
+  - xctfail_message
+  - yoda_condition
+  - empty_count
+  - trailing_whitespace
+  - discouraged_object_literal
+
+anyobject_protocol:
+  severity: error
+
+array_init:
+  severity: error
+
+attributes:
+  severity: error
+  always_on_same_line:
+    - '@IBAction'
+    - '@IBOutlet'
+    - '@IBDesignable'
+    - '@IBInspectable'
+    - '@GKInspectable'
+    - '@NSCopying'
+    - '@NSManaged'
+    - '@dynamic'
+    - '@inlinable'
+    - '@nonobjc'
+    - '@objc'
+    - '@objcMembers'
+  always_on_line_above:
+    - '@dynamicMemberLookup'
+    - '@UIApplicationMain'
+    - '@NSApplicationMain'
+    - '@available'
+    - '@convention'
+    - '@discardableResult'
+    - '@usableFromInline'
+    - '@warn_unqualified_access'
+
+block_based_kvo:
+  severity: error
+
+class_delegate_protocol:
+  severity: error
+
+closing_brace:
+  severity: error
+
+closure_body_length:
+  warning: 20
+  error: 20
+
+closure_end_indentation:
+  severity: error
+
+closure_parameter_position:
+  severity: error
+
+closure_spacing:
+  severity: error
+
+collection_alignment:
+  severity: error
+  align_colons: false
+
+colon:
+  severity: error
+  apply_to_dictionaries: true
+
+comma:
+  severity: error
+
+compiler_protocol_init:
+  severity: error
+
+conditional_returns_on_newline:
+  severity: error
+  if_only: false
+
+contains_over_first_not_nil:
+  severity: error
+
+control_statement:
+  severity: error
+
+convenience_type:
+  severity: error
+
+cyclomatic_complexity:
+  warning: 10
+  error: 10
+  ignoresCaseStatements: false
+
+deployment_target:
+  severity: error
+  iOS_deployment_target: '10.0'
+  macOS_deployment_target: '10.12'
+  watchOS_deployment_target: '3.0'
+  tvOS_deployment_target: '10.0'
+
+discarded_notification_center_observer:
+  severity: error
+
+discouraged_direct_init:
+  severity: error
+  types:
+    - 'Bundle'
+    - 'UIDevice'
+
+discouraged_object_literal:
+  severity: error
+  image_literal: true
+  color_literal: false
+
+duplicate_imports:
+  severity: error
+
+dynamic_inline:
+  severity: error
+
+empty_count:
+  severity: error
+
+empty_enum_arguments:
+  severity: error
+
+empty_parameters:
+  severity: error
+
+empty_parentheses_with_trailing_closure:
+  severity: error
+
+empty_string:
+  severity: error
+
+empty_xctest_method:
+  severity: warning
+
+explicit_acl:
+  severity: error
+
+explicit_init:
+  severity: error
+
+explicit_self:
+  severity: error
+
+explicit_top_level_acl:
+  severity: error
+
+fallthrough:
+  severity: error
+
+file_header:
+  severity: error
+  required_pattern: |
+                    \/\/
+                    \/\/  SWIFTLINT_CURRENT_FILENAME
+                    \/\/  Swift-Base
+                    \/\/
+                    \/\/  Created by \S+?\ \S+ on \d{2}\/\d{2}\/\d{4}\.
+                    \/\/  Copyright © \d{4} Flatstack\. All rights reserved\.
+                    \/\/
 file_length:
   warning: 500
-  error: 1200
-# naming rules can set warnings/errors for min_length and max_length
-# additionally they can set excluded names
-type_name:
-  min_length: 4 # only warning
-  max_length: # warning and error
+  error: 500
+  ignore_comment_only_lines: true
+
+file_name:
+  severity: error
+  prefix_pattern: ''
+  suffix_pattern: '(([A-Z][A-z]+)Extension)?'
+
+first_where:
+  severity: error
+
+for_where:
+  severity: error
+
+force_try:
+  severity: error
+
+function_body_length:
+  warning: 40
+  error: 40
+
+function_parameter_count:
+  warning: 4
+  error: 4
+  ignores_default_parameters: false
+
+generic_type_name:
+  min_length:
+    warning: 1
+    error: 1
+  max_length:
+    warning: 20
+    error: 20
+  validatesStartWithLowercase: true
+  excluded:
+    - 'T'
+    - 'U'
+    - 'V'
+
+identical_operands:
+  severity: error
+
+identifier_name:
+  min_length:
+    warning: 3
+    error: 3
+  max_length:
     warning: 40
+    error: 40
+  validates_start_with_lowercase: true
+  excluded:
+    - 'id'
+    - 'URL'
+    - 'to'
+    - 'a'
+    - 'b'
+    - 'c'
+    - 'd'
+    - 'i'
+    - 'j'
+    - 'x'
+    - 'y'
+    - 'z'
+
+implicit_getter:
+  severity: error
+
+inert_defer:
+  severity: error
+
+is_disjoint:
+  severity: error
+
+joined_default_parameter:
+  severity: error
+
+large_tuple:
+  warning: 3
+  error: 3
+
+last_where:
+  severity: error
+
+leading_whitespace:
+  severity: error
+
+legacy_cggeometry_functions:
+  severity: error
+
+legacy_constant:
+  severity: error
+
+legacy_constructor:
+  severity: error
+
+legacy_hashing:
+  severity: error
+
+legacy_nsgeometry_functions:
+  severity: error
+
+legacy_random:
+  severity: error
+
+let_var_whitespace:
+  severity: error
+
+line_length:
+  warning: 165
+  error: 165
+  ignores_urls: true
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_interpolated_strings: true
+
+lower_acl_than_parent:
+  severity: error
+
+mark:
+  severity: error
+
+modifier_order:
+  severity: error
+  preferred_modifier_order:
+    - 'acl'
+    - 'setterACL'
+    - 'override'
+    - 'owned'
+    - 'mutators'
+    - 'final'
+    - 'typeMethods'
+    - 'required'
+    - 'convenience'
+    - 'lazy'
+    - 'dynamic'
+
+multiline_arguments:
+  severity: error
+  first_argument_location: 'same_line'
+  only_enforce_after_first_closure_on_first_line: true
+
+multiline_function_chains:
+  severity: error
+
+multiline_parameters:
+  severity: error
+
+multiple_closures_with_trailing_closure:
+  severity: error
+
+nesting:
+  type_level:
+    warning: 1
+    error: 1
+  statement_level:
+    warning: 3
+    error: 3
+
+no_extension_access_modifier:
+  severity: error
+
+no_fallthrough_only:
+  severity: error
+
+no_grouping_extension:
+  severity: error
+
+number_separator:
+  severity: error
+  minimum_length: 0
+  minimum_fraction_length: 0
+
+object_literal:
+  severity: error
+  image_literal: true
+  color_literal: false
+
+opening_brace:
+  severity: error
+
+operator_usage_whitespace:
+  severity: error
+
+operator_whitespace:
+  severity: error
+
+overridden_super_call:
+  severity: error
+  included:
+    - '*'
+
+override_in_extension:
+  severity: error
+
+pattern_matching_keywords:
+  severity: error
+
+private_action:
+  severity: error
+
+private_outlet:
+  severity: error
+  allow_private_set: false
+
+private_over_fileprivate:
+  severity: error
+  validate_extensions: true
+
+private_unit_test:
+  severity: error
+
+prohibited_super_call:
+  severity: error
+  included:
+    - '*'
+
+protocol_property_accessors_order:
+  severity: error
+
+quick_discouraged_call:
+  severity: warning
+
+quick_discouraged_focused_test:
+  severity: warning
+
+quick_discouraged_pending_test:
+  severity: warning
+
+redundant_discardable_let:
+  severity: error
+
+redundant_nil_coalescing:
+  severity: error
+
+redundant_objc_attribute:
+  severity: error
+
+redundant_optional_initialization:
+  severity: error
+
+redundant_set_access_control:
+  severity: error
+
+redundant_string_enum_value:
+  severity: error
+
+redundant_type_annotation:
+  severity: error
+
+redundant_void_return:
+  severity: error
+
+required_enum_case:
+  Result:
+    success: error
+    failure: error
+
+return_arrow_whitespace:
+  severity: error
+
+shorthand_operator:
+  severity: error
+
+single_test_class:
+  severity: warning
+
+sorted_first_last:
+  severity: error
+
+statement_position:
+  severity: error
+  statement_mode: 'default'
+
+static_operator:
+  severity: error
+
+strict_fileprivate:
+  severity: error
+
+superfluous_disable_command:
+  severity: error
+
+switch_case_alignment:
+  severity: error
+  indented_cases: false
+
+switch_case_on_newline:
+  severity: error
+
+syntactic_sugar:
+  severity: error
+
+todo:
+  severity: warning
+
+trailing_comma:
+  severity: error
+  mandatory_comma: false
+
+trailing_newline:
+  severity: error
+
+trailing_semicolon:
+  severity: error
+
+trailing_whitespace:
+  severity: error
+  ignores_empty_lines: false
+  ignores_comments: false
+
+type_body_length:
+  warning: 500
+  error: 500
+
+type_name:
+  min_length:
+    warning: 3
+    error: 3
+  max_length:
+    warning: 50
     error: 50
-  excluded: iPhone # excluded via string
-reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji, sonarqube, markdown)
+  validates_start_with_lowercase: true
+
+unavailable_function:
+  severity: warning
+
+unneeded_break_in_switch:
+  severity: error
+
+unneeded_parentheses_in_closure_argument:
+  severity: error
+
+untyped_error_in_catch:
+  severity: error
+
+unused_control_flow_label:
+  severity: error
+
+unused_enumerated:
+  severity: error
+
+unused_import:
+  severity: error
+
+unused_optional_binding:
+  severity: error
+  ignore_optional_try: falser
+
+unused_private_declaration:
+  severity: warning
+
+unused_setter_value:
+  severity: error
+
+valid_ibinspectable:
+  severity: error
+
+vertical_parameter_alignment:
+  severity: error
+
+vertical_parameter_alignment_on_call:
+  severity: error
 
 vertical_whitespace:
   severity: error
   max_empty_lines: 1
 
-redundant_optional_initialization:
+vertical_whitespace_between_cases:
   severity: error
+
+vertical_whitespace_closing_braces:
+  severity: error
+
+vertical_whitespace_opening_braces:
+  severity: error
+
+void_return:
+  severity: error
+
+weak_computed_property:
+  severity: error
+
+weak_delegate:
+  severity: error
+
+xct_specific_matcher:
+  severity: warning
+
+xctfail_message:
+  severity: warning
+
+yoda_condition:
+  severity: error
+
+warning_threshold: 10

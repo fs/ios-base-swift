@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Swift-Base
 //
-//  Created by Flatstack on 02.10.14.
-//  Copyright (c) 2014 Flatstack. All rights reserved.
+//  Created by FS Flatstack on 02/10/2014.
+//  Copyright © 2014 Flatstack. All rights reserved.
 //
 
 import UIKit
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.setupProject()
-        
+
         return true
     }
 
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) { }
 
     func applicationWillTerminate(_ application: UIApplication) { }
-    
+
     // MARK: - Remote notifications
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -58,10 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: - Settings
 
-private extension AppDelegate {
+extension AppDelegate {
 
     // MARK: - Instance Methods
-    
+
     private func setupProject() {
         Fabric.with([Crashlytics.self])
     }
@@ -82,20 +82,18 @@ private extension AppDelegate {
 
 // MARK: - Push notifications
 
-private extension AppDelegate {
+extension AppDelegate {
 
     // MARK: - Instance Methods
-    
+
     private func saveRemoteNotificationTokenData(_ application: UIApplication, deviceToken: Data) {
         let tokenParts = deviceToken.map { data in
             String(format: "%02.2hhx", data)
         }
 
         let token = tokenParts.joined()
-        
-        UserDefaults.standard.set(deviceToken, forKey: UserDefaultsKeys.DeviceToken.data)
-        UserDefaults.standard.set(token, forKey: UserDefaultsKeys.DeviceToken.string)
-        UserDefaults.standard.synchronize()
+
+        Log.i(token)
     }
 
     private func getNotificationSettings() {
