@@ -97,6 +97,8 @@
 		CB18CA3322310A070027E905 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18CA3222310A070027E905 /* Colors.swift */; };
 		CB18CA3522310B0D0027E905 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18CA3422310B0D0027E905 /* Fonts.swift */; };
 		CB4EB182222ED72B00FF2232 /* Swift_BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EB181222ED72B00FF2232 /* Swift_BaseTests.swift */; };
+		CBD071E02297F14C00F96115 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD071DE2297F14C00F96115 /* ImageLoader.swift */; };
+		CBD071E12297F14C00F96115 /* DefaultImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD071DF2297F14C00F96115 /* DefaultImageLoader.swift */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 		E75BB8051E8CFEF90035C2DA /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75BB8071E8CFEF90035C2DA /* Main_iPad.storyboard */; };
 /* End PBXBuildFile section */
@@ -242,6 +244,8 @@
 		CB4EB183222ED72B00FF2232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB4EB193222ED73C00FF2232 /* Swift_BaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_BaseUITests.swift; sourceTree = "<group>"; };
 		CB4EB195222ED73C00FF2232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBD071DE2297F14C00F96115 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		CBD071DF2297F14C00F96115 /* DefaultImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultImageLoader.swift; sourceTree = "<group>"; };
 		CD668A6E2E26FB6FE9EC39E2 /* Pods-Abstract-Swift-BaseTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-BaseTests.test.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-BaseTests/Pods-Abstract-Swift-BaseTests.test.xcconfig"; sourceTree = "<group>"; };
 		D674784D249FB8DC5340E4D9 /* Pods-Swift-BaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseUITests/Pods-Swift-BaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D94174684F8EC7156120E6AF /* Pods-Swift-Base.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Base.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Base/Pods-Swift-Base.debug staging.xcconfig"; sourceTree = "<group>"; };
@@ -471,6 +475,7 @@
 			children = (
 				CB109C6B22833FC200632EC9 /* Event */,
 				CB109C5222833FBC00632EC9 /* Extensions */,
+				CBD071DD2297F14C00F96115 /* ImageLoader */,
 				CB109C7422833FD000632EC9 /* Protocols */,
 				CB109C2F22832A8200632EC9 /* Storage */,
 				CB109C7B22833FD800632EC9 /* ViewControllers */,
@@ -624,6 +629,15 @@
 				CB4EB195222ED73C00FF2232 /* Info.plist */,
 			);
 			path = "Swift-BaseUITests";
+			sourceTree = "<group>";
+		};
+		CBD071DD2297F14C00F96115 /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				CBD071DE2297F14C00F96115 /* ImageLoader.swift */,
+				CBD071DF2297F14C00F96115 /* DefaultImageLoader.swift */,
+			);
+			path = ImageLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -847,6 +861,7 @@
 				CB109C3F22832A8200632EC9 /* CoreDataStorageModel.swift in Sources */,
 				CB109C5F22833FBC00632EC9 /* NSLayoutConstraintExtension.swift in Sources */,
 				CB109C6022833FBC00632EC9 /* CollectionExtension.swift in Sources */,
+				CBD071E02297F14C00F96115 /* ImageLoader.swift in Sources */,
 				CB109C4522832A8200632EC9 /* StorageModel.swift in Sources */,
 				CB109C6822833FBC00632EC9 /* StringExtension.swift in Sources */,
 				CB109CC2228340CD00632EC9 /* UIWebActivityIndicator.swift in Sources */,
@@ -872,6 +887,7 @@
 				2124DFA01A8DF48000422313 /* ViewController.swift in Sources */,
 				CB109C9522833FE100632EC9 /* RoundedImageView.swift in Sources */,
 				CB109CB8228340CD00632EC9 /* WebURLRequestAdapter.swift in Sources */,
+				CBD071E12297F14C00F96115 /* DefaultImageLoader.swift in Sources */,
 				CB109C7022833FC200632EC9 /* Event.swift in Sources */,
 				CB109CBB228340CD00632EC9 /* AlamofireWebError.swift in Sources */,
 				CB109C2D22832A1800632EC9 /* DefaultCacheSession.swift in Sources */,
