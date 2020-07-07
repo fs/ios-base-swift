@@ -17,9 +17,13 @@ class ViewController: UIViewController {
     // MARK: - Instance Methods
 
     @IBAction private func tapShowAlert(_ sender: AnyObject) {
-        let alertController = UIAlertController(title: nil, message: "Press OK", preferredStyle: .alert)
+        let alertController = UIAlertController(
+            title: nil,
+            message: R.string.localizable.press_ok(),
+            preferredStyle: .alert
+        )
 
-        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: R.string.localizable.alert_ok(), style: .cancel))
 
         self.present(alertController, animated: true)
     }

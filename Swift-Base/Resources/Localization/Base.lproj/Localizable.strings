@@ -1,18 +1,16 @@
 /* Localized versions of Info.plist keys */
 
 /*------------Common-----------*/
-"ERROR"     = "Error";
-"NO"        = "No";
-"YES"       = "Yes";
-"OK"        = "Ok";
-
-"ORDER"     = "Order";
+"alert_close" = "Close";
+"alert_dismiss" = "Dismiss";
+"alert_ok" = "OK";
 
 /*-------------API-----------*/
-"API_VERSION_DEPRECATED"    = "The current API version deprecated";
-"OPERATION_WAS_CANCELLED"   = "Operation was cancelled";
-"NOT_FOUND"                 = "Not found";
-"UNKNOW_ERROR"              = "Unknow error";
+"internet_disconnected_title" = "No Internet Connection";
+"internet_disconnected_message" = "Please check your Wi-Fi or mobile network connection and try again.";
+"unknown_error_title" = "Something went wrong";
+"unknown_error_message" = "The Swift-Base team has been notified and is working on a fix. Please try again later.";
 
-//"" = "";
-// /*-------------CATEGORY-----------*/
+/*-------------DEMO-----------*/
+"press_ok" = "Press OK";
+"ok" = "OK";
