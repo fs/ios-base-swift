@@ -1,9 +1,9 @@
 //
 //  Log.swift
-//  ITISService
+//  Tools
 //
-//  Created by Тимур Шафигуллин on 02/11/2018.
-//  Copyright © 2018 Timur Shafigullin. All rights reserved.
+//  Created by Timur Shafigullin on 02/11/2018.
+//  Copyright © 2018 Flatstack. All rights reserved.
 //
 
 import Foundation
