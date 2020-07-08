@@ -15,6 +15,7 @@ target 'Swift-Base' do
   pod 'Moya'
   pod 'PromiseKit'
   pod 'R.swift'
+  pod 'Kingfisher', '~> 5.0'
 
   target 'Swift-BaseTests' do
     inherit! :search_paths

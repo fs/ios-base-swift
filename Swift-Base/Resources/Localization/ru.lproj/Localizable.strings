@@ -1,18 +1,16 @@
 /* Localized versions of Info.plist keys */
 
 /*------------Common-----------*/
-"ERROR"     = "Ошибка";
-"NO"        = "Нет";
-"YES"       = "Да";
-"OK"        = "Ок";
-
-"ORDER"     = "Заказ";
+"alert_close" = "Закрыть";
+"alert_dismiss" = "Отменить";
+"alert_ok" = "OK";
 
 /*-------------API-----------*/
-"API_VERSION_DEPRECATED"    = "Текущая версия API устарела";
-"OPERATION_WAS_CANCELLED"   = "Операция была отменена";
-"NOT_FOUND"                 = "Не найдено";
-"UNKNOW_ERROR"              = "Неизвестная ошибка";
+"internet_disconnected_title" = "Нет интернет подключения";
+"internet_disconnected_message" = "Пожалуйста, проверьте подключение к Wi-Fi или мобильной сети и повторите попытку.";
+"unknown_error_title" = "Что-то пошло не так";
+"unknown_error_message" = "Команда Swift-Base была уведомлена и работает над исправлением. Пожалуйста, попробуйте позже.";
 
-//"" = "";
-// /*-------------CATEGORY-----------*/
+/*-------------DEMO-----------*/
+"press_ok" = "Нажмите ОК";
+"ok" = "OK";
