@@ -6,8 +6,8 @@ target 'Swift-Base' do
   use_frameworks!
 
   # Analytics
-  pod 'Fabric'
-  pod 'Crashlytics'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
   
   # Libraries
   pod 'Alamofire'

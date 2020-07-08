@@ -9,8 +9,7 @@
 import UIKit
 import CoreData
 import UserNotifications
-import Fabric
-import Crashlytics
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -63,21 +62,8 @@ extension AppDelegate {
     // MARK: - Instance Methods
 
     private func setupProject() {
-        Fabric.with([Crashlytics.self])
+        FirebaseApp.configure()
     }
-
-    /*
-    Setup third party libraries
-
-    private func setupSDWebImage() {
-        let imageCache:SDImageCache = SDImageCache.sharedImageCache()
-        imageCache.maxCacheSize     = 1024*1024*100 // 100mb on disk
-        imageCache.maxMemoryCost    = 1024*1024*10  // 10mb in memory
-
-        let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.sharedDownloader()
-        imageDownloader.downloadTimeout          = 60.0
-    }
-    */
 }
 
 // MARK: - Push notifications
