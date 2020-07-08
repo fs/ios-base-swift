@@ -17,24 +17,30 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.8.4):
     - PromiseKit/CorePromise
+  - R.swift (5.2.2):
+    - R.swift.Library (~> 5.2.0)
+  - R.swift.Library (5.2.0)
   - Result (4.1.0)
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.5)
+  - Alamofire
   - Crashlytics
   - Fabric
   - Moya
   - PromiseKit
+  - R.swift
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - Crashlytics
     - Fabric
     - Moya
     - PromiseKit
+    - R.swift
+    - R.swift.Library
     - Result
     - SwiftLint
 
@@ -44,9 +50,11 @@ SPEC CHECKSUMS:
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Moya: 161263550064ff8a4948e8ff63137fd72a876292
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
+  R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
+  R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 8f83747133efd947e1bad42da78cc625ed8d5b1d
+PODFILE CHECKSUM: fe3b16e23d4b14715ca03a46339216633c6d724d
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.9.3
