@@ -10,6 +10,10 @@ import Foundation
 
 public extension String {
 
+    // MARK: - Type Properties
+
+    static let empty = ""
+
     // MARK: - Instance Methods
 
     func localized(tableName: String? = nil, comment: String = "") -> String {

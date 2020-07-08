@@ -38,7 +38,7 @@ public class AlamofireWebHandler: WebHandler {
     }
 
     deinit {
-        Log.i("[\(self.request.logDescription)]")
+        Log.low("[\(self.request.logDescription)] deinit", from: self)
 
         self.abort()
     }
@@ -66,15 +66,15 @@ public class AlamofireWebHandler: WebHandler {
     // MARK: -
 
     public func responseJSON(queue: DispatchQueue?, options: JSONSerialization.ReadingOptions, completion: @escaping ((Any?, WebError?) -> Void)) {
-        Log.i("[\(self.request.logDescription)]")
+        Log.low("[\(self.request.logDescription)] responseJSON()", from: self)
 
         self.dataRequest?.responseJSON(queue: queue, options: options, completionHandler: { response in
             if let error = self.validate(response: response) {
-                Log.e("[\(self.request.logDescription)] --> Error: \(error.logDescription)")
+                Log.low("[\(self.request.logDescription)] responseJSON() --> Error: \(error.logDescription)", from: self)
 
                 completion(nil, error)
             } else {
-                Log.i("[\(self.request.logDescription)] --> Success")
+                Log.low("[\(self.request.logDescription)] responseJSON() --> Success", from: self)
 
                 completion(response.result.value, nil)
             }
@@ -83,14 +83,14 @@ public class AlamofireWebHandler: WebHandler {
 
     public func responseData(queue: DispatchQueue?, completion: @escaping ((Data?, WebError?) -> Void)) {
         self.dataRequest?.responseData(queue: queue, completionHandler: { response in
-            Log.i("[\(self.request.logDescription)]")
+            Log.low("[\(self.request.logDescription)] responseData()", from: self)
 
             if let error = self.validate(response: response) {
-                Log.e("[\(self.request.logDescription)] --> Error: \(error.logDescription)")
+                Log.low("[\(self.request.logDescription)] responseData() --> Error: \(error.logDescription)", from: self)
 
                 completion(nil, error)
             } else {
-                Log.i("[\(self.request.logDescription)] --> Success")
+                Log.low("[\(self.request.logDescription)] responseData() --> Success", from: self)
 
                 completion(response.result.value, nil)
             }
@@ -98,15 +98,15 @@ public class AlamofireWebHandler: WebHandler {
     }
 
     public func responseString(queue: DispatchQueue?, encoding: String.Encoding?, completion: @escaping ((String?, WebError?) -> Void)) {
-        Log.i("[\(self.request.logDescription)]")
+        Log.low("[\(self.request.logDescription)] responseString()", from: self)
 
         self.dataRequest?.responseString(queue: queue, encoding: encoding, completionHandler: { response in
             if let error = self.validate(response: response) {
-                Log.e("[\(self.request.logDescription)] --> Error: \(error.logDescription)")
+                Log.low("[\(self.request.logDescription)] responseString() --> Error: \(error.logDescription)", from: self)
 
                 completion(nil, error)
             } else {
-                Log.i("[\(self.request.logDescription)] --> Success")
+                Log.low("[\(self.request.logDescription)] responseString() --> Success", from: self)
 
                 completion(response.result.value, nil)
             }
@@ -114,7 +114,7 @@ public class AlamofireWebHandler: WebHandler {
     }
 
     public func abort() {
-         Log.w("[\(self.request.logDescription)]")
+        Log.low("[\(self.request.logDescription)] abort()", from: self)
 
         self.dataRequest?.cancel()
         self.dataRequest = nil

@@ -12,12 +12,12 @@ public class LoggedPageViewController: UIPageViewController {
 
     // MARK: - Instance Properties
 
-    public private(set) final var isViewAppeared = false
+    public fileprivate(set) final var isViewAppeared = false
 
     // MARK: - Initializers
 
     deinit {
-        Log.i(sender: self)
+        Log.high("deinit", from: self)
     }
 
     // MARK: - Instance Methods
@@ -25,13 +25,13 @@ public class LoggedPageViewController: UIPageViewController {
     public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
-        Log.i(sender: self)
+        Log.high("didReceiveMemoryWarning()", from: self)
     }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        Log.i(sender: self)
+        Log.high("viewDidLoad()", from: self)
 
         self.isViewAppeared = false
     }
@@ -39,7 +39,7 @@ public class LoggedPageViewController: UIPageViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        Log.i(sender: self)
+        Log.high("viewWillAppear()", from: self)
 
         self.isViewAppeared = false
     }
@@ -47,7 +47,7 @@ public class LoggedPageViewController: UIPageViewController {
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        Log.i(sender: self)
+        Log.high("viewDidAppear()", from: self)
 
         self.isViewAppeared = true
     }
@@ -55,13 +55,13 @@ public class LoggedPageViewController: UIPageViewController {
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        Log.i(sender: self)
+        Log.high("viewWillDisappear()", from: self)
     }
 
     public override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        Log.i(sender: self)
+        Log.high("viewDidDisappear()", from: self)
 
         self.isViewAppeared = false
     }
@@ -71,6 +71,6 @@ public class LoggedPageViewController: UIPageViewController {
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
 
-        Log.i(String(describing: segue.identifier), sender: self)
+        Log.high("prepare(for: \(String(describing: segue.identifier)))", from: self)
     }
 }

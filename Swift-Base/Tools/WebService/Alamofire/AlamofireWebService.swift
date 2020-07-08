@@ -24,7 +24,11 @@ public final class AlamofireWebService<Handler: AlamofireWebHandler>: WebService
 
     // MARK: - Initializers
 
-    public init(serverBaseURL: URL, urlRequestAdapter: WebURLRequestAdapter? = nil, activityIndicator: WebActivityIndicator? = nil) {
+    public init(
+        serverBaseURL: URL,
+        urlRequestAdapter: WebURLRequestAdapter? = nil,
+        activityIndicator: WebActivityIndicator? = nil
+    ) {
         self.serverBaseURL = serverBaseURL
 
         self.urlRequestAdapter = urlRequestAdapter
@@ -34,6 +38,8 @@ public final class AlamofireWebService<Handler: AlamofireWebHandler>: WebService
 
         configuration.timeoutIntervalForResource = 3600
         configuration.timeoutIntervalForRequest = 30
+        configuration.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        configuration.urlCache = nil
 
         self.sessionManager = Alamofire.SessionManager(configuration: configuration)
 
@@ -45,7 +51,7 @@ public final class AlamofireWebService<Handler: AlamofireWebHandler>: WebService
     // MARK: - Instance Methods
 
     public func make(request: WebRequest) -> WebHandler {
-        Log.i(request.logDescription)
+        Log.low("send(request: \(request.logDescription), parameters: \(request.parameters))", from: self)
 
         let method: HTTPMethod
 

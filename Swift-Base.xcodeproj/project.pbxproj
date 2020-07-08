@@ -15,6 +15,10 @@
 		21DB301F19DD2289003A418D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DB301E19DD2289003A418D /* Images.xcassets */; };
 		21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */; };
 		2E7E76D2F3337950D7564BCB /* Pods_Swift_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21809D2EF15C6FD4042F092 /* Pods_Swift_Base.framework */; };
+		5E13D8FA24B5F3160081B960 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13D8F924B5F3160081B960 /* DateFormatterExtension.swift */; };
+		5E13D8FD24B5F3B10081B960 /* LogPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13D8FC24B5F3B10081B960 /* LogPrinter.swift */; };
+		5E13D8FF24B5F3E70081B960 /* LogConsolePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13D8FE24B5F3E70081B960 /* LogConsolePrinter.swift */; };
+		5E13D90124B5F4120081B960 /* LogFilePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13D90024B5F4120081B960 /* LogFilePrinter.swift */; };
 		5E8025FF24B3814500904C48 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8025FE24B3814400904C48 /* R.generated.swift */; };
 		7F7824E8E9D04257E5C62ABC /* Pods_Swift_BaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC34A414A3141736DAC65BE7 /* Pods_Swift_BaseTests.framework */; };
 		C3B9F32F224D38AE00ED6949 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9F32E224D38AE00ED6949 /* Services.swift */; };
@@ -140,6 +144,10 @@
 		515E1CD58AEDDB60304AE65F /* Pods-Abstract-Swift-Base.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-Base.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base.appstore.xcconfig"; sourceTree = "<group>"; };
 		5680218565A77C4235FC030D /* Pods-Swift-BaseUITests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseUITests.test.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseUITests/Pods-Swift-BaseUITests.test.xcconfig"; sourceTree = "<group>"; };
 		5A6EEF9457403CA02590F64D /* Pods-Abstract-Swift-Base.appstore staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-Swift-Base.appstore staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-Swift-Base/Pods-Abstract-Swift-Base.appstore staging.xcconfig"; sourceTree = "<group>"; };
+		5E13D8F924B5F3160081B960 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		5E13D8FC24B5F3B10081B960 /* LogPrinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPrinter.swift; sourceTree = "<group>"; };
+		5E13D8FE24B5F3E70081B960 /* LogConsolePrinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogConsolePrinter.swift; sourceTree = "<group>"; };
+		5E13D90024B5F4120081B960 /* LogFilePrinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFilePrinter.swift; sourceTree = "<group>"; };
 		5E8025FE24B3814400904C48 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		5FFECDAB821757A8696965B1 /* Pods-Swift-Base.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Base.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Base/Pods-Swift-Base.appstore.xcconfig"; sourceTree = "<group>"; };
 		603488A1F6209B3FC0730E39 /* Pods-Swift-BaseTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.debug staging.xcconfig"; sourceTree = "<group>"; };
@@ -404,6 +412,17 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		5E13D8FB24B5F39E0081B960 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				CB109C4722832CF800632EC9 /* Log.swift */,
+				5E13D8FE24B5F3E70081B960 /* LogConsolePrinter.swift */,
+				5E13D90024B5F4120081B960 /* LogFilePrinter.swift */,
+				5E13D8FC24B5F3B10081B960 /* LogPrinter.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
 		5E8025FD24B3813500904C48 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,12 +510,12 @@
 				CB109C6B22833FC200632EC9 /* Event */,
 				CB109C5222833FBC00632EC9 /* Extensions */,
 				CBD071DD2297F14C00F96115 /* ImageLoader */,
+				5E13D8FB24B5F39E0081B960 /* Log */,
 				CB109C7422833FD000632EC9 /* Protocols */,
 				CB109C2F22832A8200632EC9 /* Storage */,
 				CB109C7B22833FD800632EC9 /* ViewControllers */,
 				CB109C8A22833FE100632EC9 /* Views */,
 				CB109CA3228340CD00632EC9 /* WebService */,
-				CB109C4722832CF800632EC9 /* Log.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -536,6 +555,7 @@
 				CB109C5722833FBC00632EC9 /* CGSizeExtension.swift */,
 				CB109C5422833FBC00632EC9 /* CollectionExtension.swift */,
 				CB109C5A22833FBC00632EC9 /* DataExtension.swift */,
+				5E13D8F924B5F3160081B960 /* DateFormatterExtension.swift */,
 				CB109C5B22833FBC00632EC9 /* FloatingPointExtension.swift */,
 				CB109C5322833FBC00632EC9 /* NSLayoutConstraintExtension.swift */,
 				CB109C5C22833FBC00632EC9 /* StringExtension.swift */,
@@ -868,6 +888,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E13D8FA24B5F3160081B960 /* DateFormatterExtension.swift in Sources */,
 				CB109CC1228340CD00632EC9 /* WebService.swift in Sources */,
 				CB109C7122833FC200632EC9 /* EventListenerConnection.swift in Sources */,
 				218C64B81BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld in Sources */,
@@ -878,6 +899,7 @@
 				CB109C8622833FD900632EC9 /* MessagePresenting.swift in Sources */,
 				CB109C4822832CF800632EC9 /* Log.swift in Sources */,
 				CB109C9422833FE100632EC9 /* RoundedView.swift in Sources */,
+				5E13D8FF24B5F3E70081B960 /* LogConsolePrinter.swift in Sources */,
 				CB109C6222833FBC00632EC9 /* ArrayExtension.swift in Sources */,
 				CB109C3F22832A8200632EC9 /* CoreDataStorageModel.swift in Sources */,
 				CB109C5F22833FBC00632EC9 /* NSLayoutConstraintExtension.swift in Sources */,
@@ -885,6 +907,7 @@
 				CBD071E02297F14C00F96115 /* ImageLoader.swift in Sources */,
 				CB109C4522832A8200632EC9 /* StorageModel.swift in Sources */,
 				CB109C6822833FBC00632EC9 /* StringExtension.swift in Sources */,
+				5E13D8FD24B5F3B10081B960 /* LogPrinter.swift in Sources */,
 				CB109CC2228340CD00632EC9 /* UIWebActivityIndicator.swift in Sources */,
 				CB109C3C22832A8200632EC9 /* StorageManager.swift in Sources */,
 				CB109C4622832A8200632EC9 /* StorageContextType.swift in Sources */,
@@ -897,6 +920,7 @@
 				CB109CBE228340CD00632EC9 /* WebError.swift in Sources */,
 				CB109C3D22832A8200632EC9 /* StorageFetchRequest.swift in Sources */,
 				CB109C9622833FE100632EC9 /* TextField.swift in Sources */,
+				5E13D90124B5F4120081B960 /* LogFilePrinter.swift in Sources */,
 				CB109C7822833FD100632EC9 /* KeyboardScrollableHandler.swift in Sources */,
 				5E8025FF24B3814500904C48 /* R.generated.swift in Sources */,
 				CB109C1A2283295200632EC9 /* CacheManagerFactory.swift in Sources */,
@@ -1078,7 +1102,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D LOGGING";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID)";
 				PRODUCT_NAME = "Swift-Base";
 				PROVISIONING_PROFILE = "6abf51a6-4557-4190-a61f-8517c7946ecf";
@@ -1194,7 +1218,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D LOGGING";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.flatstack.ios.Swift-Base";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1270,7 +1294,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D LOGGING";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID)";
 				PRODUCT_NAME = "Swift-Base";
 				PROVISIONING_PROFILE = "1a9506f9-983f-4087-a07a-26355b883ef8";
@@ -1358,7 +1382,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D LOGGING";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID)";
 				PRODUCT_NAME = "Swift-Base";
 				PROVISIONING_PROFILE = "1a9506f9-983f-4087-a07a-26355b883ef8";
@@ -1849,7 +1873,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D LOGGING";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID)";
 				PRODUCT_NAME = "Swift-Base";
 				PROVISIONING_PROFILE = "1f21326e-340a-428d-a6c3-4eb9873475fc";
@@ -1932,7 +1956,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D LOGGING";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID)";
 				PRODUCT_NAME = "Swift-Base";
 				PROVISIONING_PROFILE = "4bedd41f-7037-4a27-a19b-53e7697ca528";
