@@ -146,15 +146,6 @@ platform :ios do
       File.delete(ENV["CHANGELOG_FILE"])
     end
   end
-
-  # -------------------------------------- #
-  #                 Error                  #
-  # -------------------------------------- #
-
-  error do |lane, exception|
-    clean()
-  end
-
 end
 
 # More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
