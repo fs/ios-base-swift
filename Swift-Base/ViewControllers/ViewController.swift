@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: LoggedViewController {
 
     // MARK: - Instance Properties
 
