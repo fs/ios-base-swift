@@ -18,6 +18,9 @@ default_platform(:ios)
 before_all do
   setup_semaphore
 
+  ENV["SCHEME_PRODUCTION"] = "Swift-Base"
+  ENV["BUNDLE_ID_PRODUCTION"] = "com.flatstack.ios.Swift-Base"
+
   ENV["SCHEME_STAGING"] = "Swift-BaseStaging"
   ENV["BUNDLE_ID_STAGING"] = "com.flatstack.ios.Swift-Base.staging"
 
@@ -45,6 +48,10 @@ platform :ios do
   	)
   end
 
+  lane :build do
+    match(type: 'adhoc')
+    gym(scheme: ENV["SCHEME_PRODUCTION"], clean: true)
+  end
 
   # -------------------------------------- #
   #               Private                  #
