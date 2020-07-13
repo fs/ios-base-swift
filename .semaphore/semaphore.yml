@@ -16,8 +16,8 @@ blocks:
         - name: ios-base-swift-secrets
       prologue:
         commands:
-          - chmod 0600 ~/.ssh/*
-          - ssh-add ~/.ssh/id_rsa
+          - chmod 0600 ~/.ssh/id_rsa_semaphoreci
+          - ssh-add ~/.ssh/id_rsa_semaphoreci
 
           - checkout
           - cache restore
