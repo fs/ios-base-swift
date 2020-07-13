@@ -50,6 +50,7 @@ platform :ios do
 
   lane :build do
     match(type: 'adhoc')
+    cocoapods
     gym(scheme: ENV["SCHEME_PRODUCTION"], clean: true, codesigning_identity: "iPhone Distribution")
   end
 

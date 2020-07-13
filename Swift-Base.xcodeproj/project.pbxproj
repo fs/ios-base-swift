@@ -15,7 +15,7 @@
 		21DB301519DD2289003A418D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB301419DD2289003A418D /* AppDelegate.swift */; };
 		21DB301F19DD2289003A418D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DB301E19DD2289003A418D /* Images.xcassets */; };
 		21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */; };
-		2E7E76D2F3337950D7564BCB /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		2E7E76D2F3337950D7564BCB /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		5E13D8F824B5ED740081B960 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E13D8F724B5ED740081B960 /* GoogleService-Info.plist */; };
 		5E13D8FA24B5F3160081B960 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13D8F924B5F3160081B960 /* DateFormatterExtension.swift */; };
 		5E13D8FD24B5F3B10081B960 /* LogPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13D8FC24B5F3B10081B960 /* LogPrinter.swift */; };
@@ -122,6 +122,7 @@
 		5EB86D5E24B7117F00516AEB /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB86D5D24B7117F00516AEB /* Production.swift */; };
 		5EB86D6024B711C000516AEB /* Staging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB86D5F24B711C000516AEB /* Staging.swift */; };
 		7F7824E8E9D04257E5C62ABC /* Pods_Swift_BaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC34A414A3141736DAC65BE7 /* Pods_Swift_BaseTests.framework */; };
+		9FE1EC4958BF5E5901FC5C95 /* Pods_Swift_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5FDC6268E437EB6396DF7B8 /* Pods_Swift_Base.framework */; };
 		C3B9F32F224D38AE00ED6949 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9F32E224D38AE00ED6949 /* Services.swift */; };
 		CB109C1A2283295200632EC9 /* CacheManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB109C112283295200632EC9 /* CacheManagerFactory.swift */; };
 		CB109C1B2283295200632EC9 /* DefaultCacheContextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB109C122283295200632EC9 /* DefaultCacheContextFactory.swift */; };
@@ -366,6 +367,7 @@
 		D94174684F8EC7156120E6AF /* Pods-Swift-Base.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Base.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Base/Pods-Swift-Base.debug staging.xcconfig"; sourceTree = "<group>"; };
 		D97C3F8992D1704C15ECDE40 /* Pods-Swift-BaseTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-BaseTests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-BaseTests/Pods-Swift-BaseTests.release staging.xcconfig"; sourceTree = "<group>"; };
 		DC4B5E47BC86CBB14A7CB50E /* Pods-Swift-Base.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Base.test.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Base/Pods-Swift-Base.test.xcconfig"; sourceTree = "<group>"; };
+		E5FDC6268E437EB6396DF7B8 /* Pods_Swift_Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
 		E75BB8061E8CFEF90035C2DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		E75BB8091E8CFEFB0035C2DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPad.strings; sourceTree = "<group>"; };
@@ -380,7 +382,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */,
-				2E7E76D2F3337950D7564BCB /* (null) in Frameworks */,
+				2E7E76D2F3337950D7564BCB /* BuildFile in Frameworks */,
+				9FE1EC4958BF5E5901FC5C95 /* Pods_Swift_Base.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +525,7 @@
 				BC34A414A3141736DAC65BE7 /* Pods_Swift_BaseTests.framework */,
 				BD474BF55427F785B95E1521 /* Pods_Swift_BaseUITests.framework */,
 				3743DAA1813BC7D8D27F5D95 /* Pods_Swift_BaseStaging.framework */,
+				E5FDC6268E437EB6396DF7B8 /* Pods_Swift_Base.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1005,7 +1009,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1043,7 +1047,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
