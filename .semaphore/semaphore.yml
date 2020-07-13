@@ -18,6 +18,7 @@ blocks:
         commands:
           - chmod 0600 ~/.ssh/*
           - ssh-add ~/.ssh/id_rsa
+          - gem cleanup
 
           - checkout
           - cache restore
