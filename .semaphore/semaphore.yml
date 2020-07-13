@@ -17,7 +17,7 @@ blocks:
       prologue:
         commands:
           - chmod 0600 ~/.ssh/*
-          - ssh-add ~/.ssh/match-repository-private-key
+          - ssh-add ~/.ssh/id_rsa
 
           - checkout
           - cache restore
