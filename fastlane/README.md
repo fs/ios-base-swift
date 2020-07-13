@@ -12,25 +12,20 @@ Install _fastlane_ using
 ```
 [sudo] gem install fastlane -NV
 ```
-or alternatively using `brew cask install fastlane`
+or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
-### ios test
-```
-fastlane ios test
-```
-Runs all the tests
 ### ios deploy_to_testflight_staging
 ```
 fastlane ios deploy_to_testflight_staging
 ```
 Deploy Staging to testflight
-### ios deploy_to_crashlytics_staging
+### ios build
 ```
-fastlane ios deploy_to_crashlytics_staging
+fastlane ios build
 ```
-Deploy Staging to crashlytics
+
 
 ----
 

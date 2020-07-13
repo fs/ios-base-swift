@@ -5,102 +5,32 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: Verifying fastlane version" time="0.00891">
+      <testcase classname="fastlane.lanes" name="0: Verifying fastlane version" time="0.000416">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: default_platform" time="0.001217">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000171">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="02: setup_circle_ci" time="0.001792">
+      <testcase classname="fastlane.lanes" name="2: setup_semaphore" time="0.000273">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="03: Switch to ios custom_get_number_of_build lane" time="0.001418">
+      <testcase classname="fastlane.lanes" name="3: match" time="10.596123">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="04: get_info_plist_value" time="0.004237">
+      <testcase classname="fastlane.lanes" name="4: cocoapods" time="3.473459">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="05: clear_derived_data" time="0.405697">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="06: Switch to ios create_default_changelog lane" time="0.00132">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="07: Switch to ios delete_changelog lane" time="0.001521">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="08: git log --pretty=format:&quot;%h&quot; --merges -1" time="0.031919">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="09: git log --pretty=format:&quot;%h&quot; -1" time="0.016928">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="10: Switch to ios create_changelog lane" time="0.002026">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="11: Switch to ios delete_changelog lane" time="0.002027">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="12: Switch to ios custom_get_number_of_build lane" time="0.001246">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="13: get_info_plist_value" time="0.00496">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="14: changelog_from_git_commits" time="0.016865">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="15: match" time="12.694333">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="16: Switch to ios make_ipa lane" time="0.001389">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="17: gym" time="160.503455">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="18: Switch to ios deploy_crashlytics lane" time="0.001303">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="19: crashlytics" time="5.299268">
+      <testcase classname="fastlane.lanes" name="5: gym" time="187.585104">
         
       </testcase>
     
