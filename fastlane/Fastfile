@@ -50,7 +50,7 @@ platform :ios do
 
   lane :build do
     match(type: 'adhoc')
-    gym(scheme: ENV["SCHEME_PRODUCTION"], clean: true)
+    gym(scheme: ENV["SCHEME_PRODUCTION"], clean: true, codesigning_identity: "iPhone Distribution")
   end
 
   # -------------------------------------- #

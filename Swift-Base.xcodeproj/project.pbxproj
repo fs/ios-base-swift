@@ -1449,7 +1449,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D LOGGING";
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.flatstack.ios.Swift-Base";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.flatstack.ios.Swift-Base 1594632786";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "";

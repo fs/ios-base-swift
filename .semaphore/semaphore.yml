@@ -13,7 +13,7 @@ blocks:
         - name: LANG
           value: en_US.UTF-8
       secrets:
-        - name: match-secrets
+        - name: ios-base-swift-secrets
       prologue:
         commands:
           - chmod 0600 ~/.ssh/*
