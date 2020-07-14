@@ -26,9 +26,9 @@ Deploy Staging to testflight
 fastlane ios build
 ```
 
-### ios beta_testflight
+### ios deploy_staging
 ```
-fastlane ios beta_testflight
+fastlane ios deploy_staging
 ```
 
 

@@ -15,6 +15,9 @@ blocks:
       secrets:
         - name: ios-base-swift-secrets
       jobs:
-        - name: Deploy to TestFlight
+        - name: Staging Deploy
           commands:
             - bundle exec fastlane deploy_staging
+        - name: Production Deploy
+          commands:
+            - bundle exec fastlane deploy_production
