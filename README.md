@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fs/ios-base-swift.svg?branch=master)](https://travis-ci.org/fs/ios-base-swift)
+![Build Status](https://flatstack.semaphoreci.com/badges/ios-base-swift.svg?style=shields)
 
 # ios-base-swift
 
