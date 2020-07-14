@@ -54,6 +54,12 @@ platform :ios do
     gym(scheme: ENV["SCHEME_PRODUCTION"], clean: true, codesigning_identity: "iPhone Distribution")
   end
 
+  lane :beta_testflight do
+    sync_code_signing(type: "appstore")
+    build_app(scheme: ENV["SCHEME_STAGING"], codesigning_identity: "iPhone Distribution")
+    upload_to_testflight(username: "apple@flatstack.com")
+  end
+
   # -------------------------------------- #
   #               Private                  #
   # -------------------------------------- #

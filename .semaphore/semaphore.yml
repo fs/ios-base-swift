@@ -30,3 +30,8 @@ blocks:
             - bundle exec fastlane build
 
             - artifact push job Swift-Base.ipa
+promotions:
+  - name: Deployment
+    pipeline_file: deployment.yml
+    auto_promote:
+      when: "result = 'passed' and branch =~ '^release'"

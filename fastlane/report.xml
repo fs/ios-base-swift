@@ -5,32 +5,32 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: Verifying fastlane version" time="0.000416">
+      <testcase classname="fastlane.lanes" name="0: Verifying fastlane version" time="0.00039">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000171">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000151">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: setup_semaphore" time="0.000273">
+      <testcase classname="fastlane.lanes" name="2: setup_semaphore" time="0.000238">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: match" time="10.596123">
+      <testcase classname="fastlane.lanes" name="3: sync_code_signing" time="10.866835">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: cocoapods" time="3.473459">
+      <testcase classname="fastlane.lanes" name="4: build_app" time="94.609714">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: gym" time="187.585104">
+      <testcase classname="fastlane.lanes" name="5: upload_to_testflight" time="504.318032">
         
       </testcase>
     
