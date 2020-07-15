@@ -255,7 +255,7 @@
 		5E74E5B324BE00CA00C8D0BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E8025FE24B3814400904C48 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		5EB86D5724B70B2600516AEB /* Swift-BaseStaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-BaseStaging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EB86D5A24B70D6100516AEB /* Swift-BaseStaging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Swift-BaseStaging.plist"; sourceTree = "<group>"; };
+		5EB86D5A24B70D6100516AEB /* Swift-BaseStaging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Swift-BaseStaging.plist"; path = "Swift-BaseStaging/Swift-BaseStaging.plist"; sourceTree = SOURCE_ROOT; };
 		5EB86D5D24B7117F00516AEB /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		5EB86D5F24B711C000516AEB /* Staging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staging.swift; sourceTree = "<group>"; };
 		5FFECDAB821757A8696965B1 /* Pods-Swift-Base.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Base.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Base/Pods-Swift-Base.appstore.xcconfig"; sourceTree = "<group>"; };
@@ -1455,7 +1455,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D LOGGING";
 				PRODUCT_NAME = "Swift-Base";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.flatstack.ios.Swift-Base";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.flatstack.ios.Swift-Base";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1555,7 +1555,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "/Users/mac-mini-132/Desktop/iOS/ios-base-swift/Swift-BaseStaging/Swift-BaseStaging.plist";
+				INFOPLIST_FILE = "Swift-BaseStaging/Swift-BaseStaging.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -1587,7 +1587,7 @@
 				DEVELOPMENT_TEAM = Y49MTY8CU2;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				INFOPLIST_FILE = "/Users/mac-mini-132/Desktop/iOS/ios-base-swift/Swift-BaseStaging/Swift-BaseStaging.plist";
+				INFOPLIST_FILE = "Swift-BaseStaging/Swift-BaseStaging.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
