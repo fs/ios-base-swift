@@ -49,7 +49,7 @@ platform :ios do
   end
 
   lane :build do
-    match(type: 'adhoc')
+    match(type: 'appstore')
     cocoapods
     gym(scheme: ENV["SCHEME_PRODUCTION"], clean: true, codesigning_identity: "iPhone Distribution")
   end
