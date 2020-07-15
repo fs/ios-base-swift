@@ -56,7 +56,7 @@ platform :ios do
 
   lane :deploy_staging do
     sync_code_signing(type: "appstore")
-    cocoapods
+    cocoapods(clean_install: true)
     build_app(scheme: ENV["SCHEME_STAGING"], codesigning_identity: "iPhone Distribution")
     upload_to_testflight(username: "apple@flatstack.com")
     firebase_app_distribution(app: "1:644059465480:ios:1f9f7065c70a913c5ccebd")
