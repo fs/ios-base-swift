@@ -79,7 +79,6 @@ platform :ios do
     get_info_plist_value(key: "CFBundleVersion")
   end
 
-
   desc "Get build number. Need params :value as String"
   private_lane :custom_set_number_of_build do |options|
     set_info_plist_value(key: "CFBundleVersion", value: options[:value])
