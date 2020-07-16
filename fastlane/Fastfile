@@ -48,8 +48,8 @@ platform :ios do
       codesigning_identity: "iPhone Distribution"
     )
 
-    upload_to_testflight(username: "apple@flatstack.com")
-    firebase_app_distribution(app: "1:644059465480:ios:1f9f7065c70a913c5ccebd")
+    #upload_to_testflight(username: "apple@flatstack.com")
+    upload_to_firebase
   end
 
   lane :deploy_production do
@@ -63,7 +63,7 @@ platform :ios do
     )
 
     upload_to_testflight(username: "apple@flatstack.com")
-    firebase_app_distribution(app: "1:644059465480:ios:1f9f7065c70a913c5ccebd")
+    upload_to_firebase
   end
 
   # -------------------------------------- #
@@ -124,28 +124,12 @@ platform :ios do
     end
   end
 
-  desc "Make an ipa file. Need params :scheme_name as String"
-  private_lane :make_ipa do |options|
-    gym(
-  	  scheme: options[:scheme_name],
-  	  clean: true,
-  	  include_symbols: true,
-  	  export_method: options[:export_method],
-  	  include_bitcode: false,
-  	)
-  end
-
-  desc "Deploy a scheme to testflight. Need params - :app_identifier as String"
-  private_lane :deploy_testflight do |options|
-
-    deliver(
-  	  app_identifier: options[:app_identifier],
-  	  skip_screenshots: true,
-  	  skip_metadata: true,
-  	  submit_for_review: false,
-  	  automatic_release: false,
-  	  force: true,
-  	)
+  desc "Deploy a scheme to firebase."
+  private_lane :upload_to_firebase do
+    firebase_app_distribution(
+      app: "1:644059465480:ios:1f9f7065c70a913c5ccebd",
+      firebase_cli_path: "/usr/local/bin/firebase",
+    )
   end
 
   # -------------------------------------- #
