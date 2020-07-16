@@ -16,11 +16,6 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
-### ios deploy_to_testflight_staging
-```
-fastlane ios deploy_to_testflight_staging
-```
-Deploy Staging to testflight
 ### ios build
 ```
 fastlane ios build

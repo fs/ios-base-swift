@@ -5,32 +5,42 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: Verifying fastlane version" time="0.000396">
+      <testcase classname="fastlane.lanes" name="0: Verifying fastlane version" time="0.0004">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000184">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000212">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: setup_semaphore" time="0.000255">
+      <testcase classname="fastlane.lanes" name="2: setup_semaphore" time="0.000276">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: sync_code_signing" time="12.976726">
+      <testcase classname="fastlane.lanes" name="3: sync_code_signing" time="11.051884">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: cocoapods" time="2.943446">
+      <testcase classname="fastlane.lanes" name="4: cocoapods" time="3.946771">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: build_app" time="89.491526">
+      <testcase classname="fastlane.lanes" name="5: build_app" time="91.408224">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="6: upload_to_testflight" time="604.654329">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="7: firebase_app_distribution" time="46.073868">
         
       </testcase>
     

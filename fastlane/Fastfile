@@ -32,22 +32,6 @@ platform :ios do
   #               Helpers                  #
   # -------------------------------------- #
 
-  desc "Deploy Staging to testflight"
-  lane :deploy_to_testflight_staging do |options|
-    clear_derived_data()
-
-    match(type: "appstore")
-
-    make_ipa(
-      scheme_name: ENV["SCHEME_STAGING"],
-      export_method: "app-store"
-    )
-
-    deploy_testflight(
-  	  app_identifier: ENV["BUNDLE_ID_STAGING"]
-  	)
-  end
-
   lane :build do
     match(type: 'appstore')
     cocoapods

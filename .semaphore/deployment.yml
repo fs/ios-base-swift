@@ -26,9 +26,9 @@ blocks:
       jobs:
         - name: Staging Deploy
           commands:
-            - bundle exec xcversion select 11.6
+            - bundle exec xcversion select 11.5
             - bundle exec fastlane deploy_staging
         - name: Production Deploy
           commands:
-            - bundle exec xcversion select 11.6
+            - bundle exec xcversion select 11.5
             - bundle exec fastlane deploy_production
