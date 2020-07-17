@@ -32,26 +32,38 @@ platform :ios do
   #               Helpers                  #
   # -------------------------------------- #
 
-  desc "Deploy Staging to testflight"
-  lane :deploy_to_testflight_staging do |options|
-    clear_derived_data()
-
-    match(type: "appstore")
-
-    make_ipa(
-      scheme_name: ENV["SCHEME_STAGING"],
-      export_method: "app-store"
-    )
-
-    deploy_testflight(
-  	  app_identifier: ENV["BUNDLE_ID_STAGING"]
-  	)
-  end
-
   lane :build do
-    match(type: 'adhoc')
+    match(type: 'appstore')
     cocoapods
     gym(scheme: ENV["SCHEME_PRODUCTION"], clean: true, codesigning_identity: "iPhone Distribution")
+  end
+
+  lane :deploy_staging do
+    sync_code_signing(type: "appstore")
+    cocoapods(clean_install: true)
+
+    build_app(
+      scheme: ENV["SCHEME_STAGING"], 
+      clean: true, 
+      codesigning_identity: "iPhone Distribution"
+    )
+
+    upload_to_testflight(username: "apple@flatstack.com")
+    upload_to_firebase
+  end
+
+  lane :deploy_production do
+    sync_code_signing(type: "appstore")
+    cocoapods(clean_install: true)
+
+    build_app(
+      scheme: ENV["SCHEME_PRODUCTION"], 
+      clean: true, 
+      codesigning_identity: "iPhone Distribution"
+    )
+
+    upload_to_testflight(username: "apple@flatstack.com")
+    upload_to_firebase
   end
 
   # -------------------------------------- #
@@ -62,7 +74,6 @@ platform :ios do
   private_lane :custom_get_number_of_build do |options|
     get_info_plist_value(key: "CFBundleVersion")
   end
-
 
   desc "Get build number. Need params :value as String"
   private_lane :custom_set_number_of_build do |options|
@@ -113,28 +124,12 @@ platform :ios do
     end
   end
 
-  desc "Make an ipa file. Need params :scheme_name as String"
-  private_lane :make_ipa do |options|
-    gym(
-  	  scheme: options[:scheme_name],
-  	  clean: true,
-  	  include_symbols: true,
-  	  export_method: options[:export_method],
-  	  include_bitcode: false,
-  	)
-  end
-
-  desc "Deploy a scheme to testflight. Need params - :app_identifier as String"
-  private_lane :deploy_testflight do |options|
-
-    deliver(
-  	  app_identifier: options[:app_identifier],
-  	  skip_screenshots: true,
-  	  skip_metadata: true,
-  	  submit_for_review: false,
-  	  automatic_release: false,
-  	  force: true,
-  	)
+  desc "Deploy a scheme to firebase."
+  private_lane :upload_to_firebase do
+    firebase_app_distribution(
+      app: "1:644059465480:ios:1f9f7065c70a913c5ccebd",
+      firebase_cli_path: "/usr/local/bin/firebase",
+    )
   end
 
   # -------------------------------------- #
