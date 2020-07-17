@@ -21,6 +21,7 @@ blocks:
 
           - checkout
           - cache restore
+          - curl -sL firebase.tools | bash
           - bundle install --path vendor/bundle
           - bundle exec fastlane update_plugins
           - cache store
