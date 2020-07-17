@@ -48,7 +48,7 @@ platform :ios do
       codesigning_identity: "iPhone Distribution"
     )
 
-    #upload_to_testflight(username: "apple@flatstack.com")
+    upload_to_testflight(username: "apple@flatstack.com")
     upload_to_firebase
   end
 
