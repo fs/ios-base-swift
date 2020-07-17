@@ -22,6 +22,7 @@ blocks:
           - checkout
           - cache restore
           - bundle install --path vendor/bundle
+          - bundle exec fastlane update_plugins
           - cache store
       jobs:
         - name: Staging Deploy
