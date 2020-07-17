@@ -7,7 +7,7 @@ agent:
     os_image: macos-xcode11
 
 blocks:
-  - name: Build app
+  - name: Deploy
     task:
       env_vars:
         - name: LANG
@@ -21,22 +21,16 @@ blocks:
 
           - checkout
           - cache restore
+          - curl -sL firebase.tools | bash
           - bundle install --path vendor/bundle
           - bundle exec fastlane update_plugins
           - cache store
       jobs:
-        - name: Build
+        - name: Staging Deploy
           commands:
-            - bundle exec xcversion select 11.5
-            - bundle exec fastlane build
-
-            - artifact push job Swift-Base.ipa
-promotions:
-  - name: Deployment
-    pipeline_file: deployment.yml
-    auto_promote:
-      when: "result = 'passed' and branch =~ '^release'"
-  - name: Master Deployment
-    pipeline_file: master_deployment.yml
-    auto_promote:
-      when: "result = 'passed' and branch = 'master'"
+            - bundle exec xcversion select 11.2.1
+            - bundle exec fastlane deploy_staging
+        - name: Production Deploy
+          commands:
+            - bundle exec xcversion select 11.2.1
+            - bundle exec fastlane deploy_production
