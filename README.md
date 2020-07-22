@@ -1,4 +1,4 @@
-![Build Status](https://flatstack.semaphoreci.com/badges/ios-base-swift.svg?style=shields)
+![Build Status](https://flatstack-opensource.semaphoreci.com/badges/ios-base-swift.svg?style=shields)
 
 # ios-base-swift
 
