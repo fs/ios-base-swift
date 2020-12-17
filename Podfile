@@ -7,15 +7,13 @@ def includeCommonPods
   pod 'Firebase/Crashlytics'
   
   # Libraries
-  pod 'Alamofire', '4.9.1'
   pod 'SwiftLint'
-  pod 'PromiseKit'
   pod 'R.swift'
   pod 'Kingfisher', '~> 5.0'
 end
 
 target 'Swift-Base' do
-  platform :ios, '11.0'
+  platform :ios, '13.1'
 
   includeCommonPods
 
@@ -25,7 +23,7 @@ target 'Swift-Base' do
 end
 
 target 'Swift-BaseStaging' do
-  platform :ios, '11.0'
+  platform :ios, '13.1'
 
   includeCommonPods
 end

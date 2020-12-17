@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (4.9.1)
   - Firebase/Analytics (6.27.1):
     - Firebase/Core
   - Firebase/Core (6.27.1):
@@ -77,15 +76,6 @@ PODS:
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
-  - PromiseKit (6.13.1):
-    - PromiseKit/CorePromise (= 6.13.1)
-    - PromiseKit/Foundation (= 6.13.1)
-    - PromiseKit/UIKit (= 6.13.1)
-  - PromiseKit/CorePromise (6.13.1)
-  - PromiseKit/Foundation (6.13.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.13.1):
-    - PromiseKit/CorePromise
   - PromisesObjC (1.2.9)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
@@ -93,17 +83,14 @@ PODS:
   - SwiftLint (0.39.2)
 
 DEPENDENCIES:
-  - Alamofire (= 4.9.1)
   - Firebase/Analytics
   - Firebase/Crashlytics
   - Kingfisher (~> 5.0)
-  - PromiseKit
   - R.swift
   - SwiftLint
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -116,14 +103,12 @@ SPEC REPOS:
     - GoogleUtilities
     - Kingfisher
     - nanopb
-    - PromiseKit
     - PromisesObjC
     - R.swift
     - R.swift.Library
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Firebase: 919186c8e119dd9372a45fd1dd17a8a942bc1892
   FirebaseAnalytics: 5fa308e1b13f838d0f6dc74719ac2a72e8c5afc4
   FirebaseCore: 8cd4f8ea22075e0ee582849b1cf79d8816506085
@@ -136,12 +121,11 @@ SPEC CHECKSUMS:
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
-  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: b1b31f16bea2ed07658464e457d4c8d2c30c534e
+PODFILE CHECKSUM: af8c6b0f964d9970cb7d2d33b598dfc4c4484631
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0
