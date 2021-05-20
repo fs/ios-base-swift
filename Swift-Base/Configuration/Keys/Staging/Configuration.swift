@@ -13,5 +13,6 @@ enum Configuration {
     // MARK: - Type Properties
 
     static let apiServerBaseURL = URL(string: "https://Swift-Base.staging.com")!
-    static let graphQLURL = URL(string: "https://swift-base-api.herokuapp.com/graphql")!
+    static let graphQLURL = URL(string: "https://rails-base-graphql-api.herokuapp.com/graphql")!
+    
 }
