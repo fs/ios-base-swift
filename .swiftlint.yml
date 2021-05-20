@@ -3,6 +3,8 @@ included:
 
 excluded:
   - Swift-Base/Tools
+  - Swift-Base/Tools
+  - Swift-Base/GraphQL
 
 disabled_rules:
   - discouraged_optional_boolean
@@ -486,7 +488,7 @@ multiple_closures_with_trailing_closure:
 nesting:
   type_level:
     warning: 1
-    error: 1
+    error: 2
   statement_level:
     warning: 3
     error: 3

@@ -8,8 +8,12 @@
 
 import Foundation
 
+@available(iOS 13.0, *)
 enum Services {
 
     // MARK: - Type Properties
 
+    static func authorizationService() -> AuthorizationService {
+        return DefaultAuthorizationService()
+    }
 }

@@ -1,5 +1,5 @@
 //
-//  Staging.swift
+//  Configuration.swift
 //  Swift-Base
 //
 //  Created by Timur Shafigullin on 09/07/2020.
@@ -8,9 +8,10 @@
 
 import Foundation
 
-enum Keys {
+enum Configuration {
 
     // MARK: - Type Properties
 
     static let apiServerBaseURL = URL(string: "https://Swift-Base.staging.com")!
+    static let graphQLURL = URL(string: "https://swift-base-api.herokuapp.com/graphql")!
 }
