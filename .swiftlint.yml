@@ -488,7 +488,7 @@ multiple_closures_with_trailing_closure:
 nesting:
   type_level:
     warning: 1
-    error: 2
+    error: 1
   statement_level:
     warning: 3
     error: 3
