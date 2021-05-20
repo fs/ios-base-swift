@@ -10,6 +10,7 @@ def includeCommonPods
   pod 'SwiftLint'
   pod 'R.swift'
   pod 'Kingfisher', '~> 5.0'
+  pod 'Apollo'
 end
 
 target 'Swift-Base' do

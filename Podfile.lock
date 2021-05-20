@@ -1,4 +1,7 @@
 PODS:
+  - Apollo (0.39.0):
+    - Apollo/Core (= 0.39.0)
+  - Apollo/Core (0.39.0)
   - Firebase/Analytics (8.0.0):
     - Firebase/Core
   - Firebase/Core (8.0.0):
@@ -107,6 +110,7 @@ PODS:
   - SwiftLint (0.43.1)
 
 DEPENDENCIES:
+  - Apollo
   - Firebase/Analytics
   - Firebase/Crashlytics
   - Kingfisher (~> 5.0)
@@ -115,6 +119,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Apollo
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -132,6 +137,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Apollo: f6c6410ebee82dd5846be87b81cedc8bc7754a82
   Firebase: 73c3e3b216ec1ecbc54d2ffdd4670c65c749edb1
   FirebaseAnalytics: dcb92c7c9ef4fa7ffac276e8f87bd4fc8c97f1b8
   FirebaseCore: 3f09591d51292843e2a46f18358d60bf4e996255
@@ -148,6 +154,6 @@ SPEC CHECKSUMS:
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: 1b5437737b2df9d91aeb6eae6450b36214567ef4
+PODFILE CHECKSUM: c738da341ee4a86a1fdfd1ccfdd4644efed9b638
 
 COCOAPODS: 1.10.1
