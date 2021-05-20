@@ -12,9 +12,4 @@ enum Services {
 
     // MARK: - Type Properties
 
-    static let cacheProvider: CacheProvider = DefaultCacheProvider<DefaultCacheSession>(model: Models.cacheModel)
-
-    static var cacheViewContext: CacheContext {
-        return Services.cacheProvider.model.viewContext
-    }
 }
