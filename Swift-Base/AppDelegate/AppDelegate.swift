@@ -65,9 +65,9 @@ extension AppDelegate {
         FirebaseApp.configure()
 
         #if RELEASE
-        Log.unregisterPrinter(LogConsolePrinter.shared)
+        Log.i(LogConsolePrinter.shared)
         #else
-        Log.registerPrinter(LogConsolePrinter.shared)
+        Log.i(LogConsolePrinter.shared)
         #endif
     }
 }
@@ -85,7 +85,7 @@ extension AppDelegate {
 
         let token = tokenParts.joined()
 
-        Log.high("saveRemoteNotificationTokenData(token: \(token))", from: self)
+        Log.i("saveRemoteNotificationTokenData(token: \(token))")
     }
 
     private func getNotificationSettings() {

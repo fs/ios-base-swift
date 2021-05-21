@@ -3,6 +3,8 @@ included:
 
 excluded:
   - Swift-Base/Tools
+  - Swift-Base/Tools
+  - Swift-Base/GraphQL
 
 disabled_rules:
   - discouraged_optional_boolean
