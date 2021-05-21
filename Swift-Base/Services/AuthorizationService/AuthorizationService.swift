@@ -15,5 +15,6 @@ protocol AuthorizationService {
     // MARK: - Instance Methods
 
     func refreshToken() -> AnyPublisher<String, Error>?
+//    func signIn(with email: String, password: String) -> AnyPublisher<CurrentUser, MyError>?
     func signOut()
 }

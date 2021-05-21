@@ -25,6 +25,10 @@ final class DefaultAuthorizationService: AuthorizationService {
         return nil
     }
 
+//    func signIn(with email: String, password: String) -> AnyPublisher<CurrentUser, MyError>? {
+//        return nil
+//    }
+
     func signOut() {
         self.accessManager.resetAccess()
     }
