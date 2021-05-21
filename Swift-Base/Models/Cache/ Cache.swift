@@ -12,7 +12,7 @@ class Cache {
 
     // MARK: - Type Properties
 
-    static let storageModel: StorageModel = CoreDataStorageModel(identifier: "")
+    static let storageModel: StorageModel = CoreDataStorageModel(identifier: "Swift-Base")
 
     // MARK: - Instance Properties
 
