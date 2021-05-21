@@ -23,6 +23,9 @@
 		5E74E5B424BE00CB00C8D0BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E74E5B324BE00CA00C8D0BD /* GoogleService-Info.plist */; };
 		5E74E5B524BE00CB00C8D0BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E74E5B324BE00CA00C8D0BD /* GoogleService-Info.plist */; };
 		5E8025FF24B3814500904C48 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8025FE24B3814400904C48 /* R.generated.swift */; };
+		5E81E9A42656924B0065432A /*  Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81E9A32656924B0065432A /*  Cache.swift */; };
+		5E81E9A7265694490065432A /* CurrentUserCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81E9A6265694490065432A /* CurrentUserCacheManager.swift */; };
+		5E81E9A92656945E0065432A /* DefaultCurrentUserCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81E9A82656945E0065432A /* DefaultCurrentUserCacheManager.swift */; };
 		5EB86CEF24B70B2600516AEB /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13D8F924B5F3160081B960 /* DateFormatterExtension.swift */; };
 		5EB86CF024B70B2600516AEB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB109CB0228340CD00632EC9 /* WebService.swift */; };
 		5EB86CF124B70B2600516AEB /* EventListenerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB109C6D22833FC200632EC9 /* EventListenerConnection.swift */; };
@@ -240,6 +243,9 @@
 		5E13D90024B5F4120081B960 /* LogFilePrinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFilePrinter.swift; sourceTree = "<group>"; };
 		5E74E5B324BE00CA00C8D0BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E8025FE24B3814400904C48 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		5E81E9A32656924B0065432A /*  Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Cache.swift"; sourceTree = "<group>"; };
+		5E81E9A6265694490065432A /* CurrentUserCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserCacheManager.swift; sourceTree = "<group>"; };
+		5E81E9A82656945E0065432A /* DefaultCurrentUserCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrentUserCacheManager.swift; sourceTree = "<group>"; };
 		5EB86D5724B70B2600516AEB /* Swift-BaseStaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-BaseStaging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB86D5A24B70D6100516AEB /* Swift-BaseStaging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Swift-BaseStaging.plist"; path = "Swift-BaseStaging/Swift-BaseStaging.plist"; sourceTree = SOURCE_ROOT; };
 		5EB86D5D24B7117F00516AEB /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
@@ -437,6 +443,7 @@
 		218C64B41BA078BA00EEEDF1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5E81E9A5265694340065432A /* CacheManagers */,
 				CB109C102283294300632EC9 /* Cache */,
 			);
 			path = Models;
@@ -535,6 +542,15 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		5E81E9A5265694340065432A /* CacheManagers */ = {
+			isa = PBXGroup;
+			children = (
+				5E81E9A6265694490065432A /* CurrentUserCacheManager.swift */,
+				5E81E9A82656945E0065432A /* DefaultCurrentUserCacheManager.swift */,
+			);
+			path = CacheManagers;
+			sourceTree = "<group>";
+		};
 		5EB86D5924B70C7400516AEB /* Swift-BaseStaging */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +629,7 @@
 				CB109C152283295200632EC9 /* DefaultCacheManagerFactory.swift */,
 				CB109C132283295200632EC9 /* DefaultCacheModel.swift */,
 				218C64B61BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld */,
+				5E81E9A32656924B0065432A /*  Cache.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -1123,6 +1140,7 @@
 				5E13D8FA24B5F3160081B960 /* DateFormatterExtension.swift in Sources */,
 				CB109CC1228340CD00632EC9 /* WebService.swift in Sources */,
 				CB109C7122833FC200632EC9 /* EventListenerConnection.swift in Sources */,
+				5E81E9A42656924B0065432A /*  Cache.swift in Sources */,
 				218C64B81BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld in Sources */,
 				CB109CA02283407900632EC9 /* LoggedNavigationController.swift in Sources */,
 				CB109C7322833FC200632EC9 /* EventConnection.swift in Sources */,
@@ -1148,6 +1166,7 @@
 				CB109CC5228340CD00632EC9 /* WebMultiPartItem.swift in Sources */,
 				CB109C7922833FD100632EC9 /* DictionaryReceiver.swift in Sources */,
 				CB109C1E2283295200632EC9 /* DefaultCacheManagerFactory.swift in Sources */,
+				5E81E9A92656945E0065432A /* DefaultCurrentUserCacheManager.swift in Sources */,
 				CB109C9722833FE100632EC9 /* IconTextField.swift in Sources */,
 				CB109CBE228340CD00632EC9 /* WebError.swift in Sources */,
 				CB109C3D22832A8200632EC9 /* StorageFetchRequest.swift in Sources */,
@@ -1172,6 +1191,7 @@
 				CB109C9A22833FE100632EC9 /* RoundImageView.swift in Sources */,
 				CB109C6522833FBC00632EC9 /* CGRectExtension.swift in Sources */,
 				CB109C4022832A8200632EC9 /* CoreDataStorageManager.swift in Sources */,
+				5E81E9A7265694490065432A /* CurrentUserCacheManager.swift in Sources */,
 				CB109C4222832A8200632EC9 /* CoreDataStorageContext.swift in Sources */,
 				CB109C8322833FD900632EC9 /* LoggedPageViewController.swift in Sources */,
 				CB109C6122833FBC00632EC9 /* UIColorExtension.swift in Sources */,
