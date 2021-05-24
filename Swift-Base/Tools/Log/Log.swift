@@ -8,86 +8,110 @@
 
 import Foundation
 
-public enum Log {
+enum LogEvent: String {
+
+    // MARK: - Enumeration cases
+
+    case e = "[‼️]" // error
+    case i = "[ℹ️]" // info
+    case d = "[💬]" // debug
+    case v = "[🔬]" // verbose
+    case w = "[⚠️]" // warning
+    case s = "[🔥]" // severe
+}
+
+// Wrapping Swift.print() within LOGGING flag
+
+func print(_ object: Any) {
+    #if LOGGING
+        Swift.print(object)
+    #endif
+}
+
+class Log {
 
     // MARK: - Type Properties
+    
+    static var dateFormat = "hh:mm:ss"
 
-    private static let dateFormatter = DateFormatter(dateFormat: Constants.defaultDateFormat)
+    static var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
 
-    // MARK: -
+        formatter.dateFormat = dateFormat
+        formatter.locale = Locale.current
+        formatter.timeZone = TimeZone.current
 
-    public private(set) static var printers: [LogPrinter] = [LogConsolePrinter.shared]
-
-    public static var dateFormat: String {
-        get { return Log.dateFormatter.dateFormat }
-        set { Log.dateFormatter.dateFormat = newValue }
+        return formatter
     }
 
     // MARK: - Type Methods
 
-    @inline(__always)
-    private static func print(
-        layer: @autoclosure () -> String,
-        text: @autoclosure () -> String,
-        sender: @autoclosure () -> Any?,
-        date: @autoclosure () -> Date
-    ) {
-        #if DEBUG || LOGGING
-            let body = sender().map { "\(String(describing: type(of: $0))): \(text())" } ?? text()
-            let line = "\(dateFormatter.string(from: date())) \(layer()) \(body)"
-
-            for printer in printers {
-                printer.print(line)
-            }
+    private static var isLoggingEnabled: Bool {
+        #if LOGGING
+        return true
+        #else
+        return false
         #endif
     }
 
-    // MARK: -
+    private class func sourceFileName(filePath: String) -> String {
+        let components = filePath.components(separatedBy: "/")
+        return components.isEmpty ? "" : components.last!
+    }
 
-    public static func registerPrinter(_ printer: LogPrinter) {
-        if !printers.contains(where: { $0 === printer }) {
-            printers.append(printer)
+    private class func printLog(_ object: Any?, filename: String, line: Int, column: Int, funcName: String, event: LogEvent) {
+        if Log.isLoggingEnabled {
+            var body = "\(Date().string) \(event.rawValue)[\(sourceFileName(filePath: filename))]:\(line) \(column) \(funcName)"
+
+            if let object = object {
+                body.append(" -> \(object)")
+            }
+
+            print(body)
         }
     }
 
-    public static func unregisterPrinter(_ printer: LogPrinter) {
-        printers.removeAll { $0 === printer }
+    // MARK: -
+    
+    class func e(_ object: Any? = nil, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        Log.printLog(object, filename: filename, line: line, column: column, funcName: funcName, event: .e)
+    }
+    
+    class func d(_ object: Any? = nil, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        Log.printLog(object, filename: filename, line: line, column: column, funcName: funcName, event: .d)
     }
 
-    public static func low(
-        _ text: @autoclosure () -> String,
-        from sender: @autoclosure () -> Any? = nil,
-        date: @autoclosure () -> Date = Date()
-    ) {
-        print(layer: Constants.lowLayerLabel, text: text(), sender: sender(), date: date())
+    class func i(_ object: Any? = nil, sender: Any, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        Log.printLog(object, filename: "\(String(describing: type(of: sender)))", line: line, column: column, funcName: funcName, event: .i)
     }
-
-    public static func medium(
-        _ text: @autoclosure () -> String,
-        from sender: @autoclosure () -> Any? = nil,
-        date: @autoclosure () -> Date = Date()
-    ) {
-        print(layer: Constants.mediumLayerLabel, text: text(), sender: sender(), date: date())
+    
+    class func i(_ object: Any? = nil, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        Log.printLog(object, filename: filename, line: line, column: column, funcName: funcName, event: .i)
     }
-
-    public static func high(
-        _ text: @autoclosure () -> String,
-        from sender: @autoclosure () -> Any? = nil,
-        date: @autoclosure () -> Date = Date()
-    ) {
-        print(layer: Constants.highLayerLabel, text: text(), sender: sender(), date: date())
+    
+    class func v(_ object: Any? = nil, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        Log.printLog(object, filename: filename, line: line, column: column, funcName: funcName, event: .v)
     }
-
-    public static func extra(
-        _ text: @autoclosure () -> String,
-        from sender: @autoclosure () -> Any? = nil,
-        date: @autoclosure () -> Date = Date()
-    ) {
-        print(layer: Constants.extraLayerLabel, text: text(), sender: sender(), date: date())
+    
+    class func w(_ object: Any? = nil, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        Log.printLog(object, filename: filename, line: line, column: column, funcName: funcName, event: .w)
+    }
+    
+    class func s(_ object: Any? = nil, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        Log.printLog(object, filename: filename, line: line, column: column, funcName: funcName, event: .s)
     }
 }
 
-// MARK: -
+// MARK: - Date
+
+private extension Date {
+
+    // MARK: - Instance Methods
+
+    var string: String {
+        return Log.dateFormatter.string(from: self)
+    }
+}
 
 private enum Constants {
 
