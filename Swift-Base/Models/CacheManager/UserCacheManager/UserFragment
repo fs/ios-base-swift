@@ -1,0 +1,7 @@
+fragment userFragment on User {
+      id,
+      email,
+      firstName,
+      lastName,
+      profileNumber
+}

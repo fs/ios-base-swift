@@ -2,7 +2,7 @@
 //  DefaultCurrentUserService.swift
 //  Swift-Base
 //
-//  Created by Евгений Самарин on 21.05.2021.
+//  Created by Евгений Самарин on 24/05/2021.
 //  Copyright © 2021 Flatstack. All rights reserved.
 //
 
@@ -10,6 +10,7 @@ import Foundation
 import Combine
 import Apollo
 
+@available(iOS 13.0, *)
 struct DefaultCurrentUserService: CurrentUserService {
 
     // MARK: - Instance Properties
@@ -29,13 +30,13 @@ struct DefaultCurrentUserService: CurrentUserService {
                                              contextIdentifier: nil)
             .tryMap { result in
                 guard let currentUserFragment = result.data?.me?.fragments.currentUserFragment else {
-                    throw Error
+                    throw VehoError(title: "Error", message: "Can't fetch profile.")
                 }
                 let context = Cache.storageModel.viewContext.createPrivateQueueChildContext()
                 _ = self.currentUserCacheManager.createOrUpdate(from: currentUserFragment, context: context)
                 self.currentUserCacheManager.save(context: context)
                 guard let storedUser = self.currentUserCacheManager.currentUser() else {
-                    throw Error
+                    throw VehoError(title: "Error", message: "User was not stored")
                 }
 
                 return storedUser
@@ -49,5 +50,44 @@ struct DefaultCurrentUserService: CurrentUserService {
 
     func storedCurrentUser() -> CurrentUser? {
         self.currentUserCacheManager.currentUser()
+    }
+
+    func updateUser(firstName: String?, lastName: String?) -> AnyPublisher<CurrentUser, Error> {
+        let updateUserMutation = UpdateUserMutation(firstName: firstName, lastName: lastName)
+        let queue = DispatchQueue(label: "Update_User_Mutation", qos: .utility)
+        return self.apiClient.performPublisher(mutation: updateUserMutation, queue: queue)
+            .tryMap({ result in
+                guard let updateData = result.data?.updateUser else {
+                    throw VehoError(title: "Error", message: "User with this email is not exist")
+                }
+                let userFragment = updateData.fragments.userFragment
+                let context = Cache.storageModel.viewContext.createPrivateQueueChildContext()
+                _ = self.currentUserCacheManager.createOrUpdate(from: userFragment, context: context)
+                self.currentUserCacheManager.save(context: context)
+                guard let storedUser = self.currentUserCacheManager.currentUser() else {
+                    throw VehoError(title: "Error", message: "User was not stored")
+                }
+
+                return storedUser
+            })
+            .mapError({ error in
+                return error
+            })
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+
+    func updatePassword(currentPassword: String?, newPassword: String) -> AnyPublisher<Void, Error> {
+        let updatePasswordMutation = UpdatePasswordMutation(currentPassword: currentPassword, password: newPassword)
+        let queue = DispatchQueue(label: "Update_Password_Mutation", qos: .utility)
+        return self.apiClient.performPublisher(mutation: updatePasswordMutation, queue: queue)
+            .tryMap({ result in
+                return ()
+            })
+            .mapError({ error in
+                return error
+            })
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
 }
