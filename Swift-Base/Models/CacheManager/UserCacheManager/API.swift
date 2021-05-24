@@ -99,60 +99,30 @@ public struct UserFragment: GraphQLFragment {
       resultMap.updateValue(newValue, forKey: "profileNumber")
     }
   }
+}
 
-  public struct CanManage: GraphQLSelectionSet {
-    public static let possibleTypes: [String] = ["AuthorizationResult"]
+public struct Fragments {
+  public private(set) var resultMap: ResultMap
 
-    public static var selections: [GraphQLSelection] {
-      return [
-        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLFragmentSpread(AuthorizationResultFragment.self)
-      ]
+  public init(unsafeResultMap: ResultMap) {
+    self.resultMap = unsafeResultMap
+  }
+
+  public var authorizationResultFragment: AuthorizationResultFragment {
+    get {
+      return AuthorizationResultFragment(unsafeResultMap: resultMap)
     }
-
-    public private(set) var resultMap: ResultMap
-
-    public init(unsafeResultMap: ResultMap) {
-      self.resultMap = unsafeResultMap
+    set {
+      resultMap += newValue.resultMap
     }
+  }
 
-    public init(value: Bool) {
-      self.init(unsafeResultMap: ["__typename": "AuthorizationResult", "value": value])
+  public var currentUserFragment: CurrentUserFragment {
+    get {
+      return CurrentUserFragment(unsafeResultMap: resultMap)
     }
-
-    public var __typename: String {
-      get {
-        return resultMap["__typename"]! as! String
-      }
-      set {
-        resultMap.updateValue(newValue, forKey: "__typename")
-      }
-    }
-
-    public var fragments: Fragments {
-      get {
-        return Fragments(unsafeResultMap: resultMap)
-      }
-      set {
-        resultMap += newValue.resultMap
-      }
-    }
-
-    public struct Fragments {
-      public private(set) var resultMap: ResultMap
-
-      public init(unsafeResultMap: ResultMap) {
-        self.resultMap = unsafeResultMap
-      }
-
-      public var authorizationResultFragment: AuthorizationResultFragment {
-        get {
-          return AuthorizationResultFragment(unsafeResultMap: resultMap)
-        }
-        set {
-          resultMap += newValue.resultMap
-        }
-      }
+    set {
+      resultMap += newValue.resultMap
     }
   }
 }
@@ -202,6 +172,98 @@ public struct AuthorizationResultFragment: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "value")
+    }
+  }
+}
+
+public struct CurrentUserFragment: GraphQLFragment {
+  /// The raw GraphQL definition of this fragment.
+  public static let fragmentDefinition: String =
+    """
+    fragment currentUserFragment on CurrentUser {
+      __typename
+      id
+      email
+      firstName
+      lastName
+      profileNumber
+    }
+    """
+
+  public static let possibleTypes: [String] = ["CurrentUser"]
+
+  public static var selections: [GraphQLSelection] {
+    return [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+      GraphQLField("email", type: .nonNull(.scalar(String.self))),
+      GraphQLField("firstName", type: .scalar(String.self)),
+      GraphQLField("lastName", type: .scalar(String.self)),
+      GraphQLField("profileNumber", type: .nonNull(.scalar(String.self)))
+    ]
+  }
+
+  public private(set) var resultMap: ResultMap
+
+  public init(unsafeResultMap: ResultMap) {
+    self.resultMap = unsafeResultMap
+  }
+
+  public init(id: GraphQLID, email: String, firstName: String? = nil, lastName: String? = nil, profileNumber: String) {
+    self.init(unsafeResultMap: ["__typename": "CurrentUser", "id": id, "email": email, "firstName": firstName, "lastName": lastName, "profileNumber": profileNumber])
+  }
+
+  public var __typename: String {
+    get {
+      return resultMap["__typename"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "__typename")
+    }
+  }
+
+  public var id: GraphQLID {
+    get {
+      return resultMap["id"]! as! GraphQLID
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var email: String {
+    get {
+      return resultMap["email"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "email")
+    }
+  }
+
+  public var firstName: String? {
+    get {
+      return resultMap["firstName"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "firstName")
+    }
+  }
+
+  public var lastName: String? {
+    get {
+      return resultMap["lastName"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "lastName")
+    }
+  }
+
+  public var profileNumber: String {
+    get {
+      return resultMap["profileNumber"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "profileNumber")
     }
   }
 }

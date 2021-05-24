@@ -14,8 +14,6 @@ protocol CurrentUserService {
 
     // MARK: - Instance Methods
 
-    func fetchCurrentUser() -> AnyPublisher<CurrentUser, Error>
+    func fetchCurrentUser() -> AnyPublisher<CurrentUser, Error>?
     func storedCurrentUser() -> CurrentUser?
-    func updateUser(firstName: String?, lastName: String?) -> AnyPublisher<CurrentUser, Error>
-    func updatePassword(currentPassword: String?, newPassword: String) -> AnyPublisher<Void, Error>
 }

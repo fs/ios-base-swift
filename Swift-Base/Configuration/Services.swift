@@ -16,4 +16,10 @@ enum Services {
     static func authorizationService() -> AuthorizationService {
         return DefaultAuthorizationService()
     }
+
+    static func currentUserService() -> CurrentUserService {
+        return DefaultCurrentUserService(apiClient: DefaultGraphQLAPIClient.shared,
+                                         currentUserCacheManager: Cache().currentUserCacheManager,
+                                         userCacheManager: Cache().userCacheManager)
+    }
 }
