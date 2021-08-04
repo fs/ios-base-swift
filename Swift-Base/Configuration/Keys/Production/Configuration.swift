@@ -1,5 +1,5 @@
 //
-//  Production.swift
+//  Configuration.swift
 //  Swift-Base
 //
 //  Created by Timur Shafigullin on 09/07/2020.
@@ -8,9 +8,10 @@
 
 import Foundation
 
-enum Keys {
+enum Configuration {
 
     // MARK: - Type Properties
 
     static let apiServerBaseURL = URL(string: "https://Swift-Base.com")!
+    static let graphQLURL = URL(string: "https://rails-base-graphql-api.herokuapp.com/graphql")!
 }

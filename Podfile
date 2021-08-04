@@ -7,11 +7,10 @@ def includeCommonPods
   pod 'Firebase/Crashlytics'
   
   # Libraries
-  pod 'Alamofire', '4.9.1'
   pod 'SwiftLint'
-  pod 'PromiseKit'
   pod 'R.swift'
   pod 'Kingfisher', '~> 5.0'
+  pod 'Apollo'
 end
 
 target 'Swift-Base' do

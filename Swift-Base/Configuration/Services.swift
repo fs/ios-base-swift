@@ -8,13 +8,12 @@
 
 import Foundation
 
+@available(iOS 13.0, *)
 enum Services {
 
     // MARK: - Type Properties
 
-    static let cacheProvider: CacheProvider = DefaultCacheProvider<DefaultCacheSession>(model: Models.cacheModel)
-
-    static var cacheViewContext: CacheContext {
-        return Services.cacheProvider.model.viewContext
+    static func authorizationService() -> AuthorizationService {
+        return DefaultAuthorizationService()
     }
 }
