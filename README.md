@@ -9,7 +9,6 @@ iOS swift template application.
 To setup project follow a few simple steps:
  1. [Download][1].
  2. [Rename project][2].
- 3. [Configure mogenerator][3].
  4. [Configure CocoaPods][4].
  5. [Configure Fabric/Crashlytics][5].
  6. [Edit README.md][6].
