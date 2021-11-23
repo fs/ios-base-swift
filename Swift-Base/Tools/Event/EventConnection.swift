@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol EventConnection: class {
+public protocol EventConnection: AnyObject {
 
     // MARK: - Instance Properties
 

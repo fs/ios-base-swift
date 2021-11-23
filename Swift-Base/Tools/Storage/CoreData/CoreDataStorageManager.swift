@@ -86,7 +86,7 @@ public class CoreDataStorageManager: StorageManager {
         self.managedObjectContext.delete(object)
     }
     
-    public func append<Object: StorageObject>() -> Object? {
+    public func append<Object: StorageObject>(_ type: Object.Type) -> Object? {
         guard let entity = NSEntityDescription.entity(forEntityName: Object.entityName, in: self.managedObjectContext) else {
             return nil
         }

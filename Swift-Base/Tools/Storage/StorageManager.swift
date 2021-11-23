@@ -37,7 +37,7 @@ public protocol StorageManager {
     func clear<Object: StorageObject>(with fetchRequest: StorageFetchRequest<Object>)
     
     func remove<Object: StorageObject>(object: Object)
-    func append<Object: StorageObject>() -> Object?
+    func append<Object: StorageObject>(_ type: Object.Type) -> Object?
 }
 
 // MARK: -
@@ -84,5 +84,9 @@ public extension StorageManager {
     
     func clear<Object: StorageObject>(_ type: Object.Type, sortDescriptors: [NSSortDescriptor]) {
         self.clear(type, sortDescriptors: sortDescriptors, predicate: nil)
+    }
+
+    func append<Object: StorageObject>(_ type: Object.Type) -> Object? {
+        self.append(type)
     }
 }

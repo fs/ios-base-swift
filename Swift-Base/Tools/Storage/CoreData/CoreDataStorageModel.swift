@@ -12,70 +12,35 @@ import CoreData
 public class CoreDataStorageModel<Manager: CoreDataStorageManager, Context: CoreDataStorageContext<Manager>>: StorageModel {
     
     // MARK: - Instance Propertes
-    
-    @available(iOS 10.0, *)
+
     public fileprivate(set) lazy var persistentContainer: NSPersistentContainer = { [unowned self] in
         let container = NSPersistentContainer(name: self.identifier)
         
         container.loadPersistentStores(completionHandler: { storeDescription, error in
             guard error == nil else {
-                fatalError()
+                 fatalError()
             }
         })
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        container.viewContext.undoManager = nil
+        container.viewContext.shouldDeleteInaccessibleFaults = true
+
+        container.viewContext.automaticallyMergesChangesFromParent = true
         
         return container
-    }()
+        }()
     
     public fileprivate(set) lazy var managedObjectContext: NSManagedObjectContext = { [unowned self] in
-        if #available(iOS 10.0, *) {
-            return self.persistentContainer.viewContext
-        } else {
-            let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-            
-            managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
-            managedObjectContext.mergePolicy = NSErrorMergePolicy
-            
-            return managedObjectContext
-        }
-    }()
+        return self.persistentContainer.viewContext
+        }()
     
     public fileprivate(set) lazy var managedObjectModel: NSManagedObjectModel = { [unowned self] in
-        if #available(iOS 10.0, *) {
-            return self.persistentContainer.managedObjectModel
-        } else {
-            guard let fileURL = Bundle.main.url(forResource: self.identifier, withExtension:"momd") else {
-                fatalError()
-            }
-            
-            guard let managedObjectModel = NSManagedObjectModel(contentsOf: fileURL) else {
-                fatalError()
-            }
-            
-            return managedObjectModel
-        }
-    }()
+        return self.persistentContainer.managedObjectModel
+        }()
     
     public fileprivate(set) lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = { [unowned self] in
-        if #available(iOS 10.0, *) {
-            return self.persistentContainer.persistentStoreCoordinator
-        } else {
-            let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-            
-            let rootURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-            let fileURL = rootURL.appendingPathComponent("\(self.identifier).sqlite")
-            
-            do {
-                try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType,
-                                                                  configurationName: nil,
-                                                                  at: fileURL,
-                                                                  options: nil)
-            } catch {
-                fatalError()
-            }
-            
-            return persistentStoreCoordinator
-        }
-    }()
+        return self.persistentContainer.persistentStoreCoordinator
+        }()
     
     // MARK: - Storage
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol WebActivityIndicator: class {
+public protocol WebActivityIndicator: AnyObject {
 
     // MARK: - Instance Properties
 

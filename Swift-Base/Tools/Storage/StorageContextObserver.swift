@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol StorageContextObserver: class {
+public protocol StorageContextObserver: AnyObject {
     
     // MARK: - Instance Methods
     
