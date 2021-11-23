@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol StorageModel: class {
+public protocol StorageModel: AnyObject {
     
     // MARK: - Instance Properties
     

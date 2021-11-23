@@ -14,5 +14,4 @@ enum Configuration {
 
     static let apiServerBaseURL = URL(string: "https://Swift-Base.staging.com")!
     static let graphQLURL = URL(string: "https://rails-base-graphql-api.herokuapp.com/graphql")!
-    
 }

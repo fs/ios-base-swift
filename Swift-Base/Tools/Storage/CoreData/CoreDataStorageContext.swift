@@ -145,6 +145,13 @@ public class CoreDataStorageContext<Manager: CoreDataStorageManager>: StorageCon
         if self.managedObjectContext.hasChanges {
             do {
                 try self.managedObjectContext.save()
+                self.managedObjectContext.parent?.performAndWait {
+                    do {
+                        try self.managedObjectContext.parent?.save()
+                    } catch {
+                        fatalError("Can not save CoreData parent context")
+                    }
+                }
             } catch {
                 fatalError("Can not save CoreData context")
             }
