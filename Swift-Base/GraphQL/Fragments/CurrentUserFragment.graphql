@@ -1,0 +1,8 @@
+fragment currentUserFragment on CurrentUser {
+      id,
+      email,
+      firstName,
+      lastName,
+      avatarUrl
+}
+

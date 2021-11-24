@@ -7,10 +7,15 @@
 //
 
 import Foundation
-#warning("change to class when adding cache managers")
-enum Cache {
+
+class Cache {
 
     // MARK: - Type Properties
 
     static let storageModel: StorageModel = CoreDataStorageModel(identifier: "Swift-Base")
+
+    // MARK: - Instance Properties
+
+    lazy var currentUserCacheManager: CurrentUserCacheManager = DefaultCurrentUserCacheManager(storageModel: Cache.storageModel)
+    lazy var userCacheManager: UserCacheManager = DefaultUserCacheManager(storageModel: Cache.storageModel)
 }

@@ -1,0 +1,9 @@
+mutation updateToken {
+  updateToken {
+    me {
+      ...currentUserFragment
+    }
+    accessToken
+    refreshToken
+  }
+}
