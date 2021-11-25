@@ -1,0 +1,9 @@
+mutation signin($input: SignInInput!) {
+  signin(input: $input) {
+    me {
+      ...currentUserFragment
+    }
+    accessToken
+    refreshToken
+  }
+}

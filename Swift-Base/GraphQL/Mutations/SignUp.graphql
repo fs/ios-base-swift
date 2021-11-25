@@ -1,0 +1,9 @@
+mutation signup($input: SignUpInput!) {
+  signup(input: $input) {
+    me {
+      ...currentUserFragment
+    }
+    accessToken
+    refreshToken
+  }
+}

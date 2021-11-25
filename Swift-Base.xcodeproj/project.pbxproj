@@ -193,7 +193,22 @@
 		CBD071E12297F14C00F96115 /* DefaultImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD071DF2297F14C00F96115 /* DefaultImageLoader.swift */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 		E75BB8051E8CFEF90035C2DA /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75BB8071E8CFEF90035C2DA /* Main_iPad.storyboard */; };
-		FB8F4812274D06890003B1E2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8F4811274D06890003B1E2 /* Cache.swift */; };
+		FB1ECFF9274E8E5600DFC93A /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FB1ECFF8274E8E5600DFC93A /* schema.json */; };
+		FB1ECFFB274E8ED400DFC93A /* UserFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FB1ECFFA274E8ED400DFC93A /* UserFragment.graphql */; };
+		FB1ECFFD274E8EE200DFC93A /* CurrentUserFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FB1ECFFC274E8EE200DFC93A /* CurrentUserFragment.graphql */; };
+		FB1ED003274E8FE800DFC93A /* FetchCurrentUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FB1ED002274E8FE800DFC93A /* FetchCurrentUser.graphql */; };
+		FB1ED007274E904D00DFC93A /* SignUp.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FB1ED004274E904D00DFC93A /* SignUp.graphql */; };
+		FB1ED008274E904D00DFC93A /* SignOut.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FB1ED005274E904D00DFC93A /* SignOut.graphql */; };
+		FB1ED009274E904D00DFC93A /* SignIn.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FB1ED006274E904D00DFC93A /* SignIn.graphql */; };
+		FB1ED00D274E907F00DFC93A /* RequestPasswordRecovery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FB1ED00A274E907F00DFC93A /* RequestPasswordRecovery.graphql */; };
+		FB1ED00E274E907F00DFC93A /* UpdateToken.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FB1ED00B274E907F00DFC93A /* UpdateToken.graphql */; };
+		FB1ED00F274E907F00DFC93A /* UpdateUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FB1ED00C274E907F00DFC93A /* UpdateUser.graphql */; };
+		FB1ED015274E911600DFC93A /* DefaultCurrentUserCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1ED013274E911600DFC93A /* DefaultCurrentUserCacheManager.swift */; };
+		FB1ED016274E911600DFC93A /* CurrentUserCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1ED014274E911600DFC93A /* CurrentUserCacheManager.swift */; };
+		FB1ED019274E912A00DFC93A /* UserCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1ED017274E912A00DFC93A /* UserCacheManager.swift */; };
+		FB1ED01A274E912A00DFC93A /* DefaultUserCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1ED018274E912A00DFC93A /* DefaultUserCacheManager.swift */; };
+		FB1ED01C274E914100DFC93A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1ED01B274E914100DFC93A /* API.swift */; };
+		FB1ED01E274E916C00DFC93A /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1ED01D274E916C00DFC93A /* Cache.swift */; };
 		FB8F4814274D08D50003B1E2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8F4813274D08D50003B1E2 /* User.swift */; };
 		FB8F4816274D09700003B1E2 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8F4815274D09700003B1E2 /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
@@ -335,7 +350,22 @@
 		E75BB8091E8CFEFB0035C2DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		F378FBE3809C9D7DACB7E736 /* Pods_Swift_BaseStaging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_BaseStaging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB028C55BDC14FF0291885F1 /* Pods_Swift_Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB8F4811274D06890003B1E2 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		FB1ECFF8274E8E5600DFC93A /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		FB1ECFFA274E8ED400DFC93A /* UserFragment.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UserFragment.graphql; sourceTree = "<group>"; };
+		FB1ECFFC274E8EE200DFC93A /* CurrentUserFragment.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CurrentUserFragment.graphql; sourceTree = "<group>"; };
+		FB1ED002274E8FE800DFC93A /* FetchCurrentUser.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FetchCurrentUser.graphql; sourceTree = "<group>"; };
+		FB1ED004274E904D00DFC93A /* SignUp.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SignUp.graphql; sourceTree = "<group>"; };
+		FB1ED005274E904D00DFC93A /* SignOut.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SignOut.graphql; sourceTree = "<group>"; };
+		FB1ED006274E904D00DFC93A /* SignIn.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SignIn.graphql; sourceTree = "<group>"; };
+		FB1ED00A274E907F00DFC93A /* RequestPasswordRecovery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RequestPasswordRecovery.graphql; sourceTree = "<group>"; };
+		FB1ED00B274E907F00DFC93A /* UpdateToken.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UpdateToken.graphql; sourceTree = "<group>"; };
+		FB1ED00C274E907F00DFC93A /* UpdateUser.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UpdateUser.graphql; sourceTree = "<group>"; };
+		FB1ED013274E911600DFC93A /* DefaultCurrentUserCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCurrentUserCacheManager.swift; sourceTree = "<group>"; };
+		FB1ED014274E911600DFC93A /* CurrentUserCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserCacheManager.swift; sourceTree = "<group>"; };
+		FB1ED017274E912A00DFC93A /* UserCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCacheManager.swift; sourceTree = "<group>"; };
+		FB1ED018274E912A00DFC93A /* DefaultUserCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultUserCacheManager.swift; sourceTree = "<group>"; };
+		FB1ED01B274E914100DFC93A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FB1ED01D274E916C00DFC93A /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		FB8F4813274D08D50003B1E2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB8F4815274D09700003B1E2 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -421,6 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				CB109C102283294300632EC9 /* Cache */,
+				FB1ED010274E90D300DFC93A /* CacheManagers */,
 				FB8F4813274D08D50003B1E2 /* User.swift */,
 				FB8F4815274D09700003B1E2 /* CurrentUser.swift */,
 			);
@@ -551,7 +582,7 @@
 		8832CAD626568DC100ADD8F7 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				8832CAD72656906700ADD8F7 /* API */,
+				FB1ED001274E8F5900DFC93A /* API */,
 				8832CAD82656907D00ADD8F7 /* Fragments */,
 				8832CAD92656908C00ADD8F7 /* Interceptors */,
 				8832CADA2656909500ADD8F7 /* Mutations */,
@@ -566,16 +597,11 @@
 			path = GraphQL;
 			sourceTree = "<group>";
 		};
-		8832CAD72656906700ADD8F7 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		8832CAD82656907D00ADD8F7 /* Fragments */ = {
 			isa = PBXGroup;
 			children = (
+				FB1ECFFA274E8ED400DFC93A /* UserFragment.graphql */,
+				FB1ECFFC274E8EE200DFC93A /* CurrentUserFragment.graphql */,
 			);
 			path = Fragments;
 			sourceTree = "<group>";
@@ -595,6 +621,12 @@
 		8832CADA2656909500ADD8F7 /* Mutations */ = {
 			isa = PBXGroup;
 			children = (
+				FB1ED006274E904D00DFC93A /* SignIn.graphql */,
+				FB1ED005274E904D00DFC93A /* SignOut.graphql */,
+				FB1ED004274E904D00DFC93A /* SignUp.graphql */,
+				FB1ED00B274E907F00DFC93A /* UpdateToken.graphql */,
+				FB1ED00A274E907F00DFC93A /* RequestPasswordRecovery.graphql */,
+				FB1ED00C274E907F00DFC93A /* UpdateUser.graphql */,
 			);
 			path = Mutations;
 			sourceTree = "<group>";
@@ -602,6 +634,7 @@
 		8832CADB265690A100ADD8F7 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
+				FB1ED002274E8FE800DFC93A /* FetchCurrentUser.graphql */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -617,6 +650,7 @@
 		8832CADE2656910800ADD8F7 /* Schemas */ = {
 			isa = PBXGroup;
 			children = (
+				FB1ECFF8274E8E5600DFC93A /* schema.json */,
 			);
 			path = Schemas;
 			sourceTree = "<group>";
@@ -713,7 +747,7 @@
 			isa = PBXGroup;
 			children = (
 				218C64B61BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld */,
-				FB8F4811274D06890003B1E2 /* Cache.swift */,
+				FB1ED01D274E916C00DFC93A /* Cache.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -870,6 +904,41 @@
 			path = ImageLoader;
 			sourceTree = "<group>";
 		};
+		FB1ED001274E8F5900DFC93A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FB1ED01B274E914100DFC93A /* API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FB1ED010274E90D300DFC93A /* CacheManagers */ = {
+			isa = PBXGroup;
+			children = (
+				FB1ED011274E90EB00DFC93A /* UserCacheManager */,
+				FB1ED012274E90F900DFC93A /* CurrentUserCacheManager */,
+			);
+			path = CacheManagers;
+			sourceTree = "<group>";
+		};
+		FB1ED011274E90EB00DFC93A /* UserCacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				FB1ED018274E912A00DFC93A /* DefaultUserCacheManager.swift */,
+				FB1ED017274E912A00DFC93A /* UserCacheManager.swift */,
+			);
+			path = UserCacheManager;
+			sourceTree = "<group>";
+		};
+		FB1ED012274E90F900DFC93A /* CurrentUserCacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				FB1ED014274E911600DFC93A /* CurrentUserCacheManager.swift */,
+				FB1ED013274E911600DFC93A /* DefaultCurrentUserCacheManager.swift */,
+			);
+			path = CurrentUserCacheManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -880,6 +949,7 @@
 				E52B6D318A78E2BE539D8A20 /* [CP] Check Pods Manifest.lock */,
 				5E8025FC24B3802800904C48 /* R.swift */,
 				07B2A25A220ADE80001EC701 /* SwiftLint */,
+				FB1ECFF7274E8DE100DFC93A /* Generate Apollo GraphQL API */,
 				21DB300B19DD2289003A418D /* Sources */,
 				21DB300C19DD2289003A418D /* Frameworks */,
 				21DB300D19DD2289003A418D /* Resources */,
@@ -986,12 +1056,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1ECFF9274E8E5600DFC93A /* schema.json in Resources */,
+				FB1ED00F274E907F00DFC93A /* UpdateUser.graphql in Resources */,
 				E75BB8051E8CFEF90035C2DA /* Main_iPad.storyboard in Resources */,
 				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
+				FB1ED007274E904D00DFC93A /* SignUp.graphql in Resources */,
+				FB1ECFFD274E8EE200DFC93A /* CurrentUserFragment.graphql in Resources */,
+				FB1ED008274E904D00DFC93A /* SignOut.graphql in Resources */,
 				5E74E5B424BE00CB00C8D0BD /* GoogleService-Info.plist in Resources */,
+				FB1ECFFB274E8ED400DFC93A /* UserFragment.graphql in Resources */,
 				218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */,
 				21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */,
 				21DB301F19DD2289003A418D /* Images.xcassets in Resources */,
+				FB1ED003274E8FE800DFC93A /* FetchCurrentUser.graphql in Resources */,
+				FB1ED009274E904D00DFC93A /* SignIn.graphql in Resources */,
+				FB1ED00E274E907F00DFC93A /* UpdateToken.graphql in Resources */,
+				FB1ED00D274E907F00DFC93A /* RequestPasswordRecovery.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1227,6 +1307,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FB1ECFF7274E8DE100DFC93A /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/Swift-Base/GraphQL/\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"Schemas/schema.json\" API/API.swift\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1238,6 +1336,7 @@
 				5E13D8FA24B5F3160081B960 /* DateFormatterExtension.swift in Sources */,
 				CB109CC1228340CD00632EC9 /* WebService.swift in Sources */,
 				CB109C7122833FC200632EC9 /* EventListenerConnection.swift in Sources */,
+				FB1ED01E274E916C00DFC93A /* Cache.swift in Sources */,
 				218C64B81BA078BA00EEEDF1 /* Swift-Base.xcdatamodeld in Sources */,
 				CB109CA02283407900632EC9 /* LoggedNavigationController.swift in Sources */,
 				CB109C7322833FC200632EC9 /* EventConnection.swift in Sources */,
@@ -1279,6 +1378,7 @@
 				CB109C9F2283407900632EC9 /* LoggedTableViewController.swift in Sources */,
 				8832CAE3265692B700ADD8F7 /* UserDefaultsManager.swift in Sources */,
 				8832CB072656A37700ADD8F7 /* DefaultAuthorizationService.swift in Sources */,
+				FB1ED016274E911600DFC93A /* CurrentUserCacheManager.swift in Sources */,
 				8832CAFE2656A21000ADD8F7 /* AuthorizationInterceptor.swift in Sources */,
 				8832CAEC265693CA00ADD8F7 /* KeychainManager.swift in Sources */,
 				CB109CC4228340CD00632EC9 /* WebErrorBase.swift in Sources */,
@@ -1298,6 +1398,7 @@
 				CB109C9A22833FE100632EC9 /* RoundImageView.swift in Sources */,
 				CB109C6522833FBC00632EC9 /* CGRectExtension.swift in Sources */,
 				CB109C4022832A8200632EC9 /* CoreDataStorageManager.swift in Sources */,
+				FB1ED01A274E912A00DFC93A /* DefaultUserCacheManager.swift in Sources */,
 				CB109C4222832A8200632EC9 /* CoreDataStorageContext.swift in Sources */,
 				CB109C8322833FD900632EC9 /* LoggedPageViewController.swift in Sources */,
 				CB109C6122833FBC00632EC9 /* UIColorExtension.swift in Sources */,
@@ -1315,12 +1416,12 @@
 				CB109C6322833FBC00632EC9 /* CGSizeExtension.swift in Sources */,
 				CB109C3E22832A8200632EC9 /* StorageContextObserver.swift in Sources */,
 				CB109C6922833FBC00632EC9 /* UIImageExtension.swift in Sources */,
+				FB1ED015274E911600DFC93A /* DefaultCurrentUserCacheManager.swift in Sources */,
 				CB109C7A22833FD100632EC9 /* KeyboardHandler.swift in Sources */,
 				CB109CA22283407900632EC9 /* LoggedViewController.swift in Sources */,
 				8832CB002656A22C00ADD8F7 /* ParameterInterceptor.swift in Sources */,
 				CB109CB7228340CD00632EC9 /* WebMultiPartDataItem.swift in Sources */,
 				CB109CBC228340CD00632EC9 /* WebRequest.swift in Sources */,
-				FB8F4812274D06890003B1E2 /* Cache.swift in Sources */,
 				8832CAEE265693D800ADD8F7 /* DefaultKeychainManager.swift in Sources */,
 				8832CAF42656964400ADD8F7 /* DefaultGraphQLAPIClient.swift in Sources */,
 				CB109CBD228340CD00632EC9 /* WebMultiPart.swift in Sources */,
@@ -1331,6 +1432,8 @@
 				8832CB022656A24700ADD8F7 /* RefreshTokenInterceptor.swift in Sources */,
 				CB109CA12283407900632EC9 /* LoggedTabBarController.swift in Sources */,
 				CB109C6A22833FBC00632EC9 /* UIEdgeInsets.swift in Sources */,
+				FB1ED01C274E914100DFC93A /* API.swift in Sources */,
+				FB1ED019274E912A00DFC93A /* UserCacheManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1523,7 +1626,7 @@
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				URL_HOST = "https://apple.com";
+				URL_HOST = "https://rails-base-graphql-api.herokuapp.com/graphql";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1568,6 +1671,7 @@
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				URL_HOST = "";
 			};
 			name = Release;
 		};
@@ -1755,6 +1859,7 @@
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				URL_HOST = "https://rails-base-graphql-api.herokuapp.com/graphql";
 			};
 			name = Debug;
 		};
